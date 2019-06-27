@@ -92,12 +92,27 @@ describe("Projects", () => {
   it("allows a manager to propose a request", async function() {
     const manager = accounts[0];
     await project.methods
-      .createRequest("test request", "100", accounts[1])
+      .createRequest("test request", "100", accounts[0])
       .send({ from: manager, gas: "1000000" });
 
     const request = await project.methods.requests(0).call();
 
     assert.equal("test request", request.description);
+  });
+
+  it("only the manager can propose a request", async function() {
+    this.timeout(20000);
+    const manager = accounts[0];
+    const supporter = accounts[1];
+
+    try {
+      await project.methods
+        .createRequest("test request", "100", accounts[3])
+        .send({ from: manager, gas: "1000000" });
+      assert(false);
+    } catch (err) {
+      assert(err);
+    }
   });
 
   it("processes request", async function() {
@@ -126,22 +141,7 @@ describe("Projects", () => {
     let balance = await web3.eth.getBalance(supporter);
     balance = web3.utils.fromWei(balance, "ether");
     balance = parseFloat(balance);
-    console.log(balance);
     assert(balance > 104);
-  });
-
-  it("only the manager can approve a request", async function() {
-    const manager = accounts[0];
-    const supporter = accounts[1];
-
-    await project.methods
-      .createRequest("test request", "100", accounts[1])
-      .send({ from: manager, gas: "1000000" });
-
-    const request = await project.methods.requests(0).call();
-
-    try {
-    } catch {}
   });
 });
 
