@@ -22,24 +22,32 @@ contract CampaignFactory {
 
 contract Fundraise {
 
-    // This is a struct definition and, as such, it does not craete an instance of the variable.
-    // Unlike with the other variables, it won't generate a function to get the struct.
+    // This are struct definitions and, as such, don't not craete an instance of the variable.
+    // Unlike with the other variables, it won't generate a function to get the struct. 
     struct Request {
         string description;
         uint value;
         address recipient;
         bool complete;
         uint approvalCount;
-        // This is a reference type.. All others are value types. Referene types do not need to be initialized when we create a new instance of struct like we do in the createRequest function.
-        mapping(address => bool) approvals;
+        mapping(address => bool) approvals; // This is a reference type.. All others are value types. Referene types do not need to be initialized when we create a new instance of struct like we do in the createRequest function.
+    }
+
+    // Struct to keep track of transaction history
+    struct SupportTransaction {
+        uint value;
+        address supporter;
     }
 
     //Declare the variables by <type><visibility><name>
     address public manager;
     uint public minimumContribution;
     // We could use an array for the suporters but this will be very costly due to linear time search of arrays.
-    // address[] public supporters;
+    // ;
     mapping(address => bool) public supporters;
+    address[] public supportersAddresses;
+    mapping(address => uint) public transactions;
+
     // We want to keep track of how many supporters the project (the contract) has.
     uint public supportersCount;
 
@@ -65,6 +73,22 @@ contract Fundraise {
         //We now create an element in the approvers mapping that maps the message sender - the new supporter - to true.
         supporters[msg.sender] = true;
         supportersCount ++;
+        // SupportTransaction memory newTransaction = SupportTransaction({
+            value: msg.value,
+            supporter: msg.sender
+        });
+        transactions[msg.sender] = msg.value;
+        supportersAddresses.push(msg.sender);
+    }
+
+    // Function to cancel the project and refund supporters
+    function refund() public {
+        uint noSupporters = supportersAddresses.length;
+        for (uint i = 1; i <= noSupporters; i++) {
+            address supporterAddress = supportersAddresses[i-1];
+            uint transactionValue = transactions[supporterAddress];
+            supporterAddress.transfer(transactionValue);
+        }
     }
 
     // Function that creates a new request and adds it to the request array.
@@ -95,7 +119,7 @@ contract Fundraise {
         // We want the require to return true if the user is not in the resquests[index].approvals array.
         require(!request.approvals[msg.sender]);
 
-        //Add the user to the approvals array for the specific request.
+       //Add the user to the approvals array for the specific request.
         request.approvals[msg.sender] = true;
 
         // Increement the no. of approvals.
