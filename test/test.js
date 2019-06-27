@@ -1,10 +1,16 @@
 const assert = require("assert");
 const ganache = require("ganache-cli");
 const Web3 = require("web3");
-const web3 = new Web3(ganache.provider());
+const provider = ganache.provider();
+const OPTIONS = {
+  defaultBlock: "latest",
+  transactionConfirmationBlocks: 1,
+  transactionBlockTimeout: 5
+};
+const web3 = new Web3(provider, null, OPTIONS);
 
-const compiledFactoryContract = require("../build/CampaignFactory.json");
-const compiledFundraise = require("../build/Fundraise.json");
+const compiledFactoryContract = require("../ethereum/build/CampaignFactory.json");
+const compiledFundraise = require("../ethereum/build/Fundraise.json");
 
 let accounts;
 let factory;
@@ -14,6 +20,7 @@ let project;
 // If we create an actual project (using the factory) in the beforeEach function, then we won't have to do it in every single other test.
 // We will just have that project available for us from now on.
 beforeEach(async function() {
+  this.timeout(100000);
   accounts = await web3.eth.getAccounts(); // Gets the accounts in the network.
   factory = await new web3.eth.Contract(
     JSON.parse(compiledFactoryContract.interface)
@@ -29,11 +36,19 @@ beforeEach(async function() {
 
   // Because getDeployedCampaigns() is a view function, we only need to '.call()' it.
   const addresses = await factory.methods.getDeployedCampaigns().call();
-  const address = addresses[0];
+  projectAddress = addresses[0];
   project = await new web3.eth.Contract( //Creates a javascript reference of the created project (contract).
     JSON.parse(compiledFundraise.interface),
     projectAddress
   ); // Read NOTE on this!
+});
+
+describe("Projects", () => {
+  // Test to check the deployment
+  it("deploys a factory and a project", () => {
+    assert.ok(factory.options.address); // A contract will be deployed once it has an address.
+    assert.ok(project.options.address);
+  });
 });
 
 // There is something to note about the way we created the javascript instance of the Fundraise contract.
