@@ -62,6 +62,31 @@ describe("Projects", () => {
     const manager = await project.methods.manager().call();
     assert.equal(accounts[0], manager);
   });
+
+  it("allows a user to support the project", async function() {
+    supporter = accounts[1];
+    await project.methods.contribute().send({
+      from: supporter,
+      value: "101" //When we deployed the contract, we set a minimum value of 100
+    });
+
+    assert(await project.methods.supporters(supporter).call());
+  });
+
+  it("the support matches the minimum contribution", async function() {
+    try {
+      supporter = accounts[1];
+      await project.methods.contribute().send({
+        from: supporter,
+        value: "101" //When we deployed the contract, we set a minimum value of 100
+      });
+      // If the error is not thrown, we 'assert(false)' and the test doesn't pass. If there is an error, the code goes to the 'catch'.
+      return assert(false);
+      // the catch is always initialized with the error.
+    } catch (err) {
+      assert(err);
+    }
+  });
 });
 
 // There is something to note about the way we created the javascript instance of the Fundraise contract.
