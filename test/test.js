@@ -1,7 +1,8 @@
 const assert = require("assert");
 const ganache = require("ganache-cli");
 const Web3 = require("web3");
-const provider = ganache.provider();
+const ganacheGas = { gasLimit: 10000000 };
+const provider = ganache.provider(ganacheGas);
 const OPTIONS = {
   defaultBlock: "latest",
   transactionConfirmationBlocks: 1,
@@ -26,12 +27,12 @@ beforeEach(async function() {
     JSON.parse(compiledFactoryContract.interface)
   )
     .deploy({ data: compiledFactoryContract.bytecode })
-    .send({ from: accounts[0], gas: "1000000" }); // Deploys the factory contract
+    .send({ from: accounts[0], gas: "3000000" }); // Deploys the factory contract
 
   // The createCampaign function is not a view function and, as such, because we are changing something in the contract, we need to call '.send()'
   await factory.methods.createCampaign("100").send({
     from: accounts[0],
-    gas: "1000000"
+    gas: "3000000"
   }); // Instructs the factory contract to create a project.
 
   // Because getDeployedCampaigns() is a view function, we only need to '.call()' it.
@@ -70,7 +71,6 @@ describe("Projects", () => {
       from: supporter,
       value: "101" //When we deployed the contract, we set a minimum value of 100
     });
-
     assert(await project.methods.supporters(supporter).call());
   });
 
@@ -93,7 +93,7 @@ describe("Projects", () => {
     const manager = accounts[0];
     await project.methods
       .createRequest("test request", "100", accounts[0])
-      .send({ from: manager, gas: "1000000" });
+      .send({ from: manager, gas: "3000000" });
 
     const request = await project.methods.requests(0).call();
 
@@ -108,7 +108,7 @@ describe("Projects", () => {
     try {
       await project.methods
         .createRequest("test request", "100", accounts[3])
-        .send({ from: manager, gas: "1000000" });
+        .send({ from: manager, gas: "3000000" });
       assert(false);
     } catch (err) {
       assert(err);
@@ -116,7 +116,7 @@ describe("Projects", () => {
   });
 
   it("processes request", async function() {
-    this.timeout(5000);
+    this.timeout(7000);
     const manager = accounts[0];
     const supporter = accounts[1];
 
@@ -127,21 +127,41 @@ describe("Projects", () => {
 
     await project.methods
       .createRequest("Open store", web3.utils.toWei("6", "ether"), supporter)
-      .send({ from: manager, gas: "1000000" });
+      .send({ from: manager, gas: "3000000" });
 
     await project.methods
       .approveRequest(0)
-      .send({ from: manager, gas: "1000000" });
+      .send({ from: manager, gas: "3000000" });
 
     await project.methods.finalizeRequest(0).send({
       from: manager,
-      gas: "1000000"
+      gas: "3000000"
     });
 
     let balance = await web3.eth.getBalance(supporter);
     balance = web3.utils.fromWei(balance, "ether");
     balance = parseFloat(balance);
     assert(balance > 104);
+  });
+
+  it("refunds supporters when contract is terminated", async function() {
+    const supporter = accounts[1];
+    let initialBalance = await web3.eth.getBalance(supporter);
+    initialBalance = web3.utils.fromWei(initialBalance, "ether");
+    initialBalance = parseFloat(initialBalance);
+
+    await project.methods.contribute().send({
+      from: supporter,
+      value: web3.utils.toWei("6", "ether")
+    });
+
+    await project.methods.terminateProject().call();
+
+    let finalBalance = await web3.eth.getBalance(supporter);
+    finalBalance = web3.utils.fromWei(finalBalance, "ether");
+    finalBalance = parseFloat(finalBalance);
+
+    assert(initialBalance - finalBalance < 1);
   });
 });
 
