@@ -22,6 +22,7 @@ const source = fs.readFileSync(contractsPath, "utf8");
 
 // 3. Compile both contracts with the solidity compiler (will return as many objects as there are different contracts in the contracts file.)
 const output = solc.compile(source, 1).contracts; // --> 'output' is an object with two separate properties. Each property corresponds to a contract in the contract file.
+console.log(output);
 // Recreate build directory
 fs.ensureDirSync(buildPath);
 
