@@ -47,6 +47,7 @@ beforeEach(async function() {
 // We want to test the project contract deployment
 // We want to test that the person who called the createCampaign function is the manager of the project contract.
 // We want to make sure that a user can support a project.
+// We want to test that only a contribution that meets the minimum requirements passes
 
 describe("Projects", () => {
   // Test to check the deployment
@@ -86,6 +87,61 @@ describe("Projects", () => {
     } catch (err) {
       assert(err);
     }
+  });
+
+  it("allows a manager to propose a request", async function() {
+    const manager = accounts[0];
+    await project.methods
+      .createRequest("test request", "100", accounts[1])
+      .send({ from: manager, gas: "1000000" });
+
+    const request = await project.methods.requests(0).call();
+
+    assert.equal("test request", request.description);
+  });
+
+  it("processes request", async function() {
+    this.timeout(5000);
+    const manager = accounts[0];
+    const supporter = accounts[1];
+
+    await project.methods.contribute().send({
+      from: manager,
+      value: web3.utils.toWei("10", "ether")
+    });
+
+    await project.methods
+      .createRequest("Open store", web3.utils.toWei("6", "ether"), supporter)
+      .send({ from: manager, gas: "1000000" });
+
+    await project.methods
+      .approveRequest(0)
+      .send({ from: manager, gas: "1000000" });
+
+    await project.methods.finalizeRequest(0).send({
+      from: manager,
+      gas: "1000000"
+    });
+
+    let balance = await web3.eth.getBalance(supporter);
+    balance = web3.utils.fromWei(balance, "ether");
+    balance = parseFloat(balance);
+    console.log(balance);
+    assert(balance > 104);
+  });
+
+  it("only the manager can approve a request", async function() {
+    const manager = accounts[0];
+    const supporter = accounts[1];
+
+    await project.methods
+      .createRequest("test request", "100", accounts[1])
+      .send({ from: manager, gas: "1000000" });
+
+    const request = await project.methods.requests(0).call();
+
+    try {
+    } catch {}
   });
 });
 
