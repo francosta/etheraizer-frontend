@@ -77,12 +77,15 @@ contract Fundraise {
         supportersAddresses.push(msg.sender);
     }
     
-    function refund() public {
+    function terminateProject() public {
+        //Refund all supporters
         for (uint i = 1; i <= supportersAddresses.length; i++) {
             address supporterAddress = supportersAddresses[i-1];
             uint transactionValue = transactions[supporterAddress];
             supporterAddress.transfer(transactionValue);
         }
+        //Selfdestruct
+        selfdestruct(manager);
     }
     
     // Function that creates a new request and adds it to the request array.
@@ -136,9 +139,5 @@ contract Fundraise {
         request.recipient.transfer(request.value);
         // Mark the request as finalized.
         request.complete = true;
-    }
-    
-    // Function to cancel the project and refund supporters
-    
-    
+    }    
 }
