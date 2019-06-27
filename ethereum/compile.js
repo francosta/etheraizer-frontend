@@ -21,22 +21,16 @@ const contractsPath = path.resolve(__dirname, "contracts", "Fundraise.sol");
 const source = fs.readFileSync(contractsPath, "utf8");
 
 // 3. Compile both contracts with the solidity compiler (will return as many objects as there are different contracts in the contracts file.)
-const output = solc.compile(source, 1).contracts;
+const output = solc.compile(source, 1).contracts; // --> 'output' is an object with two separate properties. Each property corresponds to a contract in the contract file.
 // Recreate build directory
 fs.ensureDirSync(buildPath);
 
 // 4. Write the contract's ABI into the 'build' directory.
 
-// output.forEach(contract => {
-//   fs.outputJsonSync(
-//     path.resolve(buildPath, contract.replace(":", "") + ".json"),
-//     output[contract]
-//   );
-// });
-
 for (let contract in output) {
   fs.outputJsonSync(
-    path.resolve(buildPath, contract.replace(":", "") + ".json"),
-    output[contract]
+    // outputJSONSync writes a JSON file to a speecified directory
+    path.resolve(buildPath, contract.replace(":", "") + ".json"), // We are replacing the colon because the contract is a key of 'output'
+    output[contract] // The is the contract in each iteration.
   );
 }
