@@ -17,13 +17,11 @@ fs.removeSync(buildPath); //The default npm fs module makes it really hard to de
 
 // Get the path for the contracts file.
 const contractsPath = path.resolve(__dirname, "contracts", "Fundraise.sol");
-console.log(contractsPath);
 // 2. Read the source code for the contract file.
 const source = fs.readFileSync(contractsPath, "utf8");
 
 // 3. Compile both contracts with the solidity compiler (will return as many objects as there are different contracts in the contracts file.)
 const output = solc.compile(source, 1).contracts;
-console.log(output);
 // Recreate build directory
 fs.ensureDirSync(buildPath);
 
