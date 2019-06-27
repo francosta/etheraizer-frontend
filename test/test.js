@@ -20,7 +20,7 @@ let project;
 // If we create an actual project (using the factory) in the beforeEach function, then we won't have to do it in every single other test.
 // We will just have that project available for us from now on.
 beforeEach(async function() {
-  this.timeout(100000);
+  this.timeout(4000);
   accounts = await web3.eth.getAccounts(); // Gets the accounts in the network.
   factory = await new web3.eth.Contract(
     JSON.parse(compiledFactoryContract.interface)
@@ -43,11 +43,24 @@ beforeEach(async function() {
   ); // Read NOTE on this!
 });
 
+// We want to the factory contract deployment
+// We want to test the project contract deployment
+// We want to test that the person who called the createCampaign function is the manager of the project contract.
+// We want to make sure that a user can support a project.
+
 describe("Projects", () => {
   // Test to check the deployment
-  it("deploys a factory and a project", () => {
+  it("deploys the factory contract", () => {
     assert.ok(factory.options.address); // A contract will be deployed once it has an address.
+  });
+
+  it("deploys the project contract", () => {
     assert.ok(project.options.address);
+  });
+
+  it("the createCampaign caller is the manager of the project contract", async function() {
+    const manager = await project.methods.manager().call();
+    assert.equal(accounts[0], manager);
   });
 });
 
