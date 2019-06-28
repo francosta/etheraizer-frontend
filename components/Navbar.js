@@ -11,7 +11,7 @@ export default class Navbar extends Component {
 
     return (
       <div>
-        <Menu pointing secondary>
+        <Menu pointing secondary style={{ marginTop: "20px" }}>
           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item
             name='projects'
