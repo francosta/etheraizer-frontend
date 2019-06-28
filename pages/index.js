@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import factory from "../ethereum/factoryContract";
+import { Card } from "semantic-ui-react";
 
 export default class projectIndex extends Component {
   static async getInitialProps() {
@@ -16,12 +17,27 @@ export default class projectIndex extends Component {
     await factory.methods.createCampaign(minimumContribution).call();
   }
 
+  renderProjects = () => {
+    const items = this.props.projects.map(address => {
+      return {
+        header: address,
+        description: <a>View Project</a>,
+        fluid: true
+      };
+    });
+    return <Card.Group items={items} />;
+  };
+
   render() {
     return (
       <div>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        />
         <h1>This is the homepage with all the active projects.</h1>
         <h3>These are addresses of all the deployed projects:</h3>
-        {this.props.projects}
+        {this.renderProjects()}
         <br />
         <h3>Create a new project in the form below:</h3>
         <form onSubmit={e => this.handleSubmit(e)}>
