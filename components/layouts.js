@@ -7,6 +7,7 @@ export default props => {
 
     return (
         // We use container in order to limit the size of the elements in the window.
+        // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
         <Container>
             <Head>
             <link

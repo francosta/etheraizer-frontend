@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import factory from "../ethereum/factoryContract";
-import { Card } from "semantic-ui-react";
+import { Button, Checkbox, Form, Card, Input, Dropdown } from "semantic-ui-react";
 import Layout from "../components/layouts"
 
 export default class projectIndex extends Component {
@@ -30,6 +30,12 @@ export default class projectIndex extends Component {
   };
 
   render() {
+
+    const formOptions = [
+      { key: 'wei', text: 'wei', value: 'wei' },
+      { key: 'ether', text: 'Ξ ether', value: 'ether' }
+    ]
+
     return (
     <Layout>
       <div>
@@ -69,29 +75,20 @@ export default class projectIndex extends Component {
         {this.renderProjects()}
         <br />
         <h3>Create a new project in the form below:</h3>
-        <form className="ui form" onSubmit={e => this.handleSubmit(e)}>
-          <div className="field">
-            <label>Project Name</label>
-            <input type="text" name="projectTitle" placeholder="Project Name" />
-          </div>
-          <div className="field">
+        <Form>
+          <Form.Field>
+            <label>Project Title</label>
+            <Input placeholder='Project Title' />
+          </Form.Field>
+          <Form.Field>
             <label>Minimum Contribution</label>
-            <input
-              type="text"
-              name="minimumContribution"
-              placeholder="Minimum Contribution"
-            />
-          </div>
-          <div className="field">
-            <div className="ui checkbox">
-              <input type="checkbox" tabIndex="0" className="hidden" />
-              <label>I agree to the Terms and Conditions</label>
-            </div>
-          </div>
-          <button className="ui primary button" type="submit">
-            Create Project
-          </button>
-        </form>
+            <Input label={<Dropdown defaultValue='wei' options={formOptions} />} labelPosition="right" placeholder='Minimum Contribution' />
+          </Form.Field>
+          <Form.Field>
+            <Checkbox label='I agree to the Terms and Conditions' />
+          </Form.Field>
+          <Button type='submit'>Create Project</Button>
+      </Form>
       </div>
       </Layout>
     );

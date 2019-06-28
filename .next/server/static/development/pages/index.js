@@ -273,16 +273,17 @@ var _jsxFileName = "/Users/Francisco/Documents/Flatiron/Project/ethereum-fundrai
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return (// We use container in order to limit the size of the elements in the window.
+    // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
     react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 11
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 12
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -290,19 +291,19 @@ var _jsxFileName = "/Users/Francisco/Documents/Flatiron/Project/ethereum-fundrai
       href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       },
       __self: this
     }), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 20
       },
       __self: this
     }, "I'm a footer"))
@@ -888,57 +889,64 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
+      var formOptions = [{
+        key: 'wei',
+        text: 'wei',
+        value: 'wei'
+      }, {
+        key: 'ether',
+        text: 'Ξ ether',
+        value: 'ether'
+      }];
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_layouts__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 40
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 41
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 42
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 43
         },
         __self: this
       }, "Homepage"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 44
         },
         __self: this
       }, "These are addresses of all the projects deployed into smart contracts:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         class: "ui vertical menu left floated",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 47
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 48
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         class: "ui input",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 49
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -946,229 +954,212 @@ function (_Component) {
         placeholder: "Search...",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 49
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 51
         },
         __self: this
       }, "Home", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         class: "menu",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 53
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "active item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 54
         },
         __self: this
       }, "Search"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 55
         },
         __self: this
       }, "Add"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 56
         },
         __self: this
       }, "Remove"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("i", {
         class: "grid layout icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 60
         },
         __self: this
       }), " Browse"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 62
         },
         __self: this
       }, "Messages"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         class: "ui dropdown item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 65
         },
         __self: this
       }, "More", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("i", {
         class: "dropdown icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 67
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         class: "menu",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("i", {
         class: "edit icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 69
         },
         __self: this
       }), " Edit Profile"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 70
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("i", {
         class: "globe icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 70
         },
         __self: this
       }), " Choose Language"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         class: "item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 71
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("i", {
         class: "settings icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 71
         },
         __self: this
       }), " Account Settings")))), this.renderProjects(), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 76
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
-        },
-        __self: this
-      }, "Create a new project in the form below:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("form", {
-        className: "ui form",
-        onSubmit: function onSubmit(e) {
-          return _this2.handleSubmit(e);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 72
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
-        className: "field",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        },
-        __self: this
-      }, "Project Name"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
-        type: "text",
-        name: "projectTitle",
-        placeholder: "Project Name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 75
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
-        className: "field",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 77
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+      }, "Create a new project in the form below:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 78
         },
         __self: this
-      }, "Minimum Contribution"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
-        type: "text",
-        name: "minimumContribution",
-        placeholder: "Minimum Contribution",
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"].Field, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 79
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
-        className: "field",
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        },
+        __self: this
+      }, "Project Title"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Input"], {
+        placeholder: "Project Title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"].Field, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 84
+        },
+        __self: this
+      }, "Minimum Contribution"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Input"], {
+        label: react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Dropdown"], {
+          defaultValue: "wei",
+          options: formOptions,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85
+          },
+          __self: this
+        }),
+        labelPosition: "right",
+        placeholder: "Minimum Contribution",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 85
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
-        className: "ui checkbox",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
-        type: "checkbox",
-        tabIndex: "0",
-        className: "hidden",
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"].Field, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 87
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Checkbox"], {
+        label: "I agree to the Terms and Conditions",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 88
         },
         __self: this
-      }, "I agree to the Terms and Conditions"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("button", {
-        className: "ui primary button",
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Button"], {
         type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 90
         },
         __self: this
       }, "Create Project"))));
