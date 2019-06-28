@@ -18,7 +18,7 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
 } else {
   // We are not in the browser or Metamask is not running.
   // We need to set up our own provider, using the Rinkeby Eth network, through Infura (using the link that we were provided with).
-  const const web3ServerProvider = new Web3.providers.HttpProvider(
+  const web3ServerProvider = new Web3.providers.HttpProvider(
     "https://rinkeby.infura.io/v3/c8d80c1c979446a7b1b3ebe2f3729ec9"
   );
   web3 = new Web3(web3ServerProvider);
