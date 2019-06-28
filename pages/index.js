@@ -33,10 +33,7 @@ export default class projectIndex extends Component {
     return (
     <Layout>
       <div>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        />
+        <br></br>
         <h1>Homepage</h1>
         <h3>
           These are addresses of all the projects deployed into smart contracts:
