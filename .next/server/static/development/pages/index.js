@@ -645,7 +645,7 @@ function (_Component) {
               case 0:
                 e.preventDefault();
                 projectTitle = e.target.projectTitle.value;
-                minimumContribution = e.target.contribution.value;
+                minimumContribution = e.target.minimumContribution.value;
                 console.log("Project Title: ".concat(projectTitle));
                 console.log("Minimum Contribution: ".concat(minimumContribution));
                 _context.next = 7;
@@ -709,6 +709,7 @@ function (_Component) {
         },
         __self: this
       }, "Create a new project in the form below:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("form", {
+        className: "ui form",
         onSubmit: function onSubmit(e) {
           return _this2.handleSubmit(e);
         },
@@ -717,43 +718,85 @@ function (_Component) {
           lineNumber: 43
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "field",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 44
         },
         __self: this
-      }, "Project Title"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
-        name: "projectTitle",
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 45
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+      }, "Project Name"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        type: "text",
+        name: "projectTitle",
+        placeholder: "Project Name",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 46
         },
         __self: this
-      }, "Please set a minimum contribution"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
-        name: "contribution",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        },
-        __self: this
-      }), " ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("button", {
-        type: "submit",
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "field",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 48
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, "Minimum Contribution"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        type: "text",
+        name: "minimumContribution",
+        placeholder: "Minimum Contribution",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "field",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "ui checkbox",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
+        type: "checkbox",
+        tabIndex: "0",
+        className: "hidden",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, "I agree to the Terms and Conditions"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("button", {
+        className: "ui primary button",
+        type: "submit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
         },
         __self: this
       }, "Create Project")));

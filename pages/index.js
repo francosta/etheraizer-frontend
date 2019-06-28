@@ -11,7 +11,7 @@ export default class projectIndex extends Component {
   async handleSubmit(e) {
     e.preventDefault();
     const projectTitle = e.target.projectTitle.value;
-    const minimumContribution = e.target.contribution.value;
+    const minimumContribution = e.target.minimumContribution.value;
     console.log(`Project Title: ${projectTitle}`);
     console.log(`Minimum Contribution: ${minimumContribution}`);
     await factory.methods.createCampaign(minimumContribution).call();
@@ -40,12 +40,28 @@ export default class projectIndex extends Component {
         {this.renderProjects()}
         <br />
         <h3>Create a new project in the form below:</h3>
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <p>Project Title</p>
-          <input name="projectTitle" />
-          <p>Please set a minimum contribution</p>
-          <input name="contribution" /> <br />
-          <button type="submit">Create Project</button>
+        <form className="ui form" onSubmit={e => this.handleSubmit(e)}>
+          <div className="field">
+            <label>Project Name</label>
+            <input type="text" name="projectTitle" placeholder="Project Name" />
+          </div>
+          <div className="field">
+            <label>Minimum Contribution</label>
+            <input
+              type="text"
+              name="minimumContribution"
+              placeholder="Minimum Contribution"
+            />
+          </div>
+          <div className="field">
+            <div className="ui checkbox">
+              <input type="checkbox" tabIndex="0" className="hidden" />
+              <label>I agree to the Terms and Conditions</label>
+            </div>
+          </div>
+          <button className="ui primary button" type="submit">
+            Create Project
+          </button>
         </form>
       </div>
     );
