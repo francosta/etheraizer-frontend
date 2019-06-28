@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import factory from "../ethereum/factoryContract";
 import { Button, Checkbox, Form, Card, Input, Dropdown } from "semantic-ui-react";
 import Layout from "../components/layouts"
+import web3 from '../ethereum/web3'
 
 export default class projectIndex extends Component {
   static async getInitialProps() {
@@ -9,16 +10,21 @@ export default class projectIndex extends Component {
     return { projects };
   }
 
-  async handleSubmit(e) {
+  handleSubmit = async (e) => {
     e.preventDefault();
+    debugger
+    const accounts = await web3.eth.getAccounts();
     const projectTitle = e.target.projectTitle.value;
     const minimumContribution = e.target.minimumContribution.value;
+
     console.log(`Project Title: ${projectTitle}`);
     console.log(`Minimum Contribution: ${minimumContribution}`);
-    await factory.methods.createCampaign(minimumContribution).call();
+    await factory.methods.createCampaign(minimumContribution).send(
+      {from: accounts[0]}
+    );
   }
 
-  renderProjects = () => {
+  renderProjects = () => { 
     const items = this.props.projects.map(address => {
       return {
         header: address,
@@ -44,45 +50,45 @@ export default class projectIndex extends Component {
         <h3>
           These are addresses of all the projects deployed into smart contracts:
         </h3>
-        <div class="ui vertical menu left floated">
-          <div class="item">
-            <div class="ui input"><input type="text" placeholder="Search..."/></div>
+        <div className="ui vertical menu left floated">
+          <div className="item">
+            <div className="ui input"><input type="text" placeholder="Search..."/></div>
           </div>
-          <div class="item">
+          <div className="item">
             Home
-            <div class="menu">
-              <a class="active item">Search</a>
-              <a class="item">Add</a>
-              <a class="item">Remove</a>
+            <div className="menu">
+              <a className="active item">Search</a>
+              <a className="item">Add</a>
+              <a className="item">Remove</a>
             </div>
           </div>
-          <a class="item">
-            <i class="grid layout icon"></i> Browse
+          <a className="item">
+            <i className="grid layout icon"></i> Browse
           </a>
-          <a class="item">
+          <a className="item">
             Messages
           </a>
-          <div class="ui dropdown item">
+          <div className="ui dropdown item">
             More
-            <i class="dropdown icon"></i>
-            <div class="menu">
-              <a class="item"><i class="edit icon"></i> Edit Profile</a>
-              <a class="item"><i class="globe icon"></i> Choose Language</a>
-              <a class="item"><i class="settings icon"></i> Account Settings</a>
+            <i className="dropdown icon"></i>
+            <div className="menu">
+              <a className="item"><i className="edit icon"></i> Edit Profile</a>
+              <a className="item"><i className="globe icon"></i> Choose Language</a>
+              <a className="item"><i className="settings icon"></i> Account Settings</a>
             </div>
           </div>
           </div>
         {this.renderProjects()}
         <br />
         <h3>Create a new project in the form below:</h3>
-        <Form>
-          <Form.Field>
+        <Form onSubmit={handleSubmit}>
+          <Form.Field name="projectTitle">
             <label>Project Title</label>
-            <Input placeholder='Project Title' />
+            <Input name="projectTitle" placeholder='Project Title' />
           </Form.Field>
           <Form.Field>
             <label>Minimum Contribution</label>
-            <Input label={<Dropdown defaultValue='wei' options={formOptions} />} labelPosition="right" placeholder='Minimum Contribution' />
+            <Input name="minimumContribution" label={<Dropdown defaultValue='wei' options={formOptions} />} labelPosition="right" placeholder='Minimum Contribution' />
           </Form.Field>
           <Form.Field>
             <Checkbox label='I agree to the Terms and Conditions' />
