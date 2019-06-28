@@ -561,38 +561,6 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(projectIndex, [{
-    key: "componentDidMount",
-    value: function () {
-      var _componentDidMount = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
-      /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var projects;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_8__["default"].methods.getDeployedCampaigns().call();
-
-              case 2:
-                projects = _context.sent;
-                console.log(projects);
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }));
-
-      function componentDidMount() {
-        return _componentDidMount.apply(this, arguments);
-      }
-
-      return componentDidMount;
-    }()
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -607,8 +575,48 @@ function (_Component) {
           lineNumber: 13
         },
         __self: this
-      }, "This is the homepage with all the active campaigns."), ";");
+      }, "This is the homepage with all the active projects."), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }, "These are addresses of all the deployed projects:"), this.props.projects);
     }
+  }], [{
+    key: "getInitialProps",
+    value: function () {
+      var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var projects;
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_8__["default"].methods.getDeployedCampaigns().call();
+
+              case 2:
+                projects = _context.sent;
+                return _context.abrupt("return", {
+                  projects: projects
+                });
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function getInitialProps() {
+        return _getInitialProps.apply(this, arguments);
+      }
+
+      return getInitialProps;
+    }()
   }]);
 
   return projectIndex;
