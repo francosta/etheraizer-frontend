@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import factory from "../ethereum/factoryContract";
 import { Card } from "semantic-ui-react";
+import Layout from "../components/layouts"
 
 export default class projectIndex extends Component {
   static async getInitialProps() {
@@ -30,13 +31,16 @@ export default class projectIndex extends Component {
 
   render() {
     return (
+    <Layout>
       <div>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         />
-        <h1>This is the homepage with all the active projects.</h1>
-        <h3>These are addresses of all the deployed projects:</h3>
+        <h1>Homepage</h1>
+        <h3>
+          These are addresses of all the projects deployed into smart contracts:
+        </h3>
         {this.renderProjects()}
         <br />
         <h3>Create a new project in the form below:</h3>
@@ -64,6 +68,7 @@ export default class projectIndex extends Component {
           </button>
         </form>
       </div>
+      </Layout>
     );
   }
 }
