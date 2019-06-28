@@ -14,6 +14,13 @@ let web3;
 if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   //We are in the browser and Metamask is running
   const web3BrowserProvider = window.web3.currentProvider;
+
+  // Due to Metamask's new scurity measures we first need to enable the provider before instantiating web3 with it
+  const getProvider = async () => {
+    await web3BrowserProvider.enable(); // request authentication
+  };
+  getProvider();
+
   web3 = new Web3(web3BrowserProvider);
 } else {
   // We are not in the browser or Metamask is not running.

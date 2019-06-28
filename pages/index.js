@@ -4,6 +4,7 @@ import { Button, Checkbox, Form, Card, Input, Dropdown } from "semantic-ui-react
 import Layout from "../components/layouts"
 import web3 from '../ethereum/web3'
 
+
 export default class projectIndex extends Component {
   static async getInitialProps() {
     const projects = await factory.methods.getDeployedCampaigns().call();
@@ -11,8 +12,8 @@ export default class projectIndex extends Component {
   }
 
   handleSubmit = async (e) => {
+    e.persist()
     e.preventDefault();
-    debugger
     const accounts = await web3.eth.getAccounts();
     const projectTitle = e.target.projectTitle.value;
     const minimumContribution = e.target.minimumContribution.value;
@@ -81,7 +82,7 @@ export default class projectIndex extends Component {
         {this.renderProjects()}
         <br />
         <h3>Create a new project in the form below:</h3>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Field name="projectTitle">
             <label>Project Title</label>
             <Input name="projectTitle" placeholder='Project Title' />
