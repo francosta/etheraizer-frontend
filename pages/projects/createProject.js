@@ -13,6 +13,7 @@ import {
   Transition,
   Step
 } from "semantic-ui-react";
+import ProjectCreationProgressComponent from "../../components/ProjectCreationProgressComponent";
 import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
 import { Router } from "../../routes";
@@ -24,7 +25,8 @@ export default class createproject extends Component {
     this.state = {
       errorMessage: "",
       creatingProject: false,
-      terms: false
+      terms: false,
+      projectStatus: "create"
     };
   }
 
@@ -72,33 +74,10 @@ export default class createproject extends Component {
     return (
       <Layout>
         <h2>Create a new Project</h2>
+        <ProjectCreationProgressComponent
+          projectStatus={this.state.projectStatus}
+        />
         <div>
-          <Step.Group ordered>
-            <Step active>
-              <Step.Content>
-                <Step.Title>Create</Step.Title>
-                <Step.Description>
-                  Create and pitch your project
-                </Step.Description>
-              </Step.Content>
-            </Step>
-
-            <Step>
-              <Step.Content>
-                <Step.Title>Deploy</Step.Title>
-                <Step.Description>
-                  Deploy your project to the Blockchain
-                </Step.Description>
-              </Step.Content>
-            </Step>
-
-            <Step>
-              <Step.Content>
-                <Step.Title>Achieve</Step.Title>
-                <Step.Description>Reach your funding goal</Step.Description>
-              </Step.Content>
-            </Step>
-          </Step.Group>
           <h4>Please fill in the form below to create your project:</h4>
           <Segment>
             <Transition

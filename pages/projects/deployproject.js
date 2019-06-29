@@ -123,7 +123,7 @@ export default class createproject extends Component {
                 <Input name="projectTitle" placeholder="Project Title" />
               </Form.Field>
               <Form.Field>
-                <label>Minimum Contribution</label>
+                <label>Project Description</label>
                 <Input
                   name="minimumContribution"
                   label={<Dropdown defaultValue="wei" options={formOptions} />}
