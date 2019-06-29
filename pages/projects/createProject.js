@@ -21,13 +21,22 @@ export default class createproject extends Component {
 
     this.state = {
       errorMessage: "",
-      creatingProject: false
+      creatingProject: false,
+      terms: false
     };
   }
 
   handleSubmit = async e => {
     e.persist();
     e.preventDefault();
+
+    if (this.state.terms === false) {
+      return this.setState({
+        errorMessage:
+          "You need to accept the terms conditions before creating a project."
+      });
+    }
+
     const accounts = await web3.eth.getAccounts();
     const projectTitle = e.target.projectTitle.value;
     const minimumContribution = e.target.minimumContribution.value;
@@ -44,6 +53,10 @@ export default class createproject extends Component {
       this.setState({ errorMessage: thrownError.message });
     }
     this.setState({ creatingProject: false });
+  };
+
+  handleCheck = () => {
+    this.setState({ terms: !this.state.terms });
   };
 
   //Render the createProject component
@@ -89,7 +102,11 @@ export default class createproject extends Component {
                 />
               </Form.Field>
               <Form.Field>
-                <Checkbox label="I agree to the Terms and Conditions" />
+                <Checkbox
+                  checked={this.state.terms}
+                  onChange={this.handleCheck}
+                  label="I agree to the Terms and Conditions"
+                />
               </Form.Field>
               <Message
                 color="red"
