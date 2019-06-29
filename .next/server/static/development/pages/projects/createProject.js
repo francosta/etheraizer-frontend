@@ -93,6 +93,38 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/Footer.js";
+
+
+function Footer() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    size: "small",
+    as: "h6",
+    block: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, "Etheraize | 2019 - Francisco Costa");
+}
+
+/***/ }),
+
 /***/ "./components/Navbar.js":
 /*!******************************!*\
   !*** ./components/Navbar.js ***!
@@ -144,7 +176,7 @@ function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Navbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
-      activeItem: 'home'
+      activeItem: "home"
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleItemClick", function (e, _ref) {
@@ -180,7 +212,7 @@ function (_Component) {
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "home",
-        active: activeItem === 'home',
+        active: activeItem === "home",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
@@ -189,57 +221,63 @@ function (_Component) {
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "projects",
-        active: activeItem === 'projects',
+        active: activeItem === "projects",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 20
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "about",
-        active: activeItem === 'about',
+        active: activeItem === "about",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 25
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
         position: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "my projects",
-        active: activeItem === 'my projects',
+        active: activeItem === "my projects",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 31
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "my profile",
-        active: activeItem === 'my profile',
+        active: activeItem === "my profile",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 36
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "logout",
-        active: activeItem === 'logout',
+        active: activeItem === "logout",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 41
         },
         __self: this
-      }))));
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }));
     }
   }]);
 
@@ -262,11 +300,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar */ "./components/Navbar.js");
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
+
 
 
 
@@ -274,13 +314,13 @@ var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return (// We use container in order to limit the size of the elements in the window.
     // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 12
@@ -300,13 +340,13 @@ var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
         lineNumber: 18
       },
       __self: this
-    }), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    }), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
       },
       __self: this
-    }, "I'm a footer"))
+    }))
   );
 });
 
@@ -840,25 +880,19 @@ var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/pages/projects/createProje
 
 
 
- // Create Project form submit
+
 
 var createProject =
 /*#__PURE__*/
 function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(createProject, _Component);
 
-  function createProject() {
-    var _getPrototypeOf2;
-
+  function createProject(props) {
     var _this;
 
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, createProject);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(createProject)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(createProject).call(this, props));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "handleSubmit",
     /*#__PURE__*/
@@ -871,40 +905,39 @@ function (_Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                debugger;
                 e.persist();
                 e.preventDefault();
-                _context.next = 5;
+                _context.next = 4;
                 return _ethereum_web3__WEBPACK_IMPORTED_MODULE_13__["default"].eth.getAccounts();
 
-              case 5:
+              case 4:
                 accounts = _context.sent;
                 projectTitle = e.target.projectTitle.value;
                 minimumContribution = e.target.minimumContribution.value;
                 error = "";
                 console.log("Project Title: ".concat(projectTitle));
                 console.log("Minimum Contribution: ".concat(minimumContribution));
-                _context.prev = 11;
-                _context.next = 14;
+                _context.prev = 10;
+                _context.next = 13;
                 return _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_10__["default"].methods.createCampaign(minimumContribution).send({
                   from: accounts[0]
                 });
 
-              case 14:
-                _context.next = 19;
+              case 13:
+                _context.next = 18;
                 break;
 
-              case 16:
-                _context.prev = 16;
-                _context.t0 = _context["catch"](11);
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](10);
                 error = _context.t0.message;
 
-              case 19:
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[11, 16]]);
+        }, _callee, null, [[10, 15]]);
       }));
 
       return function (_x) {
@@ -912,11 +945,15 @@ function (_Component) {
       };
     }());
 
+    _this.state = {
+      error: ""
+    };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(createProject, [{
     key: "render",
+    //Render the createProject component
     value: function render() {
       var formOptions = [{
         key: "wei",
@@ -930,39 +967,39 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_layouts__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 51
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 53
         },
         __self: this
       }, "Create a new project in the form below:"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 54
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"].Field, {
         name: "projectTitle",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 55
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 56
         },
         __self: this
       }, "Project Title"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Input"], {
@@ -970,19 +1007,19 @@ function (_Component) {
         placeholder: "Project Title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 57
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"].Field, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 60
         },
         __self: this
       }, "Minimum Contribution"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Input"], {
@@ -992,7 +1029,7 @@ function (_Component) {
           options: formOptions,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 63
           },
           __self: this
         }),
@@ -1000,20 +1037,20 @@ function (_Component) {
         placeholder: "Minimum Contribution",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 61
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Form"].Field, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Checkbox"], {
         label: "I agree to the Terms and Conditions",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 69
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Message"], {
@@ -1022,14 +1059,14 @@ function (_Component) {
         header: "Oh oh!",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 71
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Button"], {
         type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 72
         },
         __self: this
       }, "Create Project"))));

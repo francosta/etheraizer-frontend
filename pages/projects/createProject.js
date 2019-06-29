@@ -12,10 +12,16 @@ import {
 import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
 
-// Create Project form submit
 export default class createProject extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      error: ""
+    };
+  }
+
   handleSubmit = async e => {
-    debugger;
     e.persist();
     e.preventDefault();
     const accounts = await web3.eth.getAccounts();
@@ -34,6 +40,7 @@ export default class createProject extends Component {
     }
   };
 
+  //Render the createProject component
   render() {
     const formOptions = [
       { key: "wei", text: "wei", value: "wei" },

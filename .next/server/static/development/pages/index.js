@@ -93,6 +93,38 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/Footer.js";
+
+
+function Footer() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    size: "small",
+    as: "h6",
+    block: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, "Etheraize | 2019 - Francisco Costa");
+}
+
+/***/ }),
+
 /***/ "./components/Navbar.js":
 /*!******************************!*\
   !*** ./components/Navbar.js ***!
@@ -144,7 +176,7 @@ function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Navbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
-      activeItem: 'home'
+      activeItem: "home"
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleItemClick", function (e, _ref) {
@@ -180,7 +212,7 @@ function (_Component) {
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "home",
-        active: activeItem === 'home',
+        active: activeItem === "home",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
@@ -189,57 +221,63 @@ function (_Component) {
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "projects",
-        active: activeItem === 'projects',
+        active: activeItem === "projects",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 20
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "about",
-        active: activeItem === 'about',
+        active: activeItem === "about",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 25
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
         position: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "my projects",
-        active: activeItem === 'my projects',
+        active: activeItem === "my projects",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 31
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "my profile",
-        active: activeItem === 'my profile',
+        active: activeItem === "my profile",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 36
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "logout",
-        active: activeItem === 'logout',
+        active: activeItem === "logout",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 41
         },
         __self: this
-      }))));
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }));
     }
   }]);
 
@@ -262,11 +300,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar */ "./components/Navbar.js");
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
+
 
 
 
@@ -274,13 +314,13 @@ var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return (// We use container in order to limit the size of the elements in the window.
     // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 12
@@ -300,13 +340,13 @@ var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
         lineNumber: 18
       },
       __self: this
-    }), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    }), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
       },
       __self: this
-    }, "I'm a footer"))
+    }))
   );
 });
 
@@ -824,6 +864,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../ethereum/factoryContract */ "./ethereum/factoryContract.js");
 /* harmony import */ var _components_layouts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/layouts */ "./components/layouts.js");
 /* harmony import */ var _ethereum_web3__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../ethereum/web3 */ "./ethereum/web3.js");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
@@ -834,6 +876,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/pages/index.js";
+
 
 
 
@@ -864,7 +907,7 @@ function (_Component) {
           description: react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 16
+              lineNumber: 17
             },
             __self: this
           }, "View Project"),
@@ -872,11 +915,11 @@ function (_Component) {
         };
       });
 
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Card.Group, {
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Card"].Group, {
         items: items,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
         },
         __self: this
       });
@@ -891,22 +934,16 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_layouts__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 27
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28

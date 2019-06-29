@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import factory from "../ethereum/factoryContract";
 import Layout from "../components/layouts";
 import web3 from "../ethereum/web3";
+import { Card } from "semantic-ui-react";
 
 export default class projectIndex extends Component {
   static async getInitialProps() {
@@ -24,7 +25,6 @@ export default class projectIndex extends Component {
     return (
       <Layout>
         <div>
-          <br />
           <h1>Homepage</h1>
           <h3>
             These are addresses of all the projects deployed into smart
