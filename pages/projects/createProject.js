@@ -26,7 +26,7 @@ export default class createproject extends Component {
       errorMessage: "",
       creatingProject: false,
       terms: false,
-      projectStatus: "create"
+      projectStatus: "achieve"
     };
   }
 
