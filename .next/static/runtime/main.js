@@ -7435,7 +7435,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "/Users/Francisco/Documents/Flatiron/Project/ethereum-fundraiser/.next");
+      source_map_support_1.rewriteStacktrace(error, "/Users/fran/Desktop/EthFundraiser/.next");
       return error;
     }
   };
