@@ -14,6 +14,7 @@ import {
 } from "semantic-ui-react";
 import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
+import { Router } from "../../routes";
 
 export default class createproject extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ export default class createproject extends Component {
       await factory.methods
         .createCampaign(minimumContribution)
         .send({ from: accounts[0] });
+      Router.pushRoute("/");
     } catch (thrownError) {
       this.setState({ errorMessage: thrownError.message });
     }
