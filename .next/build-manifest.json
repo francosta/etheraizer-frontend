@@ -22,10 +22,6 @@
     "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/projects/createproject": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
