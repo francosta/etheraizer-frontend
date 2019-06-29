@@ -13,10 +13,10 @@ export default class Navbar extends Component {
     return (
       <div>
         <Menu pointing secondary style={{ marginTop: "20px" }}>
-          <Link route="/">
-            <a className="item">Ξtheraizer</a>
-          </Link>
-          <Menu.Menu position="right">
+          <Menu.Menu position="left" style={{ marginLeft: "100px" }}>
+            <Link route="/">
+              <a className="item">Ξtheraizer</a>
+            </Link>
             <Link route="/projects/index">
               <a className="item">Projects</a>
             </Link>
@@ -24,30 +24,6 @@ export default class Navbar extends Component {
               <a className="item">Create Project</a>
             </Link>
           </Menu.Menu>
-
-          <Menu.Item
-            style={{ marginLeft: "50px" }}
-            href="/"
-            name="home"
-            active={activeItem === "home"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="projects"
-            active={activeItem === "projects"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="about"
-            active={activeItem === "about"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            href="/projects/createproject"
-            name="create project"
-            onClick={this.handleItemClick}
-            active={activeItem === "create project"}
-          />
           <Menu.Menu position="right">
             <Menu.Item
               name="my projects"

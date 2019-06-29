@@ -3,6 +3,7 @@ import factory from "../../ethereum/factoryContract";
 import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
 import { Card } from "semantic-ui-react";
+import { Link } from "../../routes";
 
 export default class index extends Component {
   static async getInitialProps() {
@@ -14,7 +15,11 @@ export default class index extends Component {
     const items = this.props.projects.map(address => {
       return {
         header: address,
-        description: <a>View Project</a>,
+        description: (
+          <Link routes={`/projects/${address}`}>
+            <a>View Project</a>
+          </Link>
+        ),
         fluid: true
       };
     });

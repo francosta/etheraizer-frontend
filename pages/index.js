@@ -3,6 +3,7 @@ import factory from "../ethereum/factoryContract";
 import Layout from "../components/layouts";
 import web3 from "../ethereum/web3";
 import { Card } from "semantic-ui-react";
+import { Link } from "../routes";
 
 export default class projectIndex extends Component {
   static async getInitialProps() {

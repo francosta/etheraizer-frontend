@@ -10,7 +10,8 @@ import {
   Segment,
   Dimmer,
   Loader,
-  Transition
+  Transition,
+  Step
 } from "semantic-ui-react";
 import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
@@ -70,8 +71,35 @@ export default class createproject extends Component {
 
     return (
       <Layout>
+        <h2>Create a new Project</h2>
         <div>
-          <h3>Create a new project in the form below:</h3>
+          <Step.Group ordered>
+            <Step active>
+              <Step.Content>
+                <Step.Title>Create</Step.Title>
+                <Step.Description>
+                  Create and pitch your project
+                </Step.Description>
+              </Step.Content>
+            </Step>
+
+            <Step>
+              <Step.Content>
+                <Step.Title>Deploy</Step.Title>
+                <Step.Description>
+                  Deploy your project to the Blockchain
+                </Step.Description>
+              </Step.Content>
+            </Step>
+
+            <Step>
+              <Step.Content>
+                <Step.Title>Achieve</Step.Title>
+                <Step.Description>Reach your funding goal</Step.Description>
+              </Step.Content>
+            </Step>
+          </Step.Group>
+          <h4>Please fill in the form below to create your project:</h4>
           <Segment>
             <Transition
               visible={this.state.creatingProject}
@@ -90,11 +118,11 @@ export default class createproject extends Component {
             <Form
               onSubmit={this.handleSubmit}
               error={!!this.state.errorMessage}>
-              <Form.Field name="projectTitle">
+              <Form.Field required name="projectTitle">
                 <label>Project Title</label>
                 <Input name="projectTitle" placeholder="Project Title" />
               </Form.Field>
-              <Form.Field>
+              <Form.Field required>
                 <label>Minimum Contribution</label>
                 <Input
                   name="minimumContribution"
@@ -103,7 +131,7 @@ export default class createproject extends Component {
                   placeholder="Minimum Contribution"
                 />
               </Form.Field>
-              <Form.Field>
+              <Form.Field required>
                 <Checkbox
                   checked={this.state.terms}
                   onChange={this.handleCheck}
