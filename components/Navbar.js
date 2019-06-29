@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu, Image, Segment } from "semantic-ui-react";
 import { Link } from "../routes";
 
 export default class Navbar extends Component {
@@ -15,7 +15,14 @@ export default class Navbar extends Component {
         <Menu pointing secondary style={{ marginTop: "20px" }}>
           <Menu.Menu position="left" style={{ marginLeft: "100px" }}>
             <Link route="/">
-              <a className="item">Ξtheraizer</a>
+              <a className="item">
+                <Image
+                  src={
+                    "https://drive.google.com/uc?export=download&id=1Gr9jldMohwpSwJ8530JBtzv2BDGdaGRu"
+                  }
+                  style={{ width: "100px" }}
+                />
+              </a>
             </Link>
             <Link route="/projects/index">
               <a className="item">Projects</a>

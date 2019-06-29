@@ -12,8 +12,12 @@ import {
 const LoginForm = () => (
   <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
     <Grid.Column style={{ maxWidth: 450 }}>
+      <Image
+        verticalAlign="middle"
+        src="https://drive.google.com/uc?export=download&id=1g_CeGjcoMwCcOAYJzK0TCDyK-qg_ZZ46"
+      />
       <Header as="h2" color="teal" textAlign="center">
-        <Image src="/logo.png" /> Log-in to your account
+        Log-in to your account
       </Header>
       <Form size="large">
         <Segment stacked>
