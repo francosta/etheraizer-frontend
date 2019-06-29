@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import { Menu, Segment } from "semantic-ui-react";
 
 export default class Navbar extends Component {
@@ -26,6 +27,11 @@ export default class Navbar extends Component {
             name="about"
             active={activeItem === "about"}
             onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            name="create project"
+            onClick={this.handleItemClick}
+            active={activeItem === "create project"}
           />
           <Menu.Menu position="right">
             <Menu.Item

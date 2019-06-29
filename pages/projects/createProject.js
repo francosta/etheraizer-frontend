@@ -4,20 +4,24 @@ import {
   Button,
   Checkbox,
   Form,
-  Card,
   Input,
   Dropdown,
-  Message
+  Message,
+  Segment,
+  Dimmer,
+  Loader,
+  Transition
 } from "semantic-ui-react";
 import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
 
-export default class createProject extends Component {
+export default class createproject extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      error: ""
+      errorMessage: "",
+      creatingProject: false
     };
   }
 
@@ -27,17 +31,19 @@ export default class createProject extends Component {
     const accounts = await web3.eth.getAccounts();
     const projectTitle = e.target.projectTitle.value;
     const minimumContribution = e.target.minimumContribution.value;
-    let error = "";
 
     console.log(`Project Title: ${projectTitle}`);
     console.log(`Minimum Contribution: ${minimumContribution}`);
+
+    this.setState({ creatingProject: true });
     try {
       await factory.methods
         .createCampaign(minimumContribution)
         .send({ from: accounts[0] });
     } catch (thrownError) {
-      error = thrownError.message;
+      this.setState({ errorMessage: thrownError.message });
     }
+    this.setState({ creatingProject: false });
   };
 
   //Render the createProject component
@@ -51,26 +57,53 @@ export default class createProject extends Component {
       <Layout>
         <div>
           <h3>Create a new project in the form below:</h3>
-          <Form onSubmit={this.handleSubmit}>
-            <Form.Field name="projectTitle">
-              <label>Project Title</label>
-              <Input name="projectTitle" placeholder="Project Title" />
-            </Form.Field>
-            <Form.Field>
-              <label>Minimum Contribution</label>
-              <Input
-                name="minimumContribution"
-                label={<Dropdown defaultValue="wei" options={formOptions} />}
-                labelPosition="right"
-                placeholder="Minimum Contribution"
+          <Segment>
+            <Transition
+              visible={this.state.creatingProject}
+              animation="scale"
+              duration={500}>
+              <Dimmer active={this.state.creatingProject}>
+                <Loader indeterminate>
+                  Attempting to deploy project's contract into the Ethereum
+                  blockchain.
+                  <br />
+                  Please wait...
+                </Loader>
+              </Dimmer>
+            </Transition>
+
+            <Form
+              onSubmit={this.handleSubmit}
+              error={!!this.state.errorMessage}>
+              <Form.Field name="projectTitle">
+                <label>Project Title</label>
+                <Input name="projectTitle" placeholder="Project Title" />
+              </Form.Field>
+              <Form.Field>
+                <label>Minimum Contribution</label>
+                <Input
+                  name="minimumContribution"
+                  label={<Dropdown defaultValue="wei" options={formOptions} />}
+                  labelPosition="right"
+                  placeholder="Minimum Contribution"
+                />
+              </Form.Field>
+              <Form.Field>
+                <Checkbox label="I agree to the Terms and Conditions" />
+              </Form.Field>
+              <Message
+                color="red"
+                size="small"
+                compact
+                warning
+                error
+                header="Oh oh!"
+                content={this.state.errorMessage}
               />
-            </Form.Field>
-            <Form.Field>
-              <Checkbox label="I agree to the Terms and Conditions" />
-            </Form.Field>
-            <Message warning error header="Oh oh!" />
-            <Button type="submit">Create Project</Button>
-          </Form>
+              <br />
+              <Button type="submit">Create Project</Button>
+            </Form>
+          </Segment>
         </div>
       </Layout>
     );
