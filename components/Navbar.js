@@ -14,6 +14,7 @@ export default class Navbar extends Component {
       <div>
         <Menu pointing secondary style={{ marginTop: "20px" }}>
           <Menu.Item
+            style={{ marginLeft: "100px" }}
             href="/"
             name="home"
             active={activeItem === "home"}
@@ -47,6 +48,7 @@ export default class Navbar extends Component {
               onClick={this.handleItemClick}
             />
             <Menu.Item
+              style={{ marginRight: "100px" }}
               name="logout"
               active={activeItem === "logout"}
               onClick={this.handleItemClick}

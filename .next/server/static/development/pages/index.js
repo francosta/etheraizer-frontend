@@ -214,6 +214,9 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Menu"].Item, {
+        style: {
+          marginLeft: "100px"
+        },
         href: "/",
         name: "home",
         active: activeItem === "home",
@@ -229,7 +232,7 @@ function (_Component) {
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 23
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Menu"].Item, {
@@ -238,7 +241,7 @@ function (_Component) {
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Menu"].Item, {
@@ -248,14 +251,14 @@ function (_Component) {
         active: activeItem === "create project",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Menu"].Menu, {
         position: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Menu"].Item, {
@@ -264,7 +267,7 @@ function (_Component) {
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 40
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Menu"].Item, {
@@ -273,22 +276,25 @@ function (_Component) {
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Menu"].Item, {
+        style: {
+          marginRight: "100px"
+        },
         name: "logout",
         active: activeItem === "logout",
         onClick: this.handleItemClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 50
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 58
         },
         __self: this
       }));
@@ -328,7 +334,7 @@ var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return (// We use container in order to limit the size of the elements in the window.
     // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
@@ -354,7 +360,13 @@ var _jsxFileName = "/Users/fran/Desktop/EthFundraiser/components/layouts.js";
         lineNumber: 18
       },
       __self: this
-    }), props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
