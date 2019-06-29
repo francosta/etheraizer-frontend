@@ -66,7 +66,7 @@ export default class createproject extends Component {
   render() {
     const formOptions = [
       { key: "wei", text: "wei", value: "wei" },
-      { key: "ether", text: "Ξ ether", value: "ether" }
+      { key: "ether", text: "Ξther", value: "ether" }
     ];
 
     return (

@@ -11,6 +11,23 @@ export default class projectIndex extends Component {
     return { projects };
   }
 
+  componentDidMount() {
+    if (
+      localStorage.getItem("token") &&
+      localStorage.getItem("token") !== "undefined"
+    ) {
+      validate()
+        .then(resp => {
+          this.login(resp.token, resp.username);
+        })
+        .catch(err => {
+          alert(err);
+        });
+    } else {
+      this.props.history.push("/login");
+    }
+  }
+
   render() {
     return (
       <Layout>
