@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Link from "next/link";
 import { Menu, Segment } from "semantic-ui-react";
+import { Link } from "../routes";
 
 export default class Navbar extends Component {
   state = { activeItem: "home" };
@@ -13,29 +13,17 @@ export default class Navbar extends Component {
     return (
       <div>
         <Menu pointing secondary style={{ marginTop: "20px" }}>
-          <Menu.Item
-            style={{ marginLeft: "100px" }}
-            href="/"
-            name="home"
-            active={activeItem === "home"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="projects"
-            active={activeItem === "projects"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="about"
-            active={activeItem === "about"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            href="/projects/createproject"
-            name="create project"
-            onClick={this.handleItemClick}
-            active={activeItem === "create project"}
-          />
+          <Menu.Menu position="left" style={{ marginLeft: "100px" }}>
+            <Link route="/">
+              <a className="item">Ξtheraizer</a>
+            </Link>
+            <Link route="/projects/index">
+              <a className="item">Projects</a>
+            </Link>
+            <Link route="/projects/createproject">
+              <a className="item">Create Project</a>
+            </Link>
+          </Menu.Menu>
           <Menu.Menu position="right">
             <Menu.Item
               name="my projects"
