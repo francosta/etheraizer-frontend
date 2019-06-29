@@ -12,9 +12,9 @@ const handler = routes.getRequestHandler(app); //
 // We are goining to set up the app and tell it to learn to a specific port.
 const { createServer } = require("http");
 app.prepare().then(() => {
-  createServer(handler).listen(3000, error => {
+  createServer(handler).listen(3001, error => {
     if (error) throw error;
-    console.log("The app is ready on localhost:3000");
+    console.log("The app is ready on localhost:3001");
   });
 });
 
