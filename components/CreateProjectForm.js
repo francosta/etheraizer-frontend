@@ -12,6 +12,15 @@ import {
 } from "semantic-ui-react";
 
 export default class CreateProjectForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      errorMessage: "",
+      terms: false
+    };
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -58,20 +67,6 @@ export default class CreateProjectForm extends Component {
         <div>
           <h4>Please fill in the form below to create your project:</h4>
           <Segment>
-            <Transition
-              visible={this.props.creatingProject}
-              animation="scale"
-              duration={500}>
-              <Dimmer active={this.props.creatingProject}>
-                <Loader indeterminate>
-                  Attempting to deploy project's contract into the Ethereum
-                  blockchain.
-                  <br />
-                  Please wait...
-                </Loader>
-              </Dimmer>
-            </Transition>
-
             <Form
               onSubmit={this.handleSubmit}
               error={!!this.props.errorMessage}>

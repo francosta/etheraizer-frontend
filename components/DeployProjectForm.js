@@ -12,8 +12,85 @@ import {
   Transition,
   Step
 } from "semantic-ui-react";
+import factory from "../ethereum/factoryContract";
+import web3 from "../ethereum/web3";
 
 export default class DeployProjectForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      errorMessage: "",
+      creatingProject: false,
+      terms: false,
+      projectStatus: "funded"
+    };
+  }
+
+  handleCheck = () => {
+    this.setState({ terms: !this.state.terms });
+  };
+
+  // handleSubmit = () => {
+  //   setTimeout(this.props.getNewProjectBlockchainAddress(), 45000);
+  //   this.getAddressForNewProject();
+  // };
+
+  handleSubmit = async e => {
+    e.persist();
+    e.preventDefault();
+
+    if (this.state.terms === false) {
+      return this.setState({
+        errorMessage:
+          "You need to accept the terms conditions before creating a project."
+      });
+    }
+
+    const accounts = await web3.eth.getAccounts();
+    const projectTitle = e.target.projectTitle.value;
+    const minimumContribution = e.target.minimumContribution.value;
+
+    console.log(`Project Title: ${projectTitle}`);
+    console.log(`Minimum Contribution: ${minimumContribution}`);
+
+    this.setState({ creatingProject: true });
+    try {
+      await factory.methods
+        .createCampaign(minimumContribution)
+        .send({ from: accounts[0] });
+      this.getAddressForNewProject();
+    } catch (thrownError) {
+      this.setState({ errorMessage: thrownError.message });
+    }
+    this.setState({ creatingProject: false });
+  };
+
+  getAddressForNewProject = async function() {
+    const addresses = await factory.methods.getDeployedCampaigns().call();
+
+    let selectedProjectAddress;
+    selectedProjectAddress = addresses[addresses.length - 1];
+    const project = this.props.selectedProject;
+    project.blockchain_address = selectedProjectAddress;
+    project.status = "deployed";
+    this.props.selectProject(project);
+    this.updateProjectOnDatabase(project);
+  };
+
+  updateProjectOnDatabase = project => {
+    const updateURL = `http://localhost:3000/projects/${project.id}`;
+    const options = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(project)
+    };
+
+    return fetch(updateURL, options).then(resp => resp.json());
+  };
+
   render() {
     const formOptions = [
       { key: "wei", text: "wei", value: "wei" },
@@ -27,10 +104,10 @@ export default class DeployProjectForm extends Component {
           <h4>Please fill in the form below to deploy your project:</h4>
           <Segment>
             <Transition
-              visible={this.props.creatingProject}
+              visible={this.state.creatingProject}
               animation="scale"
               duration={500}>
-              <Dimmer active={this.props.creatingProject}>
+              <Dimmer active={this.state.creatingProject}>
                 <Loader indeterminate>
                   Attempting to deploy project's contract into the Ethereum
                   blockchain.
@@ -41,8 +118,8 @@ export default class DeployProjectForm extends Component {
             </Transition>
 
             <Form
-              onSubmit={this.props.handleSubmit}
-              error={!!this.props.errorMessage}>
+              onSubmit={this.handleSubmit}
+              error={!!this.state.errorMessage}>
               <Form.Field disabled name="projectTitle">
                 <label>Project Title</label>
                 <Input
@@ -61,8 +138,8 @@ export default class DeployProjectForm extends Component {
               </Form.Field>
               <Form.Field required>
                 <Checkbox
-                  checked={this.props.terms}
-                  onChange={this.props.handleCheck}
+                  checked={this.state.terms}
+                  onChange={this.handleCheck}
                   label="I agree to the Terms and Conditions"
                 />
               </Form.Field>
@@ -73,7 +150,7 @@ export default class DeployProjectForm extends Component {
                 warning
                 error
                 header="Oh oh!"
-                content={this.props.errorMessage}
+                content={this.state.errorMessage}
               />
               <br />
               <Button type="submit">Create Project</Button>

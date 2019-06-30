@@ -66,6 +66,13 @@ export default class MyApp extends App {
     this.setState({ selectedProject: project });
   };
 
+  getNewProjectBlockchainAddress = async function() {
+    const blockchainProjects = await factory.methods
+      .getDeployedCampaigns()
+      .call();
+    this.setState({ blockchainProjects: blockchainProjects });
+  };
+
   render() {
     const { Component } = this.props;
     return (
@@ -79,6 +86,7 @@ export default class MyApp extends App {
           login={this.loggedIn}
           selectedProject={this.state.selectedProject}
           selectProject={this.selectProject}
+          getNewProjectBlockchainAddress={this.getNewProjectBlockchainAddress}
         />
       </Layout>
     );

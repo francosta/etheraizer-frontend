@@ -1510,6 +1510,33 @@ function (_App) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "getNewProjectBlockchainAddress",
+    /*#__PURE__*/
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2() {
+      var blockchainProjects;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_11__["default"].methods.getDeployedCampaigns().call();
+
+            case 2:
+              blockchainProjects = _context2.sent;
+              this.setState({
+                blockchainProjects: blockchainProjects
+              });
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, this);
+    })));
+
     _this.state = {
       userData: {
         id: 17,
@@ -1542,7 +1569,8 @@ function (_App) {
         userData: this.state.userData,
         login: this.loggedIn,
         selectedProject: this.state.selectedProject,
-        selectProject: this.selectProject
+        selectProject: this.selectProject,
+        getNewProjectBlockchainAddress: this.getNewProjectBlockchainAddress
       }));
     }
   }]);
