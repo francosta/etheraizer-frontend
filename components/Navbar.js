@@ -46,7 +46,7 @@ export default class Navbar extends Component {
               style={{ marginRight: "100px" }}
               name="logout"
               active={activeItem === "logout"}
-              onClick={this.handleItemClick}
+              onClick={this.props.logout}
             />
           </Menu.Menu>
         </Menu>

@@ -361,7 +361,7 @@ function (_Component) {
         },
         name: "logout",
         active: activeItem === "logout",
-        onClick: this.handleItemClick
+        onClick: this.props.logout
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
     }
   }]);
@@ -390,7 +390,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/fran/Desktop/etheraizer/etheraizer-frontend/components/layouts.js";
 
 
 
@@ -399,45 +398,12 @@ var _jsxFileName = "/Users/fran/Desktop/etheraizer/etheraizer-frontend/component
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return (// We use container in order to limit the size of the elements in the window.
     // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
       rel: "stylesheet",
-      href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
+      href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }))
+      logout: props.logout
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
   );
 });
 
@@ -1502,15 +1468,16 @@ function (_App) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "logout", function () {
       _this.setState({
-        userData: {
+        userdata: {
+          first_name: "",
+          last_name: "",
           email: "",
-          name: "",
-          portfolios: [],
-          profile_picture: ""
+          projects: []
         }
       });
 
       localStorage.removeItem("token");
+      next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/");
     });
 
     _this.state = {
@@ -1533,12 +1500,13 @@ function (_App) {
     key: "render",
     value: function render() {
       var Component = this.props.Component;
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Component, {
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_layouts__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        logout: this.logout
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Component, {
         projects: this.props.projects,
         userData: this.state.userdata,
-        login: this.loggedIn,
-        logout: this.logout
-      });
+        login: this.loggedIn
+      }));
     }
   }]);
 
@@ -1596,24 +1564,26 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this = this;
-
-      if (localStorage.getItem("token") && localStorage.getItem("token") !== "undefined" && localStorage.getItem("token") !== "null") {
-        Object(_services_authentication__WEBPACK_IMPORTED_MODULE_9__["validate"])().then(function (resp) {
-          _this.props.login(resp.token);
-        }).catch(function (err) {
-          alert(err);
-        });
-      } else {
-        next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push("/login");
-      }
-    }
-  }, {
     key: "render",
+    // componentDidMount() {
+    //   if (
+    //     localStorage.getItem("token") &&
+    //     localStorage.getItem("token") !== "undefined" &&
+    //     localStorage.getItem("token") !== "null"
+    //   ) {
+    //     validate()
+    //       .then(resp => {
+    //         this.props.login(resp.token);
+    //       })
+    //       .catch(err => {
+    //         alert(err);
+    //       });
+    //   } else {
+    //     Router.push("/login");
+    //   }
+    // }
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_layouts__WEBPACK_IMPORTED_MODULE_7__["default"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", null, "This will be the homepage"));
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", null, "This will be the homepage");
     }
   }]);
 

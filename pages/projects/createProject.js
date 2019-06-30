@@ -72,7 +72,7 @@ export default class createproject extends Component {
     ];
 
     return (
-      <Layout>
+      <div>
         <h2>Create a new Project</h2>
         <ProjectCreationProgressComponent
           projectStatus={this.state.projectStatus}
@@ -131,7 +131,7 @@ export default class createproject extends Component {
             </Form>
           </Segment>
         </div>
-      </Layout>
+      </div>
     );
   }
 }
