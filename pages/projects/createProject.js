@@ -3,6 +3,7 @@ import ProjectCreationProgressComponent from "../../components/ProjectCreationPr
 import { Router } from "../../routes";
 import CreateProjectForm from "../../components/CreateProjectForm";
 import DeployProjectForm from "../../components/DeployProjectForm";
+import ShowProject from "../projects/showproject";
 
 export default class createproject extends Component {
   //Render the createProject component
@@ -41,14 +42,13 @@ export default class createproject extends Component {
           <ProjectCreationProgressComponent
             selectedProject={this.props.selectedProject}
           />
-          <DeployProjectForm
+          <ShowProject
             selectedProject={this.props.selectedProject}
             getNewProjectBlockchainAddress={
               this.props.getNewProjectBlockchainAddress
             }
             blockchainProjects={this.props.blockchainProjects}
             selectProject={this.props.selectProject}
-            changeSelectedProject={this.props.changeSelectedProject}
           />
         </div>
       );
