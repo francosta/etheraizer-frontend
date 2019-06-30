@@ -3,8 +3,6 @@ import factory from "../ethereum/factoryContract";
 import Layout from "../components/layouts";
 import Router from "next/router";
 import { getUserData, login, validate } from "../services/authentication";
-import Index from "./index";
-import Login from "./login";
 import App, { Container } from "next/app";
 
 export default class MyApp extends App {
@@ -17,7 +15,8 @@ export default class MyApp extends App {
     super(props);
 
     this.state = {
-      userdata: {
+      userData: {
+        id: 15,
         first_name: "Francisco",
         last_name: "Costa",
         email: "francisco@fcosta.pt",
@@ -30,7 +29,9 @@ export default class MyApp extends App {
             status: "created"
           }
         ]
-      }
+      },
+      selectedProject: {},
+      allProjects: this.props.projects
     };
   }
 
@@ -52,7 +53,7 @@ export default class MyApp extends App {
       }
     });
     localStorage.removeItem("token");
-    Router.push("/");
+    Router.push("/login");
   };
 
   render() {
@@ -61,7 +62,7 @@ export default class MyApp extends App {
       <Layout logout={this.logout}>
         <Component
           projects={this.props.projects}
-          userData={this.state.userdata}
+          userData={this.state.userData}
           login={this.loggedIn}
         />
       </Layout>
