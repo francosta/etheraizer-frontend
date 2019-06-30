@@ -31,11 +31,6 @@ export default class DeployProjectForm extends Component {
     this.setState({ terms: !this.state.terms });
   };
 
-  // handleSubmit = () => {
-  //   setTimeout(this.props.getNewProjectBlockchainAddress(), 45000);
-  //   this.getAddressForNewProject();
-  // };
-
   handleSubmit = async e => {
     e.persist();
     e.preventDefault();

@@ -26,16 +26,19 @@ export default class AchieveProjectForm extends Component {
 
     const newTitle = e.target.projectTitle.value;
     const newDescription = e.target.description.value;
-    const newGoal = e.target.goal.value;
-
+    const newGoal = parseInt(e.target.goal.value);
     const project = {
       title: newTitle,
       description: newDescription,
       goal: newGoal
     };
+    this.updateProjectOnDatabase(project);
+  };
 
-    const id = this.props.selectedProject.id;
-    const editURL = `http://localhost:3000/${id}`;
+  updateProjectOnDatabase = project => {
+    const updateURL = `http://localhost:3000/projects/${
+      this.props.selectedProject.id
+    }`;
     const options = {
       method: "PATCH",
       headers: {
@@ -44,10 +47,11 @@ export default class AchieveProjectForm extends Component {
       body: JSON.stringify(project)
     };
 
-    return fetch(editURL, options)
+    return fetch(updateURL, options)
       .then(resp => resp.json())
-      .then(newProject => {
-        this.props.selectProject(newProject);
+      .then(resp => {
+        this.props.selectProject(resp);
+        this.props.changeEdit();
       });
   };
 
@@ -61,7 +65,7 @@ export default class AchieveProjectForm extends Component {
     ];
     return (
       <div>
-        <h2>Your Project</h2>
+        <h2>Edit your project</h2>
         <div>
           <Segment>
             <Form
