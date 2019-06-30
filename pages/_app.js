@@ -13,6 +13,13 @@ export default class MyApp extends App {
     return { blockchainProjects };
   }
 
+  componentDidMount() {
+    const projectsURL = "http://localhost:3000/projects";
+    return fetch(projectsURL)
+      .then(resp => resp.json())
+      .then(resp => this.setState({ allProjects: resp }));
+  }
+
   constructor(props) {
     super(props);
 
@@ -33,7 +40,7 @@ export default class MyApp extends App {
         ]
       },
       selectedProject: {},
-      allProjects: this.props.projects
+      allProjects: {}
     };
   }
 
@@ -87,6 +94,7 @@ export default class MyApp extends App {
           selectedProject={this.state.selectedProject}
           selectProject={this.selectProject}
           getNewProjectBlockchainAddress={this.getNewProjectBlockchainAddress}
+          allProjects={this.state.allProjects}
         />
       </Layout>
     );

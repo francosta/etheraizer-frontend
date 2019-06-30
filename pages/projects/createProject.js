@@ -35,20 +35,6 @@ export default class createproject extends Component {
           />
         </div>
       );
-    } else
-      return (
-        <div>
-          <ProjectCreationProgressComponent
-            selectedProject={this.props.selectedProject}
-          />
-          <DeployProjectForm
-            userData={this.props.userData}
-            selectedProject={this.props.selectedProject}
-            getNewProjectBlockchainAddress={
-              this.props.getNewProjectBlockchainAddress
-            }
-          />
-        </div>
-      );
+    }
   }
 }

@@ -5,21 +5,17 @@ import { Card } from "semantic-ui-react";
 import { Link } from "../../routes";
 
 export default class ProjectIndex extends Component {
-  static async getInitialProps() {
-    const projects = await factory.methods.getDeployedCampaigns().call();
-    return { projects };
-  }
-
   renderProjects = () => {
-    const items = this.props.blockchainProjects.map(address => {
+    const items = this.props.allProjects.map(project => {
       return {
-        header: address,
+        image: "/images/avatar/large/elliot.jpg",
+        header: project.title,
         description: (
-          <Link routes={`/projects/${address}`}>
+          <Link routes={`/projects/${project.id}`}>
             <a>View Project</a>
           </Link>
         ),
-        fluid: true
+        fluid: false
       };
     });
     return <Card.Group items={items} />;

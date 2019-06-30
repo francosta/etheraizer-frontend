@@ -1431,7 +1431,21 @@ var MyApp =
 function (_App) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(MyApp, _App);
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(MyApp, null, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(MyApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var projectsURL = "http://localhost:3000/projects";
+      return fetch(projectsURL).then(function (resp) {
+        return resp.json();
+      }).then(function (resp) {
+        return _this2.setState({
+          allProjects: resp
+        });
+      });
+    }
+  }], [{
     key: "getInitialProps",
     value: function () {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
@@ -1551,7 +1565,7 @@ function (_App) {
         }]
       },
       selectedProject: {},
-      allProjects: _this.props.projects
+      allProjects: {}
     };
     return _this;
   }
@@ -1570,7 +1584,8 @@ function (_App) {
         login: this.loggedIn,
         selectedProject: this.state.selectedProject,
         selectProject: this.selectProject,
-        getNewProjectBlockchainAddress: this.getNewProjectBlockchainAddress
+        getNewProjectBlockchainAddress: this.getNewProjectBlockchainAddress,
+        allProjects: this.state.allProjects
       }));
     }
   }]);
