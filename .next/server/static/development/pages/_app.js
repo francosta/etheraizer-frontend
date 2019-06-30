@@ -1423,7 +1423,7 @@ function (_App) {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
       /*#__PURE__*/
       _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee() {
-        var projects;
+        var blockchainProjects;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -1432,9 +1432,9 @@ function (_App) {
                 return _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_11__["default"].methods.getDeployedCampaigns().call();
 
               case 2:
-                projects = _context.sent;
+                blockchainProjects = _context.sent;
                 return _context.abrupt("return", {
-                  projects: projects
+                  blockchainProjects: blockchainProjects
                 });
 
               case 4:
@@ -1523,7 +1523,7 @@ function (_App) {
         userData: this.state.userData,
         logout: this.logout
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(Component, {
-        projects: this.props.projects,
+        blockchainProjects: this.props.blockchainProjects,
         userData: this.state.userData,
         login: this.loggedIn,
         selectedProject: this.state.selectedProject,

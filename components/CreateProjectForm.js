@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
   Button,
-  Checkbox,
   Form,
   Input,
   Dropdown,
@@ -9,19 +8,49 @@ import {
   Segment,
   Dimmer,
   Loader,
-  Transition,
-  Step
+  Transition
 } from "semantic-ui-react";
 
-export default class DeployProjectForm extends Component {
+export default class CreateProjectForm extends Component {
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const newTitle = e.target.projectTitle.value;
+    const newDescription = e.target.description.value;
+    const newGoal = e.target.goal.value;
+
+    const project = {
+      title: newTitle,
+      description: newDescription,
+      goal: newGoal,
+      user_id: this.props.userData.id
+    };
+
+    const createURL = "http://localhost:3000/projects";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(project)
+    };
+
+    return fetch(createURL, options)
+      .then(resp => resp.json())
+      .then(newProject => console.log(newProject));
+  };
+
   render() {
     const formOptions = [
       { key: "wei", text: "wei", value: "wei" },
-      { key: "ether", text: "Ξ ether", value: "ether" }
+      { key: "ether", text: "Ξ ether", value: "ether" },
+      { key: "dollars", text: "$", value: "dollars" },
+      { key: "euros", text: "€", value: "euros" },
+      { key: "pounds", text: "£", value: "wei" }
     ];
     return (
       <div>
-        <h2>Deploy your project to the Blockchain</h2>
+        <h2>Create your Project</h2>
         <div>
           <h4>Please fill in the form below to create your project:</h4>
           <Segment>
@@ -40,26 +69,27 @@ export default class DeployProjectForm extends Component {
             </Transition>
 
             <Form
-              onSubmit={this.props.handleSubmit}
+              onSubmit={this.handleSubmit}
               error={!!this.props.errorMessage}>
               <Form.Field required name="projectTitle">
                 <label>Project Title</label>
                 <Input name="projectTitle" placeholder="Project Title" />
               </Form.Field>
               <Form.Field required>
-                <label>Minimum Contribution</label>
+                <label>Description</label>
                 <Input
-                  name="minimumContribution"
-                  label={<Dropdown defaultValue="wei" options={formOptions} />}
+                  name="description"
                   labelPosition="right"
-                  placeholder="Minimum Contribution"
+                  placeholder="Project Description"
                 />
               </Form.Field>
               <Form.Field required>
-                <Checkbox
-                  checked={this.props.terms}
-                  onChange={this.props.handleCheck}
-                  label="I agree to the Terms and Conditions"
+                <label>Goal</label>
+                <Input
+                  name="goal"
+                  label={<Dropdown defaultValue="wei" options={formOptions} />}
+                  labelPosition="right"
+                  placeholder="Funding Goal"
                 />
               </Form.Field>
               <Message

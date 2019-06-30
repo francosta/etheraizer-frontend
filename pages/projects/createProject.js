@@ -1,23 +1,10 @@
 import React, { Component } from "react";
 import factory from "../../ethereum/factoryContract";
-import {
-  Button,
-  Checkbox,
-  Form,
-  Input,
-  Dropdown,
-  Message,
-  Segment,
-  Dimmer,
-  Loader,
-  Transition,
-  Step
-} from "semantic-ui-react";
 import ProjectCreationProgressComponent from "../../components/ProjectCreationProgressComponent";
-import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
 import { Router } from "../../routes";
 import CreateProjectForm from "../../components/CreateProjectForm";
+import DeployProjectForm from "../../components/DeployProjectForm";
 
 export default class createproject extends Component {
   constructor(props) {
@@ -67,19 +54,52 @@ export default class createproject extends Component {
 
   //Render the createProject component
   render() {
-    return (
-      <div>
-        <ProjectCreationProgressComponent
-          projectStatus={this.state.projectStatus}
-        />
-        <CreateProjectForm
-          handleSubmit={this.handleSubmit}
-          errorMessage={this.state.errorMessage}
-          handleCheck={this.handleCheck}
-          terms={this.state.terms}
-          creatingProject={this.state.creatingProject}
-        />
-      </div>
-    );
+    if (!this.props.selectedProject.status) {
+      return (
+        <div>
+          <ProjectCreationProgressComponent
+            selectedProject={this.props.selectedProject}
+          />
+          <CreateProjectForm
+            handleSubmit={this.handleSubmit}
+            errorMessage={this.state.errorMessage}
+            handleCheck={this.handleCheck}
+            terms={this.state.terms}
+            creatingProject={this.state.creatingProject}
+            userData={this.props.userData}
+          />
+        </div>
+      );
+    } else if (this.props.selectedProject.status === "created") {
+      return (
+        <div>
+          <ProjectCreationProgressComponent
+            selectedProject={this.props.selectedProject}
+          />
+          <DeployProjectForm
+            handleSubmit={this.handleSubmit}
+            errorMessage={this.state.errorMessage}
+            handleCheck={this.handleCheck}
+            terms={this.state.terms}
+            creatingProject={this.state.creatingProject}
+          />
+        </div>
+      );
+    } else
+      return (
+        <div>
+          <ProjectCreationProgressComponent
+            selectedProject={this.props.selectedProject}
+          />
+          <DeployProjectForm
+            handleSubmit={this.handleSubmit}
+            errorMessage={this.state.errorMessage}
+            handleCheck={this.handleCheck}
+            terms={this.state.terms}
+            creatingProject={this.state.creatingProject}
+            userData={this.props.userData}
+          />
+        </div>
+      );
   }
 }

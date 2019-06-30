@@ -7,8 +7,10 @@ import App, { Container } from "next/app";
 
 export default class MyApp extends App {
   static async getInitialProps() {
-    const projects = await factory.methods.getDeployedCampaigns().call();
-    return { projects };
+    const blockchainProjects = await factory.methods
+      .getDeployedCampaigns()
+      .call();
+    return { blockchainProjects };
   }
 
   constructor(props) {
@@ -69,7 +71,7 @@ export default class MyApp extends App {
     return (
       <Layout userData={this.state.userData} logout={this.logout}>
         <Component
-          projects={this.props.projects}
+          blockchainProjects={this.props.blockchainProjects}
           userData={this.state.userData}
           login={this.loggedIn}
           selectedProject={this.state.selectedProject}
