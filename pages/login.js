@@ -4,7 +4,6 @@ import Head from "next/head";
 
 export default class Login extends Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <Head>
@@ -13,7 +12,7 @@ export default class Login extends Component {
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
           />
         </Head>
-        <LoginForm />
+        <LoginForm login={this.props.login} />
       </div>
     );
   }

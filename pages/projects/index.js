@@ -4,7 +4,7 @@ import Layout from "../../components/layouts";
 import { Card } from "semantic-ui-react";
 import { Link } from "../../routes";
 
-export default class index extends Component {
+export default class ProjectIndex extends Component {
   static async getInitialProps() {
     const projects = await factory.methods.getDeployedCampaigns().call();
     return { projects };

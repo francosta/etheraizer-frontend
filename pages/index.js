@@ -1,26 +1,11 @@
 import React, { Component } from "react";
 import factory from "../ethereum/factoryContract";
 import Layout from "../components/layouts";
-import web3 from "../ethereum/web3";
-import { Card } from "semantic-ui-react";
-import { Link } from "../routes";
 import Router from "next/router";
-import { getUserData, login, validate } from "../services/authentication";
+import { validate } from "../services/authentication";
+import Login from "./login";
 
-export default class projectIndex extends Component {
-  static async getInitialProps() {
-    const projects = await factory.methods.getDeployedCampaigns().call();
-    return { projects };
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      userData: {}
-    };
-  }
-
+export default class Index extends Component {
   componentDidMount() {
     if (
       localStorage.getItem("token") &&
@@ -29,7 +14,7 @@ export default class projectIndex extends Component {
     ) {
       validate()
         .then(resp => {
-          this.loggedIn(resp.token);
+          this.props.login(resp.token);
         })
         .catch(err => {
           alert(err);
@@ -39,35 +24,11 @@ export default class projectIndex extends Component {
     }
   }
 
-  loggedIn = token => {
-    localStorage.setItem("token", token);
-    getUserData().then(data => {
-      this.setState({ userData: data });
-    });
-    Router.push("/");
-  };
-
-  logout = () => {
-    this.setState({
-      userData: {
-        email: "",
-        name: "",
-        portfolios: [],
-        profile_picture: ""
-      }
-    });
-    localStorage.removeItem("token");
-  };
-
   render() {
-    if (this.state.userData === {}) {
-      return <Login pageProps={pageProps} login={this.login} />;
-    } else {
-      return (
-        <Layout>
-          <h2>This will be the homepage</h2>
-        </Layout>
-      );
-    }
+    return (
+      <Layout>
+        <h2>This will be the homepage</h2>
+      </Layout>
+    );
   }
 }

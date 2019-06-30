@@ -31,7 +31,7 @@ export default class LoginForm extends Component {
         <Grid.Column style={{ maxWidth: 450 }}>
           <Image
             verticalAlign="middle"
-            src="https://drive.google.com/uc?export=download&id=1g_CeGjcoMwCcOAYJzK0TCDyK-qg_ZZ46"
+            src="https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
           />
           <Header as="h2" color="teal" textAlign="center">
             Log-in to your account
