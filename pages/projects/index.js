@@ -11,7 +11,7 @@ export default class ProjectIndex extends Component {
   }
 
   renderProjects = () => {
-    const items = this.props.projects.map(address => {
+    const items = this.props.blockchainProjects.map(address => {
       return {
         header: address,
         description: (

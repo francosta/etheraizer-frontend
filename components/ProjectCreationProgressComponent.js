@@ -7,9 +7,9 @@ export default function ProjectCreationProgressComponent(props) {
       <Step
         active={props.selectedProject}
         completed={
-          props.selectedProject.status === "deploy" ||
-          props.selectedProject.status === "achieve" ||
-          props.selectedProject.status === "funded"
+          props.selectedProject.status === "created" ||
+          props.selectedProject.status === "deployed" ||
+          props.selectedProject.status === "achieve"
         }>
         <Step.Content>
           <Step.Title>Create</Step.Title>
@@ -17,7 +17,7 @@ export default function ProjectCreationProgressComponent(props) {
         </Step.Content>
       </Step>
       <Step
-        active={props.selectedProject.status === "deploy"}
+        active={props.selectedProject.status === "created"}
         completed={
           props.selectedProject.status === "achieve" ||
           props.selectedProject.status === "funded"

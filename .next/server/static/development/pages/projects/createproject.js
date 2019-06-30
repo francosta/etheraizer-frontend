@@ -154,7 +154,9 @@ function (_Component) {
         title: newTitle,
         description: newDescription,
         goal: newGoal,
-        user_id: _this.props.userData.id
+        user_id: _this.props.userData.id,
+        blockchain_address: "",
+        status: "created"
       };
       var createURL = "http://localhost:3000/projects";
       var options = {
@@ -167,7 +169,7 @@ function (_Component) {
       return fetch(createURL, options).then(function (resp) {
         return resp.json();
       }).then(function (newProject) {
-        return console.log(newProject);
+        _this.props.selectProject(newProject);
       });
     });
 
@@ -302,7 +304,7 @@ function (_Component) {
         text: "Ξ ether",
         value: "ether"
       }];
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", null, "Deploy your project to the Blockchain"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h4", null, "Please fill in the form below to create your project:"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Transition"], {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", null, "Deploy your project to the Blockchain"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", null, "Your project was created. Now, deploy it to the blockchain."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h4", null, "Please fill in the form below to deploy your project:"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Segment"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Transition"], {
         visible: this.props.creatingProject,
         animation: "scale",
         duration: 500
@@ -314,11 +316,11 @@ function (_Component) {
         onSubmit: this.props.handleSubmit,
         error: !!this.props.errorMessage
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Form"].Field, {
-        required: true,
+        disabled: true,
         name: "projectTitle"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("label", null, "Project Title"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Input"], {
         name: "projectTitle",
-        placeholder: "Project Title"
+        value: this.props.selectedProject.title
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Form"].Field, {
         required: true
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("label", null, "Minimum Contribution"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Input"], {
@@ -377,9 +379,9 @@ function ProjectCreationProgressComponent(props) {
     ordered: true
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"], {
     active: props.selectedProject,
-    completed: props.selectedProject.status === "deploy" || props.selectedProject.status === "achieve" || props.selectedProject.status === "funded"
+    completed: props.selectedProject.status === "created" || props.selectedProject.status === "deployed" || props.selectedProject.status === "achieve"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Title, null, "Create"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Description, null, "Create and pitch your project"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"], {
-    active: props.selectedProject.status === "deploy",
+    active: props.selectedProject.status === "created",
     completed: props.selectedProject.status === "achieve" || props.selectedProject.status === "funded"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Title, null, "Deploy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Description, null, "Deploy your project to the Blockchain"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"], {
     active: props.selectedProject.status === "achieve",
@@ -1048,7 +1050,8 @@ function (_Component) {
           handleCheck: this.handleCheck,
           terms: this.state.terms,
           creatingProject: this.state.creatingProject,
-          userData: this.props.userData
+          userData: this.props.userData,
+          selectProject: this.props.selectProject
         }));
       } else if (this.props.selectedProject.status === "created") {
         return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1058,7 +1061,8 @@ function (_Component) {
           errorMessage: this.state.errorMessage,
           handleCheck: this.handleCheck,
           terms: this.state.terms,
-          creatingProject: this.state.creatingProject
+          creatingProject: this.state.creatingProject,
+          selectedProject: this.props.selectedProject
         }));
       } else return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_11__["default"], {
         selectedProject: this.props.selectedProject
@@ -1068,7 +1072,8 @@ function (_Component) {
         handleCheck: this.handleCheck,
         terms: this.state.terms,
         creatingProject: this.state.creatingProject,
-        userData: this.props.userData
+        userData: this.props.userData,
+        selectedProject: this.props.selectedProject
       }));
     }
   }]);

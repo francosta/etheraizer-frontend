@@ -22,8 +22,9 @@ export default class DeployProjectForm extends Component {
     return (
       <div>
         <h2>Deploy your project to the Blockchain</h2>
+        <h3>Your project was created. Now, deploy it to the blockchain.</h3>
         <div>
-          <h4>Please fill in the form below to create your project:</h4>
+          <h4>Please fill in the form below to deploy your project:</h4>
           <Segment>
             <Transition
               visible={this.props.creatingProject}
@@ -42,9 +43,12 @@ export default class DeployProjectForm extends Component {
             <Form
               onSubmit={this.props.handleSubmit}
               error={!!this.props.errorMessage}>
-              <Form.Field required name="projectTitle">
+              <Form.Field disabled name="projectTitle">
                 <label>Project Title</label>
-                <Input name="projectTitle" placeholder="Project Title" />
+                <Input
+                  name="projectTitle"
+                  value={this.props.selectedProject.title}
+                />
               </Form.Field>
               <Form.Field required>
                 <label>Minimum Contribution</label>

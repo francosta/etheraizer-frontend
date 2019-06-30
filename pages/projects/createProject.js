@@ -67,6 +67,7 @@ export default class createproject extends Component {
             terms={this.state.terms}
             creatingProject={this.state.creatingProject}
             userData={this.props.userData}
+            selectProject={this.props.selectProject}
           />
         </div>
       );
@@ -82,6 +83,7 @@ export default class createproject extends Component {
             handleCheck={this.handleCheck}
             terms={this.state.terms}
             creatingProject={this.state.creatingProject}
+            selectedProject={this.props.selectedProject}
           />
         </div>
       );
@@ -98,6 +100,7 @@ export default class createproject extends Component {
             terms={this.state.terms}
             creatingProject={this.state.creatingProject}
             userData={this.props.userData}
+            selectedProject={this.props.selectedProject}
           />
         </div>
       );

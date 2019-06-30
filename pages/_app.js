@@ -18,7 +18,7 @@ export default class MyApp extends App {
 
     this.state = {
       userData: {
-        id: 15,
+        id: 17,
         first_name: "Francisco",
         last_name: "Costa",
         email: "francisco@fcosta.pt",
@@ -63,19 +63,22 @@ export default class MyApp extends App {
   };
 
   selectProject = project => {
-    this.setState({ selectProject: project });
+    this.setState({ selectedProject: project });
   };
 
   render() {
     const { Component } = this.props;
     return (
-      <Layout userData={this.state.userData} logout={this.logout}>
+      <Layout
+        userData={this.state.userData}
+        logout={this.logout}
+        selectProject={this.selectProject}>
         <Component
           blockchainProjects={this.props.blockchainProjects}
           userData={this.state.userData}
           login={this.loggedIn}
           selectedProject={this.state.selectedProject}
-          select
+          selectProject={this.selectProject}
         />
       </Layout>
     );

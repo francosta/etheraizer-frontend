@@ -23,7 +23,9 @@ export default class CreateProjectForm extends Component {
       title: newTitle,
       description: newDescription,
       goal: newGoal,
-      user_id: this.props.userData.id
+      user_id: this.props.userData.id,
+      blockchain_address: "",
+      status: "created"
     };
 
     const createURL = "http://localhost:3000/projects";
@@ -37,7 +39,9 @@ export default class CreateProjectForm extends Component {
 
     return fetch(createURL, options)
       .then(resp => resp.json())
-      .then(newProject => console.log(newProject));
+      .then(newProject => {
+        this.props.selectProject(newProject);
+      });
   };
 
   render() {
