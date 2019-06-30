@@ -56,14 +56,24 @@ export default class MyApp extends App {
     Router.push("/login");
   };
 
+  deployProject = project => {
+    this.setState({ allProjects: [...this.state.allProjects, project] });
+  };
+
+  selectProject = project => {
+    this.setState({ selectProject: project });
+  };
+
   render() {
     const { Component } = this.props;
     return (
-      <Layout logout={this.logout}>
+      <Layout userData={this.state.userData} logout={this.logout}>
         <Component
           projects={this.props.projects}
           userData={this.state.userData}
           login={this.loggedIn}
+          selectedProject={this.state.selectedProject}
+          select
         />
       </Layout>
     );
