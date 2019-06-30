@@ -44,11 +44,11 @@ export default class MyApp extends App {
 
   logout = () => {
     this.setState({
-      userData: {
+      userdata: {
+        first_name: "",
+        last_name: "",
         email: "",
-        name: "",
-        portfolios: [],
-        profile_picture: ""
+        projects: []
       }
     });
     localStorage.removeItem("token");
@@ -57,12 +57,13 @@ export default class MyApp extends App {
   render() {
     const { Component } = this.props;
     return (
-      <Component
-        projects={this.props.projects}
-        userData={this.state.userdata}
-        login={this.loggedIn}
-        logout={this.logout}
-      />
+      <Layout logout={this.logout}>
+        <Component
+          projects={this.props.projects}
+          userData={this.state.userdata}
+          login={this.loggedIn}
+        />
+      </Layout>
     );
   }
 }

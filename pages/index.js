@@ -6,29 +6,25 @@ import { validate } from "../services/authentication";
 import Login from "./login";
 
 export default class Index extends Component {
-  componentDidMount() {
-    if (
-      localStorage.getItem("token") &&
-      localStorage.getItem("token") !== "undefined" &&
-      localStorage.getItem("token") !== "null"
-    ) {
-      validate()
-        .then(resp => {
-          this.props.login(resp.token);
-        })
-        .catch(err => {
-          alert(err);
-        });
-    } else {
-      Router.push("/login");
-    }
-  }
+  // componentDidMount() {
+  //   if (
+  //     localStorage.getItem("token") &&
+  //     localStorage.getItem("token") !== "undefined" &&
+  //     localStorage.getItem("token") !== "null"
+  //   ) {
+  //     validate()
+  //       .then(resp => {
+  //         this.props.login(resp.token);
+  //       })
+  //       .catch(err => {
+  //         alert(err);
+  //       });
+  //   } else {
+  //     Router.push("/login");
+  //   }
+  // }
 
   render() {
-    return (
-      <Layout>
-        <h2>This will be the homepage</h2>
-      </Layout>
-    );
+    return <h2>This will be the homepage</h2>;
   }
 }
