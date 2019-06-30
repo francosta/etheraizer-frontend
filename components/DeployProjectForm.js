@@ -51,14 +51,12 @@ export default class DeployProjectForm extends Component {
     const projectTitle = e.target.projectTitle.value;
     const minimumContribution = e.target.minimumContribution.value;
 
-    console.log(`Project Title: ${projectTitle}`);
-    console.log(`Minimum Contribution: ${minimumContribution}`);
-
     this.setState({ creatingProject: true });
     try {
       await factory.methods
         .createCampaign(minimumContribution)
-        .send({ from: accounts[0] });
+        .send({ from: accounts[1], gas: "1000000" })
+        .then(resp => console.log(resp));
       this.getAddressForNewProject();
     } catch (thrownError) {
       this.setState({ errorMessage: thrownError.message });
@@ -68,10 +66,10 @@ export default class DeployProjectForm extends Component {
 
   getAddressForNewProject = async function() {
     const addresses = await factory.methods.getDeployedCampaigns().call();
-
     let selectedProjectAddress;
+    let project;
     selectedProjectAddress = addresses[addresses.length - 1];
-    const project = this.props.selectedProject;
+    project = this.props.selectedProject;
     project.blockchain_address = selectedProjectAddress;
     project.status = "deployed";
     this.props.selectProject(project);

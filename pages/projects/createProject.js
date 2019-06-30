@@ -35,6 +35,23 @@ export default class createproject extends Component {
           />
         </div>
       );
+    } else if (this.props.selectedProject.status === "deployed") {
+      return (
+        <div>
+          <ProjectCreationProgressComponent
+            selectedProject={this.props.selectedProject}
+          />
+          <DeployProjectForm
+            selectedProject={this.props.selectedProject}
+            getNewProjectBlockchainAddress={
+              this.props.getNewProjectBlockchainAddress
+            }
+            blockchainProjects={this.props.blockchainProjects}
+            selectProject={this.props.selectProject}
+            changeSelectedProject={this.props.changeSelectedProject}
+          />
+        </div>
+      );
     }
   }
 }

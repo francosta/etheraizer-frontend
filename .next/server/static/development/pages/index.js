@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -463,7 +463,7 @@ var _build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PU
 
  // Create an instance of the contract with the deployed contract's address
 
-var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0xe7Ece85e49885FeE1Fc84C5Bb6A79Fac6A85f999");
+var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0xD474898217b36829585E4261080e4eEb2E9c676A");
 /* harmony default export */ __webpack_exports__["default"] = (contractInstance);
 
 /***/ }),
@@ -496,7 +496,8 @@ var web3; // To define where we will get the instance of web3 from (server or br
 
 if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   //We are in the browser and Metamask is running
-  var web3BrowserProvider = window.web3.currentProvider; // Due to Metamask's new scurity measures we first need to enable the provider before instantiating web3 with it
+  var web3BrowserProvider = window.web3.currentProvider;
+  var provider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("http://127.0.0.1:7545"); // Due to Metamask's new scurity measures we first need to enable the provider before instantiating web3 with it
 
   var getProvider =
   /*#__PURE__*/
@@ -525,12 +526,25 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   }();
 
   getProvider();
-  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(web3BrowserProvider);
+  var OPTIONS = {
+    defaultBlock: "latest",
+    transactionConfirmationBlocks: 1,
+    transactionBlockTimeout: 5
+  };
+  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(provider, null, OPTIONS);
 } else {
   // We are not in the browser or Metamask is not running.
   // We need to set up our own provider, using the Rinkeby Eth network, through Infura (using the link that we were provided with).
   var web3ServerProvider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("https://rinkeby.infura.io/v3/c8d80c1c979446a7b1b3ebe2f3729ec9");
-  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(web3ServerProvider);
+
+  var _provider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("http://127.0.0.1:7545");
+
+  var _OPTIONS = {
+    defaultBlock: "latest",
+    transactionConfirmationBlocks: 1,
+    transactionBlockTimeout: 5
+  };
+  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(_provider, null, _OPTIONS); // web3 = new Web3(web3ServerProvider);
 } // const web3 = new Web3(window.web3.currentProvider);
 
 
@@ -1146,7 +1160,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
