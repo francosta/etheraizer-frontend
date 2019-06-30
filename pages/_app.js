@@ -52,6 +52,7 @@ export default class MyApp extends App {
       }
     });
     localStorage.removeItem("token");
+    Router.push("/");
   };
 
   render() {

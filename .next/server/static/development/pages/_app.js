@@ -1477,6 +1477,7 @@ function (_App) {
       });
 
       localStorage.removeItem("token");
+      next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/");
     });
 
     _this.state = {
