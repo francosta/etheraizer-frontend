@@ -10,13 +10,21 @@ const compiledProjectFactoryContract = require("../ethereum/build/CampaignFactor
 
 // We are going to use Truffle (HDWalletProvider) in order to set up our provider.
 // We need to create a new instance of HDWalletProvider and pass it two arguments: our account's Mneumonic and the link for the network we want to connect to (our Infura link)
-const provider = new HDWalletProvider(
-  "tree over season air joke shock mushroom tail ancient soldier save era",
-  "https://rinkeby.infura.io/v3/136de8105bcb446a8959963ad00fc182"
-);
+// const provider = new HDWalletProvider(
+//   "tree over season air joke shock mushroom tail ancient soldier save era",
+//   "https://rinkeby.infura.io/v3/136de8105bcb446a8959963ad00fc182"
+// );
+
+const OPTIONS = {
+  defaultBlock: "latest",
+  transactionConfirmationBlocks: 1,
+  transactionBlockTimeout: 5
+};
+
+const provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
 
 //Set up the web3 instance
-const web3 = new Web3(provider);
+const web3 = new Web3(provider, null, OPTIONS);
 
 // Now we need to use the newly-created web3 instance to deploy the contract
 // We need to get the accounts in the web3 instance.
@@ -29,11 +37,13 @@ const deploy = async function() {
   console.log("Attempting to deploy from account", accounts[0]);
 
   // Access the eth module inside the web3 instance and deploy the ABI. The ABI is the interface that we have to parse to be treated by JS.
+
+  //NOTE: IF USING METAMASK'S RINKEBY NETWORK DO NOT MENTION GAS IN TRANSACTION SEND.
   const result = await new web3.eth.Contract(
     JSON.parse(compiledProjectFactoryContract.interface)
   )
     .deploy({ data: "0x" + compiledProjectFactoryContract.bytecode })
-    .send({ from: accounts[0] });
+    .send({ from: accounts[0], gas: "1000000" });
 
   console.log("Contract deployed to ", result.options.address);
 

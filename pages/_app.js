@@ -3,21 +3,29 @@ import factory from "../ethereum/factoryContract";
 import Layout from "../components/layouts";
 import Router from "next/router";
 import { getUserData, login, validate } from "../services/authentication";
-import Index from "./index";
-import Login from "./login";
 import App, { Container } from "next/app";
 
 export default class MyApp extends App {
   static async getInitialProps() {
-    const projects = await factory.methods.getDeployedCampaigns().call();
-    return { projects };
+    const blockchainProjects = await factory.methods
+      .getDeployedCampaigns()
+      .call();
+    return { blockchainProjects };
+  }
+
+  componentDidMount() {
+    const projectsURL = "http://localhost:3000/projects";
+    return fetch(projectsURL)
+      .then(resp => resp.json())
+      .then(resp => this.setState({ allProjects: resp }));
   }
 
   constructor(props) {
     super(props);
 
     this.state = {
-      userdata: {
+      userData: {
+        id: 17,
         first_name: "Francisco",
         last_name: "Costa",
         email: "francisco@fcosta.pt",
@@ -30,7 +38,9 @@ export default class MyApp extends App {
             status: "created"
           }
         ]
-      }
+      },
+      selectedProject: {},
+      allProjects: {}
     };
   }
 
@@ -52,17 +62,40 @@ export default class MyApp extends App {
       }
     });
     localStorage.removeItem("token");
-    Router.push("/");
+    Router.push("/login");
+  };
+
+  deployProject = project => {
+    this.setState({ allProjects: [...this.state.allProjects, project] });
+  };
+
+  selectProject = project => {
+    this.setState({ selectedProject: project });
+  };
+
+  getNewProjectBlockchainAddress = async function() {
+    const blockchainProjects = await factory.methods
+      .getDeployedCampaigns()
+      .call();
+    this.setState({ blockchainProjects: blockchainProjects });
   };
 
   render() {
     const { Component } = this.props;
     return (
-      <Layout logout={this.logout}>
+      <Layout
+        userData={this.state.userData}
+        logout={this.logout}
+        selectProject={this.selectProject}>
         <Component
-          projects={this.props.projects}
-          userData={this.state.userdata}
+          blockchainProjects={this.props.blockchainProjects}
+          userData={this.state.userData}
           login={this.loggedIn}
+          selectedProject={this.state.selectedProject}
+          selectProject={this.selectProject}
+          getNewProjectBlockchainAddress={this.getNewProjectBlockchainAddress}
+          allProjects={this.state.allProjects}
+          changeSelectedProject={this.changeSelectedProject}
         />
       </Layout>
     );

@@ -15,20 +15,34 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   //We are in the browser and Metamask is running
   const web3BrowserProvider = window.web3.currentProvider;
 
+  const provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
   // Due to Metamask's new scurity measures we first need to enable the provider before instantiating web3 with it
   const getProvider = async () => {
     await web3BrowserProvider.enable(); // request authentication
   };
   getProvider();
+  const OPTIONS = {
+    defaultBlock: "latest",
+    transactionConfirmationBlocks: 1,
+    transactionBlockTimeout: 5
+  };
 
-  web3 = new Web3(web3BrowserProvider);
+  web3 = new Web3(provider, null, OPTIONS);
 } else {
   // We are not in the browser or Metamask is not running.
   // We need to set up our own provider, using the Rinkeby Eth network, through Infura (using the link that we were provided with).
   const web3ServerProvider = new Web3.providers.HttpProvider(
     "https://rinkeby.infura.io/v3/c8d80c1c979446a7b1b3ebe2f3729ec9"
   );
-  web3 = new Web3(web3ServerProvider);
+
+  const provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
+  const OPTIONS = {
+    defaultBlock: "latest",
+    transactionConfirmationBlocks: 1,
+    transactionBlockTimeout: 5
+  };
+  web3 = new Web3(provider, null, OPTIONS);
+  // web3 = new Web3(web3ServerProvider);
 }
 // const web3 = new Web3(window.web3.currentProvider);
 

@@ -45,12 +45,12 @@ export default class createproject extends Component {
 
     console.log(`Project Title: ${projectTitle}`);
     console.log(`Minimum Contribution: ${minimumContribution}`);
-
+    console.log(accounts);
     this.setState({ creatingProject: true });
     try {
       await factory.methods
         .createCampaign(minimumContribution)
-        .send({ from: accounts[0] });
+        .send({ from: accounts[0], gas: "1000000" });
       Router.pushRoute("/");
     } catch (thrownError) {
       this.setState({ errorMessage: thrownError.message });

@@ -18,7 +18,7 @@ import Layout from "../../components/layouts";
 import web3 from "../../ethereum/web3";
 import { Router } from "../../routes";
 
-export default class createproject extends Component {
+export default class ShowProject extends Component {
   constructor(props) {
     super(props);
 
