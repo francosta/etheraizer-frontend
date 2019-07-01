@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -270,6 +270,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_routes__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next-routes */ "next-routes");
+/* harmony import */ var next_routes__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_routes__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
+
+
 
 
 
@@ -310,6 +316,12 @@ function (_Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "createProject", function () {
+      var project = {};
+
+      _this.props.selectProject(project);
+    });
+
     return _this;
   }
 
@@ -344,7 +356,8 @@ function (_Component) {
       }, "Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
         route: "/projects/createproject"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
+        className: "item",
+        onClick: this.createProject
       }, "Create Project"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
         position: "right"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
@@ -397,6 +410,7 @@ var _jsxFileName = "/Users/fran/Desktop/etheraizer/etheraizer-frontend/component
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
+<<<<<<< HEAD:.next/server/static/development/pages/index.js~HEAD
   return (// We use container in order to limit the size of the elements in the window.
     // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
     react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -439,6 +453,28 @@ var _jsxFileName = "/Users/fran/Desktop/etheraizer/etheraizer-frontend/component
       __self: this
     }))
   );
+=======
+  if (props.userData.first_name === "") {
+    return (// We use container in order to limit the size of the elements in the window.
+      // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children))
+    );
+  } else {
+    return (// We use container in order to limit the size of the elements in the window.
+      // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        logout: props.logout,
+        selectProject: props.selectProject
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
+    );
+  }
+>>>>>>> development:.next/server/static/development/pages/index.js
 });
 
 /***/ }),
@@ -473,7 +509,7 @@ var _build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PU
 
  // Create an instance of the contract with the deployed contract's address
 
-var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0xe7Ece85e49885FeE1Fc84C5Bb6A79Fac6A85f999");
+var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0xD474898217b36829585E4261080e4eEb2E9c676A");
 /* harmony default export */ __webpack_exports__["default"] = (contractInstance);
 
 /***/ }),
@@ -506,7 +542,8 @@ var web3; // To define where we will get the instance of web3 from (server or br
 
 if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   //We are in the browser and Metamask is running
-  var web3BrowserProvider = window.web3.currentProvider; // Due to Metamask's new scurity measures we first need to enable the provider before instantiating web3 with it
+  var web3BrowserProvider = window.web3.currentProvider;
+  var provider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("http://127.0.0.1:7545"); // Due to Metamask's new scurity measures we first need to enable the provider before instantiating web3 with it
 
   var getProvider =
   /*#__PURE__*/
@@ -535,12 +572,25 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   }();
 
   getProvider();
-  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(web3BrowserProvider);
+  var OPTIONS = {
+    defaultBlock: "latest",
+    transactionConfirmationBlocks: 1,
+    transactionBlockTimeout: 5
+  };
+  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(provider, null, OPTIONS);
 } else {
   // We are not in the browser or Metamask is not running.
   // We need to set up our own provider, using the Rinkeby Eth network, through Infura (using the link that we were provided with).
   var web3ServerProvider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("https://rinkeby.infura.io/v3/c8d80c1c979446a7b1b3ebe2f3729ec9");
-  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(web3ServerProvider);
+
+  var _provider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("http://127.0.0.1:7545");
+
+  var _OPTIONS = {
+    defaultBlock: "latest",
+    transactionConfirmationBlocks: 1,
+    transactionBlockTimeout: 5
+  };
+  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(_provider, null, _OPTIONS); // web3 = new Web3(web3ServerProvider);
 } // const web3 = new Web3(window.web3.currentProvider);
 
 
@@ -1059,10 +1109,10 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Login, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_7___default.a, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "stylesheet",
         href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
-      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_LoginForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_LoginForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
         login: this.props.login
       }));
     }
@@ -1154,7 +1204,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

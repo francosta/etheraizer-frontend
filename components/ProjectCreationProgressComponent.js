@@ -4,13 +4,12 @@ import { Step } from "semantic-ui-react";
 export default function ProjectCreationProgressComponent(props) {
   return (
     <Step.Group ordered>
-      {/* {props.projectStatus === "create" ? <Step active> : <Step complete> } */}
       <Step
-        active={props.projectStatus === "create"}
+        active={props.selectedProject}
         completed={
-          props.projectStatus === "deploy" ||
-          props.projectStatus === "achieve" ||
-          props.projectStatus === "funded"
+          props.selectedProject.status === "created" ||
+          props.selectedProject.status === "deployed" ||
+          props.selectedProject.status === "achieve"
         }>
         <Step.Content>
           <Step.Title>Create</Step.Title>
@@ -18,9 +17,10 @@ export default function ProjectCreationProgressComponent(props) {
         </Step.Content>
       </Step>
       <Step
-        active={props.projectStatus === "deploy"}
+        active={props.selectedProject.status === "created"}
         completed={
-          props.projectStatus === "achieve" || props.projectStatus === "funded"
+          props.selectedProject.status === "deployed" ||
+          props.selectedProject.status === "funded"
         }>
         <Step.Content>
           <Step.Title>Deploy</Step.Title>
@@ -31,8 +31,8 @@ export default function ProjectCreationProgressComponent(props) {
       </Step>
 
       <Step
-        active={props.projectStatus === "achieve"}
-        completed={props.projectStatus === "funded"}>
+        active={props.selectedProject.status === "deployed"}
+        completed={props.selectedProject.status === "funded"}>
         <Step.Content>
           <Step.Title>Achieve</Step.Title>
           <Step.Description>Reach your funding goal</Step.Description>

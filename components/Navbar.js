@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import { Menu, Image, Segment } from "semantic-ui-react";
 import { Link } from "../routes";
+import Routes from "next-routes";
+import Router from "next/router";
 
 export default class Navbar extends Component {
   state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+  createProject = () => {
+    const project = {};
+    this.props.selectProject(project);
+  };
 
   render() {
     const { activeItem } = this.state;
@@ -28,7 +35,9 @@ export default class Navbar extends Component {
               <a className="item">Projects</a>
             </Link>
             <Link route="/projects/createproject">
-              <a className="item">Create Project</a>
+              <a className="item" onClick={this.createProject}>
+                Create Project
+              </a>
             </Link>
           </Menu.Menu>
           <Menu.Menu position="right">
