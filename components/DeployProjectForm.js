@@ -50,7 +50,7 @@ export default class DeployProjectForm extends Component {
     try {
       await factory.methods
         .createCampaign(minimumContribution)
-        .send({ from: accounts[1], gas: "1000000" })
+        .send({ from: accounts[3], gas: "1000000" })
         .then(resp => console.log(resp));
       this.getAddressForNewProject();
     } catch (thrownError) {

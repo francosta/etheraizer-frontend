@@ -499,7 +499,7 @@ function (_Component) {
                 _context.prev = 10;
                 _context.next = 13;
                 return _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_12__["default"].methods.createCampaign(minimumContribution).send({
-                  from: accounts[1],
+                  from: accounts[3],
                   gas: "1000000"
                 }).then(function (resp) {
                   return console.log(resp);
@@ -866,7 +866,7 @@ function ProjectStats(props) {
   var items = [{
     header: "Project Blockchain Address",
     description: "This is the person who created the project",
-    meta: props.manager
+    meta: props.selectedProject.blockchain_address
   }, {
     header: "Manager's Blockchain Address",
     description: "How much you need to donate to become a supporter",

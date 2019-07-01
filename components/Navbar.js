@@ -11,6 +11,7 @@ export default class Navbar extends Component {
 
   createProject = () => {
     const project = {};
+    this.props.selectProject(project);
   };
 
   render() {
