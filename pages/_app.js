@@ -111,6 +111,7 @@ export default class MyApp extends App {
           getNewProjectBlockchainAddress={this.getNewProjectBlockchainAddress}
           allProjects={this.state.allProjects}
           changeSelectedProject={this.changeSelectedProject}
+          deployProject={this.deployProject}
         />
       </Layout>
     );

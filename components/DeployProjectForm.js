@@ -69,6 +69,7 @@ export default class DeployProjectForm extends Component {
     project.status = "deployed";
     this.props.selectProject(project);
     this.updateProjectOnDatabase(project);
+    this.props.addProjectToAllProjects(project);
   };
 
   updateProjectOnDatabase = project => {
