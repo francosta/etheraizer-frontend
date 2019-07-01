@@ -1509,8 +1509,8 @@ function (_App) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "loggedIn", function (token) {
       localStorage.setItem("token", token);
       Object(_services_authentication__WEBPACK_IMPORTED_MODULE_14__["getUserData"])().then(function (resp) {
-        _this.setState({
-          userdata: resp
+        return _this.setState({
+          userData: resp
         });
       });
       next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/");
@@ -1518,12 +1518,7 @@ function (_App) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "logout", function () {
       _this.setState({
-        userdata: {
-          first_name: "",
-          last_name: "",
-          email: "",
-          projects: []
-        }
+        userdata: {}
       });
 
       localStorage.removeItem("token");
@@ -1570,18 +1565,7 @@ function (_App) {
     })));
 
     _this.state = {
-      userData: {
-        id: 1,
-        first_name: "Francisco",
-        last_name: "Costa",
-        email: "francisco@fcosta.pt",
-        projects: [{
-          title: "Test Project",
-          description: "This a test project in order to check if the API is working or not. Let's hope it is...",
-          goal: 1000,
-          status: "created"
-        }]
-      },
+      userData: {},
       selectedProject: {},
       allProjects: {}
     };
@@ -1688,7 +1672,7 @@ var getUserData = function getUserData() {
       Authorisation: localStorage.token
     }
   }).then(function (resp) {
-    resp.json();
+    return resp.json();
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = ({

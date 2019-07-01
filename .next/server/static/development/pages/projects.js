@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -865,7 +865,7 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "renderProjects", function () {
       var items = _this.props.allProjects.map(function (project) {
         return {
-          image: "/images/avatar/large/elliot.jpg",
+          image: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
           header: project.title,
           description: react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
             route: "/projects/".concat(project.id)
@@ -963,7 +963,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!***************************************!*\
   !*** multi ./pages/projects/index.js ***!
   \***************************************/

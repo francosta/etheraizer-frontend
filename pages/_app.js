@@ -39,21 +39,7 @@ export default class MyApp extends App {
     super(props);
 
     this.state = {
-      userData: {
-        id: 1,
-        first_name: "Francisco",
-        last_name: "Costa",
-        email: "francisco@fcosta.pt",
-        projects: [
-          {
-            title: "Test Project",
-            description:
-              "This a test project in order to check if the API is working or not. Let's hope it is...",
-            goal: 1000,
-            status: "created"
-          }
-        ]
-      },
+      userData: {},
       selectedProject: {},
       allProjects: {}
     };
@@ -61,20 +47,13 @@ export default class MyApp extends App {
 
   loggedIn = token => {
     localStorage.setItem("token", token);
-    getUserData().then(resp => {
-      this.setState({ userdata: resp });
-    });
+    getUserData().then(resp => this.setState({ userData: resp }));
     Router.push("/");
   };
 
   logout = () => {
     this.setState({
-      userdata: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        projects: []
-      }
+      userdata: {}
     });
     localStorage.removeItem("token");
     Router.push("/login");

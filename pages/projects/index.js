@@ -8,7 +8,8 @@ export default class ProjectIndex extends Component {
   renderProjects = () => {
     const items = this.props.allProjects.map(project => {
       return {
-        image: "/images/avatar/large/elliot.jpg",
+        image:
+          "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
         header: project.title,
         description: (
           <Link route={`/projects/${project.id}`}>

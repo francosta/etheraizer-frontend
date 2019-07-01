@@ -24,7 +24,7 @@ export const getUserData = () => {
   return fetch("http://localhost:3000/user_data", {
     headers: { Authorisation: localStorage.token }
   }).then(resp => {
-    resp.json();
+    return resp.json();
   });
 };
 
