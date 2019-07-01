@@ -57,7 +57,7 @@ export default class MyApp extends App {
     });
     localStorage.removeItem("token");
     this.setState({ userData: {} });
-    Router.push("/login");
+    // Router.push("/login");
   };
 
   deployProject = project => {
