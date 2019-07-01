@@ -115,6 +115,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /******/ 	var hotCurrentHash = "bd9baa87d63147b78b43";
 =======
 /******/ 	var hotCurrentHash = "1a4dfc26250f79401a4d";
@@ -124,6 +125,9 @@
 >>>>>>> 27899c90f26ce92827feb64aa953db05b655aca4
 =======
 /******/ 	var hotCurrentHash = "80afc9e7693bab674fd7";
+>>>>>>> development
+=======
+/******/ 	var hotCurrentHash = "b3f1654a430844f786d3";
 >>>>>>> development
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};

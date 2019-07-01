@@ -10,11 +10,6 @@ import ProjectCreationProgressComponent from "../../components/ProjectCreationPr
 import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
 
 export default class ShowProject extends Component {
-  // static async getInitialProps(props) {
-  //   console.log(props);
-  //   return {};
-  // }
-
   constructor(props) {
     super(props);
 
@@ -29,7 +24,6 @@ export default class ShowProject extends Component {
   }
 
   componentDidMount = async function() {
-    const web3 = web3;
     const address = this.props.selectedProject.blockchain_address;
     const project = projectContract(address);
     const stats = await project.methods.getSummary().call();
@@ -51,10 +45,17 @@ export default class ShowProject extends Component {
       <div>
         <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
         <br />
+        {/* {this.props.selectedProject.user_id === this.props.userData.id ? ( */}
+        <ProjectCreationProgressComponent
+          selectedProject={this.props.selectedProject}
+        />
+        {/* ) : null} */}
+        {/* <br /> */}
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
           noSupporters={this.state.supportersCount}
+          selectedProject={this.props.selectedProject}
         />
         <br />
         <ProjectProgress

@@ -11,52 +11,21 @@ export default class ProjectIndex extends Component {
 
     this.state = {
       searchTerm: "",
-      filteredProjects: []
+      filteredProjects: [],
+      projects: []
     };
+  }
+
+  componentDidMount() {
+    const projects = this.props.allProjects.filter(
+      project => project.status === "deployed"
+    );
+    this.setState({ projects: projects });
   }
 
   setProjects = projects => {
     this.setState({ allprojects: projects });
   };
-
-  // renderProjects = () => {
-  //   if (this.state.searchTerm === "") {
-  //     console.log("test");
-  //     const items = this.state.allprojects.map(project => {
-  //       return {
-  //         image:
-  //           "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
-  //         header: project.title,
-  //         description: (
-  //           <Link route={`/projects/${project.id}`}>
-  //             <a>View Project</a>
-  //           </Link>
-  //         ),
-  //         fluid: false
-  //       };
-  //     });
-  //     return (
-  //       <Card.Group selectProject={this.props.selectProject} items={items} />
-  //     );
-  //   } else {
-  //     const items = this.state.filteredProjects.map(project => {
-  //       return {
-  //         image:
-  //           "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
-  //         header: project.title,
-  //         description: (
-  //           <Link route={`/projects/${project.id}`}>
-  //             <a>View Project</a>
-  //           </Link>
-  //         ),
-  //         fluid: false
-  //       };
-  //     });
-  //     return (
-  //       <Card.Group selectProject={this.props.selectProject} items={items} />
-  //     );
-  //   }
-  // };
 
   handleSearch = e => {
     const searchTerm = e.target.value.toLowerCase();
@@ -113,7 +82,7 @@ export default class ProjectIndex extends Component {
           </div>
         </div>
         {this.state.searchTerm === ""
-          ? this.props.allProjects.map((project, i) => (
+          ? this.state.projects.map((project, i) => (
               <ProjectCard
                 key={i}
                 project={project}

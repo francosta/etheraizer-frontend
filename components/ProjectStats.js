@@ -6,7 +6,7 @@ export default function ProjectStats(props) {
     {
       header: "Project Blockchain Address",
       description: "This is the person who created the project",
-      meta: props.manager
+      meta: props.selectedProject.blockchain_address
     },
     {
       header: "Manager's Blockchain Address",

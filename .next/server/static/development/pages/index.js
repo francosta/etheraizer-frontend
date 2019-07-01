@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,13 +107,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/fran/Desktop/etheraizer/etheraizer-frontend/components/Footer.js";
 
 
 function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     size: "small",
     as: "h6",
-    block: true
+    block: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
   }, "Etheraize | 2019 - Francisco Costa");
 }
 
@@ -354,15 +360,11 @@ function (_Component) {
         onClick: this.createProject
       }, "Create Project"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
         position: "right"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
-        name: "my projects",
-        active: activeItem === "my projects",
-        onClick: this.handleItemClick
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
-        name: "my profile",
-        active: activeItem === "my profile",
-        onClick: this.handleItemClick
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+        route: "/myprofile"
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        className: "item"
+      }, "My Profile")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         style: {
           marginRight: "100px"
         },
@@ -457,7 +459,7 @@ var _build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PU
 
  // Create an instance of the contract with the deployed contract's address
 
-var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0x5fFa520749Fb3673d10E5735Ac5E618a6187d1Fc");
+var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0x6748e6562AC03898051f64E0f708aEd023c34af6");
 /* harmony default export */ __webpack_exports__["default"] = (contractInstance);
 
 /***/ }),
@@ -1083,6 +1085,7 @@ var routes = __webpack_require__(/*! next-routes */ "next-routes")();
 
 routes.add("/projects/index", "/projects/index");
 routes.add("/projects/createproject", "/projects/createproject");
+routes.add("/projects/myprojects", "/projects/myprojects");
 routes.add("/projects/:id", "/projects/showproject"); // This export statement will export some helpers to the rest of our project.
 
 module.exports = routes;
@@ -1147,14 +1150,14 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Francisco/Documents/Flatiron/etheraizer/etheraizer-frontend/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/fran/Desktop/etheraizer/etheraizer-frontend/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

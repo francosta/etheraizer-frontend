@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   "/_app": "static/development/pages/_app.js",
   "/_document": "static/development/pages/_document.js",
@@ -16,4 +17,7 @@
 >>>>>>> 27899c90f26ce92827feb64aa953db05b655aca4
 =======
 {"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/index":"static/development/pages/index.js","/projects":"static/development/pages/projects.js","/projects/createproject":"static/development/pages/projects/createproject.js","/projects/showproject":"static/development/pages/projects/showproject.js","/":"static/development/pages/index.js"}
+>>>>>>> development
+=======
+{"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/index":"static/development/pages/index.js","/myprofile":"static/development/pages/myprofile.js","/next/dist/pages/_error":"static/development/pages/next/dist/pages/_error.js","/":"static/development/pages/index.js"}
 >>>>>>> development

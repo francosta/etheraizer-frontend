@@ -29,10 +29,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/projects": [
+    "/myprofile": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+<<<<<<< HEAD
     "/projects/createproject": [
 <<<<<<< HEAD
 >>>>>>> development
@@ -42,6 +43,9 @@
       "static/runtime/main.js"
     ],
     "/projects/showproject": [
+=======
+    "/next/dist/pages/_error": [
+>>>>>>> development
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
