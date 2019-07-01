@@ -4,16 +4,16 @@ import { Card, Icon } from "semantic-ui-react";
 const extra = (
   <a>
     <Icon name="user" />
-    16 Friends
+    No. Supporters: 17
   </a>
 );
 
-const ProjectCard = () => (
+const ProjectCard = props => (
   <Card
-    image="/images/avatar/large/elliot.jpg"
-    header="Elliot Baker"
-    meta="Friend"
-    description="Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat."
+    image="https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
+    header={props.title}
+    meta={`Status: ${props.status}`}
+    description={props.description}
     extra={extra}
   />
 );
