@@ -11,7 +11,6 @@ export default class Navbar extends Component {
 
   createProject = () => {
     const project = {};
-    this.props.selectProject(project);
   };
 
   render() {
@@ -41,11 +40,9 @@ export default class Navbar extends Component {
             </Link>
           </Menu.Menu>
           <Menu.Menu position="right">
-            <Menu.Item
-              name="my projects"
-              active={activeItem === "my projects"}
-              onClick={this.handleItemClick}
-            />
+            <Link route="/projects/myprojects">
+              <a className="item">My Projects</a>
+            </Link>
             <Menu.Item
               name="my profile"
               active={activeItem === "my profile"}

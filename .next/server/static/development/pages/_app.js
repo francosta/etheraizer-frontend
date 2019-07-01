@@ -196,8 +196,6 @@ function (_Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "createProject", function () {
       var project = {};
-
-      _this.props.selectProject(project);
     });
 
     return _this;
@@ -238,11 +236,11 @@ function (_Component) {
         onClick: this.createProject
       }, "Create Project"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
         position: "right"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
-        name: "my projects",
-        active: activeItem === "my projects",
-        onClick: this.handleItemClick
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+        route: "/projects/myprojects"
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        className: "item"
+      }, "My Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
         name: "my profile",
         active: activeItem === "my profile",
         onClick: this.handleItemClick
@@ -1630,6 +1628,7 @@ var routes = __webpack_require__(/*! next-routes */ "next-routes")();
 
 routes.add("/projects/index", "/projects/index");
 routes.add("/projects/createproject", "/projects/createproject");
+routes.add("/projects/myprojects", "/projects/myprojects");
 routes.add("/projects/:id", "/projects/showproject"); // This export statement will export some helpers to the rest of our project.
 
 module.exports = routes;
