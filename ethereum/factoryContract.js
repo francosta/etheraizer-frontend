@@ -10,7 +10,7 @@ import ProjectFactory from "./build/CampaignFactory.json";
 // Create an instance of the contract with the deployed contract's address
 const contractInstance = new web3.eth.Contract(
   JSON.parse(ProjectFactory.interface),
-  "0xD474898217b36829585E4261080e4eEb2E9c676A"
+  "0x5fFa520749Fb3673d10E5735Ac5E618a6187d1Fc"
 );
 
 export default contractInstance;

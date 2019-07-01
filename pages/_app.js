@@ -14,6 +14,21 @@ export default class MyApp extends App {
   }
 
   componentDidMount() {
+    if (
+      localStorage.getItem("token") &&
+      localStorage.getItem("token") !== "undefined"
+    ) {
+      validate()
+        .then(resp => {
+          this.loggedIn(resp.token);
+        })
+        .catch(err => {
+          alert(err);
+        });
+    } else {
+      Router.push("/login");
+    }
+
     const projectsURL = "http://localhost:3000/projects";
     return fetch(projectsURL)
       .then(resp => resp.json())
@@ -25,7 +40,7 @@ export default class MyApp extends App {
 
     this.state = {
       userData: {
-        id: 17,
+        id: 1,
         first_name: "Francisco",
         last_name: "Costa",
         email: "francisco@fcosta.pt",
