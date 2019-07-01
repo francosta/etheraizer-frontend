@@ -9,7 +9,7 @@ export default class ProjectIndex extends Component {
     super(props);
 
     this.state = {
-      allProjects: {}
+      allprojects: []
     };
   }
   componentDidMount() {
@@ -20,12 +20,11 @@ export default class ProjectIndex extends Component {
   }
 
   setProjects = projects => {
-    debugger;
-    this.setState({ allProjects: projects });
+    this.setState({ allprojects: projects });
   };
 
   renderProjects = () => {
-    const items = this.state.allProjects.map(project => {
+    const items = this.state.allprojects.map(project => {
       return {
         image:
           "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
