@@ -1087,6 +1087,7 @@ var routes = __webpack_require__(/*! next-routes */ "next-routes")();
 
 routes.add("/projects/index", "/projects/index");
 routes.add("/projects/createproject", "/projects/createproject");
+routes.add("/projects/myprofile", "/projects/myprofile");
 routes.add("/projects/myprojects", "/projects/myprojects");
 routes.add("/projects/:id", "/projects/showproject"); // This export statement will export some helpers to the rest of our project.
 

@@ -8,6 +8,7 @@ const routes = require("next-routes")();
 
 routes.add("/projects/index", "/projects/index");
 routes.add("/projects/createproject", "/projects/createproject");
+routes.add("/projects/myprofile", "/projects/myprofile");
 routes.add("/projects/myprojects", "/projects/myprojects");
 routes.add("/projects/:id", "/projects/showproject");
 
