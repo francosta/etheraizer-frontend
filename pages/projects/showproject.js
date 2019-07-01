@@ -60,11 +60,13 @@ export default class ShowProject extends Component {
           goal={this.props.selectedProject.goal}
           progress={this.props.selectedProject.progress}
         />
+        <br />
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
           noSupporters={this.props.selectedProject.users}
         />
+        <br />
         <ProjectStats
           selectedProject={this.props.selectedProject}
           minimumContribution={this.state.minimumContribution}
@@ -73,6 +75,7 @@ export default class ShowProject extends Component {
           requestsCount={this.state.requestsCount}
           approversCount={this.state.approversCount}
         />
+        <br />
         {!this.state.edit ? (
           <div>
             <h2>{this.props.selectedProject.title}</h2>

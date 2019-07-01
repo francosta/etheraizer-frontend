@@ -455,25 +455,17 @@ __webpack_require__.r(__webpack_exports__);
 
 function ProjectStats(props) {
   var items = [{
-    header: "Project Owner Blockchain Address",
+    header: "Project Blockchain Address",
     description: "This is the person who created the project",
     meta: props.manager
   }, {
-    header: "Goal",
-    description: "How much this project needs to get funded.",
-    meta: props.selectedProject.goal
+    header: "Manager's Blockchain Address",
+    description: "How much you need to donate to become a supporter",
+    meta: props.manager
   }, {
     header: "Minimum Contribution",
     description: "How much you need to donate to become a supporter",
     meta: props.minimumContribution
-  }, {
-    header: "Amount collected",
-    description: "This is how much the project has received",
-    meta: props.balance
-  }, {
-    header: "No. Supporters",
-    description: "This is the amuont of people who have contributed to this project" //   meta: props.selectedProject.users.length
-
   }];
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Card"].Group, {
     centered: true,
@@ -1134,18 +1126,18 @@ function (_Component) {
       }) : null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectProgress__WEBPACK_IMPORTED_MODULE_11__["default"], {
         goal: this.props.selectedProject.goal,
         progress: this.props.selectedProject.progress
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
         balance: this.state.balance,
         goal: this.props.selectedProject.goal,
         noSupporters: this.props.selectedProject.users
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectStats__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectStats__WEBPACK_IMPORTED_MODULE_17__["default"], {
         selectedProject: this.props.selectedProject,
         minimumContribution: this.state.minimumContribution,
         manager: this.state.managerAddress,
         balance: this.state.balance,
         requestsCount: this.state.requestsCount,
         approversCount: this.state.approversCount
-      }), !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h2", null, this.props.selectedProject.title), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectDetails__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h2", null, this.props.selectedProject.title), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectDetails__WEBPACK_IMPORTED_MODULE_14__["default"], {
         selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
         onClick: this.handleClick,
