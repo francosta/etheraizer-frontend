@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -339,7 +339,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         className: "item"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
-        src: "https://drive.google.com/uc?export=download&id=1Gr9jldMohwpSwJ8530JBtzv2BDGdaGRu",
+        src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
         style: {
           width: "100px"
         }
@@ -987,23 +987,6 @@ function (_Component) {
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
-    // componentDidMount() {
-    //   if (
-    //     localStorage.getItem("token") &&
-    //     localStorage.getItem("token") !== "undefined" &&
-    //     localStorage.getItem("token") !== "null"
-    //   ) {
-    //     validate()
-    //       .then(resp => {
-    //         this.props.login(resp.token);
-    //       })
-    //       .catch(err => {
-    //         alert(err);
-    //       });
-    //   } else {
-    //     Router.push("/login");
-    //   }
-    // }
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", null, "This will be the homepage");
     }
@@ -1154,7 +1137,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -11,7 +11,7 @@ export default class ProjectIndex extends Component {
         image: "/images/avatar/large/elliot.jpg",
         header: project.title,
         description: (
-          <Link routes={`/projects/${project.id}`}>
+          <Link route={`/projects/${project.id}`}>
             <a>View Project</a>
           </Link>
         ),
