@@ -1501,9 +1501,8 @@ function (_App) {
 
       _this.setState({
         userData: {}
-      });
+      }); // Router.push("/login");
 
-      next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/login");
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "deployProject", function (project) {
