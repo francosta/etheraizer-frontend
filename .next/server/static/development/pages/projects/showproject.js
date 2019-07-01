@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -248,6 +248,40 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./components/ProjectCreationProgressComponent.js":
+/*!********************************************************!*\
+  !*** ./components/ProjectCreationProgressComponent.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProjectCreationProgressComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function ProjectCreationProgressComponent(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Group, {
+    ordered: true,
+    widths: 3
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"], {
+    active: !!props.selectedProject,
+    completed: props.selectedProject.status === "created" || props.selectedProject.status === "deployed" || props.selectedProject.status === "achieve"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Title, null, "Create"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Description, null, "Create and pitch your project"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"], {
+    active: props.selectedProject.status === "created",
+    completed: props.selectedProject.status === "deployed" || props.selectedProject.status === "funded"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Title, null, "Deploy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Description, null, "Deploy your project to the Blockchain"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"], {
+    active: props.selectedProject.status === "deployed",
+    completed: props.selectedProject.status === "funded"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Content, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Title, null, "Achieve"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Step"].Description, null, "Reach your funding goal"))));
+}
+
+/***/ }),
+
 /***/ "./components/ProjectDetails.js":
 /*!**************************************!*\
   !*** ./components/ProjectDetails.js ***!
@@ -288,6 +322,40 @@ function ProjectDetails(props) {
 
 /***/ }),
 
+/***/ "./components/ProjectHighLevelValues.js":
+/*!**********************************************!*\
+  !*** ./components/ProjectHighLevelValues.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var ProjectHighLevelValues = function ProjectHighLevelValues(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"].Group, {
+    widths: "three"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"].Value, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+    name: "target"
+  }), "  ", props.goal), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"].Label, null, "Goal in Wei")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"].Value, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+    name: "ethereum"
+  }), "  ", props.balance), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"].Label, null, "Amount Collected")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"].Value, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
+    src: "https://react.semantic-ui.com/images/avatar/small/joe.jpg",
+    inline: true,
+    circular: true
+  }), "  ", props.noSupporters.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Statistic"].Label, null, "No. Supporters")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ProjectHighLevelValues);
+
+/***/ }),
+
 /***/ "./components/ProjectProgress.js":
 /*!***************************************!*\
   !*** ./components/ProjectProgress.js ***!
@@ -297,7 +365,7 @@ function ProjectDetails(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProgressExampleIndicating; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProjectProgress; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
@@ -319,55 +387,99 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ProgressExampleIndicating =
+var ProjectProgress =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(ProgressExampleIndicating, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(ProjectProgress, _Component);
 
-  function ProgressExampleIndicating() {
+  function ProjectProgress() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ProgressExampleIndicating);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ProjectProgress);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ProgressExampleIndicating)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ProjectProgress)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
       percent: 33
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "increment", function () {
-      return _this.setState(function (prevState) {
-        return {
-          percent: prevState.percent >= 100 ? 0 : prevState.percent + 20
-        };
-      });
-    });
-
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ProgressExampleIndicating, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ProjectProgress, [{
     key: "render",
     value: function render() {
+      var progress;
+
+      if (this.props.progress === null) {
+        progress = 0;
+      } else {
+        progress = this.props.progress / this.props.goal * 100;
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Progress"], {
-        percent: this.state.percent,
+        percent: progress,
         indicating: true
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Button"], {
-        onClick: this.increment
-      }, "Increment"));
+      }));
     }
   }]);
 
-  return ProgressExampleIndicating;
+  return ProjectProgress;
 }(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "./components/ProjectStats.js":
+/*!************************************!*\
+  !*** ./components/ProjectStats.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProjectStats; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function ProjectStats(props) {
+  var items = [{
+    header: "Project Owner Blockchain Address",
+    description: "This is the person who created the project",
+    meta: props.manager
+  }, {
+    header: "Goal",
+    description: "How much this project needs to get funded.",
+    meta: props.selectedProject.goal
+  }, {
+    header: "Minimum Contribution",
+    description: "How much you need to donate to become a supporter",
+    meta: props.minimumContribution
+  }, {
+    header: "Amount collected",
+    description: "This is how much the project has received",
+    meta: props.balance
+  }, {
+    header: "No. Supporters",
+    description: "This is the amuont of people who have contributed to this project" //   meta: props.selectedProject.users.length
+
+  }];
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Card"].Group, {
+    centered: true,
+    items: items
+  });
+}
 
 /***/ }),
 
@@ -922,6 +1034,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ProjectDetails__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/ProjectDetails */ "./components/ProjectDetails.js");
 /* harmony import */ var _ethereum_projectContract__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../ethereum/projectContract */ "./ethereum/projectContract.js");
 /* harmony import */ var _ethereum_web3__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../ethereum/web3 */ "./ethereum/web3.js");
+/* harmony import */ var _components_ProjectStats__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../components/ProjectStats */ "./components/ProjectStats.js");
+/* harmony import */ var _components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../components/ProjectCreationProgressComponent */ "./components/ProjectCreationProgressComponent.js");
+/* harmony import */ var _components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../components/ProjectHighLevelValues */ "./components/ProjectHighLevelValues.js");
+
+
+
 
 
 
@@ -1003,8 +1121,7 @@ function (_Component) {
       balance: null,
       requestsCount: null,
       approversCount: null,
-      managerAddress: "",
-      loading: true
+      managerAddress: ""
     };
     return _this;
   }
@@ -1012,7 +1129,23 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ShowProject, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectProgress__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Title"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h2", null, this.props.selectedProject.title), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectDetails__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title)), this.props.selectedProject.user_id === this.props.userData.id ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        selectedProject: this.props.selectedProject
+      }) : null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectProgress__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        goal: this.props.selectedProject.goal,
+        progress: this.props.selectedProject.progress
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        balance: this.state.balance,
+        goal: this.props.selectedProject.goal,
+        noSupporters: this.props.selectedProject.users
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectStats__WEBPACK_IMPORTED_MODULE_17__["default"], {
+        selectedProject: this.props.selectedProject,
+        minimumContribution: this.state.minimumContribution,
+        manager: this.state.managerAddress,
+        balance: this.state.balance,
+        requestsCount: this.state.requestsCount,
+        approversCount: this.state.approversCount
+      }), !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h2", null, this.props.selectedProject.title), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectDetails__WEBPACK_IMPORTED_MODULE_14__["default"], {
         selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
         onClick: this.handleClick,
@@ -1033,7 +1166,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!*********************************************!*\
   !*** multi ./pages/projects/showproject.js ***!
   \*********************************************/

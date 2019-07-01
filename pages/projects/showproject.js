@@ -5,6 +5,9 @@ import { Button } from "semantic-ui-react";
 import ProjectDetails from "../../components/ProjectDetails";
 import projectContract from "../../ethereum/projectContract";
 import web3 from "../../ethereum/web3";
+import ProjectStats from "../../components/ProjectStats";
+import ProjectCreationProgressComponent from "../../components/ProjectCreationProgressComponent";
+import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
 
 export default class ShowProject extends Component {
   // static async getInitialProps(props) {
@@ -21,8 +24,7 @@ export default class ShowProject extends Component {
       balance: null,
       requestsCount: null,
       approversCount: null,
-      managerAddress: "",
-      loading: true
+      managerAddress: ""
     };
   }
 
@@ -41,17 +43,6 @@ export default class ShowProject extends Component {
     console.log(stats);
   };
 
-  //   then(function(balance) {
-  //     console.log(web3.fromWei(balance.toNumber(), "ether" ) );
-  // })
-  // componentDidMount() {
-  //   console.log(this.props.selectedProject);
-  //   const data   = await loadData(this.props.selectedProject.blockchain_address)
-  //   this.setState({
-  //     data
-  //   }, () => this.setState({loading: false}))
-  // }
-
   handleClick = () => {
     this.setState({ edit: !this.state.edit });
   };
@@ -59,10 +50,31 @@ export default class ShowProject extends Component {
   render() {
     return (
       <div>
+        <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
+        {this.props.selectedProject.user_id === this.props.userData.id ? (
+          <ProjectCreationProgressComponent
+            selectedProject={this.props.selectedProject}
+          />
+        ) : null}
+        <ProjectProgress
+          goal={this.props.selectedProject.goal}
+          progress={this.props.selectedProject.progress}
+        />
+        <ProjectHighLevelValues
+          balance={this.state.balance}
+          goal={this.props.selectedProject.goal}
+          noSupporters={this.props.selectedProject.users}
+        />
+        <ProjectStats
+          selectedProject={this.props.selectedProject}
+          minimumContribution={this.state.minimumContribution}
+          manager={this.state.managerAddress}
+          balance={this.state.balance}
+          requestsCount={this.state.requestsCount}
+          approversCount={this.state.approversCount}
+        />
         {!this.state.edit ? (
           <div>
-            <ProjectProgress />
-            <h1>Project Title</h1>
             <h2>{this.props.selectedProject.title}</h2>
             <ProjectDetails selectedProject={this.props.selectedProject} />
             <Button onClick={this.handleClick} type="submit">

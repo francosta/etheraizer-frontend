@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import { Button, Progress } from "semantic-ui-react";
 
-export default class ProgressExampleIndicating extends Component {
+export default class ProjectProgress extends Component {
   state = { percent: 33 };
 
-  increment = () =>
-    this.setState(prevState => ({
-      percent: prevState.percent >= 100 ? 0 : prevState.percent + 20
-    }));
-
   render() {
+    let progress;
+    if (this.props.progress === null) {
+      progress = 0;
+    } else {
+      progress = (this.props.progress / this.props.goal) * 100;
+    }
+
     return (
       <div>
-        <Progress percent={this.state.percent} indicating />
-        <Button onClick={this.increment}>Increment</Button>
+        <Progress percent={progress} indicating />
       </div>
     );
   }
