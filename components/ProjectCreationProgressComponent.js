@@ -3,9 +3,9 @@ import { Step } from "semantic-ui-react";
 
 export default function ProjectCreationProgressComponent(props) {
   return (
-    <Step.Group ordered>
+    <Step.Group ordered widths={3}>
       <Step
-        active={props.selectedProject}
+        active={!!props.selectedProject}
         completed={
           props.selectedProject.status === "created" ||
           props.selectedProject.status === "deployed" ||

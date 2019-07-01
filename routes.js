@@ -6,5 +6,9 @@
 // The first thing we need to do is to require (we need to call the function, as per the docs)
 const routes = require("next-routes")();
 
+routes.add("/projects/index", "/projects/index");
+routes.add("/projects/createproject", "/projects/createproject");
+routes.add("/projects/:id", "/projects/showproject");
+
 // This export statement will export some helpers to the rest of our project.
 module.exports = routes;

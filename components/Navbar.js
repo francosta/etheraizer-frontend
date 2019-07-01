@@ -25,7 +25,7 @@ export default class Navbar extends Component {
               <a className="item">
                 <Image
                   src={
-                    "https://drive.google.com/uc?export=download&id=1Gr9jldMohwpSwJ8530JBtzv2BDGdaGRu"
+                    "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
                   }
                   style={{ width: "100px" }}
                 />

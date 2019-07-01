@@ -1,21 +1,30 @@
-import React from "react";
 import { Card, Icon } from "semantic-ui-react";
+import React, { Component } from "react";
+import { Link } from "../routes";
 
-const extra = (
-  <a>
-    <Icon name="user" />
-    16 Friends
-  </a>
-);
+export default class ProjectCard extends Component {
+  handleClick = project => {
+    this.props.selectProject(project);
+  };
 
-const ProjectCard = () => (
-  <Card
-    image="/images/avatar/large/elliot.jpg"
-    header="Elliot Baker"
-    meta="Friend"
-    description="Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat."
-    extra={extra}
-  />
-);
-
-export default ProjectCard;
+  render() {
+    const extra = (
+      <a>
+        <Icon name="user" />
+        No. Supporters: 17
+      </a>
+    );
+    return (
+      <Link route={`/projects/${this.props.project.id}`}>
+        <Card
+          onClick={() => this.handleClick(this.props.project)}
+          image="https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
+          header={this.props.project.title}
+          meta={`Status: ${this.props.project.status}`}
+          description={this.props.project.description}
+          extra={extra}
+        />
+      </Link>
+    );
+  }
+}

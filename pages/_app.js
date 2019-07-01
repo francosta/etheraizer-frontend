@@ -13,60 +13,55 @@ export default class MyApp extends App {
     return { blockchainProjects };
   }
 
-  componentDidMount() {
-    const projectsURL = "http://localhost:3000/projects";
-    return fetch(projectsURL)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ allProjects: resp }));
-  }
-
   constructor(props) {
     super(props);
 
     this.state = {
-      userData: {
-        id: 17,
-        first_name: "Francisco",
-        last_name: "Costa",
-        email: "francisco@fcosta.pt",
-        projects: [
-          {
-            title: "Test Project",
-            description:
-              "This a test project in order to check if the API is working or not. Let's hope it is...",
-            goal: 1000,
-            status: "created"
-          }
-        ]
-      },
+      userData: {},
       selectedProject: {},
-      allProjects: {}
+      allprojects: []
     };
+  }
+
+  componentDidMount() {
+    if (
+      localStorage.getItem("token") &&
+      localStorage.getItem("token") !== "undefined"
+    ) {
+      validate()
+        .then(resp => {
+          this.loggedIn(resp.token);
+        })
+        .catch(err => {
+          alert(err);
+        });
+    } else {
+      Router.push("/login");
+    }
+
+    const projectsURL = "http://localhost:3000/projects";
+    return fetch(projectsURL)
+      .then(resp => resp.json())
+      .then(resp => this.setState({ allprojects: resp }));
   }
 
   loggedIn = token => {
     localStorage.setItem("token", token);
-    getUserData().then(resp => {
-      this.setState({ userdata: resp });
-    });
+    getUserData().then(resp => this.setState({ userData: resp }));
     Router.push("/");
   };
 
   logout = () => {
     this.setState({
-      userdata: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        projects: []
-      }
+      userdata: {}
     });
     localStorage.removeItem("token");
-    Router.push("/login");
+    this.setState({ userData: {} });
+    // Router.push("/login");
   };
 
   deployProject = project => {
-    this.setState({ allProjects: [...this.state.allProjects, project] });
+    this.setState({ allprojects: [...this.state.allprojects, project] });
   };
 
   selectProject = project => {
@@ -94,8 +89,9 @@ export default class MyApp extends App {
           selectedProject={this.state.selectedProject}
           selectProject={this.selectProject}
           getNewProjectBlockchainAddress={this.getNewProjectBlockchainAddress}
-          allProjects={this.state.allProjects}
+          allProjects={this.state.allprojects}
           changeSelectedProject={this.changeSelectedProject}
+          deployProject={this.deployProject}
         />
       </Layout>
     );
