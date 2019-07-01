@@ -3,14 +3,15 @@
     "static/development/dll/dll_2011977376de5c4d4cfb.js"
   ],
   "pages": {
+    "/": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/_error": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
+<<<<<<< HEAD
 <<<<<<< HEAD
     "/login": [
       "static/runtime/webpack.js",
@@ -18,12 +19,21 @@
     ],
     "/projects": [
 =======
+=======
+    "/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+>>>>>>> 27899c90f26ce92827feb64aa953db05b655aca4
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/projects/createproject": [
+<<<<<<< HEAD
 >>>>>>> development
+=======
+>>>>>>> 27899c90f26ce92827feb64aa953db05b655aca4
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

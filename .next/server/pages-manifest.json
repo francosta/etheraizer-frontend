@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   "/_app": "static/development/pages/_app.js",
   "/_document": "static/development/pages/_document.js",
@@ -9,3 +10,6 @@
 =======
 {"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/index":"static/development/pages/index.js","/projects/createproject":"static/development/pages/projects/createproject.js","/":"static/development/pages/index.js"}
 >>>>>>> development
+=======
+{"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/index":"static/development/pages/index.js","/projects/createproject":"static/development/pages/projects/createproject.js","/":"static/development/pages/index.js"}
+>>>>>>> 27899c90f26ce92827feb64aa953db05b655aca4
