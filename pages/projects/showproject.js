@@ -50,15 +50,16 @@ export default class ShowProject extends Component {
     return (
       <div>
         <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
-        <ProjectProgress
-          goal={this.props.selectedProject.goal}
-          progress={this.props.selectedProject.progress}
-        />
         <br />
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
           noSupporters={this.state.supportersCount}
+        />
+        <br />
+        <ProjectProgress
+          goal={this.props.selectedProject.goal}
+          progress={this.props.selectedProject.progress}
         />
         <br />
         <ProjectStats
@@ -72,8 +73,6 @@ export default class ShowProject extends Component {
         <br />
         {!this.state.edit ? (
           <div>
-            <h2>{this.props.selectedProject.title}</h2>
-            <ProjectDetails selectedProject={this.props.selectedProject} />
             <Button onClick={this.handleClick} type="submit">
               Edit Project
             </Button>{" "}

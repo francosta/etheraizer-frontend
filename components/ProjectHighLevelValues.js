@@ -13,7 +13,7 @@ const ProjectHighLevelValues = props => (
     </Statistic>
     <Statistic>
       <Statistic.Value>
-        <Icon name="ethereum" />
+        <Icon name="money" />
         {"  "}
         {props.balance}
       </Statistic.Value>
