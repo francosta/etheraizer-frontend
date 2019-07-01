@@ -1439,26 +1439,7 @@ var MyApp =
 function (_App) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(MyApp, _App);
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(MyApp, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      if (localStorage.getItem("token") && localStorage.getItem("token") !== "undefined") {
-        Object(_services_authentication__WEBPACK_IMPORTED_MODULE_14__["validate"])().then(function (resp) {
-          _this2.loggedIn(resp.token);
-        }).catch(function (err) {
-          alert(err);
-        });
-      } else {
-        next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/login");
-      } // const projectsURL = "http://localhost:3000/projects";
-      // return fetch(projectsURL)
-      //   .then(resp => resp.json())
-      //   .then(resp => this.setState({ allProjects: resp }));
-
-    }
-  }], [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(MyApp, null, [{
     key: "getInitialProps",
     value: function () {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
@@ -1527,7 +1508,7 @@ function (_App) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "deployProject", function (project) {
       _this.setState({
-        allProjects: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_this.state.allProjects), [project])
+        allprojects: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_this.state.allprojects), [project])
       });
     });
 
@@ -1567,12 +1548,36 @@ function (_App) {
     _this.state = {
       userData: {},
       selectedProject: {},
-      allProjects: {}
+      allprojects: []
     };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(MyApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      if (localStorage.getItem("token") && localStorage.getItem("token") !== "undefined") {
+        Object(_services_authentication__WEBPACK_IMPORTED_MODULE_14__["validate"])().then(function (resp) {
+          _this2.loggedIn(resp.token);
+        }).catch(function (err) {
+          alert(err);
+        });
+      } else {
+        next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/login");
+      }
+
+      var projectsURL = "http://localhost:3000/projects";
+      return fetch(projectsURL).then(function (resp) {
+        return resp.json();
+      }).then(function (resp) {
+        return _this2.setState({
+          allprojects: resp
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var Component = this.props.Component;
@@ -1587,7 +1592,7 @@ function (_App) {
         selectedProject: this.state.selectedProject,
         selectProject: this.selectProject,
         getNewProjectBlockchainAddress: this.getNewProjectBlockchainAddress,
-        allProjects: this.state.allProjects,
+        allProjects: this.state.allprojects,
         changeSelectedProject: this.changeSelectedProject,
         deployProject: this.deployProject
       }));

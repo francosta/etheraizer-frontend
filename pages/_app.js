@@ -13,6 +13,16 @@ export default class MyApp extends App {
     return { blockchainProjects };
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      userData: {},
+      selectedProject: {},
+      allprojects: []
+    };
+  }
+
   componentDidMount() {
     if (
       localStorage.getItem("token") &&
@@ -29,20 +39,10 @@ export default class MyApp extends App {
       Router.push("/login");
     }
 
-    // const projectsURL = "http://localhost:3000/projects";
-    // return fetch(projectsURL)
-    //   .then(resp => resp.json())
-    //   .then(resp => this.setState({ allProjects: resp }));
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      userData: {},
-      selectedProject: {},
-      allProjects: {}
-    };
+    const projectsURL = "http://localhost:3000/projects";
+    return fetch(projectsURL)
+      .then(resp => resp.json())
+      .then(resp => this.setState({ allprojects: resp }));
   }
 
   loggedIn = token => {
@@ -61,7 +61,7 @@ export default class MyApp extends App {
   };
 
   deployProject = project => {
-    this.setState({ allProjects: [...this.state.allProjects, project] });
+    this.setState({ allprojects: [...this.state.allprojects, project] });
   };
 
   selectProject = project => {
@@ -89,7 +89,7 @@ export default class MyApp extends App {
           selectedProject={this.state.selectedProject}
           selectProject={this.selectProject}
           getNewProjectBlockchainAddress={this.getNewProjectBlockchainAddress}
-          allProjects={this.state.allProjects}
+          allProjects={this.state.allprojects}
           changeSelectedProject={this.changeSelectedProject}
           deployProject={this.deployProject}
         />

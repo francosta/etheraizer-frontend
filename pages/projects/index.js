@@ -10,21 +10,10 @@ export default class ProjectIndex extends Component {
     super(props);
 
     this.state = {
-      allprojects: [],
       searchTerm: "",
       filteredProjects: []
     };
   }
-  componentDidMount() {
-    this.getProjects();
-  }
-
-  getProjects = () => {
-    const projectsURL = "http://localhost:3000/projects";
-    return fetch(projectsURL)
-      .then(resp => resp.json())
-      .then(resp => this.setProjects(resp));
-  };
 
   setProjects = projects => {
     this.setState({ allprojects: projects });
@@ -72,7 +61,7 @@ export default class ProjectIndex extends Component {
   handleSearch = e => {
     const searchTerm = e.target.value.toLowerCase();
     this.setState({ searchTerm: searchTerm });
-    const newProjects = this.state.allprojects.filter(project =>
+    const newProjects = this.props.allProjects.filter(project =>
       project.title.toLowerCase().includes(this.state.searchTerm)
     );
     this.setState({ filteredProjects: newProjects });
@@ -124,7 +113,7 @@ export default class ProjectIndex extends Component {
           </div>
         </div>
         {this.state.searchTerm === ""
-          ? this.state.allprojects.map((project, i) => (
+          ? this.props.allProjects.map((project, i) => (
               <ProjectCard
                 key={i}
                 project={project}

@@ -277,10 +277,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -312,8 +312,6 @@ function (_Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleClick", function (project) {
       _this.props.selectProject(project);
-
-      next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push("/projects/".concat(_this.props.project.id));
     });
 
     return _this;
@@ -324,10 +322,12 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var extra = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Icon"], {
+      var extra = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Icon"], {
         name: "user"
       }), "No. Supporters: 17");
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Card"], {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+        route: "/projects/".concat(this.props.project.id)
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Card"], {
         onClick: function onClick() {
           return _this2.handleClick(_this2.props.project);
         },
@@ -336,12 +336,12 @@ function (_Component) {
         meta: "Status: ".concat(this.props.project.status),
         description: this.props.project.description,
         extra: extra
-      });
+      }));
     }
   }]);
 
   return ProjectCard;
-}(react__WEBPACK_IMPORTED_MODULE_9__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
 
 
@@ -947,15 +947,6 @@ function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ProjectIndex).call(this, props));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getProjects", function () {
-      var projectsURL = "http://localhost:3000/projects";
-      return fetch(projectsURL).then(function (resp) {
-        return resp.json();
-      }).then(function (resp) {
-        return _this.setProjects(resp);
-      });
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "setProjects", function (projects) {
       _this.setState({
         allprojects: projects
@@ -969,7 +960,7 @@ function (_Component) {
         searchTerm: searchTerm
       });
 
-      var newProjects = _this.state.allprojects.filter(function (project) {
+      var newProjects = _this.props.allProjects.filter(function (project) {
         return project.title.toLowerCase().includes(_this.state.searchTerm);
       });
 
@@ -979,7 +970,6 @@ function (_Component) {
     });
 
     _this.state = {
-      allprojects: [],
       searchTerm: "",
       filteredProjects: []
     };
@@ -987,11 +977,6 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ProjectIndex, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.getProjects();
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -1040,7 +1025,7 @@ function (_Component) {
         className: "item"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         className: "settings icon"
-      }), " Account Settings")))), this.state.searchTerm === "" ? this.state.allprojects.map(function (project, i) {
+      }), " Account Settings")))), this.state.searchTerm === "" ? this.props.allProjects.map(function (project, i) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
           key: i,
           project: project,
