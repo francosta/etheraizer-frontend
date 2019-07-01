@@ -5,8 +5,27 @@ import { Card } from "semantic-ui-react";
 import { Link } from "../../routes";
 
 export default class ProjectIndex extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      allProjects: {}
+    };
+  }
+  componentDidMount() {
+    const projectsURL = "http://localhost:3000/projects";
+    return fetch(projectsURL)
+      .then(resp => resp.json())
+      .then(resp => this.setProjects(resp));
+  }
+
+  setProjects = projects => {
+    debugger;
+    this.setState({ allProjects: projects });
+  };
+
   renderProjects = () => {
-    const items = this.props.allProjects.map(project => {
+    const items = this.state.allProjects.map(project => {
       return {
         image:
           "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
@@ -19,7 +38,9 @@ export default class ProjectIndex extends Component {
         fluid: false
       };
     });
-    return <Card.Group items={items} />;
+    return (
+      <Card.Group selectProject={this.props.selectProject} items={items} />
+    );
   };
 
   render() {

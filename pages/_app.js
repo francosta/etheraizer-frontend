@@ -29,10 +29,10 @@ export default class MyApp extends App {
       Router.push("/login");
     }
 
-    const projectsURL = "http://localhost:3000/projects";
-    return fetch(projectsURL)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ allProjects: resp }));
+    // const projectsURL = "http://localhost:3000/projects";
+    // return fetch(projectsURL)
+    //   .then(resp => resp.json())
+    //   .then(resp => this.setState({ allProjects: resp }));
   }
 
   constructor(props) {
@@ -56,6 +56,7 @@ export default class MyApp extends App {
       userdata: {}
     });
     localStorage.removeItem("token");
+    this.setState({ userData: {} });
     Router.push("/login");
   };
 

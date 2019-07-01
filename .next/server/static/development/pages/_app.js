@@ -281,7 +281,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  if (props.userData.first_name === "") {
+  if (!props.userData.first_name) {
     return (// We use container in order to limit the size of the elements in the window.
       // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -1452,16 +1452,11 @@ function (_App) {
         });
       } else {
         next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/login");
-      }
+      } // const projectsURL = "http://localhost:3000/projects";
+      // return fetch(projectsURL)
+      //   .then(resp => resp.json())
+      //   .then(resp => this.setState({ allProjects: resp }));
 
-      var projectsURL = "http://localhost:3000/projects";
-      return fetch(projectsURL).then(function (resp) {
-        return resp.json();
-      }).then(function (resp) {
-        return _this2.setState({
-          allProjects: resp
-        });
-      });
     }
   }], [{
     key: "getInitialProps",
@@ -1522,6 +1517,11 @@ function (_App) {
       });
 
       localStorage.removeItem("token");
+
+      _this.setState({
+        userData: {}
+      });
+
       next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/login");
     });
 
