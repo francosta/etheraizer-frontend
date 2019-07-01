@@ -28,7 +28,7 @@ const ProjectHighLevelValues = props => (
           circular
         />
         {"  "}
-        {props.noSupporters.length}
+        {props.noSupporters}
       </Statistic.Value>
       <Statistic.Label>No. Supporters</Statistic.Label>
     </Statistic>

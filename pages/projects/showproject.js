@@ -23,7 +23,7 @@ export default class ShowProject extends Component {
       minimumContribution: null,
       balance: null,
       requestsCount: null,
-      approversCount: null,
+      supportersCount: null,
       managerAddress: ""
     };
   }
@@ -37,10 +37,9 @@ export default class ShowProject extends Component {
       minimumContribution: parseInt(stats[0]["_hex"]),
       balance: parseInt(stats[1]["_hex"]),
       requestsCount: parseInt(stats[2]["_hex"]),
-      approversCount: parseInt(stats[3]["_hex"]),
+      supportersCount: parseInt(stats[3]["_hex"]),
       managerAddress: stats[4]
     });
-    console.log(stats);
   };
 
   handleClick = () => {
@@ -51,11 +50,6 @@ export default class ShowProject extends Component {
     return (
       <div>
         <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
-        {this.props.selectedProject.user_id === this.props.userData.id ? (
-          <ProjectCreationProgressComponent
-            selectedProject={this.props.selectedProject}
-          />
-        ) : null}
         <ProjectProgress
           goal={this.props.selectedProject.goal}
           progress={this.props.selectedProject.progress}
@@ -64,7 +58,7 @@ export default class ShowProject extends Component {
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
-          noSupporters={this.props.selectedProject.users}
+          noSupporters={this.state.supportersCount}
         />
         <br />
         <ProjectStats
