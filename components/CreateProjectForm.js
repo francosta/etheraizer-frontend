@@ -8,7 +8,8 @@ import {
   Segment,
   Dimmer,
   Loader,
-  Transition
+  Transition,
+  TextArea
 } from "semantic-ui-react";
 
 export default class CreateProjectForm extends Component {
@@ -76,7 +77,7 @@ export default class CreateProjectForm extends Component {
               </Form.Field>
               <Form.Field required>
                 <label>Description</label>
-                <Input
+                <TextArea
                   name="description"
                   labelPosition="right"
                   placeholder="Project Description"

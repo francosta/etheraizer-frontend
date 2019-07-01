@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Grid, Header, Icon, Image } from "semantic-ui-react";
 
 export default class myprofile extends Component {
   render() {
@@ -7,6 +8,7 @@ export default class myprofile extends Component {
         <div>
           <Header size="huge">My Profile</Header>
           <br />
+          <Header size="large">My Projects</Header>
           <Grid columns="three" divided>
             <Grid.Column>
               <Header as="h2" icon="road" content="Created Projects" />
@@ -41,6 +43,7 @@ export default class myprofile extends Component {
                 <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph.png" />
               </Grid.Row>
             </Grid.Column>
+            <Header size="large">Projects I've supported</Header>
           </Grid>
         </div>
       </div>

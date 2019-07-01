@@ -40,14 +40,9 @@ export default class Navbar extends Component {
             </Link>
           </Menu.Menu>
           <Menu.Menu position="right">
-            <Link route="/projects/myprojects">
-              <a className="item">My Projects</a>
+            <Link route="/myprofile">
+              <a className="item">My Profile</a>
             </Link>
-            <Menu.Item
-              name="my profile"
-              active={activeItem === "my profile"}
-              onClick={this.handleItemClick}
-            />
             <Menu.Item
               style={{ marginRight: "100px" }}
               name="logout"
