@@ -125,10 +125,18 @@ export default class ProjectIndex extends Component {
         </div>
         {this.state.searchTerm === ""
           ? this.state.allprojects.map((project, i) => (
-              <ProjectCard key={i} {...project} />
+              <ProjectCard
+                key={i}
+                project={project}
+                selectProject={this.props.selectProject}
+              />
             ))
           : this.state.filteredProjects.map((project, i) => (
-              <ProjectCard key={i} {...project} />
+              <ProjectCard
+                key={i}
+                project={project}
+                selectProject={this.props.selectProject}
+              />
             ))}
         <br />
       </div>
