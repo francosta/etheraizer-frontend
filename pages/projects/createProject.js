@@ -40,11 +40,6 @@ export default class createproject extends Component {
     } else if (this.props.selectedProject.status === "deployed") {
       return (
         <div>
-          {this.props.selectedProject.user_id === this.props.userData.id ? (
-            <ProjectCreationProgressComponent
-              selectedProject={this.props.selectedProject}
-            />
-          ) : null}
           <ShowProject
             selectedProject={this.props.selectedProject}
             getNewProjectBlockchainAddress={

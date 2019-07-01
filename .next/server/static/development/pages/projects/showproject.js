@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1055,10 +1055,6 @@ var ShowProject =
 function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(ShowProject, _Component);
 
-  // static async getInitialProps(props) {
-  //   console.log(props);
-  //   return {};
-  // }
   function ShowProject(props) {
     var _this;
 
@@ -1071,18 +1067,17 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var web3, address, project, stats;
+      var address, project, stats;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              web3 = web3;
               address = this.props.selectedProject.blockchain_address;
               project = Object(_ethereum_projectContract__WEBPACK_IMPORTED_MODULE_15__["default"])(address);
-              _context.next = 5;
+              _context.next = 4;
               return project.methods.getSummary().call();
 
-            case 5:
+            case 4:
               stats = _context.sent;
               this.setState({
                 minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[0]["_hex"]),
@@ -1092,7 +1087,7 @@ function (_Component) {
                 managerAddress: stats[4]
               });
 
-            case 7:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -1120,10 +1115,13 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ShowProject, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        selectedProject: this.props.selectedProject
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
         balance: this.state.balance,
         goal: this.props.selectedProject.goal,
-        noSupporters: this.state.supportersCount
+        noSupporters: this.state.supportersCount,
+        selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectProgress__WEBPACK_IMPORTED_MODULE_11__["default"], {
         goal: this.props.selectedProject.goal,
         progress: this.props.selectedProject.progress
@@ -1153,14 +1151,14 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 3:
 /*!*********************************************!*\
   !*** multi ./pages/projects/showproject.js ***!
   \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Francisco/Documents/Flatiron/etheraizer/etheraizer-frontend/pages/projects/showproject.js */"./pages/projects/showproject.js");
+module.exports = __webpack_require__(/*! /Users/fran/Desktop/etheraizer/etheraizer-frontend/pages/projects/showproject.js */"./pages/projects/showproject.js");
 
 
 /***/ }),

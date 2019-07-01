@@ -107,13 +107,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/fran/Desktop/etheraizer/etheraizer-frontend/components/Footer.js";
 
 
 function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     size: "small",
     as: "h6",
-    block: true
+    block: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
   }, "Etheraize | 2019 - Francisco Costa");
 }
 
@@ -424,7 +430,7 @@ var _build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PU
 
  // Create an instance of the contract with the deployed contract's address
 
-var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0x5fFa520749Fb3673d10E5735Ac5E618a6187d1Fc");
+var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0x6748e6562AC03898051f64E0f708aEd023c34af6");
 /* harmony default export */ __webpack_exports__["default"] = (contractInstance);
 
 /***/ }),
@@ -971,12 +977,23 @@ function (_Component) {
 
     _this.state = {
       searchTerm: "",
-      filteredProjects: []
+      filteredProjects: [],
+      projects: []
     };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ProjectIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var projects = this.props.allProjects.filter(function (project) {
+        return project.status === "deployed";
+      });
+      this.setState({
+        projects: projects
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -1025,7 +1042,7 @@ function (_Component) {
         className: "item"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         className: "settings icon"
-      }), " Account Settings")))), this.state.searchTerm === "" ? this.props.allProjects.map(function (project, i) {
+      }), " Account Settings")))), this.state.searchTerm === "" ? this.state.projects.map(function (project, i) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
           key: i,
           project: project,
@@ -1079,7 +1096,7 @@ module.exports = routes;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Francisco/Documents/Flatiron/etheraizer/etheraizer-frontend/pages/projects/index.js */"./pages/projects/index.js");
+module.exports = __webpack_require__(/*! /Users/fran/Desktop/etheraizer/etheraizer-frontend/pages/projects/index.js */"./pages/projects/index.js");
 
 
 /***/ }),
