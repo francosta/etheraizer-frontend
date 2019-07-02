@@ -93,7 +93,9 @@ class ContributeForm extends Component {
       body: JSON.stringify(supportContract)
     };
 
-    return fetch(supportContractURL, options).then(resp => resp.json());
+    return fetch(supportContractURL, options)
+      .then(resp => resp.json())
+      .then(resp => this.props.updateDataOnFrontend(contractContribution));
   };
 
   render() {

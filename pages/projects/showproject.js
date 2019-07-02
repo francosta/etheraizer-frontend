@@ -58,6 +58,13 @@ class ShowProject extends Component {
     });
   };
 
+  updateDataOnFrontend = contribution => {
+    this.setState({
+      supportersCount: this.state.supportersCount + 1,
+      balance: this.state.balance + contribution
+    });
+  };
+
   getContractWithState = async function() {};
 
   handleClick = () => {
@@ -76,9 +83,12 @@ class ShowProject extends Component {
         {/* ) : null} */}
         {/* <br /> */}
         <ContributeForm
+          balance={this.state.balance}
+          supportersCount={this.state.supportersCount}
           userData={this.props.userData}
           minimumContribution={this.state.minimumContribution}
           selectedProject={this.props.selectedProject}
+          updateDataOnFrontend={this.updateDataOnFrontend}
         />
         <ProjectHighLevelValues
           balance={this.state.balance}

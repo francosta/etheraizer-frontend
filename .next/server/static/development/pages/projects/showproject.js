@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -439,6 +439,8 @@ function (_Component) {
       };
       return fetch(supportContractURL, options).then(function (resp) {
         return resp.json();
+      }).then(function (resp) {
+        return _this.props.updateDataOnFrontend(contractContribution);
       });
     });
 
@@ -1415,6 +1417,13 @@ function (_Component) {
       }, _callee2, this);
     })));
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "updateDataOnFrontend", function (contribution) {
+      _this.setState({
+        supportersCount: _this.state.supportersCount + 1,
+        balance: _this.state.balance + contribution
+      });
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getContractWithState",
     /*#__PURE__*/
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
@@ -1455,9 +1464,12 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
         selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContributeForm__WEBPACK_IMPORTED_MODULE_20__["default"], {
+        balance: this.state.balance,
+        supportersCount: this.state.supportersCount,
         userData: this.props.userData,
         minimumContribution: this.state.minimumContribution,
-        selectedProject: this.props.selectedProject
+        selectedProject: this.props.selectedProject,
+        updateDataOnFrontend: this.updateDataOnFrontend
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
         balance: this.state.balance,
         goal: this.props.selectedProject.goal,
@@ -1492,7 +1504,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!*********************************************!*\
   !*** multi ./pages/projects/showproject.js ***!
   \*********************************************/
