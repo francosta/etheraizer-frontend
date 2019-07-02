@@ -64,8 +64,36 @@ class ContributeForm extends Component {
           value: contribution
         });
         this.setState({ contributing: false, open: false });
-      } catch (err) {}
+        this.createSupportContractinDatabase(
+          this.props.selectedProject.id,
+          this.props.userData.id,
+          contribution
+        );
+      } catch (err) {
+        this.setState({ errorMsg: err, contributing: false, open: false });
+      }
     }
+  };
+
+  createSupportContractinDatabase = (project_id, user_id, contribution) => {
+    const projectId = project_id;
+    const userId = user_id;
+    const contractContribution = contribution;
+    const supportContract = {
+      user_id: userId,
+      project_id: projectId,
+      value: contractContribution
+    };
+    const supportContractURL = "http://localhost:3000/support_contracts";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(supportContract)
+    };
+
+    return fetch(supportContractURL, options).then(resp => resp.json());
   };
 
   render() {

@@ -76,6 +76,7 @@ class ShowProject extends Component {
         {/* ) : null} */}
         {/* <br /> */}
         <ContributeForm
+          userData={this.props.userData}
           minimumContribution={this.state.minimumContribution}
           selectedProject={this.props.selectedProject}
         />
