@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1504,14 +1504,14 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!*********************************************!*\
   !*** multi ./pages/projects/showproject.js ***!
   \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/fran/Desktop/etheraizer/etheraizer-frontend/pages/projects/showproject.js */"./pages/projects/showproject.js");
+module.exports = __webpack_require__(/*! /Users/francisco/Desktop/etheraizer/etheraizer-frontend/pages/projects/showproject.js */"./pages/projects/showproject.js");
 
 
 /***/ }),
