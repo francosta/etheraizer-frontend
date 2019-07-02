@@ -36,6 +36,18 @@ export default class ShowProject extends Component {
     });
   };
 
+<<<<<<< HEAD
+=======
+  updateDataOnFrontend = contribution => {
+    this.setState({
+      supportersCount: this.state.supportersCount + 1,
+      balance: this.state.balance + contribution
+    });
+  };
+
+  getContractWithState = async function() {};
+
+>>>>>>> development
   handleClick = () => {
     this.setState({ edit: !this.state.edit });
   };
@@ -51,6 +63,17 @@ export default class ShowProject extends Component {
         />
         {/* ) : null} */}
         {/* <br /> */}
+<<<<<<< HEAD
+=======
+        <ContributeForm
+          balance={this.state.balance}
+          supportersCount={this.state.supportersCount}
+          userData={this.props.userData}
+          minimumContribution={this.state.minimumContribution}
+          selectedProject={this.props.selectedProject}
+          updateDataOnFrontend={this.updateDataOnFrontend}
+        />
+>>>>>>> development
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
