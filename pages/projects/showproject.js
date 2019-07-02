@@ -52,7 +52,10 @@ export default class ShowProject extends Component {
         />
         {/* ) : null} */}
         {/* <br /> */}
-        <ContributeForm selectedProject={this.props.selectedProject} />
+        <ContributeForm
+          minimumContribution={this.state.minimumContribution}
+          selectedProject={this.props.selectedProject}
+        />
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
