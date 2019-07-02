@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -348,7 +348,7 @@ function (_Component) {
                   errorMsg: "You need to accept the terms conditions before creating a project."
                 });
 
-                _context.next = 22;
+                _context.next = 24;
                 break;
 
               case 8:
@@ -361,36 +361,47 @@ function (_Component) {
                   errorMsg: "Your contribution is below the minimum contribution for this project."
                 });
 
-                _context.next = 22;
+                _context.next = 24;
                 break;
 
               case 12:
                 _context.prev = 12;
-                _context.next = 15;
+
+                _this.setState({
+                  contributing: true
+                }); //Check units of currency
+
+
+                _context.next = 16;
                 return _ethereum_web3__WEBPACK_IMPORTED_MODULE_13__["default"].eth.getAccounts();
 
-              case 15:
+              case 16:
                 accounts = _context.sent;
-                _context.next = 18;
+                _context.next = 19;
                 return project.methods.contribute().send({
                   from: accounts[0],
                   value: contribution
                 });
 
-              case 18:
-                _context.next = 22;
+              case 19:
+                _this.setState({
+                  contributing: false,
+                  open: false
+                });
+
+                _context.next = 24;
                 break;
 
-              case 20:
-                _context.prev = 20;
+              case 22:
+                _context.prev = 22;
                 _context.t0 = _context["catch"](12);
 
-              case 22:
+              case 24:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[12, 20]]);
+        }, _callee, null, [[12, 22]]);
       }));
 
       return function (_x) {
@@ -401,7 +412,8 @@ function (_Component) {
     _this.state = {
       open: false,
       errorMsg: "",
-      terms: false
+      terms: false,
+      contributing: false
     };
     return _this;
   }
@@ -419,7 +431,15 @@ function (_Component) {
         open: open,
         onClose: this.close,
         centered: true
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Modal"].Header, null, "Make a contribution"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Modal"].Content, {
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Segment"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Transition"], {
+        visible: this.state.contributing,
+        animation: "scale",
+        duration: 500
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Dimmer"], {
+        active: this.state.contributing
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Loader"], {
+        indeterminate: true
+      }, "Attempting to send your contribution to the Ethereum blockchain.", react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), "Please wait..."))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Modal"].Header, null, "Make a contribution"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Modal"].Content, {
         image: true
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Icon"], {
         name: "check circle",
@@ -458,7 +478,7 @@ function (_Component) {
         labelPosition: "right",
         content: "Contribute!",
         type: "submit"
-      })))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Modal"].Actions, null)));
+      })))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_12__["Modal"].Actions, null))));
     }
   }]);
 
@@ -1438,7 +1458,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!*********************************************!*\
   !*** multi ./pages/projects/showproject.js ***!
   \*********************************************/
