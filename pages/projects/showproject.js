@@ -8,6 +8,7 @@ import web3 from "../../ethereum/web3";
 import ProjectStats from "../../components/ProjectStats";
 import ProjectCreationProgressComponent from "../../components/ProjectCreationProgressComponent";
 import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
+import ContributeForm from "../../components/ContributeForm";
 
 export default class ShowProject extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ export default class ShowProject extends Component {
         />
         {/* ) : null} */}
         {/* <br /> */}
+        <ContributeForm selectedProject={this.props.selectedProject} />
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
