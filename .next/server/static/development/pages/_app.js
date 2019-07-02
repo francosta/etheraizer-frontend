@@ -1596,7 +1596,8 @@ function (_App) {
         getNewProjectBlockchainAddress: this.getNewProjectBlockchainAddress,
         allProjects: this.state.allprojects,
         changeSelectedProject: this.changeSelectedProject,
-        deployProject: this.deployProject
+        deployProject: this.deployProject,
+        router: this.props.router
       }));
     }
   }]);

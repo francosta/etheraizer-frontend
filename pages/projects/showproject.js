@@ -10,7 +10,7 @@ import ProjectCreationProgressComponent from "../../components/ProjectCreationPr
 import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
 import ContributeForm from "../../components/ContributeForm";
 
-export default class ShowProject extends Component {
+class ShowProject extends Component {
   constructor(props) {
     super(props);
 
@@ -20,14 +20,35 @@ export default class ShowProject extends Component {
       balance: null,
       requestsCount: null,
       supportersCount: null,
-      managerAddress: ""
+      managerAddress: "",
+      selectedProject: null
     };
   }
 
   componentDidMount = async function() {
-    const address = this.props.selectedProject.blockchain_address;
-    const project = projectContract(address);
+    const projectsURL = "http://localhost:3000/projects";
+    return fetch(projectsURL)
+      .then(resp => resp.json())
+      .then(projects => this.selectProject(projects));
+  };
+
+  selectProject = projects => {
+    if (!this.props.selectedProject) {
+      const id = parseInt(this.props.router.query.id);
+      const selectedProject = projects.filter(project => project.id === id)[0];
+      this.setState({ selectedProject: selectedProject });
+      this.getContractWithState();
+    } else {
+      this.getContractWithProps();
+    }
+  };
+
+  getContractWithProps = async function() {
+    const project = projectContract(
+      this.props.selectedProject.blockchain_address
+    );
     const stats = await project.methods.getSummary().call();
+    console.log(stats);
     this.setState({
       minimumContribution: parseInt(stats[0]["_hex"]),
       balance: parseInt(stats[1]["_hex"]),
@@ -36,6 +57,8 @@ export default class ShowProject extends Component {
       managerAddress: stats[4]
     });
   };
+
+  getContractWithState = async function() {};
 
   handleClick = () => {
     this.setState({ edit: !this.state.edit });
@@ -97,3 +120,5 @@ export default class ShowProject extends Component {
     );
   }
 }
+
+export default ShowProject;

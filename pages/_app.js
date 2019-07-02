@@ -92,6 +92,7 @@ export default class MyApp extends App {
           allProjects={this.state.allprojects}
           changeSelectedProject={this.changeSelectedProject}
           deployProject={this.deployProject}
+          router={this.props.router}
         />
       </Layout>
     );
