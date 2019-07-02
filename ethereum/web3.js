@@ -27,7 +27,7 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
     transactionBlockTimeout: 5
   };
 
-  web3 = new Web3(provider, null, OPTIONS);
+  web3 = new Web3(web3BrowserProvider, null, OPTIONS);
 } else {
   // We are not in the browser or Metamask is not running.
   // We need to set up our own provider, using the Rinkeby Eth network, through Infura (using the link that we were provided with).
@@ -41,7 +41,7 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
     transactionConfirmationBlocks: 1,
     transactionBlockTimeout: 5
   };
-  web3 = new Web3(provider, null, OPTIONS);
+  web3 = new Web3(web3ServerProvider, null, OPTIONS);
   // web3 = new Web3(web3ServerProvider);
 }
 // const web3 = new Web3(window.web3.currentProvider);

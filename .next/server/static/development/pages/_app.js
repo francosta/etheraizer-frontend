@@ -337,7 +337,7 @@ var _build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PU
 
  // Create an instance of the contract with the deployed contract's address
 
-var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0x6748e6562AC03898051f64E0f708aEd023c34af6");
+var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0x5EeA96751a7792d5C7b788885be4a9708a409629");
 /* harmony default export */ __webpack_exports__["default"] = (contractInstance);
 
 /***/ }),
@@ -405,7 +405,7 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
     transactionConfirmationBlocks: 1,
     transactionBlockTimeout: 5
   };
-  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(provider, null, OPTIONS);
+  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(web3BrowserProvider, null, OPTIONS);
 } else {
   // We are not in the browser or Metamask is not running.
   // We need to set up our own provider, using the Rinkeby Eth network, through Infura (using the link that we were provided with).
@@ -418,7 +418,7 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
     transactionConfirmationBlocks: 1,
     transactionBlockTimeout: 5
   };
-  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(_provider, null, _OPTIONS); // web3 = new Web3(web3ServerProvider);
+  web3 = new web3__WEBPACK_IMPORTED_MODULE_2___default.a(web3ServerProvider, null, _OPTIONS); // web3 = new Web3(web3ServerProvider);
 } // const web3 = new Web3(window.web3.currentProvider);
 
 

@@ -10,10 +10,10 @@ const compiledProjectFactoryContract = require("../ethereum/build/CampaignFactor
 
 // We are going to use Truffle (HDWalletProvider) in order to set up our provider.
 // We need to create a new instance of HDWalletProvider and pass it two arguments: our account's Mneumonic and the link for the network we want to connect to (our Infura link)
-// const provider = new HDWalletProvider(
-//   "tree over season air joke shock mushroom tail ancient soldier save era",
-//   "https://rinkeby.infura.io/v3/136de8105bcb446a8959963ad00fc182"
-// );
+const provider = new HDWalletProvider(
+  "tree over season air joke shock mushroom tail ancient soldier save era",
+  "https://rinkeby.infura.io/v3/136de8105bcb446a8959963ad00fc182"
+);
 
 const OPTIONS = {
   defaultBlock: "latest",
@@ -21,7 +21,7 @@ const OPTIONS = {
   transactionBlockTimeout: 5
 };
 
-const provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
+// const provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
 
 //Set up the web3 instance
 const web3 = new Web3(provider, null, OPTIONS);
@@ -43,7 +43,7 @@ const deploy = async function() {
     JSON.parse(compiledProjectFactoryContract.interface)
   )
     .deploy({ data: "0x" + compiledProjectFactoryContract.bytecode })
-    .send({ from: accounts[0], gas: "1000000" });
+    .send({ from: accounts[0] });
 
   console.log("Contract deployed to ", result.options.address);
 
