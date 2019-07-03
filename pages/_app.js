@@ -35,8 +35,6 @@ export default class MyApp extends App {
         .catch(err => {
           alert(err);
         });
-    } else {
-      Router.push("/login");
     }
 
     const projectsURL = "http://localhost:3000/projects";

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -203,7 +203,7 @@ function (_Component) {
         fluid: true,
         size: "large"
       }, "Login"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Message"], null, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "#"
+        href: "/signup"
       }, "Sign Up"))));
     }
   }]);
@@ -657,7 +657,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/login.js ***!
   \******************************/

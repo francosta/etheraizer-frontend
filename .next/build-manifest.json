@@ -23,15 +23,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/projects": [
+    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/projects/createproject": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/projects/showproject": [
+    "/signup": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

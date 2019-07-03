@@ -109,7 +109,7 @@ function (_Component) {
         fluid: true,
         size: "large"
       }, "Login"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Message"], null, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "#"
+        href: "/signup"
       }, "Sign Up"))));
     }
   }]);
@@ -57088,7 +57088,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /*!**********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fpages%2Flogin.js ***!
   \**********************************************************************************************************************************************************/
@@ -57111,5 +57111,5 @@ module.exports = dll_1aef2d0bbc0d334d831c;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]);
+},[[7,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=login.js.map

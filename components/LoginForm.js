@@ -60,7 +60,7 @@ export default class LoginForm extends Component {
             </Segment>
           </Form>
           <Message>
-            Don't have an account? <a href="#">Sign Up</a>
+            Don't have an account? <a href="/signup">Sign Up</a>
           </Message>
         </Grid.Column>
       </Grid>

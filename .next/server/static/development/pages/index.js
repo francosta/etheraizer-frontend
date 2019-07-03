@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -229,7 +229,7 @@ function (_Component) {
         fluid: true,
         size: "large"
       }, "Login"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Message"], null, "Don't have an account? ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "#"
+        href: "/signup"
       }, "Sign Up"))));
     }
   }]);
@@ -322,50 +322,84 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Navbar, [{
     key: "render",
     value: function render() {
-      var activeItem = this.state.activeItem;
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
-        pointing: true,
-        secondary: true,
-        style: {
-          marginTop: "20px"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
-        position: "left",
-        style: {
-          marginLeft: "100px"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
-        src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
-        style: {
-          width: "100px"
-        }
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/projects/index"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/projects/createproject"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item",
-        onClick: this.createProject
-      }, "Create Project"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
-        position: "right"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/myprofile"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "My Profile")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
-        style: {
-          marginRight: "100px"
-        },
-        name: "logout",
-        active: activeItem === "logout",
-        onClick: this.props.logout
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
+      if (localStorage.token) {
+        var activeItem = this.state.activeItem;
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+          pointing: true,
+          secondary: true,
+          style: {
+            marginTop: "20px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "left",
+          style: {
+            marginLeft: "100px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
+          src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
+          style: {
+            width: "100px"
+          }
+        }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/projects/index"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "All Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/projects/createproject"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item",
+          onClick: this.createProject
+        }, "Create Project"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "right"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/myprofile"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "My Profile")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
+          style: {
+            marginRight: "100px"
+          },
+          name: "logout",
+          active: activeItem === "logout",
+          onClick: this.props.logout
+        }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+          pointing: true,
+          secondary: true,
+          style: {
+            marginTop: "20px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "left",
+          style: {
+            marginLeft: "100px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
+          src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
+          style: {
+            width: "100px"
+          }
+        }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/projects/index"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "All Projects"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "right"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/login"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "Login")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
+      }
     }
   }]);
 
@@ -1144,7 +1178,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
