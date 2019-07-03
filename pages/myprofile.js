@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import { Grid, Header, Icon, Image, Item, Container } from "semantic-ui-react";
 
 export default class myprofile extends Component {
-  createdProjects = this.props.userData.created_projects
-    ? null
-    : this.props.userData.created_projects;
+  createdProjects =
+    this.props.userData.created_projects.length > 0
+      ? this.props.userData.created_projects
+      : null;
 
-  deployedProjects = this.props.userData.deployed_projects
-    ? null
-    : this.props.userData.deployed_projects;
+  deployedProjects =
+    this.props.userData.deployed_projects.length > 0
+      ? this.props.userData.deployed_projects
+      : null;
 
-  fundedProjects = this.props.userData.funded_projects
-    ? null
-    : this.props.userData.funded_projects;
+  fundedProjects =
+    this.props.userData.funded_projects.length > 0
+      ? this.props.userData.funded_projects
+      : null;
 
   render() {
     return (

@@ -73,6 +73,15 @@ export default class MyApp extends App {
     this.setState({ blockchainProjects: blockchainProjects });
   };
 
+  updateCreatedProjectsOnFrontend = () => {
+    const { created_projects } = this.state.userData;
+    const newCreatedProjects = [
+      ...created_projects,
+      this.state.selectedProject
+    ];
+    this.setState({ userData: { ...this.state.userData, newCreatedProjects } });
+  };
+
   render() {
     const { Component } = this.props;
     return (
@@ -91,6 +100,7 @@ export default class MyApp extends App {
           changeSelectedProject={this.changeSelectedProject}
           deployProject={this.deployProject}
           router={this.props.router}
+          updateCreatedProjectsOnFrontend={this.updateCreatedProjectsOnFrontend}
         />
       </Layout>
     );

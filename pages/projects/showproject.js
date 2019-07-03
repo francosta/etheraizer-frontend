@@ -89,6 +89,7 @@ class ShowProject extends Component {
           minimumContribution={this.state.minimumContribution}
           selectedProject={this.props.selectedProject}
           updateDataOnFrontend={this.updateDataOnFrontend}
+          selectProject={this.props.selectProject}
         />
         <ProjectHighLevelValues
           balance={this.state.balance}
@@ -100,6 +101,7 @@ class ShowProject extends Component {
         <ProjectProgress
           goal={this.props.selectedProject.goal}
           progress={this.props.selectedProject.progress}
+          balance={this.state.balance}
         />
         <br />
         <ProjectStats

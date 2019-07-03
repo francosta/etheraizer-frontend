@@ -99,9 +99,8 @@ class ContributeForm extends Component {
   };
 
   updateSelectedProject = () => {
-    debugger;
     const id = this.props.selectedProject.id;
-    const updateProjectURL = `http://localhost:3000/projects${id}`;
+    const updateProjectURL = `http://localhost:3000/projects/${id}`;
     let progress = (this.props.balance / this.props.selectedProject.goal) * 100;
     if (progress > 100) {
       progress = 100;
@@ -114,7 +113,9 @@ class ContributeForm extends Component {
       body: JSON.stringify({ progress: progress })
     };
 
-    return fetch(updateProjectURL, options).then(resp => resp.json());
+    return fetch(updateProjectURL, options)
+      .then(resp => resp.json())
+      .then(resp => this.props.selectProject(resp));
   };
 
   render() {

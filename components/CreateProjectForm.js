@@ -51,6 +51,7 @@ export default class CreateProjectForm extends Component {
       .then(resp => resp.json())
       .then(newProject => {
         this.props.selectProject(newProject);
+        this.props.updateCreatedProjectsOnFrontend();
       });
   };
 

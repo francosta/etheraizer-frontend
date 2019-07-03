@@ -17,6 +17,9 @@ export default class createproject extends Component {
           <CreateProjectForm
             userData={this.props.userData}
             selectProject={this.props.selectProject}
+            updateCreatedProjectsOnFrontend={
+              this.props.updateCreatedProjectsOnFrontend
+            }
           />
         </div>
       );
