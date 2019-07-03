@@ -15,7 +15,6 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <h1>This ois the signup page</h1>
         <link
           rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"

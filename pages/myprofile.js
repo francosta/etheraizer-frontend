@@ -1,21 +1,18 @@
 import React, { Component } from "react";
-import { Grid, Header, Icon, Image, Item } from "semantic-ui-react";
+import { Grid, Header, Icon, Image, Item, Container } from "semantic-ui-react";
 
 export default class myprofile extends Component {
-  createdProjects =
-    this.props.userData.created_projects.length === 0
-      ? null
-      : this.props.userData.created_projects;
+  createdProjects = this.props.userData.created_projects
+    ? null
+    : this.props.userData.created_projects;
 
-  deployedProjects =
-    this.props.userData.deployed_projects.length === 0
-      ? null
-      : this.props.userData.deployed_projects;
+  deployedProjects = this.props.userData.deployed_projects
+    ? null
+    : this.props.userData.deployed_projects;
 
-  fundedProjects =
-    this.props.userData.funded_projects.length === 0
-      ? null
-      : this.props.userData.funded_projects;
+  fundedProjects = this.props.userData.funded_projects
+    ? null
+    : this.props.userData.funded_projects;
 
   render() {
     return (
@@ -81,7 +78,12 @@ export default class myprofile extends Component {
                     </Item>
                   </Item.Group>
                 </Grid.Row>
-              ) : null}
+              ) : (
+                <Container fluid>
+                  <Header as="h2">No created projects</Header>
+                  <p>You don't have any created projects.</p>
+                </Container>
+              )}
             </Grid.Column>
             <Grid.Column>
               <Header as="h2" icon="plug" content="Deployed Projects" />
@@ -138,7 +140,12 @@ export default class myprofile extends Component {
                     </Item>
                   </Item.Group>
                 </Grid.Row>
-              ) : null}
+              ) : (
+                <Container fluid>
+                  <Header as="h2">No deployed projects</Header>
+                  <p>You don't have any deployed projects.</p>
+                </Container>
+              )}
             </Grid.Column>
             <Grid.Column>
               <Header as="h2" icon="star" content="Funded Projects" />
@@ -191,7 +198,12 @@ export default class myprofile extends Component {
                     </Item>
                   </Item.Group>
                 </Grid.Row>
-              ) : null}
+              ) : (
+                <Container fluid>
+                  <Header as="h2">No funded projects</Header>
+                  <p>You don't have any funded projects.</p>
+                </Container>
+              )}
             </Grid.Column>
             <Header size="large">Projects I've supported</Header>
           </Grid>

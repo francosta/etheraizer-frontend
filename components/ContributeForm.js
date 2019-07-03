@@ -23,7 +23,7 @@ class ContributeForm extends Component {
 
     this.state = {
       open: false,
-      errorMsg: "",
+      errorMsg: null,
       terms: false,
       contributing: false
     };
@@ -64,6 +64,8 @@ class ContributeForm extends Component {
           value: contribution
         });
         this.setState({ contributing: false, open: false });
+        this.updateSelectedProject();
+        this.props.updateDataOnFrontend(contribution);
         this.createSupportContractinDatabase(
           this.props.selectedProject.id,
           this.props.userData.id,
@@ -82,7 +84,7 @@ class ContributeForm extends Component {
     const supportContract = {
       user_id: userId,
       project_id: projectId,
-      value: contractContribution
+      value: contribution
     };
     const supportContractURL = "http://localhost:3000/support_contracts";
     const options = {
@@ -93,9 +95,26 @@ class ContributeForm extends Component {
       body: JSON.stringify(supportContract)
     };
 
-    return fetch(supportContractURL, options)
-      .then(resp => resp.json())
-      .then(resp => this.props.updateDataOnFrontend(contractContribution));
+    return fetch(supportContractURL, options).then(resp => resp.json());
+  };
+
+  updateSelectedProject = () => {
+    debugger;
+    const id = this.props.selectedProject.id;
+    const updateProjectURL = `http://localhost:3000/projects${id}`;
+    let progress = (this.props.balance / this.props.selectedProject.goal) * 100;
+    if (progress > 100) {
+      progress = 100;
+    }
+    const options = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ progress: progress })
+    };
+
+    return fetch(updateProjectURL, options).then(resp => resp.json());
   };
 
   render() {
@@ -130,7 +149,7 @@ class ContributeForm extends Component {
                   <p>{this.props.selectedProject.description}</p>
                   <br />
                 </Container>
-                <Form onSubmit={this.handleSubmit}>
+                <Form error={this.state.errorMsg} onSubmit={this.handleSubmit}>
                   <Form.Field>
                     <label>How much do you want to contribute?</label>
                     <input
