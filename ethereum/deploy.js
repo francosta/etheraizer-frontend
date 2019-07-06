@@ -12,7 +12,7 @@ const compiledProjectFactoryContract = require("../ethereum/build/CampaignFactor
 // We need to create a new instance of HDWalletProvider and pass it two arguments: our account's Mneumonic and the link for the network we want to connect to (our Infura link)
 const provider = new HDWalletProvider(
   "tree over season air joke shock mushroom tail ancient soldier save era",
-  "https://rinkeby.infura.io/v3/136de8105bcb446a8959963ad00fc182"
+  "https://kovan.infura.io/v3/8b58c0fa62a64918bb5e776b7c58538e"
 );
 
 const OPTIONS = {

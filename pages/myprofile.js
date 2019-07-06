@@ -2,21 +2,6 @@ import React, { Component } from "react";
 import { Grid, Header, Icon, Image, Item, Container } from "semantic-ui-react";
 
 export default class myprofile extends Component {
-  createdProjects =
-    this.props.userData.created_projects.length > 0
-      ? this.props.userData.created_projects
-      : null;
-
-  deployedProjects =
-    this.props.userData.deployed_projects.length > 0
-      ? this.props.userData.deployed_projects
-      : null;
-
-  fundedProjects =
-    this.props.userData.funded_projects.length > 0
-      ? this.props.userData.funded_projects
-      : null;
-
   render() {
     return (
       <div>
@@ -29,7 +14,7 @@ export default class myprofile extends Component {
             <Grid.Column>
               <Header as="h2" icon="road" content="Created Projects" />
               <br />
-              {this.createdProjects ? (
+              {this.props.userData.created_projects.length > 0 ? (
                 <Grid.Row>
                   <Item.Group link>
                     <Item>
@@ -41,15 +26,15 @@ export default class myprofile extends Component {
                       <Item.Content>
                         <Item.Header>
                           {
-                            this.createdProjects[
-                              this.createdProjects.length - 1
+                            this.props.userData.created_projects[
+                              this.props.userData.created_projects.length - 1
                             ].title
                           }
                         </Item.Header>
                         <Item.Description>
                           {
-                            this.createdProjects[
-                              this.createdProjects.length - 1
+                            this.props.userData.created_projects[
+                              this.props.userData.created_projects.length - 1
                             ].description
                           }
                           }
@@ -62,22 +47,22 @@ export default class myprofile extends Component {
                         src="https://react.semantic-ui.com/images/avatar/large/veronika.jpg"
                       />
 
-                      <Item.Content>
+                      {/* <Item.Content>
                         <Item.Header>
                           {
-                            this.createdProjects[
-                              this.createdProjects.length - 2
+                            this.props.userData.created_projects[
+                              this.props.userData.created_projects.length - 2
                             ].title
                           }
                         </Item.Header>
                         <Item.Description>
                           {
-                            this.createdProjects[
-                              this.createdProjects.length - 2
+                            this.props.userData.created_projects[
+                              this.props.userData.created_projects.length - 2
                             ].description
                           }
                         </Item.Description>
-                      </Item.Content>
+                      </Item.Content> */}
                     </Item>
                   </Item.Group>
                 </Grid.Row>
@@ -91,7 +76,7 @@ export default class myprofile extends Component {
             <Grid.Column>
               <Header as="h2" icon="plug" content="Deployed Projects" />
               <br />
-              {this.deployedProjects ? (
+              {this.props.userData.deployed_projects.length > 0 ? (
                 <Grid.Row>
                   <Item.Group link>
                     <Item>
@@ -103,15 +88,15 @@ export default class myprofile extends Component {
                       <Item.Content>
                         <Item.Header>
                           {
-                            this.deployedProjects[
-                              this.deployedProjects.length - 1
+                            this.props.userData.deployed_projects[
+                              this.props.userData.deployed_projects.length - 1
                             ].title
                           }
                         </Item.Header>
                         <Item.Description>
                           {
-                            this.deployedProjects[
-                              this.deployedProjects.length - 1
+                            this.props.userData.deployed_projects[
+                              this.props.userData.deployed_projects.length - 1
                             ].description
                           }
                           }
@@ -124,22 +109,22 @@ export default class myprofile extends Component {
                         src="https://react.semantic-ui.com/images/avatar/large/veronika.jpg"
                       />
 
-                      <Item.Content>
+                      {/* <Item.Content>
                         <Item.Header>
                           {
-                            this.deployedProjects[
-                              this.deployedProjects.length - 2
+                            this.props.userData.deployed_projects[
+                              this.props.userData.deployed_projects.length - 2
                             ].title
                           }
                         </Item.Header>
                         <Item.Description>
                           {
-                            this.deployedProjects[
-                              this.deployedProjects.length - 2
+                            this.props.userData.deployed_projects[
+                              this.props.userData.deployed_projects.length - 2
                             ].description
                           }
                         </Item.Description>
-                      </Item.Content>
+                      </Item.Content> */}
                     </Item>
                   </Item.Group>
                 </Grid.Row>
@@ -153,7 +138,7 @@ export default class myprofile extends Component {
             <Grid.Column>
               <Header as="h2" icon="star" content="Funded Projects" />
               <br />
-              {this.fundedProjects ? (
+              {this.props.userData.funded_projects.length > 0 ? (
                 <Grid.Row>
                   <Item.Group link>
                     <Item>
@@ -165,14 +150,16 @@ export default class myprofile extends Component {
                       <Item.Content>
                         <Item.Header>
                           {
-                            this.fundedProjects[this.fundedProjects.length - 1]
-                              .title
+                            this.props.userData.funded_projects[
+                              this.props.userData.funded_projects.length - 1
+                            ].title
                           }
                         </Item.Header>
                         <Item.Description>
                           {
-                            this.fundedProjects[this.fundedProjects.length - 1]
-                              .description
+                            this.props.userData.funded_projects[
+                              this.props.userData.funded_projects.length - 1
+                            ].description
                           }
                           }
                         </Item.Description>
@@ -184,20 +171,22 @@ export default class myprofile extends Component {
                         src="https://react.semantic-ui.com/images/avatar/large/veronika.jpg"
                       />
 
-                      <Item.Content>
+                      {/* <Item.Content>
                         <Item.Header>
                           {
-                            this.fundedProjects[this.fundedProjects.length - 2]
-                              .title
+                            this.props.userData.funded_projects[
+                              this.props.userData.funded_projects.length - 2
+                            ].title
                           }
                         </Item.Header>
                         <Item.Description>
                           {
-                            this.fundedProjects[this.fundedProjects.length - 2]
-                              .description
+                            this.props.userData.funded_projects[
+                              this.props.userData.funded_projects.length - 2
+                            ].description
                           }
                         </Item.Description>
-                      </Item.Content>
+                      </Item.Content> */}
                     </Item>
                   </Item.Group>
                 </Grid.Row>
