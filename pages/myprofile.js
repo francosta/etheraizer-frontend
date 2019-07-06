@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Grid, Header, Icon, Image, Item, Container } from "semantic-ui-react";
+import {
+  Grid,
+  Header,
+  Icon,
+  Image,
+  Item,
+  Container,
+  Button
+} from "semantic-ui-react";
 
 export default class myprofile extends Component {
   render() {
@@ -41,13 +49,16 @@ export default class myprofile extends Component {
                         </Item.Description>
                       </Item.Content>
                     </Item>
-                    <Item>
+                    {this.props.userData.created_projects.length > 1 ? (
+                      <Button primary>See More</Button>
+                    ) : null}
+                    {/* <Item>
                       <Item.Image
                         size="tiny"
                         src="https://react.semantic-ui.com/images/avatar/large/veronika.jpg"
-                      />
+                      /> */}
 
-                      {/* <Item.Content>
+                    {/* <Item.Content>
                         <Item.Header>
                           {
                             this.props.userData.created_projects[
@@ -63,7 +74,7 @@ export default class myprofile extends Component {
                           }
                         </Item.Description>
                       </Item.Content> */}
-                    </Item>
+                    {/* </Item> */}
                   </Item.Group>
                 </Grid.Row>
               ) : (
@@ -103,13 +114,16 @@ export default class myprofile extends Component {
                         </Item.Description>
                       </Item.Content>
                     </Item>
-                    <Item>
+                    {this.props.userData.deployed_projects.length > 1 ? (
+                      <Button primary>See More</Button>
+                    ) : null}
+                    {/* <Item>
                       <Item.Image
                         size="tiny"
                         src="https://react.semantic-ui.com/images/avatar/large/veronika.jpg"
-                      />
+                      /> */}
 
-                      {/* <Item.Content>
+                    {/* <Item.Content>
                         <Item.Header>
                           {
                             this.props.userData.deployed_projects[
@@ -125,7 +139,7 @@ export default class myprofile extends Component {
                           }
                         </Item.Description>
                       </Item.Content> */}
-                    </Item>
+                    {/* </Item> */}
                   </Item.Group>
                 </Grid.Row>
               ) : (
@@ -165,13 +179,16 @@ export default class myprofile extends Component {
                         </Item.Description>
                       </Item.Content>
                     </Item>
-                    <Item>
+                    {this.props.userData.funded_projects.length > 1 ? (
+                      <Button primary>See More</Button>
+                    ) : null}
+                    {/* <Item>
                       <Item.Image
                         size="tiny"
                         src="https://react.semantic-ui.com/images/avatar/large/veronika.jpg"
-                      />
+                      /> */}
 
-                      {/* <Item.Content>
+                    {/* <Item.Content>
                         <Item.Header>
                           {
                             this.props.userData.funded_projects[
@@ -187,7 +204,7 @@ export default class myprofile extends Component {
                           }
                         </Item.Description>
                       </Item.Content> */}
-                    </Item>
+                    {/* </Item> */}
                   </Item.Group>
                 </Grid.Row>
               ) : (
@@ -197,8 +214,9 @@ export default class myprofile extends Component {
                 </Container>
               )}
             </Grid.Column>
-            <Header size="large">Projects I've supported</Header>
           </Grid>
+          <br />
+          <Header as="h2" icon="heart" content="Project's I've supported" />
         </div>
       </div>
     );
