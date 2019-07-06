@@ -112,6 +112,7 @@ export default class MyApp extends App {
           deployProject={this.deployProject}
           router={this.props.router}
           updateCreatedProjectsOnFrontend={this.updateCreatedProjectsOnFrontend}
+          supportContracts={this.state.supportContracts}
         />
       </Layout>
     );

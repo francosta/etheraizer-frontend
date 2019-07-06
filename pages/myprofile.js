@@ -10,6 +10,28 @@ import {
 } from "semantic-ui-react";
 
 export default class myprofile extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      mySupport: []
+    };
+  }
+
+  componentDidMount() {
+    const myContracts = this.props.supportContracts.filter(
+      contract => contract.user_id === this.props.userData.id
+    );
+
+    const myProjects = myContracts.forEach(contract => {
+      return this.props.allProjects.filter(project => {
+        return contract.project_id === project.id;
+      });
+    });
+
+    this.setState({ mySupport: myProjects });
+  }
+
   render() {
     return (
       <div>

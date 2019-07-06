@@ -1686,7 +1686,8 @@ function (_App) {
         changeSelectedProject: this.changeSelectedProject,
         deployProject: this.deployProject,
         router: this.props.router,
-        updateCreatedProjectsOnFrontend: this.updateCreatedProjectsOnFrontend
+        updateCreatedProjectsOnFrontend: this.updateCreatedProjectsOnFrontend,
+        supportContracts: this.state.supportContracts
       }));
     }
   }]);
