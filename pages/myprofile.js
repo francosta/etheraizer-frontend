@@ -6,7 +6,8 @@ import {
   Image,
   Item,
   Container,
-  Button
+  Button,
+  Card
 } from "semantic-ui-react";
 
 export default class myprofile extends Component {
@@ -23,11 +24,13 @@ export default class myprofile extends Component {
       contract => contract.user_id === this.props.userData.id
     );
 
-    const myProjects = myContracts.forEach(contract => {
-      return this.props.allProjects.filter(project => {
-        return contract.project_id === project.id;
-      });
-    });
+    const myProjects = myContracts
+      .map(contract => {
+        return this.props.allProjects.filter(project => {
+          return contract.project_id === project.id;
+        });
+      })
+      .flat();
 
     this.setState({ mySupport: myProjects });
   }
@@ -238,7 +241,33 @@ export default class myprofile extends Component {
             </Grid.Column>
           </Grid>
           <br />
+          <br />
           <Header as="h2" icon="heart" content="Project's I've supported" />
+          <br />
+          <Card.Group itemsPerRow={5}>
+            {this.state.mySupport.map(project => (
+              <Card>
+                {/* <Image
+                  src="/images/avatar/large/matthew.png"
+                  wrapped
+                  ui={false}
+                /> */}
+                <Card.Content>
+                  <Card.Header>{project.title}</Card.Header>
+                  <Card.Meta>
+                    <span className="date">Goal: {project.goal}</span>
+                  </Card.Meta>
+                  <Card.Description>{project.description}</Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <a>
+                    <Icon name="user" />
+                    {project.users.length} supporters
+                  </a>
+                </Card.Content>
+              </Card>
+            ))}
+          </Card.Group>
         </div>
       </div>
     );

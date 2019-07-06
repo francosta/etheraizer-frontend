@@ -50444,11 +50444,11 @@ function (_Component) {
       var myContracts = this.props.supportContracts.filter(function (contract) {
         return contract.user_id === _this2.props.userData.id;
       });
-      var myProjects = myContracts.forEach(function (contract) {
+      var myProjects = myContracts.map(function (contract) {
         return _this2.props.allProjects.filter(function (project) {
           return contract.project_id === project.id;
         });
-      });
+      }).flat();
       this.setState({
         mySupport: myProjects
       });
@@ -50508,11 +50508,21 @@ function (_Component) {
         fluid: true
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
         as: "h2"
-      }, "No funded projects"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "You don't have any funded projects.")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
+      }, "No funded projects"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "You don't have any funded projects.")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Header"], {
         as: "h2",
         icon: "heart",
         content: "Project's I've supported"
-      })));
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"].Group, {
+        itemsPerRow: 5
+      }, this.state.mySupport.map(function (project) {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"].Content, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"].Header, null, project.title), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"].Meta, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+          className: "date"
+        }, "Goal: ", project.goal)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"].Description, null, project.description)), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"].Content, {
+          extra: true
+        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Icon"], {
+          name: "user"
+        }), project.users.length, " supporters")));
+      }))));
     }
   }]);
 
@@ -50523,7 +50533,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 8:
+/***/ 6:
 /*!******************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmyprofile&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fpages%2Fmyprofile.js ***!
   \******************************************************************************************************************************************************************/
@@ -50546,5 +50556,5 @@ module.exports = dll_1aef2d0bbc0d334d831c;
 
 /***/ })
 
-},[[8,"static/runtime/webpack.js"]]]);
+},[[6,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=myprofile.js.map
