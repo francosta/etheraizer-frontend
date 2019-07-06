@@ -19,7 +19,8 @@ export default class MyApp extends App {
     this.state = {
       userData: {},
       selectedProject: {},
-      allprojects: []
+      allprojects: [],
+      supportContracts: []
     };
   }
 
@@ -37,11 +38,21 @@ export default class MyApp extends App {
         });
     }
 
-    const projectsURL = "http://localhost:3000/projects";
-    return fetch(projectsURL)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ allprojects: resp }));
+    this.getAllProjects().then(resp => this.setState({ allprojects: resp }));
+    this.getSupportContracts().then(resp =>
+      this.setState({ supportContracts: resp })
+    );
   }
+
+  getAllProjects = () => {
+    const projectsURL = "http://localhost:3000/projects";
+    return fetch(projectsURL).then(resp => resp.json());
+  };
+
+  getSupportContracts = () => {
+    const supportContractsURL = "http://localhost:3000/support_contracts";
+    return fetch(supportContractsURL).then(resp => resp.json());
+  };
 
   loggedIn = token => {
     localStorage.setItem("token", token);

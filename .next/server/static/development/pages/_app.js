@@ -1546,6 +1546,20 @@ function (_App) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(MyApp).call(this, props));
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getAllProjects", function () {
+      var projectsURL = "http://localhost:3000/projects";
+      return fetch(projectsURL).then(function (resp) {
+        return resp.json();
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getSupportContracts", function () {
+      var supportContractsURL = "http://localhost:3000/support_contracts";
+      return fetch(supportContractsURL).then(function (resp) {
+        return resp.json();
+      });
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "loggedIn", function (token) {
       localStorage.setItem("token", token);
       Object(_services_authentication__WEBPACK_IMPORTED_MODULE_15__["getUserData"])().then(function (resp) {
@@ -1623,7 +1637,8 @@ function (_App) {
     _this.state = {
       userData: {},
       selectedProject: {},
-      allprojects: []
+      allprojects: [],
+      supportContracts: []
     };
     return _this;
   }
@@ -1641,12 +1656,14 @@ function (_App) {
         });
       }
 
-      var projectsURL = "http://localhost:3000/projects";
-      return fetch(projectsURL).then(function (resp) {
-        return resp.json();
-      }).then(function (resp) {
+      this.getAllProjects().then(function (resp) {
         return _this2.setState({
           allprojects: resp
+        });
+      });
+      this.getSupportContracts().then(function (resp) {
+        return _this2.setState({
+          supportContracts: resp
         });
       });
     }

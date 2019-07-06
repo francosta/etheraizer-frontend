@@ -80,7 +80,6 @@ class ContributeForm extends Component {
   createSupportContractinDatabase = (project_id, user_id, contribution) => {
     const projectId = project_id;
     const userId = user_id;
-    const contractContribution = contribution;
     const supportContract = {
       user_id: userId,
       project_id: projectId,
