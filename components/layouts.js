@@ -15,7 +15,9 @@ export default props => {
           href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
         />
       </Head>
-      <Navbar logout={props.logout} selectProject={props.selectProject} />
+      {props.userData.id ? (
+        <Navbar logout={props.logout} selectProject={props.selectProject} />
+      ) : null}
       <Container>{props.children}</Container>
       <Footer />
     </div>

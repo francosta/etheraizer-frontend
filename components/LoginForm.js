@@ -32,7 +32,7 @@ export default class LoginForm extends Component {
         <Grid.Column style={{ maxWidth: 450 }}>
           <Image
             verticalAlign="middle"
-            src="https://github.com/francosta/etheraizer-frontend/raw/master/public/logo.png"
+            src="https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png"
           />
           <Header as="h2" color="teal" textAlign="center">
             Log-in to your account

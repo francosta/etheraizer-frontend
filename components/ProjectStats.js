@@ -7,24 +7,31 @@ export default function ProjectStats(props) {
     {
       header: (
         <a
+          target="_blank"
           style={{ pointerEvents: "auto" }}
           href={`https://kovan.etherscan.io/address/${
             props.selectedProject.blockchain_address
           }`}>
-          Project Blockchain Address
+          <h3>Project Blockchain Address</h3>
         </a>
       ),
-      description: "This is the person who created the project"
+      description: "This is the address of the project."
     },
     {
-      header: "Manager's Blockchain Address",
-      description: "How much you need to donate to become a supporter",
-      meta: props.manager
+      header: (
+        <a
+          target="_blank"
+          style={{ pointerEvents: "auto" }}
+          href={`https://kovan.etherscan.io/address/${props.manager}`}>
+          <h3>Owner's Blockchain Address</h3>
+        </a>
+      ),
+      description: "This is the address of the user who created the project"
     },
     {
       header: "Minimum Contribution",
       description: "How much you need to donate to become a supporter",
-      meta: props.minimumContribution
+      meta: <h4>{props.minimumContribution}</h4>
     }
   ];
 
