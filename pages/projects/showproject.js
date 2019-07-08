@@ -8,11 +8,8 @@ import web3 from "../../ethereum/web3";
 import ProjectStats from "../../components/ProjectStats";
 import ProjectCreationProgressComponent from "../../components/ProjectCreationProgressComponent";
 import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
-<<<<<<< HEAD
-=======
 import ContributeForm from "../../components/ContributeForm";
 import ProjectPresentation from "../../components/ProjectPresentation";
->>>>>>> development
 
 export default class ShowProject extends Component {
   constructor(props) {
