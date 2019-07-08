@@ -39,10 +39,8 @@ export default class ProjectIndex extends Component {
   render() {
     return (
       <div>
-        <h1>Homepage</h1>
-        <h3>
-          These are addresses of all the projects deployed into smart contracts:
-        </h3>
+        <h1>All Projects</h1>
+        <br />
         <div className="ui vertical menu left floated">
           <div className="item">
             <div className="ui input">
