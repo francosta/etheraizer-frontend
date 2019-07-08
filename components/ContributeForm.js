@@ -71,6 +71,7 @@ class ContributeForm extends Component {
           this.props.userData.id,
           contribution
         );
+        this.props.addToUserSupportedProjects(this.props.selectedProject);
       } catch (err) {
         this.setState({ errorMsg: err, contributing: false, open: false });
       }

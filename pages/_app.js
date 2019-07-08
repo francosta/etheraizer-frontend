@@ -20,7 +20,8 @@ export default class MyApp extends App {
       userData: {},
       selectedProject: {},
       allprojects: [],
-      supportContracts: []
+      supportContracts: [],
+      userSupport: []
     };
   }
 
@@ -39,9 +40,9 @@ export default class MyApp extends App {
     }
 
     this.getAllProjects().then(resp => this.setState({ allprojects: resp }));
-    this.getSupportContracts().then(resp =>
-      this.setState({ supportContracts: resp })
-    );
+    this.getSupportContracts().then(resp => {
+      this.setState({ supportContracts: resp });
+    });
   }
 
   getAllProjects = () => {
@@ -54,9 +55,29 @@ export default class MyApp extends App {
     return fetch(supportContractsURL).then(resp => resp.json());
   };
 
+  getUserSupport = () => {
+    const userContracts = this.state.supportContracts.filter(
+      contract => contract.user_id === this.state.userData.id
+    );
+
+    const userProjects = userContracts
+      .map(contract => {
+        return this.state.allprojects.filter(project => {
+          return contract.project_id === project.id;
+        });
+      })
+      .flat();
+
+    this.setState({ userSupport: userProjects });
+  };
+
   loggedIn = token => {
     localStorage.setItem("token", token);
-    getUserData().then(resp => this.setState({ userData: resp }));
+    getUserData().then(resp => {
+      this.setState({ userData: resp });
+      this.getUserSupport();
+    });
+
     Router.push("/");
   };
 
@@ -93,6 +114,10 @@ export default class MyApp extends App {
     this.setState({ userData: { ...this.state.userData, newCreatedProjects } });
   };
 
+  updateUserSupportedProjects = project => {
+    this.setState({ userSupport: [...this.state.userSupport, project] });
+  };
+
   render() {
     const { Component } = this.props;
     return (
@@ -113,6 +138,8 @@ export default class MyApp extends App {
           router={this.props.router}
           updateCreatedProjectsOnFrontend={this.updateCreatedProjectsOnFrontend}
           supportContracts={this.state.supportContracts}
+          userSupport={this.state.userSupport}
+          addToUserSupportedProjects={this.updateUserSupportedProjects}
         />
       </Layout>
     );

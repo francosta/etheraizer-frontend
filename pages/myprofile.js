@@ -1,42 +1,34 @@
 import React, { Component } from "react";
-import {
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Item,
-  Container,
-  Button,
-  Card
-} from "semantic-ui-react";
+import { Grid, Header, Item, Container, Button, Card } from "semantic-ui-react";
 import { Link } from "../routes";
 import Router from "next/router";
 import UserProfile from "../components/UserProfile";
+import ProjectCard from "../components/ProjectCard";
 
 export default class myprofile extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      mySupport: []
-    };
-  }
+  //   this.state = {
+  //     mySupport: []
+  //   };
+  // }
 
-  componentDidMount() {
-    const myContracts = this.props.supportContracts.filter(
-      contract => contract.user_id === this.props.userData.id
-    );
+  // componentDidMount() {
+  //   const myContracts = this.props.supportContracts.filter(
+  //     contract => contract.user_id === this.props.userData.id
+  //   );
 
-    const myProjects = myContracts
-      .map(contract => {
-        return this.props.allProjects.filter(project => {
-          return contract.project_id === project.id;
-        });
-      })
-      .flat();
+  //   const myProjects = myContracts
+  //     .map(contract => {
+  //       return this.props.allProjects.filter(project => {
+  //         return contract.project_id === project.id;
+  //       });
+  //     })
+  //     .flat();
 
-    this.setState({ mySupport: myProjects });
-  }
+  //   this.setState({ mySupport: myProjects });
+  // }
 
   render() {
     return (
@@ -144,32 +136,12 @@ export default class myprofile extends Component {
           <Header as="h2" icon="heart" content="Project's I've supported" />
           <br />
           <Card.Group itemsPerRow={5}>
-            {this.state.mySupport.map((project, i) => (
-              <Card key={i} {...project}>
-                {/* <Image
-                  src="/images/avatar/large/matthew.png"
-                  wrapped
-                  ui={false}
-                /> */}
-                <Card.Content>
-                  <Link route={`/projects/${project.id}`}>
-                    <Card.Header
-                      onClick={() => this.props.selectProject(project)}>
-                      {project.title}
-                    </Card.Header>
-                  </Link>
-                  <Card.Meta>
-                    <span className="date">Goal: {project.goal}</span>
-                  </Card.Meta>
-                  <Card.Description>{project.description}</Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <a>
-                    <Icon name="user" />
-                    {project.users.length} supporters
-                  </a>
-                </Card.Content>
-              </Card>
+            {this.props.userSupport.map((project, i) => (
+              <ProjectCard
+                key={i}
+                project={project}
+                selectProject={this.props.selectProject}
+              />
             ))}
           </Card.Group>
         </div>

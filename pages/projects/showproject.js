@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ProjectProgress from "../../components/ProjectProgress";
 import AchieveProjectForm from "../../components/AchieveProjectForm";
-import { Button, Grid, GridColumn } from "semantic-ui-react";
+import { Button, Grid } from "semantic-ui-react";
 import ProjectDetails from "../../components/ProjectDetails";
 import projectContract from "../../ethereum/projectContract";
 import web3 from "../../ethereum/web3";
@@ -11,7 +11,7 @@ import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
 import ContributeForm from "../../components/ContributeForm";
 import ProjectPresentation from "../../components/ProjectPresentation";
 
-class ShowProject extends Component {
+export default class ShowProject extends Component {
   constructor(props) {
     super(props);
 
@@ -21,33 +21,13 @@ class ShowProject extends Component {
       balance: null,
       requestsCount: null,
       supportersCount: null,
-      managerAddress: "",
-      selectedProject: null
+      managerAddress: ""
     };
   }
 
-  componentDidMount = function() {
-    const projectsURL = "http://localhost:3000/projects";
-    return fetch(projectsURL)
-      .then(resp => resp.json())
-      .then(projects => this.selectProject(projects));
-  };
-
-  selectProject = projects => {
-    if (!this.props.selectedProject) {
-      const id = parseInt(this.props.router.query.id);
-      const selectedProject = projects.filter(project => project.id === id)[0];
-      this.setState({ selectedProject: selectedProject });
-      this.getContractWithState();
-    } else {
-      this.getContractWithProps();
-    }
-  };
-
-  getContractWithProps = async function() {
-    const project = projectContract(
-      this.props.selectedProject.blockchain_address
-    );
+  componentDidMount = async function() {
+    const address = this.props.selectedProject.blockchain_address;
+    const project = projectContract(address);
     const stats = await project.methods.getSummary().call();
     this.setState({
       minimumContribution: parseInt(stats[0]["_hex"]),
@@ -65,22 +45,7 @@ class ShowProject extends Component {
     });
   };
 
-  getContractWithState = async function() {
-    debugger;
-
-    const project = projectContract(
-      this.state.selectedProject.blockchain_address
-    );
-    const stats = await project.methods.getSummary().call();
-    console.log(stats);
-    this.setState({
-      minimumContribution: parseInt(stats[0]["_hex"]),
-      balance: parseInt(stats[1]["_hex"]),
-      requestsCount: parseInt(stats[2]["_hex"]),
-      supportersCount: parseInt(stats[3]["_hex"]),
-      managerAddress: stats[4]
-    });
-  };
+  getContractWithState = async function() {};
 
   handleClick = () => {
     this.setState({ edit: !this.state.edit });
@@ -103,6 +68,9 @@ class ShowProject extends Component {
                 selectedProject={this.props.selectedProject}
                 updateDataOnFrontend={this.updateDataOnFrontend}
                 selectProject={this.props.selectProject}
+                addToUserSupportedProjects={
+                  this.props.addToUserSupportedProjects
+                }
               />
             </Grid.Column>
           </Grid.Row>
@@ -111,7 +79,6 @@ class ShowProject extends Component {
         <ProjectCreationProgressComponent
           selectedProject={this.props.selectedProject}
         />
-
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}
@@ -122,7 +89,6 @@ class ShowProject extends Component {
         <ProjectProgress
           goal={this.props.selectedProject.goal}
           progress={this.props.selectedProject.progress}
-          balance={this.state.balance}
         />
         <br />
         <ProjectStats
@@ -158,5 +124,3 @@ class ShowProject extends Component {
     );
   }
 }
-
-export default ShowProject;

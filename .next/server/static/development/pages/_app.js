@@ -1566,12 +1566,30 @@ function (_App) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getUserSupport", function () {
+      var userContracts = _this.state.supportContracts.filter(function (contract) {
+        return contract.user_id === _this.state.userData.id;
+      });
+
+      var userProjects = userContracts.map(function (contract) {
+        return _this.state.allprojects.filter(function (project) {
+          return contract.project_id === project.id;
+        });
+      }).flat();
+
+      _this.setState({
+        userSupport: userProjects
+      });
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "loggedIn", function (token) {
       localStorage.setItem("token", token);
       Object(_services_authentication__WEBPACK_IMPORTED_MODULE_15__["getUserData"])().then(function (resp) {
-        return _this.setState({
+        _this.setState({
           userData: resp
         });
+
+        _this.getUserSupport();
       });
       next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/");
     });
@@ -1640,11 +1658,18 @@ function (_App) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "updateUserSupportedProjects", function (project) {
+      _this.setState({
+        userSupport: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_this.state.userSupport), [project])
+      });
+    });
+
     _this.state = {
       userData: {},
       selectedProject: {},
       allprojects: [],
-      supportContracts: []
+      supportContracts: [],
+      userSupport: []
     };
     return _this;
   }
@@ -1668,7 +1693,7 @@ function (_App) {
         });
       });
       this.getSupportContracts().then(function (resp) {
-        return _this2.setState({
+        _this2.setState({
           supportContracts: resp
         });
       });
@@ -1693,7 +1718,9 @@ function (_App) {
         deployProject: this.deployProject,
         router: this.props.router,
         updateCreatedProjectsOnFrontend: this.updateCreatedProjectsOnFrontend,
-        supportContracts: this.state.supportContracts
+        supportContracts: this.state.supportContracts,
+        userSupport: this.state.userSupport,
+        addToUserSupportedProjects: this.updateUserSupportedProjects
       }));
     }
   }]);
