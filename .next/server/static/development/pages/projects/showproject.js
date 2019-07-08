@@ -493,8 +493,7 @@ function (_Component) {
         position: "absolute",
         dimmer: dimmer,
         open: open,
-        onClose: this.close,
-        centered: false
+        onClose: this.close
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Segment"], null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Transition"], {
         visible: this.state.contributing,
         animation: "scale",

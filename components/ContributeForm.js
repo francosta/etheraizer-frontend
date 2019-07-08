@@ -130,8 +130,7 @@ class ContributeForm extends Component {
           position="absolute"
           dimmer={dimmer}
           open={open}
-          onClose={this.close}
-          centered={false}>
+          onClose={this.close}>
           <Segment>
             <Transition
               visible={this.state.contributing}
