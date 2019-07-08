@@ -333,10 +333,9 @@ function (_Component) {
         onClick: function onClick() {
           return _this2.handleClick(_this2.props.project);
         },
-        image: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
+        image: this.props.project.image,
         header: this.props.project.title,
         meta: "Status: ".concat(this.props.project.status),
-        description: this.props.project.description,
         extra: extra
       }));
     }

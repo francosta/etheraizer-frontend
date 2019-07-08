@@ -18,10 +18,9 @@ export default class ProjectCard extends Component {
       <Link route={`/projects/${this.props.project.id}`}>
         <Card
           onClick={() => this.handleClick(this.props.project)}
-          image="https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
+          image={this.props.project.image}
           header={this.props.project.title}
           meta={`Status: ${this.props.project.status}`}
-          description={this.props.project.description}
           extra={extra}
         />
       </Link>
