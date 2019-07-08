@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Footer() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     size: "small",
     as: "h6",
     block: true,
@@ -120,7 +120,7 @@ function Footer() {
       bottom: 0,
       left: 0
     }
-  }, "Etheraize | 2019 - Francisco Costa");
+  }, "Etheraize | 2019 - Francisco Costa"));
 }
 
 /***/ }),

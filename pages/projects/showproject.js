@@ -25,7 +25,7 @@ class ShowProject extends Component {
     };
   }
 
-  componentDidMount = async function() {
+  componentDidMount = function() {
     const projectsURL = "http://localhost:3000/projects";
     return fetch(projectsURL)
       .then(resp => resp.json())
@@ -48,7 +48,6 @@ class ShowProject extends Component {
       this.props.selectedProject.blockchain_address
     );
     const stats = await project.methods.getSummary().call();
-    console.log(stats);
     this.setState({
       minimumContribution: parseInt(stats[0]["_hex"]),
       balance: parseInt(stats[1]["_hex"]),
@@ -65,7 +64,22 @@ class ShowProject extends Component {
     });
   };
 
-  getContractWithState = async function() {};
+  getContractWithState = async function() {
+    debugger;
+
+    const project = projectContract(
+      this.state.selectedProject.blockchain_address
+    );
+    const stats = await project.methods.getSummary().call();
+    console.log(stats);
+    this.setState({
+      minimumContribution: parseInt(stats[0]["_hex"]),
+      balance: parseInt(stats[1]["_hex"]),
+      requestsCount: parseInt(stats[2]["_hex"]),
+      supportersCount: parseInt(stats[3]["_hex"]),
+      managerAddress: stats[4]
+    });
+  };
 
   handleClick = () => {
     this.setState({ edit: !this.state.edit });
