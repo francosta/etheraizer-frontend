@@ -11,11 +11,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/projects": [
+    "/myprofile": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/projects/createproject": [
+    "/projects": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
