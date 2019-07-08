@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import { Link } from "../routes";
 import Router from "next/router";
+import UserProfile from "../components/UserProfile";
 
 export default class myprofile extends Component {
   constructor(props) {
@@ -42,6 +43,8 @@ export default class myprofile extends Component {
       <div>
         <div>
           <Header size="huge">My Profile</Header>
+          <br />
+          <UserProfile userData={this.props.userData} />
           <br />
           <Header size="large">My Projects</Header>
           <br />
