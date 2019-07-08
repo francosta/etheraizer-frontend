@@ -93,6 +93,14 @@ export default class CreateProjectForm extends Component {
                   placeholder="Funding Goal"
                 />
               </Form.Field>
+              <Form.Field>
+                <label>Image URL</label>
+                <Input
+                  name="image"
+                  labelPosition="right"
+                  placeholder="Project Image"
+                />
+              </Form.Field>
               <Message
                 color="red"
                 size="small"
