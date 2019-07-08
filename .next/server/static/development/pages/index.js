@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -113,7 +113,13 @@ function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     size: "small",
     as: "h6",
-    block: true
+    block: true,
+    style: {
+      position: "fixed",
+      right: 0,
+      bottom: 0,
+      left: 0
+    }
   }, "Etheraize | 2019 - Francisco Costa");
 }
 
@@ -1144,7 +1150,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 8:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

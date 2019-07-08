@@ -113,7 +113,13 @@ function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     size: "small",
     as: "h6",
-    block: true
+    block: true,
+    style: {
+      position: "fixed",
+      right: 0,
+      bottom: 0,
+      left: 0
+    }
   }, "Etheraize | 2019 - Francisco Costa");
 }
 
