@@ -1,4 +1,4 @@
-import { Card, Icon } from "semantic-ui-react";
+import { Card, Icon, Image } from "semantic-ui-react";
 import React, { Component } from "react";
 import { Link } from "../routes";
 
@@ -16,13 +16,18 @@ export default class ProjectCard extends Component {
     );
     return (
       <Link route={`/projects/${this.props.project.id}`}>
-        <Card
-          onClick={() => this.handleClick(this.props.project)}
-          image={this.props.project.image}
-          header={this.props.project.title}
-          meta={`Status: ${this.props.project.status}`}
-          extra={extra}
-        />
+        <Card onClick={() => this.handleClick(this.props.project)}>
+          <Image src={this.props.project.image} wrapped ui={false} />
+          <Card.Content>
+            <Card.Header>{this.props.project.title}</Card.Header>
+            <Card.Meta>
+              <span className="date">{`Status: ${
+                this.props.project.status
+              }`}</span>
+            </Card.Meta>
+          </Card.Content>
+          <Card.Content extra>{extra}</Card.Content>
+        </Card>
       </Link>
     );
   }
