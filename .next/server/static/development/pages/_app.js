@@ -1473,12 +1473,51 @@ function (_App) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(MyApp).call(this, props));
 
+<<<<<<< HEAD
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "loggedIn", function (token) {
       localStorage.setItem("token", token);
       Object(_services_authentication__WEBPACK_IMPORTED_MODULE_14__["getUserData"])().then(function (resp) {
         return _this.setState({
+=======
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getAllProjects", function () {
+      var projectsURL = "http://localhost:3000/projects";
+      return fetch(projectsURL).then(function (resp) {
+        return resp.json();
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getSupportContracts", function () {
+      var supportContractsURL = "http://localhost:3000/support_contracts";
+      return fetch(supportContractsURL).then(function (resp) {
+        return resp.json();
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getUserSupport", function () {
+      var userContracts = _this.state.supportContracts.filter(function (contract) {
+        return contract.user_id === _this.state.userData.id;
+      });
+
+      var userProjects = userContracts.map(function (contract) {
+        return _this.state.allprojects.filter(function (project) {
+          return contract.project_id === project.id;
+        });
+      }).flat();
+
+      _this.setState({
+        userSupport: userProjects
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "loggedIn", function (token) {
+      localStorage.setItem("token", token);
+      Object(_services_authentication__WEBPACK_IMPORTED_MODULE_15__["getUserData"])().then(function (resp) {
+        _this.setState({
+>>>>>>> development
           userData: resp
         });
+
+        _this.getUserSupport();
       });
       next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/");
     });
@@ -1536,10 +1575,36 @@ function (_App) {
       }, _callee2, this);
     })));
 
+<<<<<<< HEAD
     _this.state = {
       userData: {},
       selectedProject: {},
       allprojects: []
+=======
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "updateCreatedProjectsOnFrontend", function () {
+      var created_projects = _this.state.userData.created_projects;
+      var newCreatedProjects = [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(created_projects), [_this.state.selectedProject]);
+
+      _this.setState({
+        userData: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _this.state.userData, {
+          newCreatedProjects: newCreatedProjects
+        })
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "updateUserSupportedProjects", function (project) {
+      _this.setState({
+        userSupport: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_this.state.userSupport), [project])
+      });
+    });
+
+    _this.state = {
+      userData: {},
+      selectedProject: {},
+      allprojects: [],
+      supportContracts: [],
+      userSupport: []
+>>>>>>> development
     };
     return _this;
   }
@@ -1567,6 +1632,14 @@ function (_App) {
           allprojects: resp
         });
       });
+<<<<<<< HEAD
+=======
+      this.getSupportContracts().then(function (resp) {
+        _this2.setState({
+          supportContracts: resp
+        });
+      });
+>>>>>>> development
     }
   }, {
     key: "render",
@@ -1585,7 +1658,16 @@ function (_App) {
         getNewProjectBlockchainAddress: this.getNewProjectBlockchainAddress,
         allProjects: this.state.allprojects,
         changeSelectedProject: this.changeSelectedProject,
+<<<<<<< HEAD
         deployProject: this.deployProject
+=======
+        deployProject: this.deployProject,
+        router: this.props.router,
+        updateCreatedProjectsOnFrontend: this.updateCreatedProjectsOnFrontend,
+        supportContracts: this.state.supportContracts,
+        userSupport: this.state.userSupport,
+        addToUserSupportedProjects: this.updateUserSupportedProjects
+>>>>>>> development
       }));
     }
   }]);

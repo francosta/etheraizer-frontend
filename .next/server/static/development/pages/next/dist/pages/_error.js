@@ -89,9 +89,13 @@ module.exports =
 /******/
 /******/ 	// Load entry module and return exports
 <<<<<<< HEAD
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 9);
 =======
 /******/ 	return __webpack_require__(__webpack_require__.s = 10);
+>>>>>>> development
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 >>>>>>> development
 /******/ })
 /************************************************************************/
@@ -503,9 +507,13 @@ var styles = {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 9:
 =======
 /***/ 10:
+>>>>>>> development
+=======
+/***/ 8:
 >>>>>>> development
 /*!******************************************************!*\
   !*** multi ./node_modules/next/dist/pages/_error.js ***!

@@ -61,11 +61,14 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+<<<<<<< HEAD
     "/projects/createproject": [
 >>>>>>> development
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+=======
+>>>>>>> development
     "/projects/showproject": [
 <<<<<<< HEAD
 =======
@@ -74,11 +77,14 @@
 =======
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+<<<<<<< HEAD
     ],
     "/signup": [
 >>>>>>> development
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+=======
+>>>>>>> development
     ]
   }
 }

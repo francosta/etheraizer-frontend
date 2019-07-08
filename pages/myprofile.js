@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Grid, Header, Icon, Image, Item } from "semantic-ui-react";
 =======
 import {
@@ -32,6 +33,38 @@ export default class myprofile extends Component {
     this.props.userData.funded_projects.length === 0
       ? null
       : this.props.userData.funded_projects;
+=======
+import { Grid, Header, Item, Container, Button, Card } from "semantic-ui-react";
+import { Link } from "../routes";
+import Router from "next/router";
+import UserProfile from "../components/UserProfile";
+import ProjectCard from "../components/ProjectCard";
+
+export default class myprofile extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.state = {
+  //     mySupport: []
+  //   };
+  // }
+
+  // componentDidMount() {
+  //   const myContracts = this.props.supportContracts.filter(
+  //     contract => contract.user_id === this.props.userData.id
+  //   );
+
+  //   const myProjects = myContracts
+  //     .map(contract => {
+  //       return this.props.allProjects.filter(project => {
+  //         return contract.project_id === project.id;
+  //       });
+  //     })
+  //     .flat();
+
+  //   this.setState({ mySupport: myProjects });
+  // }
+>>>>>>> development
 
   render() {
     return (
@@ -227,6 +260,22 @@ export default class myprofile extends Component {
             </Grid.Column>
             <Header size="large">Projects I've supported</Header>
           </Grid>
+<<<<<<< HEAD
+=======
+          <br />
+          <br />
+          <Header as="h2" icon="heart" content="Project's I've supported" />
+          <br />
+          <Card.Group itemsPerRow={5}>
+            {this.props.userSupport.map((project, i) => (
+              <ProjectCard
+                key={i}
+                project={project}
+                selectProject={this.props.selectProject}
+              />
+            ))}
+          </Card.Group>
+>>>>>>> development
         </div>
       </div>
     );

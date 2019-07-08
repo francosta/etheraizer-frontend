@@ -356,9 +356,13 @@ function (_Component) {
                 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 _context.next = 26;
 =======
                 _context.next = 28;
+>>>>>>> development
+=======
+                _context.next = 29;
 >>>>>>> development
                 break;
 
@@ -373,9 +377,13 @@ function (_Component) {
                 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 _context.next = 26;
 =======
                 _context.next = 28;
+>>>>>>> development
+=======
+                _context.next = 29;
 >>>>>>> development
                 break;
 
@@ -419,11 +427,18 @@ function (_Component) {
 
                 _this.createSupportContractinDatabase(_this.props.selectedProject.id, _this.props.userData.id, contribution);
 
-                _context.next = 28;
+                _this.props.addToUserSupportedProjects(_this.props.selectedProject);
+
+                _context.next = 29;
                 break;
 
+<<<<<<< HEAD
               case 25:
                 _context.prev = 25;
+>>>>>>> development
+=======
+              case 26:
+                _context.prev = 26;
 >>>>>>> development
                 _context.t0 = _context["catch"](12);
 
@@ -434,18 +449,26 @@ function (_Component) {
                 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
               case 26:
 =======
               case 28:
+>>>>>>> development
+=======
+              case 29:
 >>>>>>> development
               case "end":
                 return _context.stop();
             }
           }
 <<<<<<< HEAD
+<<<<<<< HEAD
         }, _callee, null, [[12, 23]]);
 =======
         }, _callee, null, [[12, 25]]);
+>>>>>>> development
+=======
+        }, _callee, null, [[12, 26]]);
 >>>>>>> development
       }));
 
@@ -1469,6 +1492,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "regenerator-run
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
@@ -1480,6 +1504,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2__);
+>>>>>>> development
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ShowProject; });
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
 >>>>>>> development
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
@@ -1540,6 +1572,7 @@ function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(ShowProject).call(this, props));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "componentDidMount",
     /*#__PURE__*/
@@ -1636,28 +1669,34 @@ function (_Component) {
       }, _callee2, this);
 =======
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+=======
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "componentDidMount",
+    /*#__PURE__*/
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
+>>>>>>> development
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var project, stats;
+      var address, project, stats;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              project = Object(_ethereum_projectContract__WEBPACK_IMPORTED_MODULE_15__["default"])(this.props.selectedProject.blockchain_address);
-              _context.next = 3;
+              address = this.props.selectedProject.blockchain_address;
+              project = Object(_ethereum_projectContract__WEBPACK_IMPORTED_MODULE_15__["default"])(address);
+              _context.next = 4;
               return project.methods.getSummary().call();
 
-            case 3:
+            case 4:
               stats = _context.sent;
               this.setState({
-                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[0]["_hex"]),
-                balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[1]["_hex"]),
-                requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[2]["_hex"]),
-                supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[3]["_hex"]),
+                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[0]["_hex"]),
+                balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[1]["_hex"]),
+                requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[2]["_hex"]),
+                supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[3]["_hex"]),
                 managerAddress: stats[4]
               });
 
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -1676,6 +1715,7 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getContractWithState",
     /*#__PURE__*/
 <<<<<<< HEAD
+<<<<<<< HEAD
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee3() {
@@ -1690,35 +1730,24 @@ function (_Component) {
       }, _callee3);
 =======
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+=======
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
+>>>>>>> development
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-      var project, stats;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              debugger;
-              project = Object(_ethereum_projectContract__WEBPACK_IMPORTED_MODULE_15__["default"])(this.state.selectedProject.blockchain_address);
-              _context2.next = 4;
-              return project.methods.getSummary().call();
-
-            case 4:
-              stats = _context2.sent;
-              console.log(stats);
-              this.setState({
-                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[0]["_hex"]),
-                balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[1]["_hex"]),
-                requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[2]["_hex"]),
-                supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[3]["_hex"]),
-                managerAddress: stats[4]
-              });
-
-            case 7:
             case "end":
               return _context2.stop();
           }
         }
+<<<<<<< HEAD
       }, _callee2, this);
+>>>>>>> development
+=======
+      }, _callee2);
 >>>>>>> development
     })));
 
@@ -1734,8 +1763,7 @@ function (_Component) {
       balance: null,
       requestsCount: null,
       supportersCount: null,
-      managerAddress: "",
-      selectedProject: null
+      managerAddress: ""
     };
     return _this;
   }
@@ -1765,7 +1793,8 @@ function (_Component) {
         updateDataOnFrontend: this.updateDataOnFrontend
 =======
         updateDataOnFrontend: this.updateDataOnFrontend,
-        selectProject: this.props.selectProject
+        selectProject: this.props.selectProject,
+        addToUserSupportedProjects: this.props.addToUserSupportedProjects
       })))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
         selectedProject: this.props.selectedProject
 >>>>>>> development
@@ -1777,10 +1806,14 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectProgress__WEBPACK_IMPORTED_MODULE_11__["default"], {
         goal: this.props.selectedProject.goal,
 <<<<<<< HEAD
+<<<<<<< HEAD
         progress: this.props.selectedProject.progress
 =======
         progress: this.props.selectedProject.progress,
         balance: this.state.balance
+>>>>>>> development
+=======
+        progress: this.props.selectedProject.progress
 >>>>>>> development
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectStats__WEBPACK_IMPORTED_MODULE_17__["default"], {
         selectedProject: this.props.selectedProject,
@@ -1809,7 +1842,7 @@ function (_Component) {
   return ShowProject;
 }(react__WEBPACK_IMPORTED_MODULE_10__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (ShowProject);
+
 
 /***/ }),
 

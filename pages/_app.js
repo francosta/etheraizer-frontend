@@ -19,7 +19,13 @@ export default class MyApp extends App {
     this.state = {
       userData: {},
       selectedProject: {},
+<<<<<<< HEAD
       allprojects: []
+=======
+      allprojects: [],
+      supportContracts: [],
+      userSupport: []
+>>>>>>> development
     };
   }
 
@@ -39,15 +45,45 @@ export default class MyApp extends App {
       Router.push("/login");
     }
 
+<<<<<<< HEAD
+=======
+    this.getAllProjects().then(resp => this.setState({ allprojects: resp }));
+    this.getSupportContracts().then(resp => {
+      this.setState({ supportContracts: resp });
+    });
+  }
+
+  getAllProjects = () => {
+>>>>>>> development
     const projectsURL = "http://localhost:3000/projects";
     return fetch(projectsURL)
       .then(resp => resp.json())
       .then(resp => this.setState({ allprojects: resp }));
   }
 
+  getUserSupport = () => {
+    const userContracts = this.state.supportContracts.filter(
+      contract => contract.user_id === this.state.userData.id
+    );
+
+    const userProjects = userContracts
+      .map(contract => {
+        return this.state.allprojects.filter(project => {
+          return contract.project_id === project.id;
+        });
+      })
+      .flat();
+
+    this.setState({ userSupport: userProjects });
+  };
+
   loggedIn = token => {
     localStorage.setItem("token", token);
-    getUserData().then(resp => this.setState({ userData: resp }));
+    getUserData().then(resp => {
+      this.setState({ userData: resp });
+      this.getUserSupport();
+    });
+
     Router.push("/");
   };
 
@@ -75,6 +111,22 @@ export default class MyApp extends App {
     this.setState({ blockchainProjects: blockchainProjects });
   };
 
+<<<<<<< HEAD
+=======
+  updateCreatedProjectsOnFrontend = () => {
+    const { created_projects } = this.state.userData;
+    const newCreatedProjects = [
+      ...created_projects,
+      this.state.selectedProject
+    ];
+    this.setState({ userData: { ...this.state.userData, newCreatedProjects } });
+  };
+
+  updateUserSupportedProjects = project => {
+    this.setState({ userSupport: [...this.state.userSupport, project] });
+  };
+
+>>>>>>> development
   render() {
     const { Component } = this.props;
     return (
@@ -92,6 +144,14 @@ export default class MyApp extends App {
           allProjects={this.state.allprojects}
           changeSelectedProject={this.changeSelectedProject}
           deployProject={this.deployProject}
+<<<<<<< HEAD
+=======
+          router={this.props.router}
+          updateCreatedProjectsOnFrontend={this.updateCreatedProjectsOnFrontend}
+          supportContracts={this.state.supportContracts}
+          userSupport={this.state.userSupport}
+          addToUserSupportedProjects={this.updateUserSupportedProjects}
+>>>>>>> development
         />
       </Layout>
     );

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import ProjectProgress from "../../components/ProjectProgress";
 import AchieveProjectForm from "../../components/AchieveProjectForm";
+<<<<<<< HEAD
 import { Button } from "semantic-ui-react";
+=======
+import { Button, Grid } from "semantic-ui-react";
+>>>>>>> development
 import ProjectDetails from "../../components/ProjectDetails";
 import projectContract from "../../ethereum/projectContract";
 import web3 from "../../ethereum/web3";
@@ -74,6 +78,9 @@ export default class ShowProject extends Component {
                 selectedProject={this.props.selectedProject}
                 updateDataOnFrontend={this.updateDataOnFrontend}
                 selectProject={this.props.selectProject}
+                addToUserSupportedProjects={
+                  this.props.addToUserSupportedProjects
+                }
               />
             </Grid.Column>
           </Grid.Row>
@@ -84,6 +91,7 @@ export default class ShowProject extends Component {
         <ProjectCreationProgressComponent
           selectedProject={this.props.selectedProject}
         />
+<<<<<<< HEAD
         {/* ) : null} */}
         {/* <br /> */}
 <<<<<<< HEAD
@@ -96,6 +104,8 @@ export default class ShowProject extends Component {
           selectedProject={this.props.selectedProject}
           updateDataOnFrontend={this.updateDataOnFrontend}
         />
+>>>>>>> development
+=======
 >>>>>>> development
         <ProjectHighLevelValues
           balance={this.state.balance}
