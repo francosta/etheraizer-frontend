@@ -11,7 +11,7 @@ export default class ProjectCard extends Component {
     const extra = (
       <a>
         <Icon name="user" />
-        No. Supporters: 17
+        {this.props.project.users.length} supporters
       </a>
     );
     return (
