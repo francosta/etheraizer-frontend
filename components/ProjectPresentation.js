@@ -11,7 +11,9 @@ export default function ProjectPresentation(props) {
         <Grid.Column>
           <Container>
             <Header as="h2">Project's Description</Header>
-            <p>{props.selectedProject.description}</p>
+            <p style={{ fontSize: "medium" }}>
+              {props.selectedProject.description}
+            </p>
           </Container>
         </Grid.Column>
       </Grid.Row>
