@@ -55,7 +55,11 @@ export default class myprofile extends Component {
                     <Item>
                       <Item.Image
                         size="tiny"
-                        src="https://react.semantic-ui.com/images/avatar/large/stevie.jpg"
+                        src={
+                          this.props.userData.created_projects[
+                            this.props.userData.created_projects.length - 1
+                          ].image
+                        }
                       />
 
                       <Item.Content>
@@ -97,7 +101,11 @@ export default class myprofile extends Component {
                     <Item>
                       <Item.Image
                         size="tiny"
-                        src="https://react.semantic-ui.com/images/avatar/large/stevie.jpg"
+                        src={
+                          this.props.userData.deployed_projects[
+                            this.props.userData.deployed_projects.length - 1
+                          ].image
+                        }
                       />
 
                       <Item.Content>
@@ -109,12 +117,9 @@ export default class myprofile extends Component {
                           }
                         </Item.Header>
                         <Item.Description>
-                          {
-                            this.props.userData.deployed_projects[
-                              this.props.userData.deployed_projects.length - 1
-                            ].description
-                          }
-                          }
+                          {`${this.props.userData.deployed_projects[
+                            this.props.userData.deployed_projects.length - 1
+                          ].description.substring(0, 100)}` + "..."}
                         </Item.Description>
                       </Item.Content>
                     </Item>

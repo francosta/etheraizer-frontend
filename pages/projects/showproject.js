@@ -89,21 +89,23 @@ class ShowProject extends Component {
   render() {
     return (
       <div>
-        <Grid columns="equal">
-          <Grid.Column floated="left">
-            <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
-          </Grid.Column>
-          <Grid.Column floated="right">
-            <ContributeForm
-              balance={this.state.balance}
-              supportersCount={this.state.supportersCount}
-              userData={this.props.userData}
-              minimumContribution={this.state.minimumContribution}
-              selectedProject={this.props.selectedProject}
-              updateDataOnFrontend={this.updateDataOnFrontend}
-              selectProject={this.props.selectProject}
-            />
-          </Grid.Column>
+        <Grid>
+          <Grid.Row columns={2}>
+            <Grid.Column floated="left">
+              <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
+            </Grid.Column>
+            <Grid.Column floated="right">
+              <ContributeForm
+                balance={this.state.balance}
+                supportersCount={this.state.supportersCount}
+                userData={this.props.userData}
+                minimumContribution={this.state.minimumContribution}
+                selectedProject={this.props.selectedProject}
+                updateDataOnFrontend={this.updateDataOnFrontend}
+                selectProject={this.props.selectProject}
+              />
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
         <br />
         <ProjectCreationProgressComponent
