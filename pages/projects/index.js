@@ -81,21 +81,23 @@ export default class ProjectIndex extends Component {
             </div>
           </div>
         </div>
-        {this.state.searchTerm === ""
-          ? this.state.projects.map((project, i) => (
-              <ProjectCard
-                key={i}
-                project={project}
-                selectProject={this.props.selectProject}
-              />
-            ))
-          : this.state.filteredProjects.map((project, i) => (
-              <ProjectCard
-                key={i}
-                project={project}
-                selectProject={this.props.selectProject}
-              />
-            ))}
+        <Card.Group itemsPerRow={3}>
+          {this.state.searchTerm === ""
+            ? this.state.projects.map((project, i) => (
+                <ProjectCard
+                  key={i}
+                  project={project}
+                  selectProject={this.props.selectProject}
+                />
+              ))
+            : this.state.filteredProjects.map((project, i) => (
+                <ProjectCard
+                  key={i}
+                  project={project}
+                  selectProject={this.props.selectProject}
+                />
+              ))}
+        </Card.Group>
         <br />
       </div>
     );

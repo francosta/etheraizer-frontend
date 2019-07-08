@@ -486,8 +486,10 @@ function (_Component) {
           open = _this$state.open,
           dimmer = _this$state.dimmer;
       return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
+        size: "huge",
+        color: "green",
         onClick: this.show("blurring")
-      }, "Contribute"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Modal"], {
+      }, "Support this project"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Modal"], {
         dimmer: dimmer,
         open: open,
         onClose: this.close,
@@ -1471,9 +1473,13 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ShowProject, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
-        selectedProject: this.props.selectedProject
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContributeForm__WEBPACK_IMPORTED_MODULE_20__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], {
+        columns: "equal"
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
+        floated: "left"
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
+        floated: "right"
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContributeForm__WEBPACK_IMPORTED_MODULE_20__["default"], {
         balance: this.state.balance,
         supportersCount: this.state.supportersCount,
         userData: this.props.userData,
@@ -1481,6 +1487,8 @@ function (_Component) {
         selectedProject: this.props.selectedProject,
         updateDataOnFrontend: this.updateDataOnFrontend,
         selectProject: this.props.selectProject
+      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
         balance: this.state.balance,
         goal: this.props.selectedProject.goal,

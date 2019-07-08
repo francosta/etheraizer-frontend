@@ -122,7 +122,9 @@ class ContributeForm extends Component {
 
     return (
       <div>
-        <Button onClick={this.show("blurring")}>Contribute</Button>
+        <Button size="huge" color="green" onClick={this.show("blurring")}>
+          Support this project
+        </Button>
 
         <Modal dimmer={dimmer} open={open} onClose={this.close} centered={true}>
           <Segment>

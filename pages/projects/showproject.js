@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ProjectProgress from "../../components/ProjectProgress";
 import AchieveProjectForm from "../../components/AchieveProjectForm";
-import { Button } from "semantic-ui-react";
+import { Button, Grid, GridColumn } from "semantic-ui-react";
 import ProjectDetails from "../../components/ProjectDetails";
 import projectContract from "../../ethereum/projectContract";
 import web3 from "../../ethereum/web3";
@@ -88,23 +88,27 @@ class ShowProject extends Component {
   render() {
     return (
       <div>
-        <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
+        <Grid columns="equal">
+          <Grid.Column floated="left">
+            <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
+          </Grid.Column>
+          <Grid.Column floated="right">
+            <ContributeForm
+              balance={this.state.balance}
+              supportersCount={this.state.supportersCount}
+              userData={this.props.userData}
+              minimumContribution={this.state.minimumContribution}
+              selectedProject={this.props.selectedProject}
+              updateDataOnFrontend={this.updateDataOnFrontend}
+              selectProject={this.props.selectProject}
+            />
+          </Grid.Column>
+        </Grid>
         <br />
-        {/* {this.props.selectedProject.user_id === this.props.userData.id ? ( */}
         <ProjectCreationProgressComponent
           selectedProject={this.props.selectedProject}
         />
-        {/* ) : null} */}
-        {/* <br /> */}
-        <ContributeForm
-          balance={this.state.balance}
-          supportersCount={this.state.supportersCount}
-          userData={this.props.userData}
-          minimumContribution={this.state.minimumContribution}
-          selectedProject={this.props.selectedProject}
-          updateDataOnFrontend={this.updateDataOnFrontend}
-          selectProject={this.props.selectProject}
-        />
+
         <ProjectHighLevelValues
           balance={this.state.balance}
           goal={this.props.selectedProject.goal}

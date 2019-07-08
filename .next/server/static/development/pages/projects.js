@@ -1028,7 +1028,9 @@ function (_Component) {
         className: "item"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         className: "settings icon"
-      }), " Account Settings")))), this.state.searchTerm === "" ? this.state.projects.map(function (project, i) {
+      }), " Account Settings")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Card"].Group, {
+        itemsPerRow: 3
+      }, this.state.searchTerm === "" ? this.state.projects.map(function (project, i) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
           key: i,
           project: project,
@@ -1040,7 +1042,7 @@ function (_Component) {
           project: project,
           selectProject: _this2.props.selectProject
         });
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
     }
   }]);
 
