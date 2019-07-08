@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -658,6 +658,36 @@ var ProjectHighLevelValues = function ProjectHighLevelValues(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProjectHighLevelValues);
+
+/***/ }),
+
+/***/ "./components/ProjectPresentation.js":
+/*!*******************************************!*\
+  !*** ./components/ProjectPresentation.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProjectPresentation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function ProjectPresentation(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
+    columns: 2
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
+    width: 8
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
+    src: props.selectedProject.image
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    as: "h2"
+  }, "Project's Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.selectedProject.description))))));
+}
 
 /***/ }),
 
@@ -1329,6 +1359,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../components/ProjectCreationProgressComponent */ "./components/ProjectCreationProgressComponent.js");
 /* harmony import */ var _components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../components/ProjectHighLevelValues */ "./components/ProjectHighLevelValues.js");
 /* harmony import */ var _components_ContributeForm__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../components/ContributeForm */ "./components/ContributeForm.js");
+/* harmony import */ var _components_ProjectPresentation__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../components/ProjectPresentation */ "./components/ProjectPresentation.js");
+
 
 
 
@@ -1518,6 +1550,8 @@ function (_Component) {
         balance: this.state.balance,
         requestsCount: this.state.requestsCount,
         approversCount: this.state.approversCount
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectPresentation__WEBPACK_IMPORTED_MODULE_21__["default"], {
+        selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
         onClick: this.handleClick,
         type: "submit"
@@ -1562,7 +1596,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!*********************************************!*\
   !*** multi ./pages/projects/showproject.js ***!
   \*********************************************/

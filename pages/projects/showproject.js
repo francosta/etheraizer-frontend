@@ -9,6 +9,7 @@ import ProjectStats from "../../components/ProjectStats";
 import ProjectCreationProgressComponent from "../../components/ProjectCreationProgressComponent";
 import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
 import ContributeForm from "../../components/ContributeForm";
+import ProjectPresentation from "../../components/ProjectPresentation";
 
 class ShowProject extends Component {
   constructor(props) {
@@ -130,6 +131,10 @@ class ShowProject extends Component {
           requestsCount={this.state.requestsCount}
           approversCount={this.state.approversCount}
         />
+        <br />
+        <br />
+        <br />
+        <ProjectPresentation selectedProject={this.props.selectedProject} />
         <br />
         {!this.state.edit ? (
           <div>
