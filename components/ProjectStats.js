@@ -1,12 +1,20 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
+import { Link } from "../routes";
 
 export default function ProjectStats(props) {
   const items = [
     {
-      header: "Project Blockchain Address",
-      description: "This is the person who created the project",
-      meta: props.selectedProject.blockchain_address
+      header: (
+        <a
+          style={{ pointerEvents: "auto" }}
+          href={`https://kovan.etherscan.io/address/${
+            props.selectedProject.blockchain_address
+          }`}>
+          Project Blockchain Address
+        </a>
+      ),
+      description: "This is the person who created the project"
     },
     {
       header: "Manager's Blockchain Address",

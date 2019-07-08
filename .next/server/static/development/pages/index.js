@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // import logo from "../public/logo.png";
 
 var LoginForm =
 /*#__PURE__*/
@@ -207,7 +207,7 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
         verticalAlign: "middle",
-        src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
+        src: "https://github.com/francosta/etheraizer-frontend/raw/master/public/logo.png"
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Header"], {
         as: "h2",
         color: "teal",

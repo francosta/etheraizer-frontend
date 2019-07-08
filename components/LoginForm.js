@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 import { login } from "../services/authentication";
 import Router from "next/router";
+// import logo from "../public/logo.png";
 
 export default class LoginForm extends Component {
   handleSubmit = e => {
@@ -31,7 +32,7 @@ export default class LoginForm extends Component {
         <Grid.Column style={{ maxWidth: 450 }}>
           <Image
             verticalAlign="middle"
-            src="https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
+            src="https://github.com/francosta/etheraizer-frontend/raw/master/public/logo.png"
           />
           <Header as="h2" color="teal" textAlign="center">
             Log-in to your account
