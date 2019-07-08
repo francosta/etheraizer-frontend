@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -617,7 +617,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 4:
+/***/ 8:
 /*!**********************************!*\
   !*** multi ./pages/myprofile.js ***!
   \**********************************/
