@@ -8,6 +8,11 @@ import web3 from "../../ethereum/web3";
 import ProjectStats from "../../components/ProjectStats";
 import ProjectCreationProgressComponent from "../../components/ProjectCreationProgressComponent";
 import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
+<<<<<<< HEAD
+=======
+import ContributeForm from "../../components/ContributeForm";
+import ProjectPresentation from "../../components/ProjectPresentation";
+>>>>>>> development
 
 export default class ShowProject extends Component {
   constructor(props) {
@@ -55,7 +60,28 @@ export default class ShowProject extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
+=======
+        <Grid>
+          <Grid.Row columns={2}>
+            <Grid.Column floated="left">
+              <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
+            </Grid.Column>
+            <Grid.Column floated="right">
+              <ContributeForm
+                balance={this.state.balance}
+                supportersCount={this.state.supportersCount}
+                userData={this.props.userData}
+                minimumContribution={this.state.minimumContribution}
+                selectedProject={this.props.selectedProject}
+                updateDataOnFrontend={this.updateDataOnFrontend}
+                selectProject={this.props.selectProject}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+>>>>>>> development
         <br />
         {/* {this.props.selectedProject.user_id === this.props.userData.id ? ( */}
         <ProjectCreationProgressComponent
@@ -94,6 +120,10 @@ export default class ShowProject extends Component {
           requestsCount={this.state.requestsCount}
           approversCount={this.state.approversCount}
         />
+        <br />
+        <br />
+        <br />
+        <ProjectPresentation selectedProject={this.props.selectedProject} />
         <br />
         {!this.state.edit ? (
           <div>

@@ -28,6 +28,7 @@ export default class CreateProjectForm extends Component {
     const newTitle = e.target.projectTitle.value;
     const newDescription = e.target.description.value;
     const newGoal = e.target.goal.value;
+    const newImage = e.target.image.value;
 
     const project = {
       title: newTitle,
@@ -35,7 +36,8 @@ export default class CreateProjectForm extends Component {
       goal: newGoal,
       user_id: this.props.userData.id,
       blockchain_address: "",
-      status: "created"
+      status: "created",
+      image: newImage
     };
 
     const createURL = "http://localhost:3000/projects";
@@ -90,6 +92,14 @@ export default class CreateProjectForm extends Component {
                   label={<Dropdown defaultValue="wei" options={formOptions} />}
                   labelPosition="right"
                   placeholder="Funding Goal"
+                />
+              </Form.Field>
+              <Form.Field>
+                <label>Image URL</label>
+                <Input
+                  name="image"
+                  labelPosition="right"
+                  placeholder="Project Image"
                 />
               </Form.Field>
               <Message

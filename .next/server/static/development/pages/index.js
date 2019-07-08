@@ -88,7 +88,11 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 4);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+>>>>>>> development
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -201,7 +205,11 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
         verticalAlign: "middle",
+<<<<<<< HEAD
         src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
+=======
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png"
+>>>>>>> development
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Header"], {
         as: "h2",
         color: "teal",
@@ -399,6 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
+<<<<<<< HEAD
   if (!props.userData.first_name) {
     return (// We use container in order to limit the size of the elements in the window.
       // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
@@ -419,6 +428,18 @@ __webpack_require__.r(__webpack_exports__);
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
     );
   }
+=======
+  return (// We use container in order to limit the size of the elements in the window.
+    // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+      rel: "stylesheet",
+      href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+    })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      logout: props.logout,
+      selectProject: props.selectProject
+    }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
+  );
+>>>>>>> development
 });
 
 /***/ }),
@@ -1149,7 +1170,11 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 5:
+=======
+/***/ 3:
+>>>>>>> development
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

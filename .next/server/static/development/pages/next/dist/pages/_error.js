@@ -88,7 +88,11 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 9);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+>>>>>>> development
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -498,14 +502,22 @@ var styles = {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 9:
+=======
+/***/ 10:
+>>>>>>> development
 /*!******************************************************!*\
   !*** multi ./node_modules/next/dist/pages/_error.js ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/fran/Desktop/etheraizer/etheraizer-frontend/node_modules/next/dist/pages/_error.js */"./node_modules/next/dist/pages/_error.js");
+=======
+module.exports = __webpack_require__(/*! /Users/francisco/Desktop/etheraizer/etheraizer-frontend/node_modules/next/dist/pages/_error.js */"./node_modules/next/dist/pages/_error.js");
+>>>>>>> development
 
 
 /***/ }),

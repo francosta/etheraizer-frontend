@@ -88,7 +88,11 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 5);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+>>>>>>> development
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -175,7 +179,11 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
         verticalAlign: "middle",
+<<<<<<< HEAD
         src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH"
+=======
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png"
+>>>>>>> development
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Header"], {
         as: "h2",
         color: "teal",
@@ -657,7 +665,11 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 5:
+=======
+/***/ 4:
+>>>>>>> development
 /*!******************************!*\
   !*** multi ./pages/login.js ***!
   \******************************/

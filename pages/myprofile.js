@@ -1,5 +1,21 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import { Grid, Header, Icon, Image, Item } from "semantic-ui-react";
+=======
+import {
+  Grid,
+  Header,
+  Icon,
+  Image,
+  Item,
+  Container,
+  Button,
+  Card
+} from "semantic-ui-react";
+import { Link } from "../routes";
+import Router from "next/router";
+import UserProfile from "../components/UserProfile";
+>>>>>>> development
 
 export default class myprofile extends Component {
   createdProjects =
@@ -23,6 +39,8 @@ export default class myprofile extends Component {
         <div>
           <Header size="huge">My Profile</Header>
           <br />
+          <UserProfile userData={this.props.userData} />
+          <br />
           <Header size="large">My Projects</Header>
           <br />
           <Grid columns="three" divided>
@@ -35,7 +53,11 @@ export default class myprofile extends Component {
                     <Item>
                       <Item.Image
                         size="tiny"
-                        src="https://react.semantic-ui.com/images/avatar/large/stevie.jpg"
+                        src={
+                          this.props.userData.created_projects[
+                            this.props.userData.created_projects.length - 1
+                          ].image
+                        }
                       />
 
                       <Item.Content>
@@ -92,7 +114,11 @@ export default class myprofile extends Component {
                     <Item>
                       <Item.Image
                         size="tiny"
-                        src="https://react.semantic-ui.com/images/avatar/large/stevie.jpg"
+                        src={
+                          this.props.userData.deployed_projects[
+                            this.props.userData.deployed_projects.length - 1
+                          ].image
+                        }
                       />
 
                       <Item.Content>
@@ -104,12 +130,18 @@ export default class myprofile extends Component {
                           }
                         </Item.Header>
                         <Item.Description>
+<<<<<<< HEAD
                           {
                             this.deployedProjects[
                               this.deployedProjects.length - 1
                             ].description
                           }
                           }
+=======
+                          {`${this.props.userData.deployed_projects[
+                            this.props.userData.deployed_projects.length - 1
+                          ].description.substring(0, 100)}` + "..."}
+>>>>>>> development
                         </Item.Description>
                       </Item.Content>
                     </Item>

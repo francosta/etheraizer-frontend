@@ -25,6 +25,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+<<<<<<< HEAD
     "/projects": [
 =======
 =======
@@ -47,12 +48,34 @@
 >>>>>>> development
 =======
 >>>>>>> 27899c90f26ce92827feb64aa953db05b655aca4
+=======
+    "/myprofile": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/next/dist/pages/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/projects": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/projects/createproject": [
+>>>>>>> development
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/projects/showproject": [
+<<<<<<< HEAD
 =======
     "/next/dist/pages/_error": [
+>>>>>>> development
+=======
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/signup": [
 >>>>>>> development
       "static/runtime/webpack.js",
       "static/runtime/main.js"

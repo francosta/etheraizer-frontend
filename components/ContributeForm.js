@@ -105,7 +105,11 @@ class ContributeForm extends Component {
       <div>
         <Button onClick={this.show("blurring")}>Contribute</Button>
 
-        <Modal dimmer={dimmer} open={open} onClose={this.close} centered={true}>
+        <Modal
+          position="absolute"
+          dimmer={dimmer}
+          open={open}
+          onClose={this.close}>
           <Segment>
             <Transition
               visible={this.state.contributing}
@@ -127,7 +131,6 @@ class ContributeForm extends Component {
                 <Header as="h2">{this.props.selectedProject.title}</Header>
                 <Container fluid>
                   <Header as="h3">Description</Header>
-                  <p>{this.props.selectedProject.description}</p>
                   <br />
                 </Container>
                 <Form onSubmit={this.handleSubmit}>

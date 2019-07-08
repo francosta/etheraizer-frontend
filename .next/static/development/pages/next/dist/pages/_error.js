@@ -3755,10 +3755,17 @@ module.exports = __webpack_require__(/*! ./dist/lib/head */ "./node_modules/next
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffran%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./":
 /*!******************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffran%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
   \******************************************************************************************************************************************************************************************************************************************************/
+=======
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./":
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+>>>>>>> development
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3917,6 +3924,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_1aef2d0bbc0d334d831c
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 10:
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffran%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
@@ -3925,6 +3933,16 @@ module.exports = (__webpack_require__(/*! dll-reference dll_1aef2d0bbc0d334d831c
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffran%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffran%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./");
+=======
+/***/ 11:
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./");
+>>>>>>> development
 
 
 /***/ }),
@@ -3940,5 +3958,9 @@ module.exports = dll_1aef2d0bbc0d334d831c;
 
 /***/ })
 
+<<<<<<< HEAD
 },[[10,"static/runtime/webpack.js"]]]);
+=======
+},[[11,"static/runtime/webpack.js"]]]);
+>>>>>>> development
 //# sourceMappingURL=_error.js.map

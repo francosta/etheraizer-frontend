@@ -88,7 +88,11 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 6);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+>>>>>>> development
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -351,7 +355,11 @@ function (_Component) {
                   errorMsg: "You need to accept the terms conditions before creating a project."
                 });
 
+<<<<<<< HEAD
                 _context.next = 26;
+=======
+                _context.next = 28;
+>>>>>>> development
                 break;
 
               case 8:
@@ -364,7 +372,11 @@ function (_Component) {
                   errorMsg: "Your contribution is below the minimum contribution for this project."
                 });
 
+<<<<<<< HEAD
                 _context.next = 26;
+=======
+                _context.next = 28;
+>>>>>>> development
                 break;
 
               case 12:
@@ -392,6 +404,7 @@ function (_Component) {
                   open: false
                 });
 
+<<<<<<< HEAD
                 _this.createSupportContractinDatabase(_this.props.selectedProject.id, _this.props.userData.id, contribution);
 
                 _context.next = 26;
@@ -399,6 +412,19 @@ function (_Component) {
 
               case 23:
                 _context.prev = 23;
+=======
+                _this.updateSelectedProject();
+
+                _this.props.updateDataOnFrontend(contribution);
+
+                _this.createSupportContractinDatabase(_this.props.selectedProject.id, _this.props.userData.id, contribution);
+
+                _context.next = 28;
+                break;
+
+              case 25:
+                _context.prev = 25;
+>>>>>>> development
                 _context.t0 = _context["catch"](12);
 
                 _this.setState({
@@ -407,12 +433,20 @@ function (_Component) {
                   open: false
                 });
 
+<<<<<<< HEAD
               case 26:
+=======
+              case 28:
+>>>>>>> development
               case "end":
                 return _context.stop();
             }
           }
+<<<<<<< HEAD
         }, _callee, null, [[12, 23]]);
+=======
+        }, _callee, null, [[12, 25]]);
+>>>>>>> development
       }));
 
       return function (_x) {
@@ -423,11 +457,18 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "createSupportContractinDatabase", function (project_id, user_id, contribution) {
       var projectId = project_id;
       var userId = user_id;
+<<<<<<< HEAD
       var contractContribution = contribution;
       var supportContract = {
         user_id: userId,
         project_id: projectId,
         value: contractContribution
+=======
+      var supportContract = {
+        user_id: userId,
+        project_id: projectId,
+        value: contribution
+>>>>>>> development
       };
       var supportContractURL = "http://localhost:3000/support_contracts";
       var options = {
@@ -439,14 +480,46 @@ function (_Component) {
       };
       return fetch(supportContractURL, options).then(function (resp) {
         return resp.json();
+<<<<<<< HEAD
       }).then(function (resp) {
         return _this.props.updateDataOnFrontend(contractContribution);
+=======
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "updateSelectedProject", function () {
+      var id = _this.props.selectedProject.id;
+      var updateProjectURL = "http://localhost:3000/projects/".concat(id);
+      var progress = _this.props.balance / _this.props.selectedProject.goal * 100;
+
+      if (progress > 100) {
+        progress = 100;
+      }
+
+      var options = {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()({
+          progress: progress
+        })
+      };
+      return fetch(updateProjectURL, options).then(function (resp) {
+        return resp.json();
+      }).then(function (resp) {
+        return _this.props.selectProject(resp);
+>>>>>>> development
       });
     });
 
     _this.state = {
       open: false,
+<<<<<<< HEAD
       errorMsg: "",
+=======
+      errorMsg: null,
+>>>>>>> development
       terms: false,
       contributing: false
     };
@@ -460,12 +533,23 @@ function (_Component) {
           open = _this$state.open,
           dimmer = _this$state.dimmer;
       return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
+<<<<<<< HEAD
         onClick: this.show("blurring")
       }, "Contribute"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Modal"], {
         dimmer: dimmer,
         open: open,
         onClose: this.close,
         centered: true
+=======
+        size: "huge",
+        color: "green",
+        onClick: this.show("blurring")
+      }, "Support this project"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Modal"], {
+        position: "absolute",
+        dimmer: dimmer,
+        open: open,
+        onClose: this.close
+>>>>>>> development
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Segment"], null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Transition"], {
         visible: this.state.contributing,
         animation: "scale",
@@ -486,7 +570,12 @@ function (_Component) {
         fluid: true
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Header"], {
         as: "h3"
+<<<<<<< HEAD
       }, "Description"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("p", null, this.props.selectedProject.description), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null)), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Form"], {
+=======
+      }, "Description"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null)), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Form"], {
+        error: this.state.errorMsg,
+>>>>>>> development
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Form"].Field, null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", null, "How much do you want to contribute?"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("input", {
         name: "contribution",
@@ -575,13 +664,22 @@ function (_Component) {
       var newTitle = e.target.projectTitle.value;
       var newDescription = e.target.description.value;
       var newGoal = e.target.goal.value;
+<<<<<<< HEAD
+=======
+      var newImage = e.target.image.value;
+>>>>>>> development
       var project = {
         title: newTitle,
         description: newDescription,
         goal: newGoal,
         user_id: _this.props.userData.id,
         blockchain_address: "",
+<<<<<<< HEAD
         status: "created"
+=======
+        status: "created",
+        image: newImage
+>>>>>>> development
       };
       var createURL = "http://localhost:3000/projects";
       var options = {
@@ -595,6 +693,11 @@ function (_Component) {
         return resp.json();
       }).then(function (newProject) {
         _this.props.selectProject(newProject);
+<<<<<<< HEAD
+=======
+
+        _this.props.updateCreatedProjectsOnFrontend();
+>>>>>>> development
       });
     });
 
@@ -654,6 +757,13 @@ function (_Component) {
         }),
         labelPosition: "right",
         placeholder: "Funding Goal"
+<<<<<<< HEAD
+=======
+      })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Form"].Field, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", null, "Image URL"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Input"], {
+        name: "image",
+        labelPosition: "right",
+        placeholder: "Project Image"
+>>>>>>> development
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Message"], {
         color: "red",
         size: "small",
@@ -1040,6 +1150,43 @@ var ProjectHighLevelValues = function ProjectHighLevelValues(props) {
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "./components/ProjectPresentation.js":
+/*!*******************************************!*\
+  !*** ./components/ProjectPresentation.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProjectPresentation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function ProjectPresentation(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Row, {
+    columns: 2
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, {
+    width: 8
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Image"], {
+    src: props.selectedProject.image
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Grid"].Column, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+    as: "h2"
+  }, "Project's Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      fontSize: "medium"
+    }
+  }, props.selectedProject.description)))));
+}
+
+/***/ }),
+
+>>>>>>> development
 /***/ "./components/ProjectProgress.js":
 /*!***************************************!*\
   !*** ./components/ProjectProgress.js ***!
@@ -1054,6 +1201,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+<<<<<<< HEAD
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
@@ -1063,6 +1211,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__);
 
 
+=======
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__);
+>>>>>>> development
 
 
 
@@ -1074,6 +1229,7 @@ __webpack_require__.r(__webpack_exports__);
 var ProjectProgress =
 /*#__PURE__*/
 function (_Component) {
+<<<<<<< HEAD
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(ProjectProgress, _Component);
 
   function ProjectProgress() {
@@ -1094,6 +1250,14 @@ function (_Component) {
     });
 
     return _this;
+=======
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(ProjectProgress, _Component);
+
+  function ProjectProgress() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ProjectProgress);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ProjectProgress).apply(this, arguments));
+>>>>>>> development
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ProjectProgress, [{
@@ -1104,10 +1268,17 @@ function (_Component) {
       if (this.props.progress === null) {
         progress = 0;
       } else {
+<<<<<<< HEAD
         progress = this.props.progress / this.props.goal * 100;
       }
 
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Progress"], {
+=======
+        progress = this.props.balance / this.props.goal * 100;
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Progress"], {
+>>>>>>> development
         percent: progress,
         indicating: true
       }));
@@ -1115,7 +1286,11 @@ function (_Component) {
   }]);
 
   return ProjectProgress;
+<<<<<<< HEAD
 }(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+=======
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+>>>>>>> development
 
 
 
@@ -1135,10 +1310,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);
+<<<<<<< HEAD
+=======
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
+
+>>>>>>> development
 
 
 function ProjectStats(props) {
   var items = [{
+<<<<<<< HEAD
     header: "Project Blockchain Address",
     description: "This is the person who created the project",
     meta: props.selectedProject.blockchain_address
@@ -1150,6 +1332,29 @@ function ProjectStats(props) {
     header: "Minimum Contribution",
     description: "How much you need to donate to become a supporter",
     meta: props.minimumContribution
+=======
+    header: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      target: "_blank",
+      style: {
+        pointerEvents: "auto"
+      },
+      href: "https://kovan.etherscan.io/address/".concat(props.selectedProject.blockchain_address)
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Project Blockchain Address")),
+    description: "This is the address of the project."
+  }, {
+    header: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      target: "_blank",
+      style: {
+        pointerEvents: "auto"
+      },
+      href: "https://kovan.etherscan.io/address/".concat(props.manager)
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Owner's Blockchain Address")),
+    description: "This is the address of the user who created the project"
+  }, {
+    header: "Minimum Contribution",
+    description: "How much you need to donate to become a supporter",
+    meta: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, props.minimumContribution)
+>>>>>>> development
   }];
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Card"].Group, {
     centered: true,
@@ -1200,7 +1405,11 @@ var _build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PU
 
  // Create an instance of the contract with the deployed contract's address
 
+<<<<<<< HEAD
 var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0xB3e1F35b33Aa552F607Dc713a2c1017bB1D5A8CF");
+=======
+var contractInstance = new _web3__WEBPACK_IMPORTED_MODULE_0__["default"].eth.Contract(JSON.parse(_build_CampaignFactory_json__WEBPACK_IMPORTED_MODULE_1__.interface), "0xf2e6651d028071cf9C0B93A8b67549cE42523b97");
+>>>>>>> development
 /* harmony default export */ __webpack_exports__["default"] = (contractInstance);
 
 /***/ }),
@@ -1293,7 +1502,11 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
 } else {
   // We are not in the browser or Metamask is not running.
   // We need to set up our own provider, using the Rinkeby Eth network, through Infura (using the link that we were provided with).
+<<<<<<< HEAD
   var web3ServerProvider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("https://rinkeby.infura.io/v3/c8d80c1c979446a7b1b3ebe2f3729ec9");
+=======
+  var web3ServerProvider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("https://kovan.infura.io/v3/8b58c0fa62a64918bb5e776b7c58538e");
+>>>>>>> development
 
   var _provider = new web3__WEBPACK_IMPORTED_MODULE_2___default.a.providers.HttpProvider("http://127.0.0.1:7545");
 
@@ -1769,7 +1982,12 @@ function (_Component) {
           selectedProject: this.props.selectedProject
         }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_CreateProjectForm__WEBPACK_IMPORTED_MODULE_8__["default"], {
           userData: this.props.userData,
+<<<<<<< HEAD
           selectProject: this.props.selectProject
+=======
+          selectProject: this.props.selectProject,
+          updateCreatedProjectsOnFrontend: this.props.updateCreatedProjectsOnFrontend
+>>>>>>> development
         }));
       } else if (this.props.selectedProject.status === "created") {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1808,11 +2026,19 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
 /* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+=======
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2__);
+>>>>>>> development
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
@@ -1833,6 +2059,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../components/ProjectCreationProgressComponent */ "./components/ProjectCreationProgressComponent.js");
 /* harmony import */ var _components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../components/ProjectHighLevelValues */ "./components/ProjectHighLevelValues.js");
 /* harmony import */ var _components_ContributeForm__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../components/ContributeForm */ "./components/ContributeForm.js");
+<<<<<<< HEAD
+=======
+/* harmony import */ var _components_ProjectPresentation__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../components/ProjectPresentation */ "./components/ProjectPresentation.js");
+
+>>>>>>> development
 
 
 
@@ -1867,6 +2098,7 @@ function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(ShowProject).call(this, props));
 
+<<<<<<< HEAD
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "componentDidMount",
     /*#__PURE__*/
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
@@ -1897,6 +2129,22 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "selectProject", function (projects) {
       if (!_this.props.selectedProject) {
         var id = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(_this.props.router.query.id);
+=======
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "componentDidMount", function () {
+      var _this2 = this;
+
+      var projectsURL = "http://localhost:3000/projects";
+      return fetch(projectsURL).then(function (resp) {
+        return resp.json();
+      }).then(function (projects) {
+        return _this2.selectProject(projects);
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "selectProject", function (projects) {
+      if (!_this.props.selectedProject) {
+        var id = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(_this.props.router.query.id);
+>>>>>>> development
 
         var selectedProject = projects.filter(function (project) {
           return project.id === id;
@@ -1914,6 +2162,7 @@ function (_Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getContractWithProps",
     /*#__PURE__*/
+<<<<<<< HEAD
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2() {
@@ -1943,6 +2192,36 @@ function (_Component) {
           }
         }
       }, _callee2, this);
+=======
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var project, stats;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              project = Object(_ethereum_projectContract__WEBPACK_IMPORTED_MODULE_15__["default"])(this.props.selectedProject.blockchain_address);
+              _context.next = 3;
+              return project.methods.getSummary().call();
+
+            case 3:
+              stats = _context.sent;
+              this.setState({
+                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[0]["_hex"]),
+                balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[1]["_hex"]),
+                requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[2]["_hex"]),
+                supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[3]["_hex"]),
+                managerAddress: stats[4]
+              });
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+>>>>>>> development
     })));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "updateDataOnFrontend", function (contribution) {
@@ -1954,6 +2233,7 @@ function (_Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getContractWithState",
     /*#__PURE__*/
+<<<<<<< HEAD
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee3() {
@@ -1966,6 +2246,38 @@ function (_Component) {
           }
         }
       }, _callee3);
+=======
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var project, stats;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              debugger;
+              project = Object(_ethereum_projectContract__WEBPACK_IMPORTED_MODULE_15__["default"])(this.state.selectedProject.blockchain_address);
+              _context2.next = 4;
+              return project.methods.getSummary().call();
+
+            case 4:
+              stats = _context2.sent;
+              console.log(stats);
+              this.setState({
+                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[0]["_hex"]),
+                balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[1]["_hex"]),
+                requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[2]["_hex"]),
+                supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(stats[3]["_hex"]),
+                managerAddress: stats[4]
+              });
+
+            case 7:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, this);
+>>>>>>> development
     })));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "handleClick", function () {
@@ -1989,15 +2301,32 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ShowProject, [{
     key: "render",
     value: function render() {
+<<<<<<< HEAD
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
         selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContributeForm__WEBPACK_IMPORTED_MODULE_20__["default"], {
+=======
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
+        columns: 2
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
+        floated: "left"
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
+        floated: "right"
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContributeForm__WEBPACK_IMPORTED_MODULE_20__["default"], {
+>>>>>>> development
         balance: this.state.balance,
         supportersCount: this.state.supportersCount,
         userData: this.props.userData,
         minimumContribution: this.state.minimumContribution,
         selectedProject: this.props.selectedProject,
+<<<<<<< HEAD
         updateDataOnFrontend: this.updateDataOnFrontend
+=======
+        updateDataOnFrontend: this.updateDataOnFrontend,
+        selectProject: this.props.selectProject
+      })))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        selectedProject: this.props.selectedProject
+>>>>>>> development
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_19__["default"], {
         balance: this.state.balance,
         goal: this.props.selectedProject.goal,
@@ -2005,7 +2334,12 @@ function (_Component) {
         selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectProgress__WEBPACK_IMPORTED_MODULE_11__["default"], {
         goal: this.props.selectedProject.goal,
+<<<<<<< HEAD
         progress: this.props.selectedProject.progress
+=======
+        progress: this.props.selectedProject.progress,
+        balance: this.state.balance
+>>>>>>> development
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectStats__WEBPACK_IMPORTED_MODULE_17__["default"], {
         selectedProject: this.props.selectedProject,
         minimumContribution: this.state.minimumContribution,
@@ -2013,6 +2347,11 @@ function (_Component) {
         balance: this.state.balance,
         requestsCount: this.state.requestsCount,
         approversCount: this.state.approversCount
+<<<<<<< HEAD
+=======
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ProjectPresentation__WEBPACK_IMPORTED_MODULE_21__["default"], {
+        selectedProject: this.props.selectedProject
+>>>>>>> development
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("br", null), !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
         onClick: this.handleClick,
         type: "submit"
@@ -2057,7 +2396,11 @@ module.exports = routes;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 6:
+=======
+/***/ 7:
+>>>>>>> development
 /*!***********************************************!*\
   !*** multi ./pages/projects/createproject.js ***!
   \***********************************************/
