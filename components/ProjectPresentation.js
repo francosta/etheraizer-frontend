@@ -3,7 +3,7 @@ import { Grid, Container, Header, Image } from "semantic-ui-react";
 
 export default function ProjectPresentation(props) {
   return (
-    <Grid>
+    <Grid stackable>
       <Grid.Row columns={2}>
         <Grid.Column width={8}>
           <Image src={props.selectedProject.image} />

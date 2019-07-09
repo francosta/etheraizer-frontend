@@ -92,7 +92,7 @@ export default class DeployProjectForm extends Component {
       { key: "ether", text: "Ξ ether", value: "ether" }
     ];
     return (
-      <div>
+      <div style={{ marginTop: "20px" }}>
         <h2>Deploy your project to the Blockchain</h2>
         <h3>Your project was created. Now, deploy it to the blockchain.</h3>
         <div>

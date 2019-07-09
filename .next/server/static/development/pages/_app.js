@@ -292,16 +292,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  return (// We use container in order to limit the size of the elements in the window.
-    // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  if (props.router.route === "/") {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
       rel: "stylesheet",
       href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
     })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       logout: props.logout,
       selectProject: props.selectProject
-    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
-  );
+    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Image"], {
+      src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/background.jpg",
+      style: {
+        width: "100%",
+        heigth: "300"
+      }
+    }));
+  } else {
+    return (// We use container in order to limit the size of the elements in the window.
+      // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+      })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        logout: props.logout,
+        selectProject: props.selectProject
+      }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
+    );
+  }
 });
 
 /***/ }),
@@ -1708,12 +1724,9 @@ function (_App) {
         }).catch(function (err) {
           alert(err);
         });
-      } else {
-        var href = "/login";
-        var as = href;
-        next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push(href, as, {
-          shallow: true
-        });
+      } else {// const href = "/login";
+        // const as = href;
+        // Router.push(href, as, { shallow: true });
       }
 
       this.getAllProjects().then(function (resp) {
@@ -1734,7 +1747,8 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_layouts__WEBPACK_IMPORTED_MODULE_13__["default"], {
         userData: this.state.userData,
         logout: this.logout,
-        selectProject: this.selectProject
+        selectProject: this.selectProject,
+        router: this.props.router
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(Component, {
         blockchainProjects: this.props.blockchainProjects,
         userData: this.state.userData,

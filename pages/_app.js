@@ -42,9 +42,9 @@ export default class MyApp extends App {
           alert(err);
         });
     } else {
-      const href = "/login";
-      const as = href;
-      Router.push(href, as, { shallow: true });
+      // const href = "/login";
+      // const as = href;
+      // Router.push(href, as, { shallow: true });
     }
 
     this.getAllProjects().then(resp => this.setState({ allprojects: resp }));
@@ -132,7 +132,8 @@ export default class MyApp extends App {
       <Layout
         userData={this.state.userData}
         logout={this.logout}
-        selectProject={this.selectProject}>
+        selectProject={this.selectProject}
+        router={this.props.router}>
         <Component
           blockchainProjects={this.props.blockchainProjects}
           userData={this.state.userData}
