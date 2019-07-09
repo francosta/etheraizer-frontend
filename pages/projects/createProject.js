@@ -25,7 +25,7 @@ export default class createproject extends Component {
       );
     } else if (this.props.selectedProject.status === "created") {
       return (
-        <div>
+        <div style={{ marginTop: "20px" }}>
           <ProjectCreationProgressComponent
             selectedProject={this.props.selectedProject}
           />
@@ -42,7 +42,7 @@ export default class createproject extends Component {
       );
     } else if (this.props.selectedProject.status === "deployed") {
       return (
-        <div>
+        <div style={{ marginTop: "20px" }}>
           <ShowProject
             selectedProject={this.props.selectedProject}
             getNewProjectBlockchainAddress={

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1868,7 +1868,11 @@ function (_Component) {
           updateCreatedProjectsOnFrontend: this.props.updateCreatedProjectsOnFrontend
         }));
       } else if (this.props.selectedProject.status === "created") {
-        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+          style: {
+            marginTop: "20px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
           selectedProject: this.props.selectedProject
         }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_DeployProjectForm__WEBPACK_IMPORTED_MODULE_9__["default"], {
           selectedProject: this.props.selectedProject,
@@ -1878,7 +1882,11 @@ function (_Component) {
           addProjectToAllProjects: this.props.deployProject
         }));
       } else if (this.props.selectedProject.status === "deployed") {
-        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_projects_showproject__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+          style: {
+            marginTop: "20px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_projects_showproject__WEBPACK_IMPORTED_MODULE_10__["default"], {
           selectedProject: this.props.selectedProject,
           getNewProjectBlockchainAddress: this.props.getNewProjectBlockchainAddress,
           blockchainProjects: this.props.blockchainProjects,
@@ -2156,7 +2164,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!***********************************************!*\
   !*** multi ./pages/projects/createproject.js ***!
   \***********************************************/
