@@ -111,7 +111,7 @@ export default class myprofile extends Component {
           <br />
           <Header as="h2" icon="heart" content="Project's I've supported" />
           <br />
-          <Card.Group itemsPerRow={5}>
+          <Card.Group itemsPerRow={4}>
             {this.props.userSupport.map((project, i) => (
               <ProjectCard
                 key={i}

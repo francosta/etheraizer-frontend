@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -648,7 +648,7 @@ function (_Component) {
         icon: "heart",
         content: "Project's I've supported"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_6__["Card"].Group, {
-        itemsPerRow: 5
+        itemsPerRow: 4
       }, this.props.userSupport.map(function (project, i) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
           key: i,
@@ -691,7 +691,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 9:
+/***/ 4:
 /*!**********************************!*\
   !*** multi ./pages/myprofile.js ***!
   \**********************************/
