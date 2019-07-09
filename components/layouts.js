@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Container, Image } from "semantic-ui-react";
+import { Container, Image, Sticky } from "semantic-ui-react";
 import Head from "next/head";
 
 export default props => {
@@ -16,7 +16,9 @@ export default props => {
         />
       </Head>
       {props.userData.id ? (
-        <Navbar logout={props.logout} selectProject={props.selectProject} />
+        <Sticky>
+          <Navbar logout={props.logout} selectProject={props.selectProject} />{" "}
+        </Sticky>
       ) : null}
       <Container>{props.children}</Container>
       <Footer />

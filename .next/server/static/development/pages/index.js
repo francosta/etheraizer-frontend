@@ -329,11 +329,17 @@ function (_Component) {
     key: "render",
     value: function render() {
       var activeItem = this.state.activeItem;
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: {
+          backgroundColor: "white",
+          marginBottom: "0px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+        borderless: true,
         pointing: true,
         secondary: true,
         style: {
-          marginTop: "20px"
+          paddingTop: "20px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
         position: "left",
@@ -371,7 +377,7 @@ function (_Component) {
         name: "logout",
         active: activeItem === "logout",
         onClick: this.props.logout
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
+      }))));
     }
   }]);
 
@@ -410,10 +416,10 @@ __webpack_require__.r(__webpack_exports__);
     react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
       rel: "stylesheet",
       href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
-    })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       logout: props.logout,
       selectProject: props.selectProject
-    }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
+    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
   );
 });
 

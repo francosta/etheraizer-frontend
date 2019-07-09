@@ -4,13 +4,17 @@ import Layout from "../components/layouts";
 import Router from "next/router";
 import { getUserData, login, validate } from "../services/authentication";
 import App, { Container } from "next/app";
+import fetch from "isomorphic-fetch";
 
 export default class MyApp extends App {
   static async getInitialProps() {
     const blockchainProjects = await factory.methods
       .getDeployedCampaigns()
       .call();
-    return { blockchainProjects };
+    const projectsURL = "http://localhost:3000/projects";
+    let allProjectsResp = await fetch(projectsURL);
+    let allProjects = await allProjectsResp.json();
+    return { blockchainProjects, allProjects };
   }
 
   constructor(props) {
@@ -132,7 +136,7 @@ export default class MyApp extends App {
           selectedProject={this.state.selectedProject}
           selectProject={this.selectProject}
           getNewProjectBlockchainAddress={this.getNewProjectBlockchainAddress}
-          allProjects={this.state.allprojects}
+          allProjects={this.props.allProjects}
           changeSelectedProject={this.changeSelectedProject}
           deployProject={this.deployProject}
           router={this.props.router}

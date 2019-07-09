@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import factory from "../../ethereum/factoryContract";
 import Layout from "../../components/layouts";
-import { Card } from "semantic-ui-react";
+import { Card, Sticky } from "semantic-ui-react";
 import { Link } from "../../routes";
 import ProjectCard from "../../components/ProjectCard";
 
@@ -18,7 +18,7 @@ export default class ProjectIndex extends Component {
 
   componentDidMount() {
     const projects = this.props.allProjects.filter(
-      project => project.status === "deployed"
+      project => project.status === "deployed" || project.status === "funded"
     );
     this.setState({ projects: projects });
   }
@@ -38,9 +38,10 @@ export default class ProjectIndex extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "20px" }}>
         <h1>All Projects</h1>
         <br />
+
         <div className="ui vertical menu left floated">
           <div className="item">
             <div className="ui input">

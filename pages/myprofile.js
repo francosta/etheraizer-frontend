@@ -6,33 +6,9 @@ import UserProfile from "../components/UserProfile";
 import ProjectCard from "../components/ProjectCard";
 
 export default class myprofile extends Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     mySupport: []
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   const myContracts = this.props.supportContracts.filter(
-  //     contract => contract.user_id === this.props.userData.id
-  //   );
-
-  //   const myProjects = myContracts
-  //     .map(contract => {
-  //       return this.props.allProjects.filter(project => {
-  //         return contract.project_id === project.id;
-  //       });
-  //     })
-  //     .flat();
-
-  //   this.setState({ mySupport: myProjects });
-  // }
-
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "20px" }}>
         <div>
           <Header size="huge">My Profile</Header>
           <br />

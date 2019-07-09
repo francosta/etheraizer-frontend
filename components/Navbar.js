@@ -17,8 +17,8 @@ export default class Navbar extends Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <div>
-        <Menu pointing secondary style={{ marginTop: "20px" }}>
+      <div style={{ backgroundColor: "white", marginBottom: "0px" }}>
+        <Menu borderless pointing secondary style={{ paddingTop: "20px" }}>
           <Menu.Menu position="left" style={{ marginLeft: "100px" }}>
             <Link route="/">
               <a className="item">
@@ -51,7 +51,6 @@ export default class Navbar extends Component {
             />
           </Menu.Menu>
         </Menu>
-        <br />
       </div>
     );
   }

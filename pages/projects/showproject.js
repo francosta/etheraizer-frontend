@@ -26,16 +26,34 @@ export default class ShowProject extends Component {
   }
 
   componentDidMount = async function() {
-    const address = this.props.selectedProject.blockchain_address;
-    const project = projectContract(address);
-    const stats = await project.methods.getSummary().call();
-    this.setState({
-      minimumContribution: parseInt(stats[0]["_hex"]),
-      balance: parseInt(stats[1]["_hex"]),
-      requestsCount: parseInt(stats[2]["_hex"]),
-      supportersCount: parseInt(stats[3]["_hex"]),
-      managerAddress: stats[4]
-    });
+    if (Object.keys(this.props.selectedProject).length !== 0) {
+      const address = this.props.selectedProject.blockchain_address;
+      const project = projectContract(address);
+      const stats = await project.methods.getSummary().call();
+      this.setState({
+        minimumContribution: parseInt(stats[0]["_hex"]),
+        balance: parseInt(stats[1]["_hex"]),
+        requestsCount: parseInt(stats[2]["_hex"]),
+        supportersCount: parseInt(stats[3]["_hex"]),
+        managerAddress: stats[4]
+      });
+    } else {
+      const projectId = parseInt(this.props.router.query.id);
+      const projectToSelect = this.props.allProjects.filter(
+        project => project.id === projectId
+      )[0];
+      this.props.selectProject(projectToSelect);
+      const address = projectToSelect.blockchain_address;
+      const project = projectContract(address);
+      const stats = await project.methods.getSummary().call();
+      this.setState({
+        minimumContribution: parseInt(stats[0]["_hex"]),
+        balance: parseInt(stats[1]["_hex"]),
+        requestsCount: parseInt(stats[2]["_hex"]),
+        supportersCount: parseInt(stats[3]["_hex"]),
+        managerAddress: stats[4]
+      });
+    }
   };
 
   updateDataOnFrontend = contribution => {
@@ -53,7 +71,7 @@ export default class ShowProject extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "20px" }}>
         <Grid>
           <Grid.Row columns={2}>
             <Grid.Column floated="left">

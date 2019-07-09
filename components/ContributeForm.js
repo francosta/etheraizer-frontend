@@ -64,7 +64,7 @@ class ContributeForm extends Component {
           value: contribution
         });
         this.setState({ contributing: false, open: false });
-        this.updateSelectedProject();
+        this.updateSelectedProject(contribution);
         this.props.updateDataOnFrontend(contribution);
         this.createSupportContractinDatabase(
           this.props.selectedProject.id,
@@ -98,19 +98,23 @@ class ContributeForm extends Component {
     return fetch(supportContractURL, options).then(resp => resp.json());
   };
 
-  updateSelectedProject = () => {
+  updateSelectedProject = contribution => {
     const id = this.props.selectedProject.id;
     const updateProjectURL = `http://localhost:3000/projects/${id}`;
-    let progress = (this.props.balance / this.props.selectedProject.goal) * 100;
-    if (progress > 100) {
+    let progress =
+      ((this.props.balance + contribution) / this.props.selectedProject.goal) *
+      100;
+    let status = "deployed";
+    if (progress >= 100) {
       progress = 100;
+      status = "funded";
     }
     const options = {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ progress: progress })
+      body: JSON.stringify({ progress: progress, status: status })
     };
 
     return fetch(updateProjectURL, options)

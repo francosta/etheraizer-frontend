@@ -207,11 +207,17 @@ function (_Component) {
     key: "render",
     value: function render() {
       var activeItem = this.state.activeItem;
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: {
+          backgroundColor: "white",
+          marginBottom: "0px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+        borderless: true,
         pointing: true,
         secondary: true,
         style: {
-          marginTop: "20px"
+          paddingTop: "20px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
         position: "left",
@@ -249,7 +255,7 @@ function (_Component) {
         name: "logout",
         active: activeItem === "logout",
         onClick: this.props.logout
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null));
+      }))));
     }
   }]);
 
@@ -288,10 +294,10 @@ __webpack_require__.r(__webpack_exports__);
     react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
       rel: "stylesheet",
       href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
-    })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       logout: props.logout,
       selectProject: props.selectProject
-    }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
+    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
   );
 });
 
@@ -1486,6 +1492,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_authentication__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/authentication */ "./services/authentication.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! isomorphic-fetch */ "isomorphic-fetch");
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_17__);
+
 
 
 
@@ -1515,7 +1524,7 @@ function (_App) {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(
       /*#__PURE__*/
       _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee() {
-        var blockchainProjects;
+        var blockchainProjects, projectsURL, allProjectsResp, allProjects;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -1525,11 +1534,23 @@ function (_App) {
 
               case 2:
                 blockchainProjects = _context.sent;
+                projectsURL = "http://localhost:3000/projects";
+                _context.next = 6;
+                return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_17___default()(projectsURL);
+
+              case 6:
+                allProjectsResp = _context.sent;
+                _context.next = 9;
+                return allProjectsResp.json();
+
+              case 9:
+                allProjects = _context.sent;
                 return _context.abrupt("return", {
-                  blockchainProjects: blockchainProjects
+                  blockchainProjects: blockchainProjects,
+                  allProjects: allProjects
                 });
 
-              case 4:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -1554,14 +1575,14 @@ function (_App) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getAllProjects", function () {
       var projectsURL = "http://localhost:3000/projects";
-      return fetch(projectsURL).then(function (resp) {
+      return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_17___default()(projectsURL).then(function (resp) {
         return resp.json();
       });
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getSupportContracts", function () {
       var supportContractsURL = "http://localhost:3000/support_contracts";
-      return fetch(supportContractsURL).then(function (resp) {
+      return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_17___default()(supportContractsURL).then(function (resp) {
         return resp.json();
       });
     });
@@ -1713,7 +1734,7 @@ function (_App) {
         selectedProject: this.state.selectedProject,
         selectProject: this.selectProject,
         getNewProjectBlockchainAddress: this.getNewProjectBlockchainAddress,
-        allProjects: this.state.allprojects,
+        allProjects: this.props.allProjects,
         changeSelectedProject: this.changeSelectedProject,
         deployProject: this.deployProject,
         router: this.props.router,
@@ -1989,6 +2010,17 @@ module.exports = require("core-js/library/fn/symbol");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/symbol/iterator");
+
+/***/ }),
+
+/***/ "isomorphic-fetch":
+/*!***********************************!*\
+  !*** external "isomorphic-fetch" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-fetch");
 
 /***/ }),
 

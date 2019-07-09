@@ -10,7 +10,7 @@ export default class createproject extends Component {
   render() {
     if (!this.props.selectedProject.status) {
       return (
-        <div>
+        <div style={{ marginTop: "20px" }}>
           <ProjectCreationProgressComponent
             selectedProject={this.props.selectedProject}
           />

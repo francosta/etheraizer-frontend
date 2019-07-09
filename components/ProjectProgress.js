@@ -7,7 +7,7 @@ export default class ProjectProgress extends Component {
     if (this.props.progress === null) {
       progress = 0;
     } else {
-      progress = (this.props.balance / this.props.goal) * 100;
+      progress = this.props.progress;
     }
 
     return (
