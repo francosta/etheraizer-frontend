@@ -110,7 +110,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Footer() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginTop: 50
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     size: "small",
     as: "h6",
     block: true,
@@ -207,7 +211,7 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
         verticalAlign: "middle",
-        src: "https://github.com/francosta/etheraizer-frontend/blob/development/public/logo.png"
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png"
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Header"], {
         as: "h2",
         color: "teal",
@@ -406,6 +410,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _pages_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/index */ "./pages/index.js");
+
 
 
 
@@ -419,9 +425,7 @@ __webpack_require__.r(__webpack_exports__);
     })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       logout: props.logout,
       selectProject: props.selectProject
-    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "team"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("style", null, "\n            .team {\n                width:100%;\n                // height:400%;\n                position:absolute;\n                background: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/banner.png\") no-repeat;\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "TEST")));
+    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_index__WEBPACK_IMPORTED_MODULE_5__["default"], null));
   } else {
     return (// We use container in order to limit the size of the elements in the window.
       // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
@@ -1002,14 +1006,9 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        id: "wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
-        src: "../public/homepage.jpg",
-        style: {
-          width: "100%"
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Wecome to Etheraizer"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], null));
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "team"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("style", null, "\n            .team {\n              width: 100%;\n              // height: 344px;\n              background-size: contain;\n              // background-repeat: no-repeat\n              background-image: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png\") no-repeat;\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null)));
     }
   }]);
 

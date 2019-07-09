@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Container, Image, Sticky } from "semantic-ui-react";
 import Head from "next/head";
+import Index from "../pages/index";
 
 export default props => {
   if (props.router.route === "/") {
@@ -19,19 +20,7 @@ export default props => {
             <Navbar logout={props.logout} selectProject={props.selectProject} />{" "}
           </Sticky>
         ) : null}
-        <div className="team">
-          <style>
-            {`
-            .team {
-                width:100%;
-                // height:400%;
-                position:absolute;
-                background: url("https://github.com/francosta/etheraizer-frontend/raw/development/public/banner.png") no-repeat;
-            }
-        `}
-          </style>
-          <h3>TEST</h3>
-        </div>
+        <Index />
       </div>
     );
   } else {

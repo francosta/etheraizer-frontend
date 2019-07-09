@@ -85,7 +85,7 @@ export default class SignUpForm extends Component {
         <Grid.Column style={{ maxWidth: 450 }}>
           <Image
             verticalAlign="middle"
-            src="https://github.com/francosta/etheraizer-frontend/blob/development/public/logo.png"
+            src="https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png"
           />
           <Header as="h2" color="teal" textAlign="center">
             Create a new account

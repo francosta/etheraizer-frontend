@@ -10,13 +10,20 @@ export default class Index extends Component {
   render() {
     return (
       <div>
-        <Container>
-          <div id="wrapper">
-            <img src="../public/homepage.jpg" style={{ width: "100%" }} />
-            <h1>Wecome to Etheraizer</h1>
-          </div>
-        </Container>
-        <Container />
+        <div className="team">
+          <style>
+            {`
+            .team {
+              width: 100%;
+              // height: 344px;
+              background-size: contain;
+              // background-repeat: no-repeat
+              background-image: url("https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png") no-repeat;
+            }
+        `}
+          </style>
+          <h1 />
+        </div>
       </div>
     );
   }

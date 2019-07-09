@@ -3,7 +3,7 @@ import { Header } from "semantic-ui-react";
 
 export default function Footer() {
   return (
-    <div>
+    <div style={{ marginTop: 50 }}>
       <br />
       <Header
         size="small"
