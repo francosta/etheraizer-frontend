@@ -14,6 +14,7 @@ import {
 } from "semantic-ui-react";
 import factory from "../ethereum/factoryContract";
 import web3 from "../ethereum/web3";
+import Router from "next-routes";
 
 export default class DeployProjectForm extends Component {
   constructor(props) {
@@ -70,6 +71,7 @@ export default class DeployProjectForm extends Component {
     this.props.selectProject(project);
     this.updateProjectOnDatabase(project);
     this.props.addProjectToAllProjects(project);
+    Router.push(`/projects/${this.props.selectedProject.id}`);
   };
 
   updateProjectOnDatabase = project => {
