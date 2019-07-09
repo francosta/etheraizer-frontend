@@ -17,7 +17,12 @@ export default class ProjectCard extends Component {
     return (
       <Link route={`/projects/${this.props.project.id}`}>
         <Card onClick={() => this.handleClick(this.props.project)}>
-          <Image src={this.props.project.image} wrapped ui={false} />
+          <img
+            src={this.props.project.image}
+            wrapped
+            ui={false}
+            style={{ maxHeight: 200 }}
+          />
           {this.props.project.status === "deployed" ? (
             <Label attached="bottom" as="a" color="orange">
               <Label.Detail>
@@ -35,11 +40,15 @@ export default class ProjectCard extends Component {
 
           <Card.Content>
             <Card.Header>{this.props.project.title}</Card.Header>
-            <Card.Meta>
-              <span className="date">Joined in 2015</span>
-            </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
+            <Card.Description style={{ marginTop: "10px" }}>
+              <div style={{ marginTop: "10px" }}>
+                <Icon name="money" />
+                Goal: {this.props.project.goal}
+              </div>
+              <div style={{ marginTop: "10px" }}>
+                <Icon name="user" />
+                No. Supporters: {this.props.project.users.length}
+              </div>
             </Card.Description>
           </Card.Content>
 
