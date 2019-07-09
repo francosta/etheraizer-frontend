@@ -41,6 +41,10 @@ export default class MyApp extends App {
         .catch(err => {
           alert(err);
         });
+    } else {
+      const href = "/login";
+      const as = href;
+      Router.push(href, as, { shallow: true });
     }
 
     this.getAllProjects().then(resp => this.setState({ allprojects: resp }));
@@ -82,7 +86,7 @@ export default class MyApp extends App {
       this.getUserSupport();
     });
 
-    Router.push("/");
+    // Router.push("/");
   };
 
   logout = () => {

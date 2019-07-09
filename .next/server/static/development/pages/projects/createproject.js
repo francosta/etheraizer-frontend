@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -879,9 +879,8 @@ function (_Component) {
               this.props.selectProject(project);
               this.updateProjectOnDatabase(project);
               this.props.addProjectToAllProjects(project);
-              next_routes__WEBPACK_IMPORTED_MODULE_14___default.a.push("/projects/".concat(this.props.selectedProject.id));
 
-            case 11:
+            case 10:
             case "end":
               return _context2.stop();
           }
@@ -2151,7 +2150,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!***********************************************!*\
   !*** multi ./pages/projects/createproject.js ***!
   \***********************************************/

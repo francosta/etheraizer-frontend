@@ -197,7 +197,10 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "createProject", function () {
       var project = {};
 
-      _this.props.selectProject(project);
+      _this.props.selectProject(project); // const href = "/createproject";
+      // const as = href;
+      // Router.push(href, as, { shallow: true });
+
     });
 
     return _this;
@@ -238,7 +241,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         className: "item"
       }, "All Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/projects/createproject"
+        href: "/projects/createproject"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         className: "item",
         onClick: this.createProject
@@ -1611,8 +1614,7 @@ function (_App) {
         });
 
         _this.getUserSupport();
-      });
-      next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/");
+      }); // Router.push("/");
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "logout", function () {
@@ -1705,6 +1707,12 @@ function (_App) {
           _this2.loggedIn(resp.token);
         }).catch(function (err) {
           alert(err);
+        });
+      } else {
+        var href = "/login";
+        var as = href;
+        next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push(href, as, {
+          shallow: true
         });
       }
 

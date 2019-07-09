@@ -12,6 +12,9 @@ export default class Navbar extends Component {
   createProject = () => {
     const project = {};
     this.props.selectProject(project);
+    // const href = "/createproject";
+    // const as = href;
+    // Router.push(href, as, { shallow: true });
   };
 
   render() {
@@ -33,7 +36,7 @@ export default class Navbar extends Component {
             <Link route="/projects/index">
               <a className="item">All Projects</a>
             </Link>
-            <Link route="/projects/createproject">
+            <Link href="/projects/createproject">
               <a className="item" onClick={this.createProject}>
                 Create Project
               </a>

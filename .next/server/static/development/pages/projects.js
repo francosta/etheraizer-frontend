@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -197,7 +197,10 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "createProject", function () {
       var project = {};
 
-      _this.props.selectProject(project);
+      _this.props.selectProject(project); // const href = "/createproject";
+      // const as = href;
+      // Router.push(href, as, { shallow: true });
+
     });
 
     return _this;
@@ -238,7 +241,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         className: "item"
       }, "All Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/projects/createproject"
+        href: "/projects/createproject"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         className: "item",
         onClick: this.createProject
@@ -1116,7 +1119,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!***************************************!*\
   !*** multi ./pages/projects/index.js ***!
   \***************************************/
