@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -351,7 +351,7 @@ function (_Component) {
         attached: "bottom",
         as: "a",
         color: "orange"
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Label"].Detail, null, "Funding Ongoing -", " ", this.props.project.progress ? "".concat(this.props.project.progress, "%") : "0%")) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Label"], {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Label"].Detail, null, "Funding Ongoing:", " ", this.props.project.progress ? "".concat(this.props.project.progress, "%") : "0%")) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         attached: "bottom",
         as: "a",
         color: "green"
@@ -1144,7 +1144,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 8:
+/***/ 3:
 /*!***************************************!*\
   !*** multi ./pages/projects/index.js ***!
   \***************************************/

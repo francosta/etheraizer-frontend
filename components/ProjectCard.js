@@ -26,7 +26,7 @@ export default class ProjectCard extends Component {
           {this.props.project.status === "deployed" ? (
             <Label attached="bottom" as="a" color="orange">
               <Label.Detail>
-                Funding Ongoing -{" "}
+                Funding Ongoing:{" "}
                 {this.props.project.progress
                   ? `${this.props.project.progress}%`
                   : "0%"}
