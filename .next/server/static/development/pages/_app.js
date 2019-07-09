@@ -1724,9 +1724,12 @@ function (_App) {
         }).catch(function (err) {
           alert(err);
         });
-      } else {// const href = "/login";
-        // const as = href;
-        // Router.push(href, as, { shallow: true });
+      } else if (this.props.router.route !== "/signup") {
+        var href = "/login";
+        var as = href;
+        next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push(href, as, {
+          shallow: true
+        });
       }
 
       this.getAllProjects().then(function (resp) {

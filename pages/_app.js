@@ -41,10 +41,10 @@ export default class MyApp extends App {
         .catch(err => {
           alert(err);
         });
-    } else {
-      // const href = "/login";
-      // const as = href;
-      // Router.push(href, as, { shallow: true });
+    } else if (this.props.router.route !== "/signup") {
+      const href = "/login";
+      const as = href;
+      Router.push(href, as, { shallow: true });
     }
 
     this.getAllProjects().then(resp => this.setState({ allprojects: resp }));
