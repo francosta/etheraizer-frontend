@@ -126,6 +126,17 @@ export default class MyApp extends App {
     this.setState({ userSupport: [...this.state.userSupport, project] });
   };
 
+  updateUserData = (firstName, lastName, email) => {
+    this.setState({
+      userData: {
+        ...this.state.userData,
+        first_name: firstName,
+        last_name: lastName,
+        email: email
+      }
+    });
+  };
+
   render() {
     const { Component } = this.props;
     return (
@@ -149,6 +160,7 @@ export default class MyApp extends App {
           supportContracts={this.state.supportContracts}
           userSupport={this.state.userSupport}
           addToUserSupportedProjects={this.updateUserSupportedProjects}
+          updateUserData={this.updateUserData}
         />
       </Layout>
     );

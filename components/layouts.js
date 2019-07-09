@@ -19,10 +19,19 @@ export default props => {
             <Navbar logout={props.logout} selectProject={props.selectProject} />{" "}
           </Sticky>
         ) : null}
-        <Image
-          src="https://github.com/francosta/etheraizer-frontend/raw/development/public/background.jpg"
-          style={{ width: "100%", heigth: "300" }}
-        />
+        <div className="team">
+          <style>
+            {`
+            .team {
+                width:100%;
+                // height:400%;
+                position:absolute;
+                background: url("https://github.com/francosta/etheraizer-frontend/raw/development/public/banner.png") no-repeat;
+            }
+        `}
+          </style>
+          <h3>TEST</h3>
+        </div>
       </div>
     );
   } else {

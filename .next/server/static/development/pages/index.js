@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -319,10 +319,7 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "createProject", function () {
       var project = {};
 
-      _this.props.selectProject(project); // const href = "/createproject";
-      // const as = href;
-      // Router.push(href, as, { shallow: true });
-
+      _this.props.selectProject(project);
     });
 
     return _this;
@@ -338,6 +335,7 @@ function (_Component) {
           marginBottom: "0px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+        stackable: true,
         borderless: true,
         pointing: true,
         secondary: true,
@@ -421,13 +419,9 @@ __webpack_require__.r(__webpack_exports__);
     })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       logout: props.logout,
       selectProject: props.selectProject
-    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Image"], {
-      src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/background.jpg",
-      style: {
-        width: "100%",
-        heigth: "300"
-      }
-    }));
+    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "team"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("style", null, "\n            .team {\n                width:100%;\n                // height:400%;\n                position:absolute;\n                background: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/banner.png\") no-repeat;\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "TEST")));
   } else {
     return (// We use container in order to limit the size of the elements in the window.
       // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
@@ -1168,7 +1162,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

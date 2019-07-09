@@ -12,16 +12,18 @@ export default class Navbar extends Component {
   createProject = () => {
     const project = {};
     this.props.selectProject(project);
-    // const href = "/createproject";
-    // const as = href;
-    // Router.push(href, as, { shallow: true });
   };
 
   render() {
     const { activeItem } = this.state;
     return (
       <div style={{ backgroundColor: "white", marginBottom: "0px" }}>
-        <Menu borderless pointing secondary style={{ paddingTop: "20px" }}>
+        <Menu
+          stackable
+          borderless
+          pointing
+          secondary
+          style={{ paddingTop: "20px" }}>
           <Menu.Menu position="left" style={{ marginLeft: "100px" }}>
             <Link route="/">
               <a className="item">
