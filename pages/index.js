@@ -31,16 +31,24 @@ export default class Index extends Component {
               paddingTop: 0
             }}>
             <Grid.Column floated="left" width={4}>
-              <Header
-                textAlign="center"
+              <Container
                 style={{
                   position: "relative",
-                  top: "50%"
+                  top: 0,
+                  bottom: 0,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: "15vh"
                 }}>
-                Connect your ethereum wallet using Metamask
-              </Header>
+                <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png" />
+                <Header textAlign="center">
+                  Connect your ethereum wallet using Metamask
+                </Header>
+              </Container>
             </Grid.Column>
-            <Grid.Column floated="right" width={12}>
+            <Grid.Column style={{ padding: 0 }} floated="right" width={12}>
               <Image
                 style={{ heigth: 500, width: "100%" }}
                 src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step1%20copy.png"
