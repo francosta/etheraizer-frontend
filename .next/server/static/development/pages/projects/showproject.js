@@ -237,7 +237,9 @@ function (_Component) {
         content: this.props.errorMessage
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         type: "submit"
-      }, "Edit Project")))));
+      }, "Edit Project"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+        onClick: this.props.changeEdit
+      }, "Cancel")))));
     }
   }]);
 
@@ -1564,10 +1566,10 @@ function (_Component) {
         approversCount: this.state.approversCount
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_ProjectPresentation__WEBPACK_IMPORTED_MODULE_22__["default"], {
         selectedProject: this.props.selectedProject
-      }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null), !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Button"], {
+      }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null), !this.state.edit ? react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", null, this.props.selectedProject.user_id === this.props.userData.id ? react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Button"], {
         onClick: this.handleClick,
         type: "submit"
-      }, "Edit Project"), " ") : react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_AchieveProjectForm__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      }, "Edit Project") : null) : react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_AchieveProjectForm__WEBPACK_IMPORTED_MODULE_13__["default"], {
         active: this.state.edit,
         selectedProject: this.props.selectedProject,
         selectProject: this.props.selectProject,

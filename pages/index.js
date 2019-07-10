@@ -11,7 +11,8 @@ import {
   Rail,
   Header,
   Grid,
-  Card
+  Card,
+  Icon
 } from "semantic-ui-react";
 import SignUpForm from "../components/SignUpForm";
 
@@ -41,7 +42,7 @@ export default class Index extends Component {
                   marginTop: "50%"
                 }}>
                 <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png" />
-                <Header textAlign="center">
+                <Header as="h1" textAlign="center">
                   Connect your ethereum wallet using Metamask
                 </Header>
               </Container>
@@ -78,15 +79,43 @@ export default class Index extends Component {
                   flexDirection: "column",
                   marginTop: "50%"
                 }}>
-                <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png" />
-                <Header textAlign="center">
+                <Icon name="check" size="huge" color="green" />
+                <Header as="h1" textAlign="center">
                   Create, deploy and fund your project
                 </Header>
               </Container>
             </Grid.Column>
           </Grid.Row>
+          <Grid.Row
+            style={{
+              marginTop: 0,
+              marginBottom: 0,
+              paddingBottom: 0,
+              paddingTop: 0
+            }}>
+            <Grid.Column floated="left" width={4}>
+              <Container
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: "50%"
+                }}>
+                <Header as="h1" textAlign="center">
+                  Browse through and support projects
+                </Header>
+              </Container>
+            </Grid.Column>
+            <Grid.Column style={{ padding: 0 }} floated="right" width={12}>
+              <Image
+                style={{ heigth: 500, width: "100%" }}
+                src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step3.png"
+              />
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
-        <h1>Signup Now</h1>
         <SignUpForm />
       </div>
     );

@@ -114,6 +114,7 @@ export default class UserProfileEditForm extends Component {
           content="The passwords do not match."
         />
         <Button type="submit">Edit Profile</Button>
+        <Button onClick={this.props.editProfile}>Cancel</Button>
       </Form>
     );
   }

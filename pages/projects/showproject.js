@@ -124,9 +124,11 @@ export default class ShowProject extends Component {
         <br />
         {!this.state.edit ? (
           <div>
-            <Button onClick={this.handleClick} type="submit">
-              Edit Project
-            </Button>{" "}
+            {this.props.selectedProject.user_id === this.props.userData.id ? (
+              <Button onClick={this.handleClick} type="submit">
+                Edit Project
+              </Button>
+            ) : null}
           </div>
         ) : (
           <div>

@@ -2266,6 +2266,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
+        as: "h1",
         textAlign: "center"
       }, "Connect your ethereum wallet using Metamask"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
         style: {
@@ -2311,11 +2312,48 @@ function (_Component) {
           flexDirection: "column",
           marginTop: "50%"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
-        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Icon"], {
+        name: "check",
+        size: "huge",
+        color: "green"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
+        as: "h1",
         textAlign: "center"
-      }, "Create, deploy and fund your project"))))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
+      }, "Create, deploy and fund your project")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Row, {
+        style: {
+          marginTop: 0,
+          marginBottom: 0,
+          paddingBottom: 0,
+          paddingTop: 0
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        floated: "left",
+        width: 4
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], {
+        style: {
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          marginTop: "50%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
+        as: "h1",
+        textAlign: "center"
+      }, "Browse through and support projects"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        style: {
+          padding: 0
+        },
+        floated: "right",
+        width: 12
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
+        style: {
+          heigth: 500,
+          width: "100%"
+        },
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step3.png"
+      })))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
     }
   }]);
 

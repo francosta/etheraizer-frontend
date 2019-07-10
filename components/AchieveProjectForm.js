@@ -103,6 +103,7 @@ export default class AchieveProjectForm extends Component {
               />
               <br />
               <Button type="submit">Edit Project</Button>
+              <Button onClick={this.props.changeEdit}>Cancel</Button>
             </Form>
           </Segment>
         </div>
