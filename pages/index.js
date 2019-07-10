@@ -34,13 +34,11 @@ export default class Index extends Component {
               <Container
                 style={{
                   position: "relative",
-                  top: 0,
-                  bottom: 0,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   flexDirection: "column",
-                  marginTop: "15vh"
+                  marginTop: "50%"
                 }}>
                 <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png" />
                 <Header textAlign="center">
