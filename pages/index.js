@@ -24,11 +24,11 @@ export default class Index extends Component {
         <Container>
           <Header>Get your project funded in 4 simple steps!</Header>
         </Container>
-        <Grid stackable columns={2}>
-          <Grid.Column>
-            <h1>Get your project funded in 4 simple steps!</h1>
+        <Grid stackable equal columns={2}>
+          <Grid.Column width={8}>
+            <h1>Connect your ethereum wallet using Metamask</h1>
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column width={8}>
             <Image
               style={{ heigth: 500, width: "100%" }}
               src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step1.png"
