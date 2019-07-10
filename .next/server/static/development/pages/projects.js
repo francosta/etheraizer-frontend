@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1125,7 +1125,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "team"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("style", null, "\n            .team {\n              width: 100%;\n              // height: 344px;\n              background-size: contain;\n              // background-repeat: no-repeat\n              background-image: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png\") no-repeat;\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null)));
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("style", null, "\n            .team {\n              width: 100%;\n              // height: 344px;\n              background-size: contain;\n              // background-repeat: no-repeat\n              background-image: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png\");\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null)));
     }
   }]);
 
@@ -1269,12 +1269,19 @@ function (_Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleFilter", function (filter) {
+      _this.setState({
+        filter: filter
+      });
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "contextRef", Object(react__WEBPACK_IMPORTED_MODULE_7__["createRef"])());
 
     _this.state = {
       searchTerm: "",
       filteredProjects: [],
-      projects: []
+      projects: [],
+      filter: null
     };
     return _this;
   }
@@ -1320,39 +1327,27 @@ function (_Component) {
         placeholder: "Search..."
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "item"
-      }, "Home", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "See only", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "menu"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "active item"
-      }, "Search"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        className: "item",
+        onClick: function onClick() {
+          return _this2.handleFilter("funding");
+        }
+      }, "Awaiting funding"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        className: "item",
+        onClick: function onClick() {
+          return _this2.handleFilter("funded");
+        }
+      }, "Funded"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "item"
-      }, "Add"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "Remove"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "grid layout icon"
-      }), " Browse"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "Messages"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "ui dropdown item"
-      }, "More", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "dropdown icon"
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Sort By", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "menu"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         className: "item"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "edit icon"
-      }), " Edit Profile"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, "Supporters"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         className: "item"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "globe icon"
-      }), " Choose Language"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "settings icon"
-      }), " Account Settings")))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"].Column, {
+      }, "Backing")))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"].Column, {
         stackable: true,
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Card"].Group, {
@@ -1463,7 +1458,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!***************************************!*\
   !*** multi ./pages/projects/index.js ***!
   \***************************************/

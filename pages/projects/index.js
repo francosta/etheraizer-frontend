@@ -12,7 +12,8 @@ export default class ProjectIndex extends Component {
     this.state = {
       searchTerm: "",
       filteredProjects: [],
-      projects: []
+      projects: [],
+      filter: null
     };
   }
 
@@ -34,6 +35,10 @@ export default class ProjectIndex extends Component {
       project.title.toLowerCase().includes(this.state.searchTerm)
     );
     this.setState({ filteredProjects: newProjects });
+  };
+
+  handleFilter = filter => {
+    this.setState({ filter: filter });
   };
 
   contextRef = createRef();
@@ -58,30 +63,25 @@ export default class ProjectIndex extends Component {
                   </div>
                 </div>
                 <div className="item">
-                  Home
+                  See only
                   <div className="menu">
-                    <a className="active item">Search</a>
-                    <a className="item">Add</a>
-                    <a className="item">Remove</a>
+                    <a
+                      className="item"
+                      onClick={() => this.handleFilter("funding")}>
+                      Awaiting funding
+                    </a>
+                    <a
+                      className="item"
+                      onClick={() => this.handleFilter("funded")}>
+                      Funded
+                    </a>
                   </div>
                 </div>
-                <a className="item">
-                  <i className="grid layout icon" /> Browse
-                </a>
-                <a className="item">Messages</a>
-                <div className="ui dropdown item">
-                  More
-                  <i className="dropdown icon" />
+                <div className="item">
+                  Sort By
                   <div className="menu">
-                    <a className="item">
-                      <i className="edit icon" /> Edit Profile
-                    </a>
-                    <a className="item">
-                      <i className="globe icon" /> Choose Language
-                    </a>
-                    <a className="item">
-                      <i className="settings icon" /> Account Settings
-                    </a>
+                    <a className="item">Supporters</a>
+                    <a className="item">Backing</a>
                   </div>
                 </div>
               </div>

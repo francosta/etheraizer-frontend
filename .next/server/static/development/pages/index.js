@@ -1008,7 +1008,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "team"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("style", null, "\n            .team {\n              width: 100%;\n              // height: 344px;\n              background-size: contain;\n              // background-repeat: no-repeat\n              background-image: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png\") no-repeat;\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null)));
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("style", null, "\n            .team {\n              width: 100%;\n              // height: 344px;\n              background-size: contain;\n              // background-repeat: no-repeat\n              background-image: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png\");\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null)));
     }
   }]);
 

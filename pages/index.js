@@ -18,7 +18,7 @@ export default class Index extends Component {
               // height: 344px;
               background-size: contain;
               // background-repeat: no-repeat
-              background-image: url("https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png") no-repeat;
+              background-image: url("https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png");
             }
         `}
           </style>
