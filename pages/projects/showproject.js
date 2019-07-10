@@ -10,6 +10,7 @@ import ProjectCreationProgressComponent from "../../components/ProjectCreationPr
 import ProjectHighLevelValues from "../../components/ProjectHighLevelValues";
 import ContributeForm from "../../components/ContributeForm";
 import ProjectPresentation from "../../components/ProjectPresentation";
+import Router from "next/router";
 
 export default class ShowProject extends Component {
   constructor(props) {
@@ -69,28 +70,40 @@ export default class ShowProject extends Component {
     this.setState({ edit: !this.state.edit });
   };
 
+  handleLogin = () => {
+    const href = "/login";
+    const as = href;
+    Router.push(href, as, { shallow: true });
+  };
+
   render() {
     return (
       <div style={{ marginTop: "20px" }}>
         <Grid>
           <Grid.Row columns={2}>
-            <Grid.Column floated="left">
+            <Grid.Column width={10} floated="left">
               <h1>{`Project Name: ${this.props.selectedProject.title}`}</h1>
             </Grid.Column>
-            <Grid.Column floated="right">
-              <ContributeForm
-                balance={this.state.balance}
-                supportersCount={this.state.supportersCount}
-                userData={this.props.userData}
-                minimumContribution={this.state.minimumContribution}
-                selectedProject={this.props.selectedProject}
-                updateDataOnFrontend={this.updateDataOnFrontend}
-                selectProject={this.props.selectProject}
-                addToUserSupportedProjects={
-                  this.props.addToUserSupportedProjects
-                }
-              />
-            </Grid.Column>
+            {this.props.userData.id ? (
+              <Grid.Column width={4} floated="right">
+                <ContributeForm
+                  balance={this.state.balance}
+                  supportersCount={this.state.supportersCount}
+                  userData={this.props.userData}
+                  minimumContribution={this.state.minimumContribution}
+                  selectedProject={this.props.selectedProject}
+                  updateDataOnFrontend={this.updateDataOnFrontend}
+                  selectProject={this.props.selectProject}
+                  addToUserSupportedProjects={
+                    this.props.addToUserSupportedProjects
+                  }
+                />
+              </Grid.Column>
+            ) : (
+              <Button size="big" color="green" onClick={this.handleLogin}>
+                Login to support
+              </Button>
+            )}
           </Grid.Row>
         </Grid>
         <br />

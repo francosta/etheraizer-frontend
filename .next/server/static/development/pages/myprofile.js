@@ -799,7 +799,7 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(myprofile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (!this.props.userData.id) {
+      if (!this.props.userData) {
         var href = "/login";
         var as = href;
         next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push(href, as, {
@@ -873,7 +873,7 @@ function (_Component) {
       }, "No funded projects"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "You don't have any funded projects.")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Header"], {
         as: "h2",
         icon: "heart",
-        content: "Project's I've supported"
+        content: "Projects I've supported"
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Card"].Group, {
         itemsPerRow: 4
       }, this.props.userSupport.map(function (project, i) {

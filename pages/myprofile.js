@@ -16,7 +16,7 @@ export default class myprofile extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.userData.id) {
+    if (!this.props.userData) {
       const href = "/login";
       const as = href;
       Router.push(href, as, { shallow: true });
@@ -147,7 +147,7 @@ export default class myprofile extends Component {
               </Grid>
               <br />
               <br />
-              <Header as="h2" icon="heart" content="Project's I've supported" />
+              <Header as="h2" icon="heart" content="Projects I've supported" />
               <br />
               <Card.Group itemsPerRow={4}>
                 {this.props.userSupport.map((project, i) => (

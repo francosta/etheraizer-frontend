@@ -1387,6 +1387,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../components/ProjectHighLevelValues */ "./components/ProjectHighLevelValues.js");
 /* harmony import */ var _components_ContributeForm__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../components/ContributeForm */ "./components/ContributeForm.js");
 /* harmony import */ var _components_ProjectPresentation__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../components/ProjectPresentation */ "./components/ProjectPresentation.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_23__);
+
 
 
 
@@ -1514,6 +1517,14 @@ function (_Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "handleLogin", function () {
+      var href = "/login";
+      var as = href;
+      next_router__WEBPACK_IMPORTED_MODULE_23___default.a.push(href, as, {
+        shallow: true
+      });
+    });
+
     _this.state = {
       edit: false,
       minimumContribution: null,
@@ -1535,8 +1546,10 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Grid"].Row, {
         columns: 2
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Grid"].Column, {
+        width: 10,
         floated: "left"
-      }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title))), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Grid"].Column, {
+      }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("h1", null, "Project Name: ".concat(this.props.selectedProject.title))), this.props.userData.id ? react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Grid"].Column, {
+        width: 4,
         floated: "right"
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_ContributeForm__WEBPACK_IMPORTED_MODULE_21__["default"], {
         balance: this.state.balance,
@@ -1547,7 +1560,11 @@ function (_Component) {
         updateDataOnFrontend: this.updateDataOnFrontend,
         selectProject: this.props.selectProject,
         addToUserSupportedProjects: this.props.addToUserSupportedProjects
-      })))), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      })) : react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_14__["Button"], {
+        size: "big",
+        color: "green",
+        onClick: this.handleLogin
+      }, "Login to support"))), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_ProjectCreationProgressComponent__WEBPACK_IMPORTED_MODULE_19__["default"], {
         selectedProject: this.props.selectedProject
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_ProjectHighLevelValues__WEBPACK_IMPORTED_MODULE_20__["default"], {
         balance: this.state.balance,
@@ -1740,6 +1757,17 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("next-routes");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

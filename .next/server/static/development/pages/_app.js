@@ -2004,8 +2004,16 @@ function (_App) {
         });
       }).flat();
 
+      Array.prototype.unique = function () {
+        return this.filter(function (value, index, self) {
+          return self.indexOf(value) === index;
+        });
+      };
+
+      var uniqueUserProjects = userProjects.unique();
+
       _this.setState({
-        userSupport: userProjects
+        userSupport: uniqueUserProjects
       });
     });
 
@@ -2015,9 +2023,9 @@ function (_App) {
         _this.setState({
           userData: resp
         });
-
-        _this.getUserSupport();
-      }); // Router.push("/");
+      }).then(function () {
+        return _this.getUserSupport();
+      });
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "logout", function () {
@@ -2089,6 +2097,18 @@ function (_App) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "updateUserSupportedProjects", function (project) {
       _this.setState({
         userSupport: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_this.state.userSupport), [project])
+      });
+
+      Array.prototype.unique = function () {
+        return this.filter(function (value, index, self) {
+          return self.indexOf(value) === index;
+        });
+      };
+
+      var newSupport = _this.state.userSupport.unique();
+
+      _this.setState({
+        userSupport: newSupport
       });
     });
 
@@ -2166,7 +2186,8 @@ function (_App) {
         supportContracts: this.state.supportContracts,
         userSupport: this.state.userSupport,
         addToUserSupportedProjects: this.updateUserSupportedProjects,
-        updateUserData: this.updateUserData
+        updateUserData: this.updateUserData,
+        getUserSupport: this.getUserSupport
       }));
     }
   }]);

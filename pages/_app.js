@@ -71,7 +71,7 @@ export default class MyApp extends App {
       contract => contract.user_id === this.state.userData.id
     );
 
-    const userProjects = userContracts
+    let userProjects = userContracts
       .map(contract => {
         return this.state.allprojects.filter(project => {
           return contract.project_id === project.id;
@@ -79,17 +79,22 @@ export default class MyApp extends App {
       })
       .flat();
 
-    this.setState({ userSupport: userProjects });
+    Array.prototype.unique = function() {
+      return this.filter(function(value, index, self) {
+        return self.indexOf(value) === index;
+      });
+    };
+    const uniqueUserProjects = userProjects.unique();
+    this.setState({ userSupport: uniqueUserProjects });
   };
 
   loggedIn = token => {
     localStorage.setItem("token", token);
-    getUserData().then(resp => {
-      this.setState({ userData: resp });
-      this.getUserSupport();
-    });
-
-    // Router.push("/");
+    getUserData()
+      .then(resp => {
+        this.setState({ userData: resp });
+      })
+      .then(() => this.getUserSupport());
   };
 
   logout = () => {
@@ -127,6 +132,13 @@ export default class MyApp extends App {
 
   updateUserSupportedProjects = project => {
     this.setState({ userSupport: [...this.state.userSupport, project] });
+    Array.prototype.unique = function() {
+      return this.filter(function(value, index, self) {
+        return self.indexOf(value) === index;
+      });
+    };
+    let newSupport = this.state.userSupport.unique();
+    this.setState({ userSupport: newSupport });
   };
 
   updateUserData = (firstName, lastName, email) => {
@@ -164,6 +176,7 @@ export default class MyApp extends App {
           userSupport={this.state.userSupport}
           addToUserSupportedProjects={this.updateUserSupportedProjects}
           updateUserData={this.updateUserData}
+          getUserSupport={this.getUserSupport}
         />
       </Layout>
     );
