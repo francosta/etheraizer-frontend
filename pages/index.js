@@ -19,19 +19,19 @@ export default class Index extends Component {
     return (
       <div>
         <div>
-          <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png" />
+          <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png" />
         </div>
         <Container>
           <Header>Get your project funded in 4 simple steps!</Header>
         </Container>
-        <Grid stackable equal columns={2}>
-          <Grid.Column width={8}>
+        <Grid stackable equal columns={3}>
+          <Grid.Column floated="left " width={8}>
             <h1>Connect your ethereum wallet using Metamask</h1>
           </Grid.Column>
-          <Grid.Column width={8}>
+          <Grid.Column floated="right" width={12}>
             <Image
               style={{ heigth: 500, width: "100%" }}
-              src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step1.png"
+              src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step1%20copy.png"
             />
           </Grid.Column>
         </Grid>
