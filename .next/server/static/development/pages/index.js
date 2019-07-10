@@ -1286,24 +1286,23 @@ function (_Component) {
         stackable: true,
         equal: true,
         columns: 3
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Row, {
+        style: {
+          marginTop: 0,
+          marginBottom: 0,
+          paddingBottom: 0,
+          paddingTop: 0
+        }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        floated: "left",
+        width: 4
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
+        textAlign: "center",
         style: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingBottom: 0,
-          paddingTop: 0
-        },
-        floated: "left ",
-        width: 8
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
-        textAlign: "center"
-      }, "Connect your ethereum wallet using Metamask"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
-        style: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingBottom: 0,
-          paddingTop: 0
-        },
+          position: "relative",
+          top: "50%"
+        }
+      }, "Connect your ethereum wallet using Metamask")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
         floated: "right",
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
@@ -1312,17 +1311,18 @@ function (_Component) {
           width: "100%"
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step1%20copy.png"
-      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
+      })))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
         stackable: true,
         equal: true,
         columns: 3
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Row, {
         style: {
           marginTop: 0,
           marginBottom: 0,
           paddingBottom: 0,
           paddingTop: 0
-        },
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
         floated: "left",
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
@@ -1332,15 +1332,9 @@ function (_Component) {
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step2%20copy.png"
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
-        style: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingBottom: 0,
-          paddingTop: 0
-        },
         floated: "right",
-        width: 8
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Create, deploy and fund your project!"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
+        width: 4
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Create, deploy and fund your project!")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
     }
   }]);
 

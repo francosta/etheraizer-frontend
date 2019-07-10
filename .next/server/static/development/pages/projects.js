@@ -1403,24 +1403,23 @@ function (_Component) {
         stackable: true,
         equal: true,
         columns: 3
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Row, {
+        style: {
+          marginTop: 0,
+          marginBottom: 0,
+          paddingBottom: 0,
+          paddingTop: 0
+        }
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        floated: "left",
+        width: 4
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
+        textAlign: "center",
         style: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingBottom: 0,
-          paddingTop: 0
-        },
-        floated: "left ",
-        width: 8
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
-        textAlign: "center"
-      }, "Connect your ethereum wallet using Metamask"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
-        style: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingBottom: 0,
-          paddingTop: 0
-        },
+          position: "relative",
+          top: "50%"
+        }
+      }, "Connect your ethereum wallet using Metamask")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
         floated: "right",
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
@@ -1429,17 +1428,18 @@ function (_Component) {
           width: "100%"
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step1%20copy.png"
-      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
+      })))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
         stackable: true,
         equal: true,
         columns: 3
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Row, {
         style: {
           marginTop: 0,
           marginBottom: 0,
           paddingBottom: 0,
           paddingTop: 0
-        },
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
         floated: "left",
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
@@ -1449,15 +1449,9 @@ function (_Component) {
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step2%20copy.png"
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
-        style: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingBottom: 0,
-          paddingTop: 0
-        },
         floated: "right",
-        width: 8
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Create, deploy and fund your project!"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
+        width: 4
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Create, deploy and fund your project!")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
     }
   }]);
 
@@ -1585,35 +1579,45 @@ function (_Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "filteredProjects", function () {
+      var filterResults = _this.state.projects.filter(function (project) {
+        return project.title.toLowerCase().includes(_this.state.searchTerm);
+      });
+
+      if (_this.state.fundingFilter) {
+        filterResults = filterResults.filter(function (project) {
+          return project.status === "deployed";
+        });
+      }
+
+      if (_this.state.fundedFilter) {
+        filterResults = filterResults.filter(function (project) {
+          return project.status === "funded";
+        });
+      }
+
+      return filterResults;
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleSearch", function (e) {
       var searchTerm = e.target.value.toLowerCase();
 
       _this.setState({
         searchTerm: searchTerm
       });
-
-      var newProjects = _this.props.allProjects.filter(function (project) {
-        return project.title.toLowerCase().includes(_this.state.searchTerm);
-      });
-
-      _this.setState({
-        filteredProjects: newProjects
-      });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleFilter", function (filter) {
-      _this.setState({
-        filter: filter
-      });
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleFilter", function (filterType) {
+      _this.setState(Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({}, filterType, !_this.state[filterType]));
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "contextRef", Object(react__WEBPACK_IMPORTED_MODULE_7__["createRef"])());
 
     _this.state = {
-      searchTerm: "",
-      filteredProjects: [],
       projects: [],
-      filter: null
+      searchTerm: "",
+      fundedFilter: false,
+      fundingFilter: false
     };
     return _this;
   }
@@ -1626,6 +1630,9 @@ function (_Component) {
       });
       this.setState({
         projects: projects
+      });
+      this.setState({
+        filteredProjects: projects
       });
     }
   }, {
@@ -1661,17 +1668,23 @@ function (_Component) {
         className: "item"
       }, "See only", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "menu"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Checkbox"], {
         className: "item",
-        onClick: function onClick() {
-          return _this2.handleFilter("funding");
+        label: {
+          children: "Awaiting funding"
+        },
+        onClick: function onClick(e) {
+          return _this2.handleFilter("fundingFilter");
         }
-      }, "Awaiting funding"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Checkbox"], {
         className: "item",
-        onClick: function onClick() {
-          return _this2.handleFilter("funded");
+        label: {
+          children: "Funded"
+        },
+        onClick: function onClick(e) {
+          return _this2.handleFilter("fundedFilter");
         }
-      }, "Funded"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "item"
       }, "Sort By", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "menu"
@@ -1684,13 +1697,7 @@ function (_Component) {
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Card"].Group, {
         itemsPerRow: 3
-      }, this.state.searchTerm === "" ? this.state.projects.map(function (project, i) {
-        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
-          key: i,
-          project: project,
-          selectProject: _this2.props.selectProject
-        });
-      }) : this.state.filteredProjects.map(function (project, i) {
+      }, this.filteredProjects().map(function (project, i) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
           key: i,
           project: project,

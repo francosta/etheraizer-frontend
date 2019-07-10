@@ -1,7 +1,7 @@
 import React, { Component, createRef } from "react";
 import factory from "../../ethereum/factoryContract";
 import Layout from "../../components/layouts";
-import { Card, Sticky, Grid, Ref, Segment } from "semantic-ui-react";
+import { Card, Sticky, Grid, Ref, Segment, Checkbox } from "semantic-ui-react";
 import { Link } from "../../routes";
 import ProjectCard from "../../components/ProjectCard";
 
@@ -10,10 +10,10 @@ export default class ProjectIndex extends Component {
     super(props);
 
     this.state = {
-      searchTerm: "",
-      filteredProjects: [],
       projects: [],
-      filter: null
+      searchTerm: "",
+      fundedFilter: false,
+      fundingFilter: false
     };
   }
 
@@ -22,23 +22,39 @@ export default class ProjectIndex extends Component {
       project => project.status === "deployed" || project.status === "funded"
     );
     this.setState({ projects: projects });
+    this.setState({ filteredProjects: projects });
   }
 
   setProjects = projects => {
     this.setState({ allprojects: projects });
   };
 
-  handleSearch = e => {
-    const searchTerm = e.target.value.toLowerCase();
-    this.setState({ searchTerm: searchTerm });
-    const newProjects = this.props.allProjects.filter(project =>
+  filteredProjects = () => {
+    let filterResults = this.state.projects.filter(project =>
       project.title.toLowerCase().includes(this.state.searchTerm)
     );
-    this.setState({ filteredProjects: newProjects });
+    if (this.state.fundingFilter) {
+      filterResults = filterResults.filter(
+        project => project.status === "deployed"
+      );
+    }
+
+    if (this.state.fundedFilter) {
+      filterResults = filterResults.filter(
+        project => project.status === "funded"
+      );
+    }
+
+    return filterResults;
   };
 
-  handleFilter = filter => {
-    this.setState({ filter: filter });
+  handleSearch = e => {
+    const searchTerm = e.target.value.toLowerCase();
+    this.setState({ searchTerm });
+  };
+
+  handleFilter = filterType => {
+    this.setState({ [filterType]: !this.state[filterType] });
   };
 
   contextRef = createRef();
@@ -65,16 +81,16 @@ export default class ProjectIndex extends Component {
                 <div className="item">
                   See only
                   <div className="menu">
-                    <a
+                    <Checkbox
                       className="item"
-                      onClick={() => this.handleFilter("funding")}>
-                      Awaiting funding
-                    </a>
-                    <a
+                      label={{ children: "Awaiting funding" }}
+                      onClick={e => this.handleFilter("fundingFilter")}
+                    />
+                    <Checkbox
                       className="item"
-                      onClick={() => this.handleFilter("funded")}>
-                      Funded
-                    </a>
+                      label={{ children: "Funded" }}
+                      onClick={e => this.handleFilter("fundedFilter")}
+                    />
                   </div>
                 </div>
                 <div className="item">
@@ -89,21 +105,13 @@ export default class ProjectIndex extends Component {
           </Grid.Column>
           <Grid.Column stackable width={12}>
             <Card.Group itemsPerRow={3}>
-              {this.state.searchTerm === ""
-                ? this.state.projects.map((project, i) => (
-                    <ProjectCard
-                      key={i}
-                      project={project}
-                      selectProject={this.props.selectProject}
-                    />
-                  ))
-                : this.state.filteredProjects.map((project, i) => (
-                    <ProjectCard
-                      key={i}
-                      project={project}
-                      selectProject={this.props.selectProject}
-                    />
-                  ))}
+              {this.filteredProjects().map((project, i) => (
+                <ProjectCard
+                  key={i}
+                  project={project}
+                  selectProject={this.props.selectProject}
+                />
+              ))}
             </Card.Group>
           </Grid.Column>
         </Grid>
