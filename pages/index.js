@@ -10,18 +10,22 @@ export default class Index extends Component {
   render() {
     return (
       <div>
-        <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage-dark.png" />
-        <Segment textAlign="center">
-          <Image src="/images/wireframe/paragraph.png" />
+        <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png" />
+        <Container>
+          <Segment
+            style={{ marginTop: 20, marginBottom: 20 }}
+            textAlign="center">
+            <Image src="/images/wireframe/paragraph.png" />
 
-          <Rail internal position="left">
-            <Segment>Left Rail Content</Segment>
-          </Rail>
+            <Rail internal position="left">
+              <Segment>Left Rail Content</Segment>
+            </Rail>
 
-          <Rail internal position="right">
-            <Segment>Right Rail Content</Segment>
-          </Rail>
-        </Segment>
+            <Rail internal position="right">
+              <Segment>Right Rail Content</Segment>
+            </Rail>
+          </Segment>
+        </Container>
       </div>
     );
   }
