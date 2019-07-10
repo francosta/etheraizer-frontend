@@ -10,7 +10,7 @@ export default class Index extends Component {
   render() {
     return (
       <div>
-        <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png" />
+        <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage-dark.png" />
         <Segment textAlign="center">
           <Image src="/images/wireframe/paragraph.png" />
 
