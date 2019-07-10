@@ -1394,11 +1394,12 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
         style: {
-          marginTop: 20
+          marginTop: 20,
+          marginBottom: 0
         },
         centered: true
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
-        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero.png"
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero copy.png"
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
         stackable: true,
         equal: true,
@@ -1461,7 +1462,20 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
         floated: "right",
         width: 4
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Create, deploy and fund your project!")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], {
+        style: {
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          marginTop: "50%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
+        textAlign: "center"
+      }, "Create, deploy and fund your project"))))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
     }
   }]);
 
@@ -1694,15 +1708,7 @@ function (_Component) {
         onClick: function onClick(e) {
           return _this2.handleFilter("fundedFilter");
         }
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "item"
-      }, "Sort By", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "menu"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "Supporters"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "Backing")))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"].Column, {
+      })))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"].Column, {
         stackable: true,
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Card"].Group, {

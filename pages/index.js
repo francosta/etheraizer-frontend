@@ -19,8 +19,8 @@ export default class Index extends Component {
   render() {
     return (
       <div>
-        <Grid style={{ marginTop: 20 }} centered>
-          <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero.png" />
+        <Grid style={{ marginTop: 20, marginBottom: 0 }} centered>
+          <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero copy.png" />
         </Grid>
         <Grid stackable equal columns={3}>
           <Grid.Row
@@ -69,7 +69,20 @@ export default class Index extends Component {
               />
             </Grid.Column>
             <Grid.Column floated="right" width={4}>
-              <h1>Create, deploy and fund your project!</h1>
+              <Container
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: "50%"
+                }}>
+                <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png" />
+                <Header textAlign="center">
+                  Create, deploy and fund your project
+                </Header>
+              </Container>
             </Grid.Column>
           </Grid.Row>
         </Grid>

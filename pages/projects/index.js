@@ -93,13 +93,6 @@ export default class ProjectIndex extends Component {
                     />
                   </div>
                 </div>
-                <div className="item">
-                  Sort By
-                  <div className="menu">
-                    <a className="item">Supporters</a>
-                    <a className="item">Backing</a>
-                  </div>
-                </div>
               </div>
             </Sticky>
           </Grid.Column>
