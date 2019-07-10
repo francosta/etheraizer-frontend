@@ -41,7 +41,10 @@ export default class MyApp extends App {
         .catch(err => {
           alert(err);
         });
-    } else if (this.props.router.route !== "/signup") {
+    } else if (
+      this.props.router.route === "/createproject" ||
+      this.props.router.route === "/myprofile"
+    ) {
       const href = "/login";
       const as = href;
       Router.push(href, as, { shallow: true });

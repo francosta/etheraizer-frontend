@@ -17,9 +17,21 @@ export default props => {
         </Head>
         {props.userData.id ? (
           <Sticky>
-            <Navbar logout={props.logout} selectProject={props.selectProject} />{" "}
+            <Navbar
+              userData={props.userData}
+              logout={props.logout}
+              selectProject={props.selectProject}
+            />
           </Sticky>
-        ) : null}
+        ) : (
+          <Sticky>
+            <Navbar
+              userData={props.userData}
+              logout={props.logout}
+              selectProject={props.selectProject}
+            />
+          </Sticky>
+        )}
         <Index />
       </div>
     );
@@ -36,9 +48,21 @@ export default props => {
         </Head>
         {props.userData.id ? (
           <Sticky>
-            <Navbar logout={props.logout} selectProject={props.selectProject} />{" "}
+            <Navbar
+              userData={props.userData}
+              logout={props.logout}
+              selectProject={props.selectProject}
+            />{" "}
           </Sticky>
-        ) : null}
+        ) : (
+          <Sticky>
+            <Navbar
+              userData={props.userData}
+              logout={props.logout}
+              selectProject={props.selectProject}
+            />{" "}
+          </Sticky>
+        )}
         <Container>{props.children}</Container>
         <Footer />
       </div>

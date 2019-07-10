@@ -10,7 +10,8 @@ import {
   Segment,
   Rail,
   Header,
-  Grid
+  Grid,
+  Card
 } from "semantic-ui-react";
 import SignUpForm from "../components/SignUpForm";
 
@@ -18,18 +19,34 @@ export default class Index extends Component {
   render() {
     return (
       <div>
-        <div>
-          <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png" />
-        </div>
-
-        <Container>
-          <Header>Get your project funded in 4 simple steps!</Header>
-        </Container>
+        <Grid style={{ marginTop: 20 }} centered>
+          <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero.png" />
+        </Grid>
         <Grid stackable equal columns={3}>
-          <Grid.Column floated="left " width={8}>
-            <h1>Connect your ethereum wallet using Metamask</h1>
+          <Grid.Column
+            style={{
+              marginTop: 0,
+              marginBottom: 0,
+              paddingBottom: 0,
+              paddingTop: 0
+            }}
+            floated="left "
+            width={8}>
+            <Container>
+              <Header textAlign="center">
+                Connect your ethereum wallet using Metamask
+              </Header>
+            </Container>
           </Grid.Column>
-          <Grid.Column floated="right" width={12}>
+          <Grid.Column
+            style={{
+              marginTop: 0,
+              marginBottom: 0,
+              paddingBottom: 0,
+              paddingTop: 0
+            }}
+            floated="right"
+            width={12}>
             <Image
               style={{ heigth: 500, width: "100%" }}
               src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step1%20copy.png"
@@ -37,19 +54,30 @@ export default class Index extends Component {
           </Grid.Column>
         </Grid>
         <Grid stackable equal columns={3}>
-          <Grid.Column floated="left" width={12}>
+          <Grid.Column
+            style={{
+              marginTop: 0,
+              marginBottom: 0,
+              paddingBottom: 0,
+              paddingTop: 0
+            }}
+            floated="left"
+            width={12}>
             <Image
               style={{ heigth: 500, width: "100%" }}
               src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step2%20copy.png"
             />
           </Grid.Column>
-          <Grid.Column floated="right" width={8}>
+          <Grid.Column
+            style={{
+              marginTop: 0,
+              marginBottom: 0,
+              paddingBottom: 0,
+              paddingTop: 0
+            }}
+            floated="right"
+            width={8}>
             <h1>Create, deploy and fund your project!</h1>
-          </Grid.Column>
-        </Grid>
-        <Grid columns={2}>
-          <Grid.Column>
-            <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png" />
           </Grid.Column>
         </Grid>
         <h1>Signup Now</h1>

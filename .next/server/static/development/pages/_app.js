@@ -332,57 +332,99 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Navbar, [{
     key: "render",
     value: function render() {
-      var activeItem = this.state.activeItem;
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          backgroundColor: "white",
-          marginBottom: "0px"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
-        stackable: true,
-        borderless: true,
-        pointing: true,
-        secondary: true,
-        style: {
-          paddingTop: "20px"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
-        position: "left",
-        style: {
-          marginLeft: "100px"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
-        src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
-        style: {
-          width: "100px"
-        }
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/projects/index"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "All Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        href: "/projects/createproject"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item",
-        onClick: this.createProject
-      }, "Create Project"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
-        position: "right"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-        route: "/myprofile"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "item"
-      }, "My Profile")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
-        style: {
-          marginRight: "100px"
-        },
-        name: "logout",
-        active: activeItem === "logout",
-        onClick: this.props.logout
-      }))));
+      if (this.props.userData.id) {
+        var activeItem = this.state.activeItem;
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          style: {
+            backgroundColor: "white",
+            marginBottom: "0px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+          stackable: true,
+          borderless: true,
+          pointing: true,
+          secondary: true,
+          style: {
+            paddingTop: "20px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "left",
+          style: {
+            marginLeft: "100px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
+          src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
+          style: {
+            width: "100px"
+          }
+        }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/projects/index"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "All Projects")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          href: "/projects/createproject"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item",
+          onClick: this.createProject
+        }, "Create Project"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "right"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/myprofile"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "My Profile")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
+          style: {
+            marginRight: "100px"
+          },
+          name: "logout",
+          active: activeItem === "logout",
+          onClick: this.props.logout
+        }))));
+      } else {
+        var _activeItem = this.state.activeItem;
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          style: {
+            backgroundColor: "white",
+            marginBottom: "0px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"], {
+          stackable: true,
+          borderless: true,
+          pointing: true,
+          secondary: true,
+          style: {
+            paddingTop: "20px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "left",
+          style: {
+            marginLeft: "100px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Image"], {
+          src: "https://drive.google.com/uc?id=1l-c_jyMF1elbZKIeemM-vaFL-eRqd9xH",
+          style: {
+            width: "100px"
+          }
+        }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/projects/index"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "All Projects"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
+          position: "right"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+          route: "/login"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+          className: "item"
+        }, "Login")))));
+      }
     }
   }]);
 
@@ -627,9 +669,14 @@ __webpack_require__.r(__webpack_exports__);
       rel: "stylesheet",
       href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
     })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      userData: props.userData,
       logout: props.logout,
       selectProject: props.selectProject
-    }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_index__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+    })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      userData: props.userData,
+      logout: props.logout,
+      selectProject: props.selectProject
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_index__WEBPACK_IMPORTED_MODULE_5__["default"], null));
   } else {
     return (// We use container in order to limit the size of the elements in the window.
       // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
@@ -637,9 +684,14 @@ __webpack_require__.r(__webpack_exports__);
         rel: "stylesheet",
         href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
       })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        userData: props.userData,
         logout: props.logout,
         selectProject: props.selectProject
-      }), " ") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
+      }), " ") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        userData: props.userData,
+        logout: props.logout,
+        selectProject: props.selectProject
+      }), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Container"], null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null))
     );
   }
 });
@@ -2058,7 +2110,7 @@ function (_App) {
         }).catch(function (err) {
           alert(err);
         });
-      } else if (this.props.router.route !== "/signup") {
+      } else if (this.props.router.route === "/createproject" || this.props.router.route === "/myprofile") {
         var href = "/login";
         var as = href;
         next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push(href, as, {
@@ -2167,16 +2219,35 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
-        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png"
-      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], null, "Get your project funded in 4 simple steps!")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
+        style: {
+          marginTop: 20
+        },
+        centered: true
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero.png"
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
         stackable: true,
         equal: true,
         columns: 3
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        style: {
+          marginTop: 0,
+          marginBottom: 0,
+          paddingBottom: 0,
+          paddingTop: 0
+        },
         floated: "left ",
         width: 8
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Connect your ethereum wallet using Metamask")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Container"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Header"], {
+        textAlign: "center"
+      }, "Connect your ethereum wallet using Metamask"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        style: {
+          marginTop: 0,
+          marginBottom: 0,
+          paddingBottom: 0,
+          paddingTop: 0
+        },
         floated: "right",
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
@@ -2190,6 +2261,12 @@ function (_Component) {
         equal: true,
         columns: 3
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        style: {
+          marginTop: 0,
+          marginBottom: 0,
+          paddingBottom: 0,
+          paddingTop: 0
+        },
         floated: "left",
         width: 12
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
@@ -2199,13 +2276,15 @@ function (_Component) {
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step2%20copy.png"
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, {
+        style: {
+          marginTop: 0,
+          marginBottom: 0,
+          paddingBottom: 0,
+          paddingTop: 0
+        },
         floated: "right",
         width: 8
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Create, deploy and fund your project!"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
-        columns: 2
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Grid"].Column, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
-        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png"
-      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Create, deploy and fund your project!"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Signup Now"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_12__["default"], null));
     }
   }]);
 
