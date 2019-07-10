@@ -3,10 +3,6 @@
     "static/development/dll/dll_2011977376de5c4d4cfb.js"
   ],
   "pages": {
-    "/": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
@@ -15,23 +11,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/myprofile": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/projects": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/projects/createproject": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/projects/showproject": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
