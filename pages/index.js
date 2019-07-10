@@ -21,6 +21,7 @@ export default class Index extends Component {
         <div>
           <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png" />
         </div>
+
         <Container>
           <Header>Get your project funded in 4 simple steps!</Header>
         </Container>
@@ -35,18 +36,18 @@ export default class Index extends Component {
             />
           </Grid.Column>
         </Grid>
-        <Grid columns={2}>
-          <Grid.Column>
-            <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png" />
+        <Grid stackable equal columns={3}>
+          <Grid.Column floated="left" width={12}>
+            <Image
+              style={{ heigth: 500, width: "100%" }}
+              src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step2%20copy.png"
+            />
           </Grid.Column>
-          <Grid.Column>
-            <h1>Connect your Ethereum wallet</h1>
+          <Grid.Column floated="right" width={8}>
+            <h1>Create, deploy and fund your project!</h1>
           </Grid.Column>
         </Grid>
         <Grid columns={2}>
-          <Grid.Column>
-            <h1>Create, Deploy, Achieve!</h1>
-          </Grid.Column>
           <Grid.Column>
             <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png" />
           </Grid.Column>

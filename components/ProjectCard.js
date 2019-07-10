@@ -24,7 +24,7 @@ export default class ProjectCard extends Component {
             style={{ maxHeight: 200 }}
           />
           {this.props.project.status === "deployed" ? (
-            <Label attached="bottom" as="a" color="orange">
+            <Label attached="bottom" as="a" color="black">
               <Label.Detail>
                 Funding Ongoing:{" "}
                 {this.props.project.progress
@@ -33,7 +33,7 @@ export default class ProjectCard extends Component {
               </Label.Detail>
             </Label>
           ) : (
-            <Label attached="bottom" as="a" color="green">
+            <Label attached="bottom" as="a" color="teal">
               <Label.Detail>Funded</Label.Detail>
             </Label>
           )}
