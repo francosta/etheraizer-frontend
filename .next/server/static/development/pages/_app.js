@@ -326,6 +326,14 @@ function (_Component) {
       _this.props.selectProject(project);
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "login", function () {
+      var href = "/login";
+      var as = href;
+      next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push(href, as, {
+        shallow: true
+      });
+    });
+
     return _this;
   }
 
@@ -419,11 +427,14 @@ function (_Component) {
           className: "item"
         }, "All Projects"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
           position: "right"
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
-          route: "/login"
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-          className: "item"
-        }, "Login")))));
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
+          style: {
+            marginRight: "100px"
+          },
+          name: "login",
+          active: _activeItem === "login",
+          onClick: this.login
+        }))));
       }
     }
   }]);
@@ -2020,7 +2031,9 @@ function (_App) {
         userData: {}
       });
 
-      next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/login");
+      next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/", "/", {
+        shallow: true
+      });
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "deployProject", function (project) {

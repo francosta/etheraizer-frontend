@@ -14,6 +14,12 @@ export default class Navbar extends Component {
     this.props.selectProject(project);
   };
 
+  login = () => {
+    const href = "/login";
+    const as = href;
+    Router.push(href, as, { shallow: true });
+  };
+
   render() {
     if (this.props.userData.id) {
       const { activeItem } = this.state;
@@ -85,9 +91,12 @@ export default class Navbar extends Component {
               </Link>
             </Menu.Menu>
             <Menu.Menu position="right">
-              <Link route="/login">
-                <a className="item">Login</a>
-              </Link>
+              <Menu.Item
+                style={{ marginRight: "100px" }}
+                name="login"
+                active={activeItem === "login"}
+                onClick={this.login}
+              />
             </Menu.Menu>
           </Menu>
         </div>
