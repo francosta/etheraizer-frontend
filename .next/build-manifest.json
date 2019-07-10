@@ -22,18 +22,6 @@
     "/login": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/myprofile": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/next/dist/pages/_error": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/projects": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
