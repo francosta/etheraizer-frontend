@@ -16,13 +16,15 @@ export default props => {
           />
         </Head>
         {props.userData.id ? (
-          <Sticky>
-            <Navbar
-              userData={props.userData}
-              logout={props.logout}
-              selectProject={props.selectProject}
-            />
-          </Sticky>
+          <div>
+            <Sticky>
+              <Navbar
+                userData={props.userData}
+                logout={props.logout}
+                selectProject={props.selectProject}
+              />
+            </Sticky>
+          </div>
         ) : (
           <Sticky>
             <Navbar
@@ -32,7 +34,7 @@ export default props => {
             />
           </Sticky>
         )}
-        <Index />
+        <Index userData={props.userData} projects={props.allProjects} />
       </div>
     );
   } else {

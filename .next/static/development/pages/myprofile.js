@@ -58249,12 +58249,10 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(myprofile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (!this.props.userData) {
+      if (!this.props.userData.id) {
         var href = "/login";
         var as = href;
-        next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push(href, as, {
-          shallow: true
-        });
+        next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push(href);
       }
     }
   }, {

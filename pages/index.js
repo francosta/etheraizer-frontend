@@ -12,11 +12,18 @@ import {
   Header,
   Grid,
   Card,
-  Icon
+  Icon,
+  Button
 } from "semantic-ui-react";
 import SignUpForm from "../components/SignUpForm";
 
 export default class Index extends Component {
+  handleClick = () => {
+    const href = "/projects";
+    const as = href;
+    Router.push(href, as, { shallow: true });
+  };
+
   render() {
     return (
       <div>
@@ -116,7 +123,13 @@ export default class Index extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <SignUpForm />
+        {this.props.userData.id ? (
+          <Button onClick={this.handleClick} size="huge" color="green">
+            Explore Projects
+          </Button>
+        ) : (
+          <SignUpForm />
+        )}
       </div>
     );
   }

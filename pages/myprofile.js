@@ -16,10 +16,10 @@ export default class myprofile extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.userData) {
+    if (!this.props.userData.id) {
       const href = "/login";
       const as = href;
-      Router.push(href, as, { shallow: true });
+      Router.push(href);
     }
   }
 
