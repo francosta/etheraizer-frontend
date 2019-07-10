@@ -24,14 +24,14 @@ export default class Index extends Component {
         <Container>
           <Header>Get your project funded in 4 simple steps!</Header>
         </Container>
-        <Grid columns={2}>
+        <Grid stackable columns={2}>
           <Grid.Column>
             <h1>Get your project funded in 4 simple steps!</h1>
           </Grid.Column>
           <Grid.Column>
             <Image
               style={{ heigth: 500, width: "100%" }}
-              src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png"
+              src="https://github.com/francosta/etheraizer-frontend/raw/development/public/step1.png"
             />
           </Grid.Column>
         </Grid>
