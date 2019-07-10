@@ -4,26 +4,24 @@ import Layout from "../components/layouts";
 import Router from "next/router";
 import { validate } from "../services/authentication";
 import Login from "./login";
-import { Container, Image } from "semantic-ui-react";
+import { Container, Image, Segment, Rail } from "semantic-ui-react";
 
 export default class Index extends Component {
   render() {
     return (
       <div>
-        <div className="team">
-          <style>
-            {`
-            .team {
-              width: 100%;
-              // height: 344px;
-              background-size: contain;
-              // background-repeat: no-repeat
-              background-image: url("https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png");
-            }
-        `}
-          </style>
-          <h1 />
-        </div>
+        <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png" />
+        <Segment textAlign="center">
+          <Image src="/images/wireframe/paragraph.png" />
+
+          <Rail internal position="left">
+            <Segment>Left Rail Content</Segment>
+          </Rail>
+
+          <Rail internal position="right">
+            <Segment>Right Rail Content</Segment>
+          </Rail>
+        </Segment>
       </div>
     );
   }

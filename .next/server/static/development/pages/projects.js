@@ -1123,9 +1123,19 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "team"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("style", null, "\n            .team {\n              width: 100%;\n              // height: 344px;\n              background-size: contain;\n              // background-repeat: no-repeat\n              background-image: url(\"https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png\");\n            }\n        "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null)));
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/homepage.png"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Segment"], {
+        textAlign: "center"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Image"], {
+        src: "/images/wireframe/paragraph.png"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Rail"], {
+        internal: true,
+        position: "left"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Segment"], null, "Left Rail Content")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Rail"], {
+        internal: true,
+        position: "right"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Segment"], null, "Right Rail Content"))));
     }
   }]);
 
