@@ -50,6 +50,7 @@ export default class createproject extends Component {
             }
             blockchainProjects={this.props.blockchainProjects}
             selectProject={this.props.selectProject}
+            userData={this.props.userData}
           />
         </div>
       );

@@ -1892,7 +1892,8 @@ function (_Component) {
           selectedProject: this.props.selectedProject,
           getNewProjectBlockchainAddress: this.props.getNewProjectBlockchainAddress,
           blockchainProjects: this.props.blockchainProjects,
-          selectProject: this.props.selectProject
+          selectProject: this.props.selectProject,
+          userData: this.props.userData
         }));
       }
     }
