@@ -32,7 +32,7 @@ export default class ShowProject extends Component {
       const project = projectContract(address);
       const stats = await project.methods.getSummary().call();
       this.setState({
-        minimumContribution: parseInt(stats[0]["_hex"] + 1),
+        minimumContribution: parseInt(stats[0]["_hex"]) + 1,
         balance: parseInt(stats[1]["_hex"]),
         requestsCount: parseInt(stats[2]["_hex"]),
         supportersCount: parseInt(stats[3]["_hex"]),
@@ -48,7 +48,7 @@ export default class ShowProject extends Component {
       const project = projectContract(address);
       const stats = await project.methods.getSummary().call();
       this.setState({
-        minimumContribution: parseInt(stats[0]["_hex"] + 1),
+        minimumContribution: parseInt(stats[0]["_hex"]) + 1,
         balance: parseInt(stats[1]["_hex"]),
         requestsCount: parseInt(stats[2]["_hex"]),
         supportersCount: parseInt(stats[3]["_hex"]),

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1450,7 +1450,7 @@ function (_Component) {
             case 5:
               stats = _context.sent;
               this.setState({
-                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[0]["_hex"] + 1),
+                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[0]["_hex"]) + 1,
                 balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[1]["_hex"]),
                 requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[2]["_hex"]),
                 supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[3]["_hex"]),
@@ -1473,7 +1473,7 @@ function (_Component) {
             case 16:
               _stats = _context.sent;
               this.setState({
-                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[0]["_hex"] + 1),
+                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[0]["_hex"]) + 1,
                 balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[1]["_hex"]),
                 requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[2]["_hex"]),
                 supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[3]["_hex"]),
@@ -1627,7 +1627,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!*********************************************!*\
   !*** multi ./pages/projects/showproject.js ***!
   \*********************************************/

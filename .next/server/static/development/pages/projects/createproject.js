@@ -651,23 +651,11 @@ function (_Component) {
       var formOptions = [{
         key: "wei",
         text: "wei",
-        value: "wei"
-      }, {
-        key: "ether",
-        text: "Ξ ether",
-        value: "ether"
-      }, {
-        key: "dollars",
-        text: "$",
-        value: "dollars"
-      }, {
-        key: "euros",
-        text: "€",
-        value: "euros"
-      }, {
-        key: "pounds",
-        text: "£",
-        value: "wei"
+        value: "wei" // { key: "ether", text: "Ξ ether", value: "ether" },
+        // { key: "dollars", text: "$", value: "dollars" },
+        // { key: "euros", text: "€", value: "euros" },
+        // { key: "pounds", text: "£", value: "wei" }
+
       }];
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h2", null, "Create your Project"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h4", null, "Please fill in the form below to create your project:"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Segment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Form"], {
         onSubmit: this.handleSubmit,
@@ -2009,7 +1997,7 @@ function (_Component) {
             case 5:
               stats = _context.sent;
               this.setState({
-                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[0]["_hex"] + 1),
+                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[0]["_hex"]) + 1,
                 balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[1]["_hex"]),
                 requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[2]["_hex"]),
                 supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(stats[3]["_hex"]),
@@ -2032,7 +2020,7 @@ function (_Component) {
             case 16:
               _stats = _context.sent;
               this.setState({
-                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[0]["_hex"] + 1),
+                minimumContribution: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[0]["_hex"]) + 1,
                 balance: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[1]["_hex"]),
                 requestsCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[2]["_hex"]),
                 supportersCount: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(_stats[3]["_hex"]),

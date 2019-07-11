@@ -59,11 +59,11 @@ export default class CreateProjectForm extends Component {
 
   render() {
     const formOptions = [
-      { key: "wei", text: "wei", value: "wei" },
-      { key: "ether", text: "Ξ ether", value: "ether" },
-      { key: "dollars", text: "$", value: "dollars" },
-      { key: "euros", text: "€", value: "euros" },
-      { key: "pounds", text: "£", value: "wei" }
+      { key: "wei", text: "wei", value: "wei" }
+      // { key: "ether", text: "Ξ ether", value: "ether" },
+      // { key: "dollars", text: "$", value: "dollars" },
+      // { key: "euros", text: "€", value: "euros" },
+      // { key: "pounds", text: "£", value: "wei" }
     ];
     return (
       <div>

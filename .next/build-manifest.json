@@ -38,10 +38,6 @@
     "/projects/showproject": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/signup": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
