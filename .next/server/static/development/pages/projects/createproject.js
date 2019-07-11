@@ -735,8 +735,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _ethereum_factoryContract__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../ethereum/factoryContract */ "./ethereum/factoryContract.js");
 /* harmony import */ var _ethereum_web3__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../ethereum/web3 */ "./ethereum/web3.js");
-/* harmony import */ var next_routes__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! next-routes */ "next-routes");
-/* harmony import */ var next_routes__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(next_routes__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_14__);
 
 
 
@@ -834,7 +834,7 @@ function (_Component) {
                   creatingProject: false
                 });
 
-                next_routes__WEBPACK_IMPORTED_MODULE_14___default.a.push("projects/".concat(_this.props.selectedProject.id));
+                next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("projects/".concat(_this.props.selectedProject.id));
 
               case 21:
               case "end":

@@ -14,7 +14,7 @@ import {
 } from "semantic-ui-react";
 import factory from "../ethereum/factoryContract";
 import web3 from "../ethereum/web3";
-import Router from "next-routes";
+import Router from "next/router";
 
 export default class DeployProjectForm extends Component {
   constructor(props) {
