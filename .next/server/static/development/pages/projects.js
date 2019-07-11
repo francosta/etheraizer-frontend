@@ -805,6 +805,7 @@ __webpack_require__.r(__webpack_exports__);
       logout: props.logout,
       selectProject: props.selectProject
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      selectProject: props.selectProject,
       userData: props.userData,
       projects: props.allProjects
     }));
@@ -1369,6 +1370,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _components_SignUpForm__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/SignUpForm */ "./components/SignUpForm.js");
+/* harmony import */ var _components_ProjectCard__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/ProjectCard */ "./components/ProjectCard.js");
+
 
 
 
@@ -1390,18 +1393,12 @@ var Index =
 function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Index, _Component);
 
-  function Index() {
-    var _getPrototypeOf2;
-
+  function Index(props) {
     var _this;
 
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Index);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Index).call(this, props));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleClick", function () {
       var href = "/projects";
@@ -1411,21 +1408,47 @@ function (_Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleTransition", function () {
+      _this.setState({
+        visible: !_this.state.visible
+      });
+    });
+
+    _this.state = {
+      visible: false
+    };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], {
-        style: {
+        style: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({
           marginTop: 20,
           marginBottom: 0
+        }, "marginBottom", 70)
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
+        style: {
+          padding: 0
         },
         centered: true
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Image"], {
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero copy.png"
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], {
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
+        style: {
+          padding: 0
+        },
+        centered: true
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Icon"], {
+        name: "arrow alternate circle down",
+        centered: true,
+        size: "huge"
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        name: "more"
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], {
         stackable: true,
         equal: true,
         columns: 3
@@ -1437,8 +1460,12 @@ function (_Component) {
           paddingTop: 0
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
+        style: {
+          marginLeft: "6vw",
+          marginTop: "5vh"
+        },
         floated: "left",
-        width: 4
+        width: 3
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Container"], {
         style: {
           position: "relative",
@@ -1446,7 +1473,8 @@ function (_Component) {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          marginTop: "50%"
+          marginTop: "50%",
+          marginLeft: "20%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Image"], {
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/Metamask.png"
@@ -1465,7 +1493,7 @@ function (_Component) {
           width: "100%"
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step1%20copy.png"
-      })))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], {
+      }))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], {
         stackable: true,
         equal: true,
         columns: 3
@@ -1486,8 +1514,12 @@ function (_Component) {
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step2%20copy.png"
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
+        style: {
+          marginRight: "6vw",
+          marginTop: "12vh"
+        },
         floated: "right",
-        width: 4
+        width: 3
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Container"], {
         style: {
           position: "relative",
@@ -1512,8 +1544,12 @@ function (_Component) {
           paddingTop: 0
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
+        style: {
+          marginLeft: "4vw",
+          marginTop: "15vh"
+        },
         floated: "left",
-        width: 4
+        width: 3
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Container"], {
         style: {
           position: "relative",
@@ -1523,7 +1559,11 @@ function (_Component) {
           flexDirection: "column",
           marginTop: "50%"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Header"], {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Icon"], {
+        name: "heart",
+        size: "huge",
+        color: "red"
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Header"], {
         as: "h1",
         textAlign: "center"
       }, "Browse through and support projects"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Column, {
@@ -1538,11 +1578,30 @@ function (_Component) {
           width: "100%"
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step3.png"
-      })))), this.props.userData.id ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
-        onClick: this.handleClick,
+      }))), this.props.userData.id ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
+        centered: true
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: {
+          marginTop: "10%",
+          marginBottom: "2%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
+        onClick: this.handleTransition,
         size: "huge",
         color: "green"
-      }, "Explore Projects") : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_14__["default"], null));
+      }, "Explore Projects"))) : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
+        centered: true
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_14__["default"], null))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Container"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Transition"], {
+        visible: this.state.visible
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Card"].Group, {
+        itemsPerRow: 4
+      }, this.props.projects.map(function (project, i) {
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_15__["default"], {
+          key: i,
+          project: project,
+          selectProject: _this2.props.selectProject
+        });
+      }))))));
     }
   }]);
 

@@ -159,7 +159,8 @@ export default class MyApp extends App {
         userData={this.state.userData}
         logout={this.logout}
         selectProject={this.selectProject}
-        router={this.props.router}>
+        router={this.props.router}
+        allProjects={this.props.allProjects}>
         <Component
           blockchainProjects={this.props.blockchainProjects}
           userData={this.state.userData}

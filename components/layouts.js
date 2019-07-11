@@ -34,7 +34,11 @@ export default props => {
             />
           </Sticky>
         )}
-        <Index userData={props.userData} projects={props.allProjects} />
+        <Index
+          selectProject={props.selectProject}
+          userData={props.userData}
+          projects={props.allProjects}
+        />
       </div>
     );
   } else {
