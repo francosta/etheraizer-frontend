@@ -296,15 +296,13 @@ function (_Component) {
       var user;
       var newFirstName;
       var newLastName;
-      var newEmail;
-
-      if (e.target.password.value !== "" && e.target.password.value !== e.target.passwordConfirmation.value) {
-        _this.setState({
-          error: "The passwords do not match"
-        });
-
-        return null;
-      }
+      var newEmail; // if (
+      //   e.target.password.value !== "" &&
+      //   e.target.password.value !== e.target.passwordConfirmation.value
+      // ) {
+      //   this.setState({ error: "The passwords do not match" });
+      //   return null;
+      // }
 
       if (e.target.firstName.value === "") {
         newFirstName = _this.props.userData.first_name;
@@ -322,23 +320,19 @@ function (_Component) {
         newEmail = _this.props.userData.email;
       } else {
         newEmail = e.target.email.value;
-      }
+      } // if (e.target.password.value !== "") {
+      //   user = {
+      //     first_name: newFirstName,
+      //     last_name: newLastName,
+      //     email: newEmail
+      //     // password: e.target.password.value
 
-      if (e.target.password.value !== "") {
-        user = {
-          first_name: newFirstName,
-          last_name: newLastName,
-          email: newEmail,
-          password: e.target.password.value
-        };
-      } else {
-        user = {
-          first_name: newFirstName,
-          last_name: newLastName,
-          email: newEmail
-        };
-      }
 
+      user = {
+        first_name: newFirstName,
+        last_name: newLastName,
+        email: newEmail
+      };
       var editUserURL = "http://localhost:3000/users/".concat(_this.props.userData.id);
       var options = {
         method: "PATCH",
@@ -386,13 +380,7 @@ function (_Component) {
         placeholder: this.props.userData.email
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Form"].Group, {
         widths: "equal"
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Form"].Field, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", null, "New Password"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
-        name: "password",
-        type: "password"
-      })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Form"].Field, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", null, "New Password Confirmation"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
-        name: "passwordConfirmation",
-        type: "password"
-      }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Message"], {
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Message"], {
         visible: this.state.error,
         error: true,
         content: "The passwords do not match."

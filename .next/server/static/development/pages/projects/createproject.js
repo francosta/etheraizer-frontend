@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -951,7 +951,11 @@ function (_Component) {
         checked: this.state.terms,
         onChange: this.handleCheck,
         label: "I agree to the Terms and Conditions"
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Message"], {
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", {
+        style: {
+          marginTop: 10
+        }
+      }, "You will need to pay a small transaction fee in order to deploy your project.")), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_11__["Message"], {
         color: "red",
         size: "small",
         compact: true,
@@ -2174,7 +2178,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 8:
+/***/ 6:
 /*!***********************************************!*\
   !*** multi ./pages/projects/createproject.js ***!
   \***********************************************/

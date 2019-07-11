@@ -138,6 +138,10 @@ export default class DeployProjectForm extends Component {
                   onChange={this.handleCheck}
                   label="I agree to the Terms and Conditions"
                 />
+                <p style={{ marginTop: 10 }}>
+                  You will need to pay a small transaction fee in order to
+                  deploy your project.
+                </p>
               </Form.Field>
               <Message
                 color="red"

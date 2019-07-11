@@ -18,13 +18,13 @@ export default class UserProfileEditForm extends Component {
     let newLastName;
     let newEmail;
 
-    if (
-      e.target.password.value !== "" &&
-      e.target.password.value !== e.target.passwordConfirmation.value
-    ) {
-      this.setState({ error: "The passwords do not match" });
-      return null;
-    }
+    // if (
+    //   e.target.password.value !== "" &&
+    //   e.target.password.value !== e.target.passwordConfirmation.value
+    // ) {
+    //   this.setState({ error: "The passwords do not match" });
+    //   return null;
+    // }
 
     if (e.target.firstName.value === "") {
       newFirstName = this.props.userData.first_name;
@@ -44,20 +44,18 @@ export default class UserProfileEditForm extends Component {
       newEmail = e.target.email.value;
     }
 
-    if (e.target.password.value !== "") {
-      user = {
-        first_name: newFirstName,
-        last_name: newLastName,
-        email: newEmail,
-        password: e.target.password.value
-      };
-    } else {
-      user = {
-        first_name: newFirstName,
-        last_name: newLastName,
-        email: newEmail
-      };
-    }
+    // if (e.target.password.value !== "") {
+    //   user = {
+    //     first_name: newFirstName,
+    //     last_name: newLastName,
+    //     email: newEmail
+    //     // password: e.target.password.value
+
+    user = {
+      first_name: newFirstName,
+      last_name: newLastName,
+      email: newEmail
+    };
 
     const editUserURL = `http://localhost:3000/users/${this.props.userData.id}`;
     const options = {
@@ -99,14 +97,14 @@ export default class UserProfileEditForm extends Component {
           <input name="email" placeholder={this.props.userData.email} />
         </Form.Field>
         <Form.Group widths="equal">
-          <Form.Field>
+          {/* <Form.Field>
             <label>New Password</label>
             <input name="password" type="password" />
           </Form.Field>
           <Form.Field>
             <label>New Password Confirmation</label>
             <input name="passwordConfirmation" type="password" />
-          </Form.Field>
+          </Form.Field> */}
         </Form.Group>
         <Message
           visible={this.state.error}
