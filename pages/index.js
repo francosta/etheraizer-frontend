@@ -170,9 +170,14 @@ export default class Index extends Component {
             </Grid.Column>
           </Grid.Row>
           {this.props.userData.id ? (
-            <Grid.Row centered>
-              <div style={{ marginTop: "10%", marginBottom: "2%" }}>
+            <Grid.Row style={{ backgroundColor: "teal" }} centered>
+              <div
+                style={{
+                  marginTop: "10%",
+                  marginBottom: "10%"
+                }}>
                 <Button
+                  href="#projects"
                   onClick={this.handleTransition}
                   size="huge"
                   color="green">
@@ -188,17 +193,19 @@ export default class Index extends Component {
         </Grid>
         <Container>
           <Transition visible={this.state.visible}>
-            <Grid>
-              <Card.Group itemsPerRow={4}>
-                {this.props.projects.map((project, i) => (
-                  <ProjectCard
-                    key={i}
-                    project={project}
-                    selectProject={this.props.selectProject}
-                  />
-                ))}
-              </Card.Group>
-            </Grid>
+            <a name="projects">
+              <Grid>
+                <Card.Group style={{ marginTop: 50 }} itemsPerRow={4}>
+                  {this.props.projects.map((project, i) => (
+                    <ProjectCard
+                      key={i}
+                      project={project}
+                      selectProject={this.props.selectProject}
+                    />
+                  ))}
+                </Card.Group>
+              </Grid>
+            </a>
           </Transition>
         </Container>
       </div>

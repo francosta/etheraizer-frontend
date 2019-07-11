@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -334,6 +334,14 @@ function (_Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "signup", function () {
+      var href = "/signup";
+      var as = href;
+      next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push(href, as, {
+        shallow: true
+      });
+    });
+
     return _this;
   }
 
@@ -428,12 +436,16 @@ function (_Component) {
         }, "All Projects"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Menu, {
           position: "right"
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
-          style: {
-            marginRight: "100px"
-          },
           name: "login",
           active: _activeItem === "login",
           onClick: this.login
+        }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Menu"].Item, {
+          style: {
+            marginRight: "100px"
+          },
+          name: "signup",
+          active: _activeItem === "signup",
+          onClick: this.signup
         }))));
       }
     }
@@ -664,7 +676,7 @@ function (_Component) {
           Object(_services_authentication__WEBPACK_IMPORTED_MODULE_10__["login"])(user.email, user.password).then(function (resp) {
             return _this.props.login(resp.token);
           });
-          var href = "/";
+          var href = "/projects";
           var as = href;
           next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push(href, as, {
             shallow: true
@@ -1594,13 +1606,17 @@ function (_Component) {
         },
         src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/step3.png"
       }))), this.props.userData.id ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
+        style: {
+          backgroundColor: "teal"
+        },
         centered: true
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           marginTop: "10%",
-          marginBottom: "2%"
+          marginBottom: "10%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Button"], {
+        href: "#projects",
         onClick: this.handleTransition,
         size: "huge",
         color: "green"
@@ -1610,7 +1626,12 @@ function (_Component) {
         login: this.props.login
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Container"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Transition"], {
         visible: this.state.visible
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        name: "projects"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Card"].Group, {
+        style: {
+          marginTop: 50
+        },
         itemsPerRow: 4
       }, this.props.projects.map(function (project, i) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ProjectCard__WEBPACK_IMPORTED_MODULE_15__["default"], {
@@ -1618,7 +1639,7 @@ function (_Component) {
           project: project,
           selectProject: _this2.props.selectProject
         });
-      }))))));
+      })))))));
     }
   }]);
 
@@ -1771,7 +1792,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

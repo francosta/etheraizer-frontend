@@ -58366,7 +58366,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 5:
+/***/ 10:
 /*!******************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmyprofile&absolutePagePath=%2FUsers%2Ffrancisco%2FDesktop%2Fetheraizer%2Fetheraizer-frontend%2Fpages%2Fmyprofile.js ***!
   \******************************************************************************************************************************************************************/
@@ -58389,5 +58389,5 @@ module.exports = dll_1aef2d0bbc0d334d831c;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
+},[[10,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=myprofile.js.map
