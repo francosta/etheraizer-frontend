@@ -58,7 +58,7 @@ export default class DeployProjectForm extends Component {
       this.setState({ errorMessage: thrownError.message });
     }
     this.setState({ creatingProject: false });
-    Router.push(`projects/${this.props.selectedProject.id}`);
+    Router.push(`/projects/${this.props.selectedProject.id}`);
   };
 
   getAddressForNewProject = async function() {

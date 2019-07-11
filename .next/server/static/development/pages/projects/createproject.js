@@ -834,7 +834,7 @@ function (_Component) {
                   creatingProject: false
                 });
 
-                next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("projects/".concat(_this.props.selectedProject.id));
+                next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/projects/".concat(_this.props.selectedProject.id));
 
               case 21:
               case "end":
