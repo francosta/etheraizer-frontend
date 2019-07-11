@@ -182,7 +182,7 @@ export default class Index extends Component {
             </Grid.Row>
           ) : (
             <Grid.Row centered>
-              <SignUpForm />
+              <SignUpForm login={this.props.login} />
             </Grid.Row>
           )}
         </Grid>

@@ -20,7 +20,7 @@ export default class LoginForm extends Component {
     login(email, password).then(resp => {
       this.props.login(resp.token);
     });
-    Router.push("/");
+    Router.push("/projects");
   };
 
   render() {

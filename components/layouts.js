@@ -38,6 +38,7 @@ export default props => {
           selectProject={props.selectProject}
           userData={props.userData}
           projects={props.allProjects}
+          login={props.login}
         />
       </div>
     );

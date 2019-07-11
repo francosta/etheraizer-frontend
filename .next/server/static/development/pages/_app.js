@@ -190,7 +190,7 @@ function (_Component) {
       Object(_services_authentication__WEBPACK_IMPORTED_MODULE_9__["login"])(email, password).then(function (resp) {
         _this.props.login(resp.token);
       });
-      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/");
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/projects");
     });
 
     return _this;
@@ -807,7 +807,8 @@ __webpack_require__.r(__webpack_exports__);
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
       selectProject: props.selectProject,
       userData: props.userData,
-      projects: props.allProjects
+      projects: props.allProjects,
+      login: props.login
     }));
   } else {
     return (// We use container in order to limit the size of the elements in the window.
@@ -2287,7 +2288,8 @@ function (_App) {
         logout: this.logout,
         selectProject: this.selectProject,
         router: this.props.router,
-        allProjects: this.props.allProjects
+        allProjects: this.props.allProjects,
+        login: this.loggedIn
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(Component, {
         blockchainProjects: this.props.blockchainProjects,
         userData: this.state.userData,
@@ -2579,7 +2581,9 @@ function (_Component) {
         color: "green"
       }, "Explore Projects"))) : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
         centered: true
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_14__["default"], null))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Container"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Transition"], {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_SignUpForm__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        login: this.props.login
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Container"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Transition"], {
         visible: this.state.visible
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Card"].Group, {
         itemsPerRow: 4
