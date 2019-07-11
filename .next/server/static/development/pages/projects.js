@@ -1432,15 +1432,25 @@ function (_Component) {
         }, "marginBottom", 70)
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
         style: {
-          height: "800px",
+          marginTop: "5vh",
           padding: 0
         },
         centered: true
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Image"], {
         style: {
-          height: "100%"
+          width: "30%"
         },
-        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_gif_dunia.gif"
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/logo.png"
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
+        style: {
+          marginBottom: "5vh"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Image"], {
+        style: {
+          width: "50%"
+        },
+        centered: true,
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/ezgif.com-crop.gif"
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
         style: {
           padding: 0
