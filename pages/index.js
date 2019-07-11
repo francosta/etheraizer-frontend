@@ -47,8 +47,11 @@ export default class Index extends Component {
             marginBottom: 0,
             marginBottom: 70
           }}>
-          <Grid.Row style={{ padding: 0 }} centered>
-            <Image src="https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero copy.png" />
+          <Grid.Row style={{ height: "800px", padding: 0 }} centered>
+            <Image
+              style={{ height: "100%" }}
+              src="https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_gif_dunia.gif"
+            />
           </Grid.Row>
           <Grid.Row style={{ padding: 0 }} centered>
             <Icon name="arrow alternate circle down" centered size="huge" />

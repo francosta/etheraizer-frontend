@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1432,11 +1432,15 @@ function (_Component) {
         }, "marginBottom", 70)
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
         style: {
+          height: "800px",
           padding: 0
         },
         centered: true
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Image"], {
-        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero copy.png"
+        style: {
+          height: "100%"
+        },
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_gif_dunia.gif"
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
         style: {
           padding: 0
@@ -1754,7 +1758,7 @@ var getUserData = function getUserData() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

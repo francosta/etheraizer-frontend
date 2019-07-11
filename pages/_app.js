@@ -98,12 +98,12 @@ export default class MyApp extends App {
   };
 
   logout = () => {
-    this.setState({
-      userData: {}
-    });
     localStorage.removeItem("token");
-    this.setState({ userData: {} });
-    Router.push("/", "/", { shallow: true });
+    Router.push("/", "/", { shallow: true }).then(() => {
+      this.setState({
+        userData: {}
+      });
+    });
   };
 
   deployProject = project => {

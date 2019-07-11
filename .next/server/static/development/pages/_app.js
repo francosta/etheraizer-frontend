@@ -2150,18 +2150,13 @@ function (_App) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "logout", function () {
-      _this.setState({
-        userData: {}
-      });
-
       localStorage.removeItem("token");
-
-      _this.setState({
-        userData: {}
-      });
-
       next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/", "/", {
         shallow: true
+      }).then(function () {
+        _this.setState({
+          userData: {}
+        });
       });
     });
 
@@ -2411,11 +2406,15 @@ function (_Component) {
         }, "marginBottom", 70)
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
         style: {
+          height: "800px",
           padding: 0
         },
         centered: true
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Image"], {
-        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_hero copy.png"
+        style: {
+          height: "100%"
+        },
+        src: "https://github.com/francosta/etheraizer-frontend/raw/development/public/landing_gif_dunia.gif"
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_13__["Grid"].Row, {
         style: {
           padding: 0
