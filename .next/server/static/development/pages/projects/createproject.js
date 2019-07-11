@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -834,7 +834,9 @@ function (_Component) {
                   creatingProject: false
                 });
 
-              case 20:
+                next_routes__WEBPACK_IMPORTED_MODULE_14___default.a.push("projects/".concat(_this.props.selectedProject.id));
+
+              case 21:
               case "end":
                 return _context.stop();
             }
@@ -2178,7 +2180,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 6:
+/***/ 3:
 /*!***********************************************!*\
   !*** multi ./pages/projects/createproject.js ***!
   \***********************************************/
