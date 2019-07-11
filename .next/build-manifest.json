@@ -19,11 +19,23 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/myprofile": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/signup": [
+    "/projects": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/projects/createproject": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/projects/showproject": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
