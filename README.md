@@ -23,3 +23,11 @@ I have adopted a TDD approach for writing the contracts, using Mocha.
 # Client
 
 The client-side of the application is built in React, using Next.js for server-side rendering.
+The frontend design was made using Semantic UI and CSS.
+
+# Screenshots and Video Demo
+
+You can check a video demo of Etheraizer [here](https://youtu.be/lR9p1DDKhJE). 
+
+
+
