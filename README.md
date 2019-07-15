@@ -18,6 +18,7 @@ The backend API was built using Ruby on Rails with a PostgreSQL database. This c
 
 The blockchain-related backend is written in Javascript and blockchain smart contracts in Solidity.
 I have adopted a TDD approach for writing the contracts, using Mocha.
+During development, I have used the Kovan Ethereum Test Network.
 
 
 # Client
@@ -25,17 +26,33 @@ I have adopted a TDD approach for writing the contracts, using Mocha.
 The client-side of the application is built in React, using Next.js for server-side rendering.
 The frontend design was made using Semantic UI and CSS.
 
+# User Journeys
+
+As a user, I can link my Ether wallet to Etheraizer, using the Metamask browser extension. Any user can create a project, usinf a description, a funding goal and an image.
+The project will be deployed to the Blockchain as soon as the user sets a minimum contribution for supporters. The user will have to pay a small transaction fee to deploy the project, which is processed by Metamask.
+
+Etheraizer will create a link to the project's address in the Blockchain, where all of the information presented in the frontend can be verified.
+
+Any user can also browse through and support any projects being funded in Etheraizer. The support transaction will also be handled through Metamask and can be verified through the link in the frontend to the Blockchain page.
+
+Any user can also check and edit their own profile and see the project's they've created as well the ones they've supported.
+
 # Screenshots and Video Demo
 
-You can check a video demo of Etheraizer [here](https://youtu.be/lR9p1DDKhJE). 
+### You can check a video demo of Etheraizer [here](https://youtu.be/lR9p1DDKhJE). 
 
 ![EtheraizerLogo](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/logo.png)
+Etheraizer logo
 
 ![LandingPage](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/landingPage.png)
+Landing page
 
 ![signUpForm](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/signUp.png)
+Sign up page
 
 ![AllProjects](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/allProjects.png)
+All projects page
 
 ![ProjectPage](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/projectPage.png)
+Project page
 
