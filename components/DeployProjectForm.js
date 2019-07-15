@@ -14,6 +14,10 @@ import {
 } from "semantic-ui-react";
 import factory from "../ethereum/factoryContract";
 import web3 from "../ethereum/web3";
+<<<<<<< HEAD
+=======
+import Router from "next/router";
+>>>>>>> development
 
 export default class DeployProjectForm extends Component {
   constructor(props) {
@@ -56,6 +60,11 @@ export default class DeployProjectForm extends Component {
     } catch (thrownError) {
       this.setState({ errorMessage: thrownError.message });
     }
+    // Router.push(
+    //   `/projects/${this.props.selectedProject.id}`,
+    //   `/projects/${this.props.selectedProject.id}`,
+    //   { shallow: true }
+    // );
     this.setState({ creatingProject: false });
   };
 
@@ -136,6 +145,10 @@ export default class DeployProjectForm extends Component {
                   onChange={this.handleCheck}
                   label="I agree to the Terms and Conditions"
                 />
+                <p style={{ marginTop: 10 }}>
+                  You will need to pay a small transaction fee in order to
+                  deploy your project.
+                </p>
               </Form.Field>
               <Message
                 color="red"

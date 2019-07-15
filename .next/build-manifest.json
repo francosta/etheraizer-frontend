@@ -39,6 +39,7 @@
       "static/runtime/main.js"
     ],
     "/myprofile": [
+<<<<<<< HEAD
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
@@ -58,6 +59,8 @@
       "static/runtime/main.js"
     ],
     "/projects": [
+=======
+>>>>>>> development
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

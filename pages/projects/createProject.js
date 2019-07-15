@@ -34,6 +34,7 @@ export default class createproject extends Component {
             blockchainProjects={this.props.blockchainProjects}
             selectProject={this.props.selectProject}
             addProjectToAllProjects={this.props.deployProject}
+            addToUserSupportedProjects={this.props.addToUserSupportedProjects}
           />
         </div>
       );

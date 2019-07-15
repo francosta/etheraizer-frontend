@@ -17,7 +17,35 @@ export default props => {
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
           />
         </Head>
+<<<<<<< HEAD
         <Container>{props.children}</Container>
+=======
+        {props.userData.id ? (
+          <div>
+            <Sticky>
+              <Navbar
+                userData={props.userData}
+                logout={props.logout}
+                selectProject={props.selectProject}
+              />
+            </Sticky>
+          </div>
+        ) : (
+          <Sticky>
+            <Navbar
+              userData={props.userData}
+              logout={props.logout}
+              selectProject={props.selectProject}
+            />
+          </Sticky>
+        )}
+        <Index
+          selectProject={props.selectProject}
+          userData={props.userData}
+          projects={props.allProjects}
+          login={props.login}
+        />
+>>>>>>> development
       </div>
     );
   } else {

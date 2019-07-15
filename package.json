@@ -12,6 +12,11 @@
   "dependencies": {
     "fs-extra": "^8.0.1",
     "ganache-cli": "^6.4.4",
+<<<<<<< HEAD
+=======
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.13",
+>>>>>>> development
     "mocha": "^6.1.4",
     "next": "^8.1.0",
     "next-routes": "^1.4.2",
@@ -20,7 +25,13 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.87.2",
     "solc": "^0.4.17",
+<<<<<<< HEAD
     "truffle-hdwallet-provider": "0.0.5",
+=======
+    "style-loader": "^0.23.1",
+    "styled-components": "^4.3.2",
+    "truffle-hdwallet-provider": "^1.0.6",
+>>>>>>> development
     "url-loader": "^2.0.1",
     "web3": "^1.0.0-beta.55"
   }

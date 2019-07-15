@@ -123,7 +123,14 @@ export default class MyApp extends App {
       <Layout
         userData={this.state.userData}
         logout={this.logout}
+<<<<<<< HEAD
         selectProject={this.selectProject}>
+=======
+        selectProject={this.selectProject}
+        router={this.props.router}
+        allProjects={this.props.allProjects}
+        login={this.loggedIn}>
+>>>>>>> development
         <Component
           blockchainProjects={this.props.blockchainProjects}
           userData={this.state.userData}

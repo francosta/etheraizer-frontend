@@ -67,6 +67,12 @@ export default class SignUpForm extends Component {
           login(user.email, user.password).then(resp =>
             this.props.login(resp.token)
           );
+<<<<<<< HEAD
+=======
+          const href = "/projects";
+          const as = href;
+          Router.push(href, as, { shallow: true });
+>>>>>>> development
         });
     } catch (err) {
       this.setState({ error: err });
