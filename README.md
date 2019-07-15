@@ -41,8 +41,9 @@ Any user can also check and edit their own profile and see the project's they've
 
 ### You can check a video demo of Etheraizer [here](https://youtu.be/lR9p1DDKhJE). 
 
-![EtheraizerLogo](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/logo.png)
-Etheraizer logo
+
+
+
 
 ![LandingPage](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/landingPage.png)
 Landing page
