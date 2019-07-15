@@ -1,22 +1,23 @@
-# Job Application Tracker Overview
+# Overview
 
-This is a Job Application Tracker. It consists of a dashboard where a user can create and track its job applications, along with specific tasks for each application. The user can also write and store cover letters for specific applications, through the built-in cover letter bank.
-Additionally, the app is connected to the Reed job API which lists current job openings for the user's chosen city and industry.
+Etheraizer is a crowdfunding app that works on the Blockchain.
+Users can create and present their projects for funding as well as support other projects on the platform.
+All projects get a blockchain address, where the current balance as well as project owner (which are shown in the frontend) can be verified.
+All support transactions can also be easily verified, both in the frontend and in the blockchain.
+
+Users can pay and fund projects using the Ethereum blockchain and connecting their wallets through Metamask.
 
 # Motivation
 
-I have built this app as the final project for my Javascript module of the Flatiron School Software Engineering bootcamp. The brief for the project was a single page application, using vanilla Javascript as the frontend and a Ruby on Rails backend.
-Having gone through the process of searching and applying for jobs, I have found that a job application tracker dashboard would be very useful.
+This app was built as the final project for the Flatiron School Software Engineering Bootcamp. I have built the entire application in two weeks.
 
 # Server
 
-The backend was built using Ruby on Rails with an SQL database, using an object-oriented programming approach.
-The app has 4 models: User, Application, Task and Cover Letter.
+The backend API was built using Ruby on Rails with a PostgreSQL database. This can be found in a different [GitHub repository](https://github.com/francosta/etheraizer-backend).
 
-A user has many applications. An application has many tasks and has many cover letters.
+The blockchain-related backend is written in Javascript. 
 
-There are API endpoints for all models. The app uses mainly the User endpoint.
-Authentication is done through a Rails sessions controller, using bcrypt for encyption.
+
 
 # Client
 
