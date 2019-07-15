@@ -8969,16 +8969,10 @@ function baseClone(value, bitmask, customizer, key, object, stack) {
     value.forEach(function(subValue) {
       result.add(baseClone(subValue, bitmask, customizer, subValue, value, stack));
     });
-
-    return result;
-  }
-
-  if (isMap(value)) {
+  } else if (isMap(value)) {
     value.forEach(function(subValue, key) {
       result.set(key, baseClone(subValue, bitmask, customizer, key, value, stack));
     });
-
-    return result;
   }
 
   var keysFunc = isFull
@@ -10550,8 +10544,8 @@ function baseMerge(object, source, srcIndex, customizer, stack) {
     return;
   }
   baseFor(source, function(srcValue, key) {
+    stack || (stack = new Stack);
     if (isObject(srcValue)) {
-      stack || (stack = new Stack);
       baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
     }
     else {
@@ -13033,12 +13027,14 @@ module.exports = createRecurry;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(/*! ./toInteger */ "./node_modules/lodash/toInteger.js"),
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js"),
+    toInteger = __webpack_require__(/*! ./toInteger */ "./node_modules/lodash/toInteger.js"),
     toNumber = __webpack_require__(/*! ./toNumber */ "./node_modules/lodash/toNumber.js"),
     toString = __webpack_require__(/*! ./toString */ "./node_modules/lodash/toString.js");
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMin = Math.min;
+var nativeIsFinite = root.isFinite,
+    nativeMin = Math.min;
 
 /**
  * Creates a function like `_.round`.
@@ -13052,7 +13048,7 @@ function createRound(methodName) {
   return function(number, precision) {
     number = toNumber(number);
     precision = precision == null ? 0 : nativeMin(toInteger(precision), 292);
-    if (precision) {
+    if (precision && nativeIsFinite(number)) {
       // Shift with exponential notation to avoid floating-point issues.
       // See [MDN](https://mdn.io/round#Examples) for more details.
       var pair = (toString(number) + 'e').split('e'),
@@ -15874,7 +15870,7 @@ module.exports = root;
 /***/ (function(module, exports) {
 
 /**
- * Gets the value at `key`, unless `key` is "__proto__".
+ * Gets the value at `key`, unless `key` is "__proto__" or "constructor".
  *
  * @private
  * @param {Object} object The object to query.
@@ -15882,6 +15878,10 @@ module.exports = root;
  * @returns {*} Returns the property value.
  */
 function safeGet(object, key) {
+  if (key === 'constructor' && typeof object[key] === 'function') {
+    return;
+  }
+
   if (key == '__proto__') {
     return;
   }
