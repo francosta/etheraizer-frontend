@@ -29,5 +29,13 @@ The frontend design was made using Semantic UI and CSS.
 
 You can check a video demo of Etheraizer [here](https://youtu.be/lR9p1DDKhJE). 
 
+![EtheraizerLogo](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/logo.png)
 
+![LandingPage](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/landingPage.png)
+
+![signUpForm](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/signUp.png)
+
+![AllProjects](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/allProjects.png)
+
+![ProjectPage](https://github.com/francosta/etheraizer-frontend/blob/master/public/Screenshots/projectPage.png)
 
