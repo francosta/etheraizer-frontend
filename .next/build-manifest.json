@@ -19,15 +19,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/projects": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/projects/createproject": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/projects/showproject": [
+    "/myprofile": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
