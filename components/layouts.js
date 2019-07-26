@@ -17,7 +17,7 @@ export default props => {
           />
           <link
             rel="icon"
-            href="https://github.com/francosta/etheraizer-frontend/raw/master/public/%CE%9Etheraizer%20Logo.png"
+            href="https://github.com/francosta/etheraizer-frontend/raw/master/public/logo.png"
           />
         </Head>
         {props.userData.id ? (
@@ -53,6 +53,11 @@ export default props => {
       // We will put the CSS stylesheet link within the head so that it stays in the head of the HTML file.
       <div>
         <Head>
+          <title>Etheraizer</title>
+          <link
+            rel="icon"
+            href="https://github.com/francosta/etheraizer-frontend/raw/master/public/logo.png"
+          />
           <link
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"

@@ -45,7 +45,7 @@ export default class DeployProjectForm extends Component {
 
     const accounts = await web3.eth.getAccounts();
     const projectTitle = e.target.projectTitle.value;
-    const minimumContribution = e.target.minimumContribution.value;
+    const minimumContribution = e.target.minimumContribution.value - 1;
 
     this.setState({ creatingProject: true });
     try {
