@@ -10,9 +10,14 @@ export default props => {
     return (
       <div>
         <Head>
+          <title>Etheraizer</title>
           <link
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+          />
+          <link
+            rel="icon"
+            href="https://github.com/francosta/etheraizer-frontend/raw/master/public/%CE%9Etheraizer%20Logo.png"
           />
         </Head>
         {props.userData.id ? (

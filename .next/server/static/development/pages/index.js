@@ -805,9 +805,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   if (props.router.route === "/") {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Etheraizer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
       rel: "stylesheet",
       href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+      rel: "icon",
+      href: "https://github.com/francosta/etheraizer-frontend/raw/master/public/%CE%9Etheraizer%20Logo.png"
     })), props.userData.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Sticky"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       userData: props.userData,
       logout: props.logout,
@@ -1799,7 +1802,7 @@ var getUserData = function getUserData() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/francisco/Desktop/etheraizer-frontend/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/francisco/Desktop/Projects/etheraizer-frontend/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
