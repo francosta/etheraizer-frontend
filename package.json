@@ -15,7 +15,7 @@
     "fs-extra": "^8.0.1",
     "ganache-cli": "^6.4.4",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "mocha": "^6.1.4",
     "next": "^8.1.0",
     "next-routes": "^1.4.2",
